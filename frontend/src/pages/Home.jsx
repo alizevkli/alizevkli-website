@@ -5,6 +5,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { Reveal } from "../components/Reveal";
 import { SectionHeader } from "../components/SectionHeader";
 import { VideoPlaceholder } from "../components/VideoPlaceholder";
+import { PlaceholderBlock } from "../components/PlaceholderBlock";
 import { IMAGES } from "../constants/images";
 
 const HeroSection = () => {
@@ -59,14 +60,14 @@ const HeroSection = () => {
             <Reveal delay={120}>
               <h1
                 data-testid="hero-title"
-                className="font-anton uppercase text-white leading-[0.88] tracking-tight text-[18vw] sm:text-[15vw] md:text-[10vw] lg:text-[9rem] xl:text-[11rem]"
+                className="font-anton uppercase text-white leading-[0.88] tracking-tight text-[16vw] sm:text-[13vw] md:text-[9vw] lg:text-[8.5rem] xl:text-[10rem]"
               >
-                Tennis<br />
-                <span className="inline-flex items-baseline gap-3 md:gap-5">
-                  Pro<span className="text-[#B7FF00]">·</span>
-                </span>
+                {t.hero.titleLine1}<br />
+                {t.hero.titleLine2}
+                <span className="text-[#B7FF00]">.</span>
                 <br />
-                Analysis
+                {t.hero.titleLine3}
+                <span className="text-[#B7FF00]">.</span>
               </h1>
             </Reveal>
           </div>
@@ -194,6 +195,7 @@ const BaselineSection = () => {
           eyebrow={t.baseline.eyebrow}
           title={t.baseline.title}
           lead={t.baseline.lead}
+          size="md"
         />
 
         <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-[#F8FAFC]/10 border border-[#F8FAFC]/10">
@@ -248,13 +250,13 @@ const CoachingSection = () => {
             />
           </div>
           <Reveal delay={160}>
-            <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden border border-[#F8FAFC]/10">
-              <img
-                src={IMAGES.clayLegs}
-                alt="Tennis training detail"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden">
+              <PlaceholderBlock
+                label="Coaching"
+                caption="On-court session · photo coming soon"
+                className="absolute inset-0"
+                testId="placeholder-coaching"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/70 to-transparent" />
             </div>
           </Reveal>
         </div>
@@ -377,48 +379,53 @@ const AboutSection = () => {
       data-testid="section-about"
       className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10"
     >
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
         <Reveal>
-          <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden border border-[#F8FAFC]/10">
-            <img
-              src={IMAGES.aboutCoach}
-              alt="Ali Zevkli"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+          <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden">
+            <PlaceholderBlock
+              label="Ali Zevkli"
+              caption="Founder portrait · photo coming soon"
+              className="absolute inset-0"
+              testId="placeholder-founder"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/70 via-transparent to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                  Founder
-                </div>
-                <div className="font-anton uppercase text-3xl text-white mt-1">
-                  Ali Zevkli
-                </div>
-              </div>
-              <span className="w-2 h-2 bg-[#B7FF00]" />
-            </div>
           </div>
         </Reveal>
 
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-7 flex flex-col">
           <SectionHeader
             eyebrow={t.about.eyebrow}
             title={t.about.title}
             lead={t.about.lead}
           />
-          <Reveal delay={200}>
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Reveal delay={140}>
+            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">
+              {t.about.role}
+            </div>
+          </Reveal>
+          <Reveal delay={220}>
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {t.about.creds.map((c, i) => (
                 <div
                   key={c}
                   className="flex items-start gap-3 border border-[#F8FAFC]/10 px-4 py-3 hover:border-[#B7FF00]/50 transition-colors"
                 >
                   <span className="font-anton text-[#B7FF00] text-sm shrink-0">
-                    0{i + 1}
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-sm text-white/90">{c}</span>
                 </div>
               ))}
+            </div>
+          </Reveal>
+          <Reveal delay={320}>
+            <div className="mt-8">
+              <Link
+                to="/about"
+                data-testid="founder-cta"
+                className="tpa-btn-secondary inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.22em]"
+              >
+                Read founder profile <ArrowRight size={14} />
+              </Link>
             </div>
           </Reveal>
         </div>

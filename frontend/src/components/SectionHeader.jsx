@@ -1,12 +1,20 @@
 import { Reveal } from "./Reveal";
 
+const SIZE_CLASSES = {
+  lg: "text-4xl md:text-5xl lg:text-6xl",
+  md: "text-3xl md:text-4xl lg:text-5xl",
+  sm: "text-2xl md:text-3xl lg:text-4xl",
+};
+
 export const SectionHeader = ({
   eyebrow,
   title,
   lead,
   align = "left",
+  size = "lg",
   testId,
 }) => {
+  const titleSize = SIZE_CLASSES[size] || SIZE_CLASSES.lg;
   return (
     <div
       data-testid={testId}
@@ -21,7 +29,7 @@ export const SectionHeader = ({
       )}
       {title && (
         <Reveal delay={80}>
-          <h2 className="font-anton uppercase text-4xl md:text-5xl lg:text-6xl text-white leading-[0.95]">
+          <h2 className={`font-anton uppercase ${titleSize} text-white leading-[0.95]`}>
             {title}
           </h2>
         </Reveal>
