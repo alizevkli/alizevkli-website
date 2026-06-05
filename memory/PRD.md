@@ -37,6 +37,18 @@ Build a premium responsive website for **Tennis Pro Analysis**, founded by **Ali
 - Mobile menu (hamburger), scroll-to-top, scroll-aware navbar blur
 - Testing pass: 100% acceptance criteria validated by testing_agent_v3 (iteration_1)
 
+## v2 Updates (Dec 2025 · brand repositioning)
+- Hero headline switched to **"Tennis Performance. Measured."** (was "Tennis Pro Analysis") with lime accent periods, matching new premium positioning
+- Hero subtitle: "Data-driven coaching, match analysis and player development by Ali Zevkli."
+- Proof bar updated to authoritative 5 credentials: ATPCA Advanced Pro Level 2 · TTF Qualified Coach · Division 1 WA Playing Background · Competed Against UTR 9+ Players · UTR Tournament Director
+- Homepage TPA intro rewritten as broader "What Is Tennis Pro Analysis" (less Baseline-Vision-centric)
+- Baseline section title shortened to "Video analysis. Performance reporting." (≈20% smaller via new SectionHeader `size="md"` variant)
+- Homepage About section rebuilt as a proper **Founder section** with role line ("Founder · Performance Coach · Analyst · Tournament Director") and "Read founder profile" CTA
+- Coaching + Founder + About-page imagery swapped to branded `PlaceholderBlock` ("photo coming soon") — keeping real images only on hero & action backgrounds
+- 10-item credentials list rolled out on Home Founder section and /about: ATPCA Advanced Pro Level 2 · TTF Qualified Coach · Bachelor in Physical Education & Sports Performance · International Tennis Coach · Division 1 WA · Competed vs UTR 9+ · Tournament Director (UTR Events) · Mentor for Trainee Coaches (Tennis West) · English & Turkish Speaking · Founder of Tennis Pro Analysis
+- Turkish translations updated to match
+- Testing pass: 100% iteration_2 (no issues)
+
 ## Prioritised Backlog
 - **P0**: replace placeholders when Ali confirms email / phone / Instagram handle
 - **P1**: real session/match videos in `/src/constants/images.js` (or upload to `/public`) — swap `VideoPlaceholder` for `<video>`
