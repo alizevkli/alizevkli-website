@@ -1,0 +1,36 @@
+{
+  "summary": "First-iteration frontend-only smoke + flow testing of Tennis Pro Analysis static marketing site at https://tennis-data-hub-1.preview.emergentagent.com. Verified homepage hero, all 10 ordered home sections, proof bar (5 credentials), hero CTAs, full desktop navigation (6 routes), mobile menu (390x844), EN/TR language toggle + localStorage 'tpa-lang' persistence across navigation and reload, Baseline Vision 8 KPI grid, About page (no certificate/transcript/reference images), Pathways visa disclaimer, contact-email/phone/instagram 'adding soon' placeholders (both on Contact page and Footer), scroll-to-top after navigation, and verified absence of newsletter / fake testimonials / fake numeric stats / 500+ patterns across all 8 pages. All core acceptance criteria met. Only minor visual nit: each contact channel card on /contact shows the localized 'Email — adding soon' label AND a separate uppercase 'soon' badge tag, making the visible text read 'Email — adding soon  soon' (label + badge are by-design but visually redundant).",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Contact page (/contact)",
+        "issues": [
+          "Each channel card renders 'Email — adding soon' / 'Phone — adding soon' / 'Instagram — adding soon' AND an additional uppercase 'soon' badge on the right of the same card, so the visible text reads e.g. 'Email — adding soon ... soon'. Recommend dropping either the trailing 'soon' badge in Contact.jsx (line 37-39) or shortening the label to 'Email —' so the badge isn't redundant."
+        ]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Optional polish: remove redundant 'soon' badge tag in /app/frontend/src/pages/Contact.jsx (lines 37-39) OR drop the 'adding soon' suffix from contact.email/phone/instagram translation strings so the text isn't duplicated."
+  ],
+  "critical_code_review_comments": [
+    "ScrollToTop uses `'instant' in window ? 'instant' : 'auto'` — the `'instant' in window` check is always false (`instant` is not a property of window). Functionally fine because it falls back to 'auto', but the intent ('instant' scroll behavior is now a valid ScrollOptions value in modern browsers) is not achieved. Consider `behavior: 'instant'` directly or `behavior: 'auto'`.",
+    "Footer column 'Legal' is defined in translations (t.footer.legal) but never used in /app/frontend/src/components/Footer.jsx — minor dead translation key.",
+    "Navbar mobile menu toggles body overflow:hidden via useEffect; works correctly. data-testid coverage is consistent and complete across Navbar, Footer, LanguageToggle, all pages."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (out of scope)", "frontend": "100% (all acceptance criteria pass)"},
+  "test_credentials": "N/A — static marketing site, no auth.",
+  "seed_data_creation": "None — static site, no DB.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Static React marketing site; no backend. All flows verified at external URL https://tennis-data-hub-1.preview.emergentagent.com on desktop (1440x900) and mobile (390x844). data-testids in place: page-home, page-contact, page-about, page-baseline, page-pathways, hero-title, hero-subtitle, hero-cta-primary, hero-cta-secondary, proof-bar, section-tpa/baseline/coaching/tournament/pathways/about/video/contact-cta, nav-link-{home,tpa,baseline-vision,coaching,about,contact}, mobile-link-* (same suffixes), nav-mobile-toggle, mobile-menu, language-toggle / language-toggle-en / language-toggle-tr, footer-email/phone/instagram, contact-email/phone/instagram, site-footer. Language persistence key is localStorage 'tpa-lang' ('en' | 'tr'). Note: hero-title is split across spans so .text_content() returns 'TENNIS\\nPRO\\n·\\n\\nANALYSIS' — assert on uppercase fragments, not the literal 'Tennis Pro Analysis' string. After clicking a nav link, wait ~500ms before reading window.scrollY because Reveal animations briefly re-layout content; scroll-to-top is verified working on all 6 routes.",
+  "rca_of_the_issue": "No blocking issues found. The only nit (duplicate 'soon' on Contact channel cards) is a design choice in Contact.jsx — channel label includes 'adding soon' and a separate <span>soon</span> badge is rendered on the same card. Fix: drop either the badge (lines 37-39 in Contact.jsx) or the suffix in translations."
+}
