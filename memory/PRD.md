@@ -43,6 +43,29 @@ Build a premium responsive website for **Tennis Pro Analysis**, founded by **Ali
 - Proof bar updated to authoritative 5 credentials: ATPCA Advanced Pro Level 2 · TTF Qualified Coach · Division 1 WA Playing Background · Competed Against UTR 9+ Players · UTR Tournament Director
 - Homepage TPA intro rewritten as broader "What Is Tennis Pro Analysis" (less Baseline-Vision-centric)
 - Baseline section title shortened to "Video analysis. Performance reporting." (≈20% smaller via new SectionHeader `size="md"` variant)
+- Homepage About section rebuilt as a proper **Founder section** with role line and "Read founder profile" CTA
+- Coaching + Founder + About-page imagery swapped to branded `PlaceholderBlock` ("photo coming soon")
+- 10-item credentials list rolled out on Home Founder section and /about
+- Turkish translations updated to match
+- Testing pass: 100% iteration_2 (no issues)
+
+## v3 Updates (Dec 2025 · brand assets + section reorder)
+- Real **TPA logo** image swapped into Navbar + Footer (on a clean white brand-patch background) and set as the favicon (`TPA-LOGO-SQUARE.jpg`).
+- Real **founder photo** (Ali Zevkli on court) now used on the homepage Founder section and on the `/about` page — placeholders removed.
+- Real **coaching photo** (Ali coaching with a student) on the homepage Coaching section.
+- **Baseline Vision device/app preview** added to the homepage Baseline section using the supplied infographic.
+- **Tournament section** keeps a branded placeholder until UTR event photos are supplied.
+- Homepage **section order reshuffled**: Hero → Proof Bar → Founder → TPA → Baseline Vision → Coaching → Tournament → Pathways → Video → Contact. Eyebrows renumbered 01–08.
+- Hero copy updated: subheading "Coaching, match analysis and player development powered by experience, data and performance insights.", CTAs shortened to "Book a Session" / "View Analysis".
+- About copy rewritten to position Ali as an international tennis coach, performance analyst and tournament director; TPA copy made broader so Baseline Vision is positioned as one tool inside the TPA performance system.
+- **Instagram** is now a real outbound link to `https://instagram.com/tennisproanalysis` (@tennisproanalysis) in Footer and Contact channels. Email and phone remain "adding soon" placeholders.
+- All Baseline device subhead strings moved into i18n; TR translations updated.
+- Testing pass: 100% iteration_3 (28/28 assertions).
+- Hero headline switched to **"Tennis Performance. Measured."** (was "Tennis Pro Analysis") with lime accent periods, matching new premium positioning
+- Hero subtitle: "Data-driven coaching, match analysis and player development by Ali Zevkli."
+- Proof bar updated to authoritative 5 credentials: ATPCA Advanced Pro Level 2 · TTF Qualified Coach · Division 1 WA Playing Background · Competed Against UTR 9+ Players · UTR Tournament Director
+- Homepage TPA intro rewritten as broader "What Is Tennis Pro Analysis" (less Baseline-Vision-centric)
+- Baseline section title shortened to "Video analysis. Performance reporting." (≈20% smaller via new SectionHeader `size="md"` variant)
 - Homepage About section rebuilt as a proper **Founder section** with role line ("Founder · Performance Coach · Analyst · Tournament Director") and "Read founder profile" CTA
 - Coaching + Founder + About-page imagery swapped to branded `PlaceholderBlock` ("photo coming soon") — keeping real images only on hero & action backgrounds
 - 10-item credentials list rolled out on Home Founder section and /about: ATPCA Advanced Pro Level 2 · TTF Qualified Coach · Bachelor in Physical Education & Sports Performance · International Tennis Coach · Division 1 WA · Competed vs UTR 9+ · Tournament Director (UTR Events) · Mentor for Trainee Coaches (Tennis West) · English & Turkish Speaking · Founder of Tennis Pro Analysis

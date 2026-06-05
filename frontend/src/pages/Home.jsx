@@ -229,15 +229,13 @@ const BaselineSection = () => {
             </div>
             <div className="lg:col-span-5">
               <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">
-                Device · App
+                {t.baseline.deviceEyebrow}
               </div>
               <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                Real-time tracking. Reportable output.
+                {t.baseline.deviceTitle}
               </h3>
               <p className="text-sm text-[#A7B0BA] leading-relaxed mb-6">
-                Baseline Vision captures the session on court and delivers structured
-                reports — shot speed, placement, patterns and progress — all reviewed
-                inside the wider TPA system.
+                {t.baseline.deviceLead}
               </p>
               <Link
                 to="/baseline-vision"

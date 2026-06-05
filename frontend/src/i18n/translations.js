@@ -76,6 +76,10 @@ export const translations = {
         { label: "Player Development", desc: "Translating data into the next training block." },
       ],
       cta: "See Baseline Vision",
+      deviceEyebrow: "Device · App",
+      deviceTitle: "Real-time tracking. Reportable output.",
+      deviceLead:
+        "Baseline Vision captures the session on court and delivers structured reports — shot speed, placement, patterns and progress — all reviewed inside the wider TPA system.",
     },
     coaching: {
       eyebrow: "04 — Coaching",
@@ -258,6 +262,10 @@ export const translations = {
         { label: "Oyuncu Gelişimi", desc: "Veriyi bir sonraki antrenman bloğuna çevirme." },
       ],
       cta: "Baseline Vision'ı Gör",
+      deviceEyebrow: "Cihaz · Uygulama",
+      deviceTitle: "Gerçek zamanlı takip. Raporlanabilir çıktı.",
+      deviceLead:
+        "Baseline Vision kortta seansı yakalar ve yapılandırılmış raporlar sunar — vuruş hızı, yerleşim, desenler ve ilerleme — tamamı TPA sistemi içinde incelenir.",
     },
     coaching: {
       eyebrow: "04 — Antrenörlük",
