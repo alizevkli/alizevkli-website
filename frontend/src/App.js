@@ -12,6 +12,7 @@ import Tournament from "./pages/Tournament";
 import Pathways from "./pages/Pathways";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Brand from "./pages/Brand";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/pathways" element={<Pathways />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/brand" element={<Brand />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>

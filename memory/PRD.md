@@ -49,6 +49,17 @@ Build a premium responsive website for **Tennis Pro Analysis**, founded by **Ali
 - Turkish translations updated to match
 - Testing pass: 100% iteration_2 (no issues)
 
+## v4 Updates (Dec 2025 · brand identity system)
+- Built a vector logo system at `/brand` with **three distinct concepts**, each delivered as pure SVG (favicon → billboard scalable):
+  - **C1 · Signal** — Performance Intelligence. Asymmetric chamfered frame with a captured shot-trajectory curve + structured data points.
+  - **C2 · Apex** — Elite Athlete. Bold geometric chevron with a lime analysis line slicing the base and a precision data-point at the summit.
+  - **C3 · TPA Monogram** — Custom interlocked TPA letterform inside a rounded-square badge with lime under-stroke.
+- Every concept rendered in: lockup (dark/light), icon-only (96/48/24/16 px), favicon, social avatar, plus real-world previews (navbar bar, jersey/apparel patch, social card / report cover).
+- New palette wired in for the logo system: `#0A1220` Ink · `#111827` Slate · `#FFFFFF` Paper · `#C6FF00` Lime + variants · `#00D4FF` Cyan optional.
+- New display fonts loaded: **Archivo Black** (for C1 wordmark) and **Space Grotesk** (for C3 wordmark); Anton retained for C2 + main site headings.
+- All logos defined in `/components/brand/TpaLogos.jsx` as exportable React components — once a concept is selected, sitewide rollout (navbar, footer, favicon, social meta) is a one-prop change.
+- `/brand` is an unlinked review route (not in nav) for the founder to make the call.
+
 ## v3 Updates (Dec 2025 · brand assets + section reorder)
 - Real **TPA logo** image swapped into Navbar + Footer (on a clean white brand-patch background) and set as the favicon (`TPA-LOGO-SQUARE.jpg`).
 - Real **founder photo** (Ali Zevkli on court) now used on the homepage Founder section and on the `/about` page — placeholders removed.
