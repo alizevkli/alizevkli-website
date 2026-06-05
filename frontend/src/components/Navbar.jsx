@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
-import { BRAND } from "../constants/images";
+import { FinalLockup, FinalMark } from "./brand/TpaLogos";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -50,16 +50,7 @@ export const Navbar = () => {
           onClick={() => setOpen(false)}
           aria-label="Tennis Pro Analysis — Home"
         >
-          <span className="inline-flex items-center bg-white px-2.5 py-1.5 border border-white">
-            <img
-              src={BRAND.logoWide}
-              alt="Tennis Pro Analysis"
-              className="h-5 md:h-6 w-auto block"
-            />
-          </span>
-          <span className="hidden xl:inline-block text-[10px] uppercase tracking-[0.3em] text-[#A7B0BA] group-hover:text-[#B7FF00] transition-colors">
-            Performance & Video Analysis
-          </span>
+          <FinalLockup theme="dark" height={36} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">
@@ -107,6 +98,9 @@ export const Navbar = () => {
           className="lg:hidden border-t border-[#F8FAFC]/10 bg-[#06141F]"
         >
           <div className="px-5 py-6 flex flex-col gap-1">
+            <div className="pb-5 mb-3 border-b border-[#F8FAFC]/10">
+              <FinalMark size={36} />
+            </div>
             {links.map((l) => (
               <NavLink
                 key={l.to}

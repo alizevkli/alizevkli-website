@@ -4,6 +4,7 @@ import { LanguageProvider } from "./i18n/LanguageContext";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { LoadingScreen } from "./components/LoadingScreen";
 import Home from "./pages/Home";
 import TPA from "./pages/TPA";
 import BaselineVision from "./pages/BaselineVision";
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <LanguageProvider>
+        <LoadingScreen />
         <BrowserRouter>
           <ScrollToTop />
           <Navbar />

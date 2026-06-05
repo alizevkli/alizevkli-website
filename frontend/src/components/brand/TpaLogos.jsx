@@ -368,3 +368,213 @@ export const CONCEPTS = [
     Favicon: C3Favicon,
   },
 ];
+
+/* ============================================================
+ * FINAL — TPA · APEX SIGNAL
+ * The synthesis. Strongest elements from all three concepts:
+ *   • Custom proprietary letterform (from C3 — ownership)
+ *   • Bold geometric apex silhouette (from C2 — elite athletic)
+ *   • Lime data line + signal dot (from C1 — analytics/tech)
+ *
+ * The mark is a custom "A" — the brand's anchor letter (Analysis,
+ * Apex, Ali) — built as two thick angular legs with a lime
+ * cross-line (the analysis insight cutting through the form) and
+ * a precision lime data-point sitting at the apex.
+ * ============================================================ */
+
+export const FinalMark = ({
+  size = 64,
+  color = PAPER,
+  accent = LIME,
+  className = "",
+  withDot = true,
+  withCorner = true,
+}) => (
+  <svg
+    viewBox="0 0 64 64"
+    width={size}
+    height={size}
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-label="Tennis Pro Analysis"
+  >
+    <g strokeLinecap="square">
+      {/* Left leg */}
+      <line x1="32" y1="8" x2="6" y2="58" stroke={color} strokeWidth="7" />
+      {/* Right leg */}
+      <line x1="32" y1="8" x2="58" y2="58" stroke={color} strokeWidth="7" />
+      {/* Lime cross-line — the analysis insight */}
+      <line x1="16" y1="42" x2="48" y2="42" stroke={accent} strokeWidth="5" />
+    </g>
+    {/* Precision data point at the apex */}
+    {withDot && <circle cx="32" cy="5" r="3.2" fill={accent} />}
+    {/* Optional corner tick — reads as report / readout */}
+    {withCorner && (
+      <g fill={accent}>
+        <rect x="56" y="58" width="6" height="2" />
+        <rect x="60" y="54" width="2" height="6" />
+      </g>
+    )}
+  </svg>
+);
+
+export const FinalWordmark = ({
+  color = PAPER,
+  accent = LIME,
+  height = 28,
+  variant = "row", // 'row' | 'stack'
+}) => {
+  if (variant === "stack") {
+    return (
+      <svg
+        viewBox="0 0 240 80"
+        height={height}
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="TENNIS PRO ANALYSIS"
+        style={{ display: "block" }}
+      >
+        <text
+          x="0"
+          y="38"
+          fontFamily="'Anton', sans-serif"
+          fontSize="44"
+          letterSpacing="2"
+          fill={color}
+        >
+          TENNIS PRO
+        </text>
+        <text
+          x="0"
+          y="68"
+          fontFamily="'Space Grotesk', 'Inter', sans-serif"
+          fontWeight="600"
+          fontSize="15"
+          letterSpacing="10"
+          fill={accent}
+        >
+          ANALYSIS
+        </text>
+      </svg>
+    );
+  }
+  return (
+    <svg
+      viewBox="0 0 420 56"
+      height={height}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="TENNIS PRO ANALYSIS"
+      style={{ display: "block" }}
+    >
+      <text
+        x="0"
+        y="38"
+        fontFamily="'Anton', sans-serif"
+        fontSize="44"
+        letterSpacing="2"
+        fill={color}
+      >
+        TENNIS PRO
+      </text>
+      <text
+        x="222"
+        y="38"
+        fontFamily="'Anton', sans-serif"
+        fontSize="44"
+        letterSpacing="2"
+        fill={accent}
+      >
+        ANALYSIS
+      </text>
+    </svg>
+  );
+};
+
+export const FinalLockup = ({ theme = "dark", height = 48, wordmark = "row" }) => {
+  const isDark = theme === "dark";
+  const color = isDark ? PAPER : INK;
+  return (
+    <div
+      style={{ display: "inline-flex", alignItems: "center", gap: 16, height }}
+    >
+      <FinalMark size={height} color={color} accent={LIME} />
+      <FinalWordmark
+        color={color}
+        accent={LIME}
+        height={height * (wordmark === "stack" ? 0.95 : 0.62)}
+        variant={wordmark}
+      />
+    </div>
+  );
+};
+
+export const FinalAvatar = ({ size = 200, theme = "dark" }) => {
+  const bg = theme === "dark" ? INK : PAPER;
+  const fg = theme === "dark" ? PAPER : INK;
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        background: bg,
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <FinalMark size={size * 0.6} color={fg} accent={LIME} />
+    </div>
+  );
+};
+
+export const FinalFavicon = ({ size = 64 }) => (
+  <div
+    style={{
+      width: size,
+      height: size,
+      background: INK,
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <FinalMark size={size * 0.72} color={PAPER} accent={LIME} withCorner={false} />
+  </div>
+);
+
+// Mobile header — single-line compact lockup
+export const FinalMobileHeader = ({ theme = "dark" }) => {
+  const color = theme === "dark" ? PAPER : INK;
+  return (
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 10 }}>
+      <FinalMark size={28} color={color} accent={LIME} withCorner={false} />
+      <span
+        style={{
+          fontFamily: "'Anton', sans-serif",
+          fontSize: 18,
+          letterSpacing: 1.5,
+          color,
+          textTransform: "uppercase",
+        }}
+      >
+        Tennis Pro <span style={{ color: LIME }}>Analysis</span>
+      </span>
+    </div>
+  );
+};
+
+export const FinalLoader = ({ size = 80 }) => (
+  <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
+    <FinalMark size={size} color={PAPER} accent={LIME} withCorner={false} />
+    <div
+      style={{
+        fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+        fontSize: 10,
+        letterSpacing: 8,
+        color: "#A7B0BA",
+        textTransform: "uppercase",
+      }}
+    >
+      Tennis · Pro · Analysis
+    </div>
+  </div>
+);
