@@ -34,9 +34,7 @@ export default function Contact() {
                     </span>
                     <span className="text-sm md:text-base text-white/90">{label}</span>
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#A7B0BA]">
-                    soon
-                  </span>
+                  <span className="w-1.5 h-1.5 bg-[#B7FF00]" />
                 </div>
               </Reveal>
             ))}
