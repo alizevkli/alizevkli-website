@@ -1,0 +1,125 @@
+{
+  "theme": "dark",
+  "archetype": "ARCHETYPE 2: THE PERFORMANCE PRO",
+  "brand": {
+    "name": "Tennis Pro Analysis",
+    "positioning": "Premium sports-performance brand, data-driven coaching, match analysis",
+    "tone": "Elite, precise, commanding, serious"
+  },
+  "colors": {
+    "background": "#06141F",
+    "surface": "#0B1F33",
+    "primary": "#B7FF00",
+    "secondary": "#1FA463",
+    "text_primary": "#F8FAFC",
+    "text_muted": "#A7B0BA",
+    "border": "rgba(248, 250, 252, 0.1)",
+    "rules": [
+      "No light blue.",
+      "Use #B7FF00 (Lime) strictly for high-priority CTA buttons, active states, and data highlights.",
+      "Use #1FA463 (Tennis Green) for secondary elements, success states, or subtle grid borders.",
+      "Surfaces (#0B1F33) should sit on Background (#06141F) with a 1px solid border (#F8FAFC with 10% opacity) rather than heavy drop shadows (Tactical Minimalism)."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Anton, sans-serif",
+      "style": "uppercase, tracking-tight, leading-none, bold impact",
+      "sizes": {
+        "h1": "text-5xl md:text-7xl uppercase",
+        "h2": "text-4xl md:text-5xl uppercase",
+        "h3": "text-2xl md:text-3xl uppercase"
+      }
+    },
+    "body": {
+      "font_family": "Inter, sans-serif",
+      "style": "clean, geometric, tracking-normal, leading-relaxed",
+      "sizes": {
+        "base": "text-base md:text-lg",
+        "small": "text-sm",
+        "micro": "text-xs tracking-[0.2em] uppercase"
+      }
+    }
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "p-4, p-8, p-12, py-24 for massive sections",
+    "grid_strategy": "Tetris Grid for marketing sections (asymmetrical spans). Control Room Grid for 'Baseline Vision' analytics sections (dense, strict columns).",
+    "border_radius": "rounded-none or rounded-sm (max 4px). Keep edges sharp to emphasize tactical/athletic feel.",
+    "alignment": "Left-align dense text and data. Center-align hero headlines."
+  },
+  "components": {
+    "hero": {
+      "layout": "Full viewport height. Background image with bg-[#06141F]/60 overlay. Content left-aligned or centered.",
+      "headline": "\"Tennis Pro Analysis\"",
+      "subheadline": "\"Performance & Video Analysis for serious tennis players, clubs and competitive players.\"",
+      "cta_primary": "bg-[#B7FF00] text-[#06141F] font-bold hover:bg-white transition-colors uppercase tracking-wide px-8 py-4 text-lg",
+      "cta_secondary": "border border-[#F8FAFC]/20 text-[#F8FAFC] hover:border-[#1FA463] hover:text-[#1FA463] transition-colors bg-transparent backdrop-blur-md px-8 py-4 text-lg"
+    },
+    "proof_bar": {
+      "style": "Minimalist ticker or fixed grid at the bottom of hero. Text in #A7B0BA, border-y border-[#F8FAFC]/10.",
+      "content": "Real credentials. No fake metrics. E.g., 'Baseline Vision Certified', 'Pro Tour Experience', 'Video Analytics'"
+    },
+    "service_cards": {
+      "style": "Tactical Neumorphism / Technical Grid. bg-[#0B1F33], 1px border-[#F8FAFC]/10. Hover: -translate-y-1, border-[#B7FF00]/50, subtle glow.",
+      "padding": "p-8 md:p-12",
+      "title": "Anton font, #F8FAFC",
+      "description": "Inter font, #A7B0BA"
+    },
+    "baseline_vision_section": {
+      "style": "Control Room Grid. Display stats, data points, or abstract analysis graphics. Dense typography, glowing #B7FF00 accents for data bars."
+    },
+    "navigation": {
+      "style": "Crystal Glass or Solid. backdrop-blur-xl bg-[#06141F]/80, border-b border-[#F8FAFC]/10. Must contain EN/TR language toggle.",
+      "links": "Home, Baseline Vision, Coaching, Pathways, About Ali, Contact"
+    },
+    "video_placeholders": {
+      "style": "aspect-video bg-[#0B1F33] border border-[#F8FAFC]/10 flex items-center justify-center relative overflow-hidden group",
+      "icon": "Play icon in #B7FF00, scales up on hover"
+    },
+    "contact_cta": {
+      "style": "Massive typography, high contrast. bg-[#B7FF00] container with #06141F text, or vice versa with neon borders."
+    }
+  },
+  "motion": {
+    "hover": "Fast, precise, athletic transitions. transition-all duration-200 ease-out.",
+    "reveal": "Staggered fade-up for service cards and grid items. No bouncy springs; use sharp ease-out curves.",
+    "parallax": "Subtle parallax on hero background to add depth without distraction."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1578966663421-00f3bfebfa89",
+        "description": "Overhead view of green tennis court. Use for hero background or Baseline Vision section.",
+        "category": "hero_background"
+      },
+      {
+        "url": "https://images.pexels.com/photos/10340633/pexels-photo-10340633.jpeg",
+        "description": "Dark studio portrait of a tennis player/coach holding a racket. Use for 'About Ali' section.",
+        "category": "about_coach"
+      },
+      {
+        "url": "https://images.pexels.com/photos/28435181/pexels-photo-28435181.jpeg",
+        "description": "Tennis player silhouette against vivid sky. Great for 'Australia-T\u00fcrkiye Pathways' or 'Tournament Development'.",
+        "category": "service_action"
+      },
+      {
+        "url": "https://images.pexels.com/photos/5739222/pexels-photo-5739222.jpeg",
+        "description": "Close-up of athlete's legs on clay court. Use for 'Coaching' or 'Tennis Pro Analysis' section.",
+        "category": "detail_shot"
+      }
+    ],
+    "video": "Use empty states with dark navy background and play icon for video placeholders as requested."
+  },
+  "testing_attributes": {
+    "rules": "All interactive elements MUST include a data-testid attribute in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color palette. No light blue.",
+    "Implement Anton for headings, making sure they are uppercase and visually commanding.",
+    "Use pure HTML/Tailwind for marketing layout structures to avoid generic Shadcn card stiffness. Only use Shadcn for complex interactives.",
+    "Ensure the hero image has a #06141F/60 overlay for text contrast.",
+    "Do not invent fake numbers or testimonials. Stick to structural placeholders if content is missing.",
+    "Include the EN/TR language toggle in the header.",
+    "Make sure all headings use Anton and all body text uses Inter."
+  ]
+}
