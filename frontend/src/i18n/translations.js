@@ -18,11 +18,11 @@ export const translations = {
       titleLine3: "Measured",
       title: "Tennis Performance. Measured.",
       subtitle:
-        "Data-driven coaching, match analysis and player development by Ali Zevkli.",
+        "Coaching, match analysis and player development powered by experience, data and performance insights.",
       support:
-        "Tennis Pro Analysis is a premium tennis performance, coaching and analysis brand — built around player development, Baseline Vision match analysis, tournament direction, and Australia–Türkiye pathways.",
-      ctaPrimary: "Book a TPA Session",
-      ctaSecondary: "View Performance Analysis",
+        "Tennis Pro Analysis is a premium tennis performance, coaching and analysis brand built around player development — coaching, match analysis, tournament direction and Australia–Türkiye pathways. Baseline Vision is one tool inside the TPA performance system.",
+      ctaPrimary: "Book a Session",
+      ctaSecondary: "View Analysis",
       scroll: "Scroll",
     },
     proof: {
@@ -36,10 +36,10 @@ export const translations = {
       ],
     },
     tpa: {
-      eyebrow: "01 — What Is Tennis Pro Analysis",
+      eyebrow: "02 — What Is Tennis Pro Analysis",
       title: "A performance-first tennis brand.",
       lead:
-        "Tennis Pro Analysis is built around player development. Expert coaching, match analysis, tactical and technical review, tournament direction and program design — combined into one performance system led by Ali Zevkli.",
+        "Tennis Pro Analysis is built around player development. Expert coaching, match analysis, tactical and technical review, tournament direction and program design — combined into one performance system led by Ali Zevkli. Baseline Vision is one of the tools inside the TPA system.",
       bullets: [
         {
           k: "Performance Coaching",
@@ -61,10 +61,10 @@ export const translations = {
       cta: "Explore TPA",
     },
     baseline: {
-      eyebrow: "02 — Baseline Vision",
+      eyebrow: "03 — Baseline Vision",
       title: "Video analysis. Performance reporting.",
       lead:
-        "Baseline Vision turns full matches into structured data — stroke speed, rally depth, placement zones, serve and return patterns, line calls, and progression over time.",
+        "Baseline Vision is the analysis tool inside the TPA system — full matches turned into structured data. Stroke speed, rally depth, placement zones, serve and return patterns, line calls, and progression over time.",
       grid: [
         { label: "Match Stats", desc: "Winners, errors, conversion, rally length distribution." },
         { label: "Stroke Speed", desc: "Serve and groundstroke speed tracking per session." },
@@ -78,7 +78,7 @@ export const translations = {
       cta: "See Baseline Vision",
     },
     coaching: {
-      eyebrow: "03 — Coaching",
+      eyebrow: "04 — Coaching",
       title: "Coaching for players who train with intent.",
       lead:
         "Private and small-group coaching for competitive juniors, adult competitors, and clubs. Sessions are built around a clear plan, measurable goals, and post-session review.",
@@ -101,7 +101,7 @@ export const translations = {
       ],
     },
     tournament: {
-      eyebrow: "04 — Tournament & Program Development",
+      eyebrow: "05 — Tournament & Program Development",
       title: "Tournaments. Programs. Pathways.",
       lead:
         "UTR tournament organisation, on-the-ground tournament director experience, and club / school program support — designed to give players a real competitive runway.",
@@ -113,7 +113,7 @@ export const translations = {
       ],
     },
     pathways: {
-      eyebrow: "05 — Australia ↔ Türkiye Pathways",
+      eyebrow: "06 — Australia ↔ Türkiye Pathways",
       title: "Two countries. One performance plan.",
       lead:
         "Guidance and support for tennis players, coaches, clubs and families exploring opportunities between Australia and Türkiye — training environments, competition schedules, club introductions and program design.",
@@ -135,11 +135,11 @@ export const translations = {
       ],
     },
     about: {
-      eyebrow: "06 — Founder",
+      eyebrow: "01 — Founder",
       title: "Ali Zevkli",
-      role: "Founder · Performance Coach · Analyst · Tournament Director",
+      role: "International Tennis Coach · Performance Analyst · Tournament Director",
       lead:
-        "Ali Zevkli is the founder of Tennis Pro Analysis. A performance coach, match analyst, tournament director and player-development specialist with competitive playing experience and international coaching experience — bridging high-performance environments in Australia and Türkiye.",
+        "Ali Zevkli is an international tennis coach, performance analyst and tournament director. With coaching experience across Australia and Türkiye, ATPCA Advanced Pro Level 2 accreditation, a Physical Education and Sports Performance background, Division 1 playing experience in Western Australia, and experience competing against UTR 9+ level players, Ali combines coaching expertise with data-driven analysis to help players improve performance and understanding of the game.",
       creds: [
         "ATPCA Advanced Pro Level 2",
         "Turkish Tennis Federation (TTF) Qualified Coach",
@@ -166,7 +166,7 @@ export const translations = {
         "Reach out to schedule a TPA session, request a Baseline Vision analysis, or discuss program work for your club or academy.",
       email: "Email — adding soon",
       phone: "Phone — adding soon",
-      instagram: "Instagram — adding soon",
+      instagram: "@tennisproanalysis",
       cta: "Book a TPA Session",
     },
     footer: {
@@ -198,11 +198,11 @@ export const translations = {
       titleLine3: "Ölçüldü",
       title: "Tenis Performansı. Ölçüldü.",
       subtitle:
-        "Veriye dayalı antrenörlük, maç analizi ve oyuncu gelişimi — Ali Zevkli imzasıyla.",
+        "Antrenörlük, maç analizi ve oyuncu gelişimi — deneyim, veri ve performans öngörüleriyle güçlendirilmiş.",
       support:
-        "Tennis Pro Analysis; oyuncu gelişimi, Baseline Vision maç analizi, turnuva direktörlüğü ve Avustralya–Türkiye geçişleri etrafında kurulmuş premium bir tenis performansı, antrenörlük ve analiz markasıdır.",
-      ctaPrimary: "TPA Seansı Rezerve Et",
-      ctaSecondary: "Performans Analizini İncele",
+        "Tennis Pro Analysis; oyuncu gelişimi etrafında kurulmuş premium bir tenis performansı, antrenörlük ve analiz markasıdır — antrenörlük, maç analizi, turnuva direktörlüğü ve Avustralya–Türkiye geçişleri. Baseline Vision, TPA performans sisteminin içindeki araçlardan yalnızca biridir.",
+      ctaPrimary: "Seans Al",
+      ctaSecondary: "Analizi İncele",
       scroll: "Kaydır",
     },
     proof: {
@@ -216,10 +216,10 @@ export const translations = {
       ],
     },
     tpa: {
-      eyebrow: "01 — Tennis Pro Analysis Nedir",
+      eyebrow: "02 — Tennis Pro Analysis Nedir",
       title: "Performans öncelikli bir tenis markası.",
       lead:
-        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik inceleme, turnuva direktörlüğü ve program tasarımı — Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir.",
+        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik inceleme, turnuva direktörlüğü ve program tasarımı — Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir. Baseline Vision, TPA sisteminin içindeki araçlardan biridir.",
       bullets: [
         {
           k: "Performans Antrenörlüğü",
@@ -241,8 +241,10 @@ export const translations = {
       cta: "TPA'yı Keşfet",
     },
     baseline: {
-      eyebrow: "02 — Baseline Vision",
+      eyebrow: "03 — Baseline Vision",
       title: "Video analizi. Performans raporlaması.",
+      lead:
+        "Baseline Vision, TPA sisteminin içindeki analiz aracıdır — tüm maçları yapılandırılmış veriye çevirir. Vuruş hızı, ralli derinliği, yerleşim bölgeleri, servis ve karşılama desenleri, çizgi kararları ve zaman içindeki ilerleme.",
       lead:
         "Baseline Vision, tüm maçları yapılandırılmış veriye çevirir — vuruş hızı, ralli derinliği, yerleşim bölgeleri, servis ve karşılama desenleri, çizgi kararları ve zaman içindeki ilerleme.",
       grid: [
@@ -258,7 +260,7 @@ export const translations = {
       cta: "Baseline Vision'ı Gör",
     },
     coaching: {
-      eyebrow: "03 — Antrenörlük",
+      eyebrow: "04 — Antrenörlük",
       title: "Niyetle antrenman yapan oyuncular için antrenörlük.",
       lead:
         "Rekabetçi gençler, yetişkin yarışmacılar ve kulüpler için özel ve küçük gruplu antrenörlük. Seanslar; net bir plan, ölçülebilir hedefler ve seans sonrası inceleme etrafında kurulur.",
@@ -281,7 +283,7 @@ export const translations = {
       ],
     },
     tournament: {
-      eyebrow: "04 — Turnuva ve Program Geliştirme",
+      eyebrow: "05 — Turnuva ve Program Geliştirme",
       title: "Turnuvalar. Programlar. Geçişler.",
       lead:
         "UTR turnuva organizasyonu, sahada turnuva direktörlüğü deneyimi ve kulüp / okul program desteği — oyunculara gerçek bir rekabet pisti sunmak için tasarlandı.",
@@ -293,7 +295,7 @@ export const translations = {
       ],
     },
     pathways: {
-      eyebrow: "05 — Avustralya ↔ Türkiye Geçişleri",
+      eyebrow: "06 — Avustralya ↔ Türkiye Geçişleri",
       title: "İki ülke. Tek performans planı.",
       lead:
         "Avustralya ile Türkiye arasında fırsatları araştıran tenis oyuncuları, antrenörler, kulüpler ve aileler için rehberlik ve destek — antrenman ortamları, turnuva takvimleri, kulüp tanıtımları ve program tasarımı.",
@@ -315,11 +317,11 @@ export const translations = {
       ],
     },
     about: {
-      eyebrow: "06 — Kurucu",
+      eyebrow: "01 — Kurucu",
       title: "Ali Zevkli",
-      role: "Kurucu · Performans Antrenörü · Analist · Turnuva Direktörü",
+      role: "Uluslararası Tenis Antrenörü · Performans Analisti · Turnuva Direktörü",
       lead:
-        "Ali Zevkli, Tennis Pro Analysis'in kurucusudur. Rekabetçi oyunculuk geçmişi ve uluslararası antrenörlük deneyimine sahip bir performans antrenörü, maç analisti, turnuva direktörü ve oyuncu-gelişim uzmanı olarak Avustralya ile Türkiye'deki yüksek performans ortamlarını birbirine bağlar.",
+        "Ali Zevkli; uluslararası bir tenis antrenörü, performans analisti ve turnuva direktörüdür. Avustralya ve Türkiye'de antrenörlük deneyimi, ATPCA Advanced Pro Level 2 akreditasyonu, Beden Eğitimi ve Spor Performansı geçmişi, Batı Avustralya'da Division 1 oyunculuk deneyimi ve UTR 9+ seviyesinde oyunculara karşı maç tecrübesiyle Ali; antrenörlük uzmanlığını veriye dayalı analizle birleştirerek oyuncuların performansını ve oyunu anlama becerisini geliştirmelerine yardımcı olur.",
       creds: [
         "ATPCA Advanced Pro Level 2",
         "Türkiye Tenis Federasyonu (TTF) Yetkili Antrenör",
@@ -346,7 +348,7 @@ export const translations = {
         "TPA seansı planlamak, Baseline Vision analizi talep etmek veya kulübün ya da akademin için program çalışması görüşmek üzere iletişime geç.",
       email: "E-posta — yakında eklenecek",
       phone: "Telefon — yakında eklenecek",
-      instagram: "Instagram — yakında eklenecek",
+      instagram: "@tennisproanalysis",
       cta: "TPA Seansı Rezerve Et",
     },
     footer: {

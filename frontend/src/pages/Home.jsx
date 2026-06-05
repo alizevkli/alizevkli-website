@@ -6,7 +6,7 @@ import { Reveal } from "../components/Reveal";
 import { SectionHeader } from "../components/SectionHeader";
 import { VideoPlaceholder } from "../components/VideoPlaceholder";
 import { PlaceholderBlock } from "../components/PlaceholderBlock";
-import { IMAGES } from "../constants/images";
+import { IMAGES, BRAND } from "../constants/images";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -218,14 +218,35 @@ const BaselineSection = () => {
         </div>
 
         <Reveal delay={200}>
-          <div className="mt-10">
-            <Link
-              to="/baseline-vision"
-              data-testid="baseline-section-cta"
-              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-[#B7FF00] hover:gap-3 transition-all"
-            >
-              {t.baseline.cta} <ArrowRight size={16} />
-            </Link>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden border border-[#F8FAFC]/10 bg-[#0B1F33]">
+              <img
+                src={BRAND.socialCardA}
+                alt="Baseline Vision device and app screenshots"
+                className="w-full h-full object-cover object-center"
+                data-testid="baseline-device-photo"
+              />
+            </div>
+            <div className="lg:col-span-5">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">
+                Device · App
+              </div>
+              <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
+                Real-time tracking. Reportable output.
+              </h3>
+              <p className="text-sm text-[#A7B0BA] leading-relaxed mb-6">
+                Baseline Vision captures the session on court and delivers structured
+                reports — shot speed, placement, patterns and progress — all reviewed
+                inside the wider TPA system.
+              </p>
+              <Link
+                to="/baseline-vision"
+                data-testid="baseline-section-cta"
+                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-[#B7FF00] hover:gap-3 transition-all"
+              >
+                {t.baseline.cta} <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </Reveal>
       </div>
@@ -250,13 +271,14 @@ const CoachingSection = () => {
             />
           </div>
           <Reveal delay={160}>
-            <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden">
-              <PlaceholderBlock
-                label="Coaching"
-                caption="On-court session · photo coming soon"
-                className="absolute inset-0"
-                testId="placeholder-coaching"
+            <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden border border-[#F8FAFC]/10">
+              <img
+                src={BRAND.socialCardB}
+                alt="Ali Zevkli coaching on court"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                data-testid="coaching-photo"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/60 to-transparent pointer-events-none" />
             </div>
           </Reveal>
         </div>
@@ -322,6 +344,17 @@ const TournamentSection = () => {
               </Reveal>
             ))}
           </ul>
+
+          <Reveal delay={300}>
+            <div className="mt-8 relative aspect-[16/9] overflow-hidden">
+              <PlaceholderBlock
+                label="UTR Tournaments"
+                caption="Tournament & program photos · coming soon"
+                className="absolute inset-0"
+                testId="placeholder-tournament"
+              />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -381,13 +414,25 @@ const AboutSection = () => {
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
         <Reveal>
-          <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden">
-            <PlaceholderBlock
-              label="Ali Zevkli"
-              caption="Founder portrait · photo coming soon"
-              className="absolute inset-0"
-              testId="placeholder-founder"
+          <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden border border-[#F8FAFC]/10">
+            <img
+              src={BRAND.founder}
+              alt="Ali Zevkli — Founder of Tennis Pro Analysis"
+              className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+              data-testid="founder-photo"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/85 via-[#06141F]/10 to-transparent" />
+            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
+                  Founder
+                </div>
+                <div className="font-anton uppercase text-3xl text-white mt-1">
+                  Ali Zevkli
+                </div>
+              </div>
+              <span className="w-2 h-2 bg-[#B7FF00]" />
+            </div>
           </div>
         </Reveal>
 
@@ -507,12 +552,12 @@ export default function Home() {
     <div data-testid="page-home">
       <HeroSection />
       <ProofBar />
+      <AboutSection />
       <TPAIntro />
       <BaselineSection />
       <CoachingSection />
       <TournamentSection />
       <PathwaysSection />
-      <AboutSection />
       <VideoSection />
       <ContactCTA />
     </div>

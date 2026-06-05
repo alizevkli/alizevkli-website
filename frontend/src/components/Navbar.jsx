@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
+import { BRAND } from "../constants/images";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -45,12 +46,19 @@ export const Navbar = () => {
         <Link
           to="/"
           data-testid="nav-logo"
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-3 group"
           onClick={() => setOpen(false)}
+          aria-label="Tennis Pro Analysis — Home"
         >
-          <span className="inline-block w-2.5 h-2.5 bg-[#B7FF00] group-hover:rotate-45 transition-transform duration-300" />
-          <span className="font-anton text-xl md:text-2xl uppercase tracking-wide text-white">
-            Tennis<span className="text-[#B7FF00]">.</span>Pro<span className="text-[#1FA463]">.</span>Analysis
+          <span className="inline-flex items-center bg-white px-2.5 py-1.5 border border-white">
+            <img
+              src={BRAND.logoWide}
+              alt="Tennis Pro Analysis"
+              className="h-5 md:h-6 w-auto block"
+            />
+          </span>
+          <span className="hidden xl:inline-block text-[10px] uppercase tracking-[0.3em] text-[#A7B0BA] group-hover:text-[#B7FF00] transition-colors">
+            Performance & Video Analysis
           </span>
         </Link>
 

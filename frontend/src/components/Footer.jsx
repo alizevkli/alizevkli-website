@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
+import { BRAND, SOCIAL } from "../constants/images";
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -33,13 +34,14 @@ export const Footer = () => {
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-2.5">
-            <span className="inline-block w-2.5 h-2.5 bg-[#B7FF00]" />
-            <span className="font-anton text-2xl uppercase tracking-wide text-white">
-              Tennis<span className="text-[#B7FF00]">.</span>Pro<span className="text-[#1FA463]">.</span>Analysis
-            </span>
-          </div>
-          <p className="mt-4 text-[#A7B0BA] text-sm leading-relaxed max-w-md">
+          <span className="inline-flex items-center bg-white px-3 py-2 border border-white">
+            <img
+              src={BRAND.logoWide}
+              alt="Tennis Pro Analysis"
+              className="h-7 w-auto block"
+            />
+          </span>
+          <p className="mt-5 text-[#A7B0BA] text-sm leading-relaxed max-w-md">
             {t.footer.tagline}. {t.hero.support}
           </p>
         </div>
@@ -72,7 +74,16 @@ export const Footer = () => {
           <ul className="space-y-2.5 text-sm text-[#A7B0BA]">
             <li data-testid="footer-email">{t.contact.email}</li>
             <li data-testid="footer-phone">{t.contact.phone}</li>
-            <li data-testid="footer-instagram">{t.contact.instagram}</li>
+            <li data-testid="footer-instagram">
+              <a
+                href={SOCIAL.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-[#B7FF00] transition-colors"
+              >
+                {t.contact.instagram}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
