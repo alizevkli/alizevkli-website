@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
-import { FinalLockup, FinalMark } from "./brand/TpaLogos";
+import { FinalLockup } from "./brand/TpaLogos";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -99,7 +99,7 @@ export const Navbar = () => {
         >
           <div className="px-5 py-6 flex flex-col gap-1">
             <div className="pb-5 mb-3 border-b border-[#F8FAFC]/10">
-              <FinalMark size={36} />
+              <FinalLockup theme="dark" height={38} />
             </div>
             {links.map((l) => (
               <NavLink
