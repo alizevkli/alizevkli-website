@@ -249,7 +249,7 @@ export const FinalLockup = ({
     <div
       style={{ display: "inline-flex", alignItems: "center", gap: 12, height }}
     >
-      <FinalMark size={height} withBackground={true} />
+      <FinalMark size={height} withBackground={false} showText={false} />
       <span className={hideTextBelowSm ? "hidden sm:block" : ""}>
         <FinalWordmark
           color={color}
