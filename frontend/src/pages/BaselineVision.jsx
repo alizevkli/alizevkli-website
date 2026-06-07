@@ -9,5 +9,4 @@ const baselineVideos = [
   {
     title: "Match Summary Like On TV",
     text:
-      "Video analysis, match stats, line calling and player feedback in one smarter coaching session.",
-    src: "https://drive.google.com/file/d/1HFPsD
+      "Video analysis, match stats, line calling and player feedback in
