@@ -10,7 +10,7 @@ export const LanguageToggle = ({ testId = "language-toggle" }) => {
         type="button"
         data-testid={`${testId}-${code}`}
         onClick={() => setLang(code)}
-        className={`px-2.5 py-1 text-xs tracking-[0.25em] uppercase transition-colors ${
+        className={`px-3 py-1.5 text-xs tracking-[0.14em] uppercase transition-colors whitespace-nowrap ${
           active ? "text-[#06141F] bg-[#B7FF00]" : "text-[#A7B0BA] hover:text-white"
         }`}
       >
@@ -24,8 +24,8 @@ export const LanguageToggle = ({ testId = "language-toggle" }) => {
       data-testid={testId}
       className="inline-flex items-center border border-[#F8FAFC]/15 divide-x divide-[#F8FAFC]/10"
     >
-      <Btn code="en" label="EN" />
-      <Btn code="tr" label="TR" />
+      <Btn code="en" label="AU EN" />
+      <Btn code="tr" label="TR Türkçe" />
     </div>
   );
 };
