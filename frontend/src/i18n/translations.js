@@ -19,8 +19,7 @@ export const translations = {
       title: "Performance. Data. Development.",
       subtitle:
         "Coaching, match analysis and player development powered by experience, technology and performance insights. Helping players train smarter, compete better and understand their game with confidence.",
-      support:
-        "Australia • Türkiye • International",
+      support: "Australia • Türkiye • International",
       ctaPrimary: "Book a Session",
       ctaSecondary: "Explore Baseline Vision",
       scroll: "Scroll",
@@ -33,10 +32,11 @@ export const translations = {
         "Marmara University BESYO",
         "Founder • Tennis Pro Analysis",
         "Baseline Vision Performance Specialist",
+        "International Tennis Coach",
       ],
     },
     tpa: {
-      eyebrow: "02 — What Is Tennis Pro Analysis",
+      eyebrow: "Tennis Pro Analysis",
       title: "A performance-first tennis brand.",
       lead:
         "Tennis Pro Analysis is built around player development. Expert coaching, match analysis, tactical and technical review, tournament direction and program design — combined into one performance system led by Ali Zevkli. Baseline Vision is one of the tools inside the TPA system.",
@@ -61,7 +61,7 @@ export const translations = {
       cta: "Explore TPA",
     },
     baseline: {
-      eyebrow: "03 — Baseline Vision",
+      eyebrow: "Baseline Vision",
       title: "Match analysis. Performance insights.",
       lead:
         "Baseline Vision transforms match footage into actionable coaching data. Track rally length, shot speed, net clearance, court positioning, ball placement and player tendencies. Every session becomes measurable, reviewable and easier to improve. Used inside the Tennis Pro Analysis system to support smarter coaching, player development and performance tracking.",
@@ -82,7 +82,7 @@ export const translations = {
         "Baseline Vision captures the session on court and delivers structured reports — shot speed, placement, patterns and progress — all reviewed inside the wider TPA system.",
     },
     coaching: {
-      eyebrow: "04 — Coaching",
+      eyebrow: "Coaching",
       title: "Coaching with purpose.",
       lead:
         "Every player is different. Sessions are designed around individual goals, playing style, technical development and match performance. Whether you are a junior player, competitive adult, club player or tournament competitor, the focus is always measurable improvement.",
@@ -105,7 +105,7 @@ export const translations = {
       ],
     },
     tournament: {
-      eyebrow: "05 — Tournaments & Events",
+      eyebrow: "Tournaments & Events",
       title: "Tournaments & event delivery.",
       lead:
         "From local events to competitive tournaments, Tennis Pro Analysis supports the planning, delivery and management of tennis competitions. Drawing on real-world tournament director experience, our focus is creating organised, professional and enjoyable experiences for players, parents, coaches and clubs.",
@@ -119,7 +119,7 @@ export const translations = {
       ],
     },
     pathways: {
-      eyebrow: "06 — Pathways & Opportunities",
+      eyebrow: "Pathways & Opportunities",
       title: "Player pathways & opportunities.",
       lead:
         "Helping players explore development opportunities both on and off the court. Tennis Pro Analysis supports long-term player growth through coaching, performance analysis, tournament experience and guidance on available pathways within the tennis ecosystem.",
@@ -141,11 +141,11 @@ export const translations = {
       ],
     },
     about: {
-      eyebrow: "01 — Founder",
+      eyebrow: "Founder",
       title: "Ali Zevkli",
-      role: "Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis",
+      role: "International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis",
       lead:
-        "Tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.",
+        "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.",
       creds: [
         "ATPCA Club Professional 2",
         "Turkish Tennis Federation (TTF) Qualified Coach",
@@ -157,13 +157,13 @@ export const translations = {
       ],
     },
     video: {
-      eyebrow: "07 — In Motion",
+      eyebrow: "In Motion",
       title: "Sessions, breakdowns, match film.",
       lead: "Video reels and analysis clips will be published here.",
       placeholder: "Video placeholder",
     },
     contact: {
-      eyebrow: "08 — Contact",
+      eyebrow: "Contact",
       title: "Let’s improve your game.",
       lead:
         "Whether you're looking for coaching, performance analysis, Baseline Vision insights or tournament support, Tennis Pro Analysis can help you take the next step.",
@@ -189,7 +189,7 @@ export const translations = {
       baseline: "Baseline Vision",
       coaching: "Antrenörlük",
       tournament: "Turnuvalar",
-      pathways: "Geçişler",
+      pathways: "Gelişim Yolları",
       about: "Hakkında",
       contact: "İletişim",
       book: "Seans Al",
@@ -201,11 +201,10 @@ export const translations = {
       titleLine3: "Gelişim",
       title: "Performans. Veri. Gelişim.",
       subtitle:
-        "Antrenörlük, maç analizi ve oyuncu gelişimi — deneyim, teknoloji ve performans öngörüleriyle desteklenir. Oyuncuların daha akıllı çalışmasına, daha iyi rekabet etmesine ve oyununu güvenle anlamasına yardımcı olur.",
-      support:
-        "Avustralya • Türkiye • Uluslararası",
+        "Deneyim, teknoloji ve performans analizleriyle desteklenen tenis antrenörlüğü, maç analizi ve oyuncu gelişimi. Oyuncuların daha bilinçli çalışmasına, daha iyi rekabet etmesine ve oyununu daha net anlamasına yardımcı olur.",
+      support: "Avustralya • Türkiye • Uluslararası",
       ctaPrimary: "Seans Al",
-      ctaSecondary: "Baseline Vision’ı Keşfet",
+      ctaSecondary: "Baseline Vision’ı İncele",
       scroll: "Kaydır",
     },
     proof: {
@@ -216,141 +215,142 @@ export const translations = {
         "Marmara Üniversitesi BESYO",
         "Kurucu • Tennis Pro Analysis",
         "Baseline Vision Performans Uzmanı",
+        "Uluslararası Tenis Antrenörü",
       ],
     },
     tpa: {
-      eyebrow: "02 — Tennis Pro Analysis Nedir",
-      title: "Performans öncelikli bir tenis markası.",
+      eyebrow: "Tennis Pro Analysis",
+      title: "Performans odaklı tenis markası.",
       lead:
-        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik inceleme, turnuva direktörlüğü ve program tasarımı — Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir. Baseline Vision, TPA sisteminin içindeki araçlardan biridir.",
+        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik değerlendirme, turnuva yönetimi ve program tasarımı Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir. Baseline Vision, bu sistemin içindeki analiz araçlarından biridir.",
       bullets: [
         {
           k: "Performans Antrenörlüğü",
-          v: "Ölçülebilir hedefler, periyodize bloklar ve seans sonrası inceleme üzerine kurulu özel antrenörlük ve gruplar.",
+          v: "Ölçülebilir hedefler, planlı antrenman blokları ve seans sonrası değerlendirme üzerine kurulu bireysel ve grup antrenörlüğü.",
         },
         {
           k: "Maç Analizi",
-          v: "Gerçek maç görüntülerinde Baseline Vision video analizi, maç istatistikleri, taktik ve teknik çözümleme.",
+          v: "Gerçek maç görüntüleri üzerinden Baseline Vision video analizi, maç istatistikleri, taktik ve teknik değerlendirme.",
         },
         {
           k: "Oyuncu Gelişimi",
-          v: "Teknik, taktik ve fiziksel katmanlarda kilometre taşlarıyla kişisel yol haritaları.",
+          v: "Teknik, taktik, fiziksel ve mental gelişim alanlarında kişiye özel gelişim planları.",
         },
         {
-          k: "Turnuvalar ve Geçişler",
-          v: "UTR turnuva direktörlüğü, kulüp/okul program desteği ve Avustralya–Türkiye geçiş planlaması.",
+          k: "Turnuvalar ve Gelişim Yolları",
+          v: "UTR turnuva yönetimi, kulüp ve okul program desteği, Avustralya–Türkiye bağlantılı gelişim planlaması.",
         },
       ],
-      cta: "TPA'yı Keşfet",
+      cta: "TPA’yı Keşfet",
     },
     baseline: {
-      eyebrow: "03 — Baseline Vision",
+      eyebrow: "Baseline Vision",
       title: "Maç analizi. Performans içgörüleri.",
       lead:
-        "Baseline Vision maç görüntülerini uygulanabilir antrenörlük verisine dönüştürür. Ralli uzunluğu, vuruş hızı, file üstü mesafe, kort pozisyonu, top yerleşimi ve oyuncu eğilimleri takip edilebilir. Her seans ölçülebilir, incelenebilir ve gelişimi daha net hâle getirir.",
+        "Baseline Vision, maç görüntülerini uygulanabilir performans verilerine dönüştürür. Ralli uzunluğu, vuruş hızı, top yerleşimi, kort pozisyonu, file üstü mesafe ve oyuncu eğilimleri detaylı şekilde analiz edilebilir. Her seans ölçülebilir, incelenebilir ve gelişim sürecini daha net hale getirir. Tennis Pro Analysis sistemi içerisinde daha bilinçli antrenman planlaması, oyuncu gelişimi ve performans takibi için kullanılmaktadır.",
       grid: [
-        { label: "Maç İstatistikleri", desc: "Sayı kazanma, hata, dönüşüm, ralli uzunluğu dağılımı." },
-        { label: "Vuruş Hızı", desc: "Seans başına servis ve yerden vuruş hızı takibi." },
-        { label: "Ralli Analizi", desc: "Her sayının derinlik, yön ve deseni." },
-        { label: "Top Yerleşimi", desc: "Servis, karşılama, FH ve BH için ısı bölgeleri." },
-        { label: "Servis / Karşılama", desc: "İlk / ikinci servis ve karşılama pozisyonunda desen tanıma." },
-        { label: "Çizgi Kararları", desc: "Kritik sayılarda yakın kararlar için challenge tarzı inceleme." },
-        { label: "Gelişim Raporları", desc: "Tüm KPI'larda seans-seans değişimler." },
-        { label: "Oyuncu Gelişimi", desc: "Veriyi bir sonraki antrenman bloğuna çevirme." },
+        { label: "Maç İstatistikleri", desc: "Kazanan vuruşlar, basit hatalar, dönüşüm oranları ve ralli dağılımları." },
+        { label: "Vuruş Hızı", desc: "Servis ve yerden vuruş hızlarının takibi." },
+        { label: "Ralli Analizi", desc: "Her puanın derinlik, yön ve oyun deseni analizi." },
+        { label: "Top Yerleşimi", desc: "Servis, return, forehand ve backhand hedef bölgeleri." },
+        { label: "Servis ve Return Analizi", desc: "Servis alışkanlıkları ve return pozisyonlarının incelenmesi." },
+        { label: "Çizgi Kararı İncelemesi", desc: "Kritik puanlarda yakın kararların görüntü üzerinden değerlendirilmesi." },
+        { label: "Gelişim Raporları", desc: "Seanslar arasında performans değişimlerinin karşılaştırılması." },
+        { label: "Oyuncu Gelişimi", desc: "Verilerin bir sonraki antrenman planına dönüştürülmesi." },
       ],
-      cta: "Baseline Vision'ı Gör",
+      cta: "Baseline Vision’ı Gör",
       deviceEyebrow: "Cihaz · Uygulama",
-      deviceTitle: "Gerçek zamanlı takip. Raporlanabilir çıktı.",
+      deviceTitle: "Gerçek zamanlı takip. Raporlanabilir sonuçlar.",
       deviceLead:
-        "Baseline Vision kortta seansı yakalar ve yapılandırılmış raporlar sunar — vuruş hızı, yerleşim, desenler ve ilerleme — tamamı TPA sistemi içinde incelenir.",
+        "Baseline Vision, kort üzerindeki verileri kayıt altına alır ve yapılandırılmış performans raporları üretir. Vuruş hızı, top yerleşimi, oyun desenleri ve gelişim göstergeleri Tennis Pro Analysis sistemi içerisinde değerlendirilerek oyuncuya özel geri bildirimlere dönüştürülür.",
     },
     coaching: {
-      eyebrow: "04 — Antrenörlük",
+      eyebrow: "Antrenörlük",
       title: "Amaç odaklı antrenörlük.",
       lead:
-        "Her oyuncu farklıdır. Seanslar bireysel hedeflere, oyun tarzına, teknik gelişime ve maç performansına göre tasarlanır. Junior, yetişkin, kulüp oyuncusu veya turnuva oyuncusu fark etmeksizin odak her zaman ölçülebilir gelişimdir.",
+        "Her oyuncu farklıdır. Seanslar; oyuncunun hedeflerine, oyun tarzına, teknik gelişim ihtiyaçlarına ve maç performansına göre planlanır. Junior oyuncular, yetişkin tenisçiler, kulüp oyuncuları ve turnuva seviyesindeki sporcular için odak noktamız her zaman ölçülebilir gelişimdir.",
       tiers: [
         {
           name: "Bireysel Antrenörlük",
-          desc: "Oyuncunun oyununa göre özel antrenörlük. Teknik gelişim, taktik farkındalık, hareket verimliliği, puan inşası ve maç hazırlığı gerektiğinde video geri bildirimle desteklenir.",
+          desc: "Oyuncunun oyununa özel antrenman planı. Teknik gelişim, taktik farkındalık, hareket verimliliği, puan kurgusu ve maç hazırlığı gerektiğinde video geri bildirimlerle desteklenir.",
           features: ["Teknik Gelişim", "Maç Stratejisi", "Video Geri Bildirim"],
         },
         {
           name: "Performans Analizi",
-          desc: "Maç görüntülerini net gelişim planlarına dönüştürme. Baseline Vision ve performans inceleme araçlarıyla oyuncular güçlü yanları, zayıf noktaları ve antrenman önceliklerini objektif şekilde görür.",
+          desc: "Maç görüntülerini net gelişim planlarına dönüştürün. Baseline Vision ve performans inceleme araçlarıyla oyuncular güçlü yönlerini, gelişim alanlarını ve bir sonraki antrenman önceliklerini objektif şekilde görebilir.",
           features: ["Maç İstatistikleri", "Taktik İnceleme", "Performans Raporları"],
         },
         {
           name: "Kulüp & Akademi Desteği",
-          desc: "Daha yapılandırılmış oyuncu gelişim yolu isteyen kulüpler, okullar ve akademiler için program tasarımı, antrenör mentorluğu ve performans sistemleri.",
-          features: ["Program Tasarımı", "Antrenör Mentorluğu", "Oyuncu Yolları"],
+          desc: "Daha yapılandırılmış oyuncu gelişim sistemi isteyen kulüpler, okullar ve akademiler için program tasarımı, antrenör mentorluğu ve performans takip sistemleri.",
+          features: ["Program Tasarımı", "Antrenör Mentorluğu", "Oyuncu Gelişim Yolları"],
         },
       ],
     },
     tournament: {
-      eyebrow: "05 — Turnuvalar & Etkinlikler",
+      eyebrow: "Turnuvalar ve Etkinlikler",
       title: "Turnuva ve etkinlik yönetimi.",
       lead:
-        "Yerel etkinliklerden rekabetçi turnuvalara kadar Tennis Pro Analysis, tenis organizasyonlarının planlanması, yürütülmesi ve yönetimini destekler. Gerçek turnuva direktörlüğü deneyimiyle odak; oyuncular, veliler, antrenörler ve kulüpler için düzenli, profesyonel ve keyifli deneyimler oluşturmaktır.",
+        "Yerel organizasyonlardan rekabetçi turnuvalara kadar Tennis Pro Analysis; tenis etkinliklerinin planlanması, yürütülmesi ve yönetilmesini destekler. Gerçek turnuva direktörlüğü deneyimine dayanan yaklaşımımız; oyuncular, veliler, antrenörler ve kulüpler için profesyonel, düzenli ve keyifli bir organizasyon deneyimi sunmaktır.",
       points: [
-        "Turnuva planlama, programlama ve kura yönetimi.",
-        "Oyuncu iletişimi, güncellemeler ve etkinlik koordinasyonu.",
-        "Etkinliklerde maç analizi ve performans inceleme fırsatları.",
-        "Rekabetçi programlar yürüten kulüp, akademi ve kurumlara destek.",
-        "Uygun olduğunda modern teknoloji ve veri odaklı içgörülerin entegrasyonu.",
-        "Oyuncu deneyimine güçlü odaklanan profesyonel etkinlik yönetimi.",
+        "Turnuva planlama, zamanlama ve kura yönetimi.",
+        "Oyuncu iletişimi, bilgilendirmeler ve organizasyon koordinasyonu.",
+        "Turnuvalar sırasında maç analizi ve performans değerlendirme fırsatları.",
+        "Kulüpler, akademiler ve tenis organizasyonları için operasyonel destek.",
+        "Uygun durumlarda teknoloji ve veri odaklı performans araçlarının entegrasyonu.",
+        "Oyuncu deneyimini ön planda tutan profesyonel etkinlik yönetimi.",
       ],
     },
     pathways: {
-      eyebrow: "06 — Oyuncu Yolları & Fırsatlar",
-      title: "Oyuncu gelişim yolları ve fırsatlar.",
+      eyebrow: "Oyuncu Gelişim Yolları ve Fırsatlar",
+      title: "Oyuncu gelişimi ve fırsatlar.",
       lead:
-        "Oyuncuların kort içi ve kort dışı gelişim fırsatlarını keşfetmesine yardımcı olur. Tennis Pro Analysis; antrenörlük, performans analizi, turnuva deneyimi ve tenis ekosistemindeki uygun yollar hakkında rehberlikle uzun vadeli oyuncu gelişimini destekler.",
+        "Oyuncuların hem kort içinde hem de kort dışında gelişim fırsatlarını değerlendirmelerine yardımcı oluyoruz. Tennis Pro Analysis; antrenörlük, performans analizi, turnuva deneyimi ve tenis ekosistemindeki gelişim fırsatları konusunda rehberlik sağlayarak uzun vadeli oyuncu gelişimini destekler.",
       disclaimer:
-        "Her oyuncunun yolculuğu farklıdır. Tennis Pro Analysis, bireysel hedef ve koşullara göre daha bilinçli gelişim kararlarını desteklemek için antrenörlük, analiz ve rehberlik sunar.",
+        "Her oyuncunun gelişim yolculuğu farklıdır. Tennis Pro Analysis; oyuncuların bireysel hedefleri, ihtiyaçları ve koşulları doğrultusunda bilinçli gelişim kararları almasına yardımcı olmak amacıyla antrenörlük, analiz ve rehberlik hizmetleri sunar.",
       blocks: [
         {
           k: "Oyuncu Gelişimi",
-          v: "Yapılandırılmış antrenörlük ve performans incelemesiyle güçlü teknik, taktik ve mental temeller oluşturma.",
+          v: "Yapılandırılmış antrenman programları ve performans değerlendirmeleri ile güçlü teknik, taktik ve zihinsel temeller oluşturun.",
         },
         {
           k: "Turnuva Hazırlığı",
-          v: "Maç analizi, performans takibi ve hedefli antrenman planlarıyla rekabete hazırlanma.",
+          v: "Maç analizi, performans takibi ve hedef odaklı antrenman planlarıyla rekabete daha hazır hale gelin.",
         },
         {
           k: "Uluslararası Perspektif",
-          v: "Avustralya, Türkiye ve uluslararası ortamlarda edinilen antrenörlük ve tenis deneyiminden faydalanma.",
+          v: "Avustralya, Türkiye ve uluslararası tenis ortamlarında edinilmiş antrenörlük ve performans deneyiminden faydalanın.",
         },
       ],
     },
     about: {
-      eyebrow: "01 — Kurucu",
+      eyebrow: "Kurucu",
       title: "Ali Zevkli",
-      role: "Tenis Antrenörü · Performans Analisti · Tennis Pro Analysis Kurucusu",
+      role: "Uluslararası Tenis Antrenörü · Performans ve Video Analizi Uzmanı · Tennis Pro Analysis Kurucusu",
       lead:
-        "Tenis antrenörü, performans analisti ve Tennis Pro Analysis kurucusu. Ali; kort içi antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyununu net anlamasına, amaçla çalışmasına ve daha hızlı gelişmesine yardımcı olur.",
+        "Ali Zevkli; kort içi antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyununu daha net anlamasına, amaçlı çalışmasına ve daha hızlı gelişmesine yardımcı olur.",
       creds: [
         "ATPCA Club Professional 2",
         "Türkiye Tenis Federasyonu (TTF) Yetkili Antrenör",
         "Marmara Üniversitesi BESYO",
         "Tennis Pro Analysis Kurucusu",
         "Baseline Vision Performans Uzmanı",
-        "Turnuva Direktörü — UTR Etkinlikleri",
+        "UTR Turnuva Direktörü",
         "İngilizce & Türkçe",
       ],
     },
     video: {
-      eyebrow: "07 — Hareket Halinde",
+      eyebrow: "Hareket Halinde",
       title: "Seanslar, analizler, maç görüntüleri.",
-      lead: "Video reels ve analiz klipleri burada yayınlanacak.",
+      lead: "Video reel’leri ve analiz klipleri burada yayınlanacak.",
       placeholder: "Video alanı",
     },
     contact: {
-      eyebrow: "08 — İletişim",
-      title: "Oyununuzu geliştirelim.",
+      eyebrow: "İletişim",
+      title: "Oyununuzu bir sonraki seviyeye taşıyalım.",
       lead:
-        "Antrenörlük, performans analizi, Baseline Vision içgörüleri veya turnuva desteği arıyorsanız Tennis Pro Analysis bir sonraki adımı atmanıza yardımcı olabilir.",
-      email: "Web — www.alizevkli.com",
+        "Antrenörlük, performans analizi, Baseline Vision değerlendirmeleri veya turnuva desteği arıyorsanız Tennis Pro Analysis size yardımcı olabilir.",
+      email: "Web Sitesi — www.alizevkli.com",
       phone: "Hizmetler — Antrenörlük • Maç Analizi • Baseline Vision • Turnuvalar",
       instagram: "Instagram — @tennisproanalysis",
       cta: "Ali ile İletişime Geç",
