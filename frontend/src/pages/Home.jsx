@@ -22,6 +22,9 @@ const HOME_VIDEOS = [
   },
 ];
 
+const FOUNDER_LEAD =
+  "Tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.";
+
 const HeroSection = () => {
   const { t } = useLanguage();
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -302,9 +305,9 @@ const AboutSection = () => {
           </div>
         </Reveal>
         <div className="lg:col-span-7 flex flex-col">
-          <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} lead={t.about.lead} />
+          <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={FOUNDER_LEAD} />
           <Reveal delay={140}>
-            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">{t.about.role}</div>
+            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis</div>
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -319,7 +322,7 @@ const AboutSection = () => {
           <Reveal delay={320}>
             <div className="mt-8">
               <Link to="/about" data-testid="founder-cta" className="tpa-btn-secondary inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.22em]">
-                Read founder profile <ArrowRight size={14} />
+                Read Founder Profile <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
