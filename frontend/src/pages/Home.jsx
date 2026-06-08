@@ -407,21 +407,39 @@ const VideoSection = () => {
 };
 
 const TrustSection = () => {
-  const badges = ["ATPCA", "TTF", "UTR", "BASELINE VISION", "TENNIS PRO ANALYSIS"];
+  const partners = [
+    { name: "ATPCA", image: BRAND.logos?.atpca, label: "Coach Certification" },
+    { name: "TTF", image: BRAND.logos?.ttf, label: "TTF Background" },
+    { name: "UTR Sports", image: BRAND.logos?.utr, label: "Tournament Experience" },
+    { name: "Baseline Vision", image: BRAND.logos?.baselineVision, label: "Analysis Technology" },
+    { name: "TenX", image: BRAND.logos?.tenx, label: "Sponsor" },
+    { name: "Tennis Pro Analysis", image: BRAND.logos?.tpa || BRAND.logoSquare, label: "Founder Brand" },
+  ];
 
   return (
-    <section data-testid="section-trust" className="relative border-t border-[#F8FAFC]/10 py-12 md:py-16 px-5 md:px-10 bg-[#06141F]">
+    <section data-testid="section-trust" className="relative border-t border-[#F8FAFC]/10 py-14 md:py-20 px-5 md:px-10 bg-[#06141F]">
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
-          <div className="text-center mb-8">
-            <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">Professional Affiliations & Experience</h3>
+          <div className="text-center mb-10">
+            <div className="text-[10px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3">Trust Network</div>
+            <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">Professional Affiliations, Technology & Sponsors</h3>
           </div>
         </Reveal>
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-          {badges.map((badge, i) => (
-            <Reveal key={badge} delay={i * 60}>
-              <div className="px-5 md:px-6 py-3 border border-[#B7FF00]/40 text-white text-xs md:text-sm font-bold tracking-[0.18em] uppercase hover:border-[#B7FF00] transition-colors">
-                {badge}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+          {partners.map((partner, i) => (
+            <Reveal key={partner.name} delay={i * 60}>
+              <div className="h-full min-h-[150px] border border-[#F8FAFC]/10 bg-[#0B1F33]/60 p-4 flex flex-col items-center justify-between text-center hover:border-[#B7FF00]/50 transition-colors">
+                <div className="h-16 w-full flex items-center justify-center mb-4">
+                  {partner.image ? (
+                    <img src={partner.image} alt={`${partner.name} logo`} className="max-h-14 max-w-[120px] object-contain" />
+                  ) : (
+                    <span className="font-anton uppercase text-2xl text-white">{partner.name}</span>
+                  )}
+                </div>
+                <div>
+                  <div className="font-bold text-xs uppercase tracking-[0.18em] text-white">{partner.name}</div>
+                  <p className="mt-2 text-[11px] leading-relaxed text-[#A7B0BA]">{partner.label}</p>
+                </div>
               </div>
             </Reveal>
           ))}
