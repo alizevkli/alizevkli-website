@@ -156,10 +156,6 @@ const BaselineSection = () => {
           {t.baseline.grid.map((g, i) => (
             <Reveal key={g.label} delay={i * 50}>
               <div className="bg-[#06141F] p-5 md:p-7 h-full group hover:bg-[#0B1F33] transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">KPI</span>
-                  <span className="w-1.5 h-1.5 bg-[#1FA463] group-hover:bg-[#B7FF00] transition-colors" />
-                </div>
                 <div className="font-anton uppercase text-xl md:text-2xl text-white mb-2">{g.label}</div>
                 <p className="text-xs text-[#A7B0BA] leading-relaxed">{g.desc}</p>
               </div>
@@ -280,6 +276,64 @@ const PathwaysSection = () => {
   );
 };
 
+const AustraliaTurkeySection = () => {
+  const cards = [
+    {
+      tag: "AU",
+      title: "Australia",
+      items: ["Coaching Experience", "Player Development", "Tournament Experience", "Performance Analysis"],
+    },
+    {
+      tag: "TR",
+      title: "Türkiye",
+      items: ["TTF Coaching Background", "Turkish Tennis Network", "Player Development", "Club & Academy Support"],
+    },
+    {
+      tag: "INTL",
+      title: "International",
+      items: ["Online Analysis", "Remote Coaching", "Performance Reports", "International Pathways"],
+    },
+  ];
+
+  return (
+    <section data-testid="section-australia-turkiye" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
+      <div className="max-w-[1400px] mx-auto">
+        <Reveal>
+          <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">Australia ↔ Türkiye</div>
+        </Reveal>
+        <Reveal delay={100}>
+          <h2 className="font-anton uppercase text-5xl md:text-7xl text-white leading-[0.95]">International Tennis Pathway</h2>
+        </Reveal>
+        <Reveal delay={180}>
+          <p className="mt-6 max-w-4xl text-[#A7B0BA] text-base md:text-lg leading-relaxed">
+            Tennis Pro Analysis combines coaching and tennis experience gained across Australia and Türkiye, helping players, parents, clubs and academies connect performance development with international opportunities.
+          </p>
+        </Reveal>
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          {cards.map((card, i) => (
+            <Reveal key={card.title} delay={i * 100}>
+              <div className="tpa-card p-7 md:p-9 h-full">
+                <div className="inline-flex items-center justify-center px-4 py-2 border border-[#B7FF00]/40 text-[#B7FF00] text-xs font-bold tracking-[0.24em] uppercase mb-6">
+                  {card.tag}
+                </div>
+                <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-5">{card.title}</h3>
+                <ul className="space-y-3">
+                  {card.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-white/90">
+                      <span className="mt-1.5 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const AboutSection = () => {
   const { t } = useLanguage();
   return (
@@ -352,6 +406,31 @@ const VideoSection = () => {
   );
 };
 
+const TrustSection = () => {
+  const badges = ["ATPCA", "TTF", "UTR", "BASELINE VISION", "TENNIS PRO ANALYSIS"];
+
+  return (
+    <section data-testid="section-trust" className="relative border-t border-[#F8FAFC]/10 py-12 md:py-16 px-5 md:px-10 bg-[#06141F]">
+      <div className="max-w-[1400px] mx-auto">
+        <Reveal>
+          <div className="text-center mb-8">
+            <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">Professional Affiliations & Experience</h3>
+          </div>
+        </Reveal>
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+          {badges.map((badge, i) => (
+            <Reveal key={badge} delay={i * 60}>
+              <div className="px-5 md:px-6 py-3 border border-[#B7FF00]/40 text-white text-xs md:text-sm font-bold tracking-[0.18em] uppercase hover:border-[#B7FF00] transition-colors">
+                {badge}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ContactCTA = () => {
   const { t } = useLanguage();
   return (
@@ -396,7 +475,9 @@ export default function Home() {
       <CoachingSection />
       <TournamentSection />
       <PathwaysSection />
+      <AustraliaTurkeySection />
       <VideoSection />
+      <TrustSection />
       <ContactCTA />
     </div>
   );
