@@ -23,7 +23,7 @@ const HOME_VIDEOS = [
 ];
 
 const FOUNDER_LEAD =
-  "Tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.";
+  "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -135,7 +135,6 @@ const TPAIntro = () => {
           {t.tpa.bullets.map((b, i) => (
             <Reveal key={b.k} delay={i * 80}>
               <div className="tpa-card p-6 md:p-8 h-full">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">0{i + 1}</div>
                 <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{b.k}</h3>
                 <p className="text-sm text-[#A7B0BA] leading-relaxed">{b.v}</p>
               </div>
@@ -158,7 +157,7 @@ const BaselineSection = () => {
             <Reveal key={g.label} delay={i * 50}>
               <div className="bg-[#06141F] p-5 md:p-7 h-full group hover:bg-[#0B1F33] transition-colors">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">KPI · {String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">KPI</span>
                   <span className="w-1.5 h-1.5 bg-[#1FA463] group-hover:bg-[#B7FF00] transition-colors" />
                 </div>
                 <div className="font-anton uppercase text-xl md:text-2xl text-white mb-2">{g.label}</div>
@@ -207,10 +206,6 @@ const CoachingSection = () => {
           {t.coaching.tiers.map((tier, i) => (
             <Reveal key={tier.name} delay={i * 80}>
               <div className="tpa-card p-7 md:p-9 h-full flex flex-col">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">Tier · 0{i + 1}</span>
-                  <span className="font-anton text-3xl text-[#1FA463]">0{i + 1}</span>
-                </div>
                 <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-3">{tier.name}</h3>
                 <p className="text-sm text-[#A7B0BA] leading-relaxed mb-6">{tier.desc}</p>
                 <ul className="space-y-2 mt-auto">
@@ -239,10 +234,10 @@ const TournamentSection = () => {
         </div>
         <div className="lg:col-span-7">
           <ul className="divide-y divide-[#F8FAFC]/10 border-y border-[#F8FAFC]/10">
-            {t.tournament.points.map((p, i) => (
-              <Reveal key={p} delay={i * 60}>
+            {t.tournament.points.map((p) => (
+              <Reveal key={p}>
                 <li className="py-6 flex items-start gap-6 group">
-                  <span className="font-anton text-2xl text-[#B7FF00] w-10 shrink-0">0{i + 1}</span>
+                  <span className="mt-2 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
                   <span className="text-base md:text-lg text-white/90 group-hover:text-white transition-colors">{p}</span>
                 </li>
               </Reveal>
@@ -268,10 +263,9 @@ const PathwaysSection = () => {
       <div className="relative max-w-[1400px] mx-auto">
         <SectionHeader eyebrow={t.pathways.eyebrow} title={t.pathways.title} lead={t.pathways.lead} />
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {t.pathways.blocks.map((b, i) => (
-            <Reveal key={b.k} delay={i * 80}>
+          {t.pathways.blocks.map((b) => (
+            <Reveal key={b.k}>
               <div className="tpa-card p-7 md:p-9 h-full">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">Pathway · 0{i + 1}</div>
                 <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{b.k}</h3>
                 <p className="text-sm text-[#A7B0BA] leading-relaxed">{b.v}</p>
               </div>
@@ -307,13 +301,13 @@ const AboutSection = () => {
         <div className="lg:col-span-7 flex flex-col">
           <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={FOUNDER_LEAD} />
           <Reveal delay={140}>
-            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis</div>
+            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis</div>
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {t.about.creds.map((c, i) => (
+              {t.about.creds.map((c) => (
                 <div key={c} className="flex items-start gap-3 border border-[#F8FAFC]/10 px-4 py-3 hover:border-[#B7FF00]/50 transition-colors">
-                  <span className="font-anton text-[#B7FF00] text-sm shrink-0">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="mt-2 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
                   <span className="text-sm text-white/90">{c}</span>
                 </div>
               ))}
