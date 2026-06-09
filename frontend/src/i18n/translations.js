@@ -19,7 +19,7 @@ export const translations = {
       title: "Performance. Data. Development.",
       subtitle:
         "Coaching, match analysis and player development powered by experience, technology and performance insights. Helping players train smarter, compete better and understand their game with confidence.",
-      support: "Australia • Türkiye • International",
+      support: "🇦🇺 Australia • 🇹🇷 Türkiye • 🌍 International",
       ctaPrimary: "Book a Session",
       ctaSecondary: "Explore Baseline Vision",
       scroll: "Scroll",
@@ -27,12 +27,12 @@ export const translations = {
     proof: {
       title: "Credentials",
       items: [
-        "ATPCA Club Professional 2",
+        "ATPCA Advanced Pro Level 2",
         "TTF Qualified Coach",
         "Marmara University BESYO",
         "Founder • Tennis Pro Analysis",
         "Baseline Vision Performance Specialist",
-        "International Tennis Coach",
+        "International Tennis Coach — 20+ Years",
       ],
     },
     tpa: {
@@ -120,25 +120,39 @@ export const translations = {
     },
     pathways: {
       eyebrow: "Pathways & Opportunities",
-      title: "Player pathways & opportunities.",
+      title: "Australia ↔ Türkiye Tennis Pathways.",
       lead:
-        "Helping players explore development opportunities both on and off the court. Tennis Pro Analysis supports long-term player growth through coaching, performance analysis, tournament experience and guidance on available pathways within the tennis ecosystem.",
+        "Connecting player development, performance analysis, tournament experience and international tennis opportunities across Australia and Türkiye.",
       disclaimer:
         "Every player’s journey is unique. Tennis Pro Analysis provides coaching, analysis and guidance designed to support informed development decisions based on individual goals and circumstances.",
       blocks: [
         {
           k: "Player Development",
-          v: "Build strong technical, tactical and mental foundations through structured coaching and performance review.",
+          v: "Structured coaching and performance analysis for players who want stronger technical, tactical and mental foundations.",
         },
         {
-          k: "Tournament Readiness",
-          v: "Prepare for competition through match analysis, performance tracking and targeted training plans.",
+          k: "Australia Tennis Pathways",
+          v: "Guidance for players and families exploring Australian tennis environments, training options, tournaments and development opportunities.",
         },
         {
-          k: "International Perspective",
-          v: "Benefit from coaching and tennis experience gained across Australia, Türkiye and international environments.",
+          k: "Tournament Preparation",
+          v: "Match analysis, performance tracking and targeted training plans to help players prepare for competitive match play.",
+        },
+        {
+          k: "Remote Video Analysis",
+          v: "Players can send match or training footage for technical, tactical and performance feedback without needing to be on court in person.",
+        },
+        {
+          k: "Club & Academy Consulting",
+          v: "Support for clubs, schools, academies and tennis programs wanting better structure, player pathways and performance analysis systems.",
+        },
+        {
+          k: "Antalya & Resort Coaching",
+          v: "Specialist experience in luxury resort tennis environments across Antalya — including Maxx Royal Resort and Lykia World — covering guest programs, group clinics and structured private coaching.",
         },
       ],
+      comingSoon: "🇦🇺 Australia ↔ 🇹🇷 Türkiye ↔ 🌍 International",
+      comingSoonSub: "Full on-court coaching services available across Türkiye from 2026. Remote analysis and consulting services available now.",
     },
     about: {
       eyebrow: "Founder",
@@ -147,7 +161,7 @@ export const translations = {
       lead:
         "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.",
       creds: [
-        "ATPCA Club Professional 2",
+        "ATPCA Advanced Pro Level 2",
         "Turkish Tennis Federation (TTF) Qualified Coach",
         "Marmara University BESYO",
         "Founder of Tennis Pro Analysis",
@@ -155,6 +169,35 @@ export const translations = {
         "Tournament Director — UTR Events",
         "English & Turkish Speaking",
       ],
+      experience: {
+        title: "Coaching Career — 20+ Years",
+        australia: {
+          label: "Australia",
+          clubs: [
+            "Tennis Programs Victoria",
+            "Norris Bank Tennis Club",
+            "St James Tennis Club",
+            "Onslow Park Tennis Club",
+            "East Fremantle Lawn Tennis Club",
+            "The Avenues Estate Tennis Courts",
+            "Perth and Melbourne coaching programs",
+            "Private, group, junior and adult coaching",
+            "Tournament and player development support",
+            "Baseline Vision performance analysis",
+          ],
+        },
+        turkey: {
+          label: "Türkiye",
+          clubs: [
+            "Yeşilyurt Sports Club — Istanbul",
+            "Maxx Royal Resort — Antalya",
+            "Lykia World — Antalya",
+            "Turkish Tennis Federation coaching background",
+            "Marmara University BESYO",
+            "Istanbul, Antalya and Türkiye tennis environment",
+          ],
+        },
+      },
     },
     video: {
       eyebrow: "In Motion",
@@ -167,6 +210,8 @@ export const translations = {
       title: "Let’s improve your game.",
       lead:
         "Whether you're looking for coaching, performance analysis, Baseline Vision insights or tournament support, Tennis Pro Analysis can help you take the next step.",
+      whatsapp: "WhatsApp — +61 400 963 351",
+      whatsappCta: "Message Ali on WhatsApp",
       email: "Website — www.alizevkli.com",
       phone: "Services — Coaching • Match Analysis • Baseline Vision • Tournaments",
       instagram: "Instagram — @tennisproanalysis",
@@ -189,7 +234,7 @@ export const translations = {
       baseline: "Baseline Vision",
       coaching: "Antrenörlük",
       tournament: "Turnuvalar",
-      pathways: "Gelişim Yolları",
+      pathways: "Yollar",
       about: "Hakkında",
       contact: "İletişim",
       book: "Seans Al",
@@ -201,28 +246,28 @@ export const translations = {
       titleLine3: "Gelişim",
       title: "Performans. Veri. Gelişim.",
       subtitle:
-        "Deneyim, teknoloji ve performans analizleriyle desteklenen tenis antrenörlüğü, maç analizi ve oyuncu gelişimi. Oyuncuların daha bilinçli çalışmasına, daha iyi rekabet etmesine ve oyununu daha net anlamasına yardımcı olur.",
-      support: "Avustralya • Türkiye • Uluslararası",
+        "Avustralya ve Türkiye'de 20 yılı aşkın deneyime sahip uluslararası tenis antrenörü Ali Zevkli ile oyununuzu gerçek veriye dayalı antrenman ve maç analiziyle bir üst seviyeye taşıyın.",
+      support: "🇦🇺 Avustralya • 🇹🇷 Türkiye • 🌍 Uluslararası",
       ctaPrimary: "Seans Al",
-      ctaSecondary: "Baseline Vision’ı İncele",
+      ctaSecondary: "Baseline Vision'ı İncele",
       scroll: "Kaydır",
     },
     proof: {
       title: "Yetkinlikler",
       items: [
-        "ATPCA Club Professional 2",
+        "ATPCA İleri Profesyonel Seviye 2",
         "TTF Yetkili Antrenör",
         "Marmara Üniversitesi BESYO",
-        "Kurucu • Tennis Pro Analysis",
+        "Tennis Pro Analysis Kurucusu",
         "Baseline Vision Performans Uzmanı",
-        "Uluslararası Tenis Antrenörü",
+        "Uluslararası Tenis Antrenörü — 20+ Yıl",
       ],
     },
     tpa: {
       eyebrow: "Tennis Pro Analysis",
-      title: "Performans odaklı tenis markası.",
+      title: "Performans odaklı bir tenis markası.",
       lead:
-        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik değerlendirme, turnuva yönetimi ve program tasarımı Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir. Baseline Vision, bu sistemin içindeki analiz araçlarından biridir.",
+        "Tennis Pro Analysis, oyuncu gelişimi üzerine kurulmuştur. Uzman antrenörlük, maç analizi, taktik ve teknik değerlendirme, turnuva yönetimi ve program tasarımı — Ali Zevkli liderliğinde tek bir performans sistemi olarak birleşir. Baseline Vision, bu sistemin içindeki analiz araçlarından biridir.",
       bullets: [
         {
           k: "Performans Antrenörlüğü",
@@ -241,7 +286,7 @@ export const translations = {
           v: "UTR turnuva yönetimi, kulüp ve okul program desteği, Avustralya–Türkiye bağlantılı gelişim planlaması.",
         },
       ],
-      cta: "TPA’yı Keşfet",
+      cta: "TPA'yı Keşfet",
     },
     baseline: {
       eyebrow: "Baseline Vision",
@@ -258,7 +303,7 @@ export const translations = {
         { label: "Gelişim Raporları", desc: "Seanslar arasında performans değişimlerinin karşılaştırılması." },
         { label: "Oyuncu Gelişimi", desc: "Verilerin bir sonraki antrenman planına dönüştürülmesi." },
       ],
-      cta: "Baseline Vision’ı Gör",
+      cta: "Baseline Vision'ı Gör",
       deviceEyebrow: "Cihaz · Uygulama",
       deviceTitle: "Gerçek zamanlı takip. Raporlanabilir sonuçlar.",
       deviceLead:
@@ -302,35 +347,49 @@ export const translations = {
       ],
     },
     pathways: {
-      eyebrow: "Oyuncu Gelişim Yolları ve Fırsatlar",
-      title: "Oyuncu gelişimi ve fırsatlar.",
+      eyebrow: "Gelişim Yolları ve Fırsatlar",
+      title: "Avustralya ↔ Türkiye tenis gelişim yolları.",
       lead:
-        "Oyuncuların hem kort içinde hem de kort dışında gelişim fırsatlarını değerlendirmelerine yardımcı oluyoruz. Tennis Pro Analysis; antrenörlük, performans analizi, turnuva deneyimi ve tenis ekosistemindeki gelişim fırsatları konusunda rehberlik sağlayarak uzun vadeli oyuncu gelişimini destekler.",
+        "Oyuncular, aileler, kulüpler ve akademiler için Avustralya ve Türkiye arasında performans gelişimi, turnuva hazırlığı ve tenis fırsatlarını birbirine bağlayan rehberlik.",
       disclaimer:
-        "Her oyuncunun gelişim yolculuğu farklıdır. Tennis Pro Analysis; oyuncuların bireysel hedefleri, ihtiyaçları ve koşulları doğrultusunda bilinçli gelişim kararları almasına yardımcı olmak amacıyla antrenörlük, analiz ve rehberlik hizmetleri sunar.",
+        "Her oyuncunun gelişim yolculuğu farklıdır. Tennis Pro Analysis; bireysel hedefler, ihtiyaçlar ve koşullar doğrultusunda bilinçli gelişim kararları alınmasına destek olur.",
       blocks: [
         {
           k: "Oyuncu Gelişimi",
-          v: "Yapılandırılmış antrenman programları ve performans değerlendirmeleri ile güçlü teknik, taktik ve zihinsel temeller oluşturun.",
+          v: "Daha güçlü teknik, taktik ve zihinsel temeller isteyen oyuncular için yapılandırılmış antrenörlük ve performans analizi.",
+        },
+        {
+          k: "Avustralya Tenis Yolları",
+          v: "Avustralya'daki tenis ortamı, antrenman seçenekleri, turnuvalar ve gelişim fırsatlarını araştıran oyuncu ve aileler için rehberlik.",
         },
         {
           k: "Turnuva Hazırlığı",
-          v: "Maç analizi, performans takibi ve hedef odaklı antrenman planlarıyla rekabete daha hazır hale gelin.",
+          v: "Rekabetçi maçlara hazırlanmak için maç analizi, performans takibi ve hedef odaklı antrenman planları.",
         },
         {
-          k: "Uluslararası Perspektif",
-          v: "Avustralya, Türkiye ve uluslararası tenis ortamlarında edinilmiş antrenörlük ve performans deneyiminden faydalanın.",
+          k: "Uzaktan Video Analizi",
+          v: "Oyuncular maç veya antrenman videolarını göndererek teknik, taktik ve performans geri bildirimi alabilir.",
+        },
+        {
+          k: "Kulüp & Akademi Danışmanlığı",
+          v: "Daha iyi yapı, oyuncu gelişim yolu ve performans analiz sistemi isteyen kulüpler, okullar ve akademiler için destek.",
+        },
+        {
+          k: "Antalya & Resort Tenisi",
+          v: "Maxx Royal Resort ve Lykia World dahil Antalya'daki lüks resort tenis ortamlarında misafir programları, grup klinikleri ve özel ders deneyimi.",
         },
       ],
+      comingSoon: "🇦🇺 Avustralya ↔ 🇹🇷 Türkiye ↔ 🌍 Uluslararası",
+      comingSoonSub: "2026'dan itibaren Türkiye genelinde kort içi antrenörlük hizmetleri. Uzaktan analiz ve danışmanlık hizmetleri şu anda mevcut.",
     },
     about: {
       eyebrow: "Kurucu",
       title: "Ali Zevkli",
       role: "Uluslararası Tenis Antrenörü · Performans ve Video Analizi Uzmanı · Tennis Pro Analysis Kurucusu",
       lead:
-        "Ali Zevkli; kort içi antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyununu daha net anlamasına, amaçlı çalışmasına ve daha hızlı gelişmesine yardımcı olur.",
+        "İstanbul'dan Antalya'ya, Perth'ten Melbourne'a uzanan 20 yılı aşkın tenis ve antrenörlük deneyimi. Ali Zevkli; kort içi antrenörlük, video analizi, maç istatistikleri ve Baseline Vision teknolojisini birleştirerek oyuncuların oyununu daha net anlamasına ve daha bilinçli gelişmesine yardımcı olur.",
       creds: [
-        "ATPCA Club Professional 2",
+        "ATPCA İleri Profesyonel Seviye 2",
         "Türkiye Tenis Federasyonu (TTF) Yetkili Antrenör",
         "Marmara Üniversitesi BESYO",
         "Tennis Pro Analysis Kurucusu",
@@ -338,18 +397,49 @@ export const translations = {
         "UTR Turnuva Direktörü",
         "İngilizce & Türkçe",
       ],
+      experience: {
+        title: "Antrenörlük Kariyeri — 20+ Yıl",
+        australia: {
+          label: "Avustralya",
+          clubs: [
+            "Tennis Programs Victoria",
+            "Norris Bank Tennis Club",
+            "St James Tennis Club",
+            "Onslow Park Tennis Club",
+            "East Fremantle Lawn Tennis Club",
+            "The Avenues Estate Tennis Courts",
+            "Perth ve Melbourne antrenörlük programları",
+            "Bireysel, grup, junior ve yetişkin antrenörlüğü",
+            "Turnuva ve oyuncu gelişim desteği",
+            "Baseline Vision performans analizi",
+          ],
+        },
+        turkey: {
+          label: "Türkiye",
+          clubs: [
+            "Yeşilyurt Spor Kulübü — İstanbul",
+            "Maxx Royal Resort — Antalya",
+            "Lykia World — Antalya",
+            "Türkiye Tenis Federasyonu antrenörlük geçmişi",
+            "Marmara Üniversitesi BESYO",
+            "İstanbul, Antalya ve Türkiye tenis ortamı",
+          ],
+        },
+      },
     },
     video: {
       eyebrow: "Hareket Halinde",
       title: "Seanslar, analizler, maç görüntüleri.",
-      lead: "Video reel’leri ve analiz klipleri burada yayınlanacak.",
+      lead: "Video reel'leri ve analiz klipleri burada yayınlanacak.",
       placeholder: "Video alanı",
     },
     contact: {
       eyebrow: "İletişim",
-      title: "Oyununuzu bir sonraki seviyeye taşıyalım.",
+      title: "Oyununuzu birlikte geliştireceğiz.",
       lead:
-        "Antrenörlük, performans analizi, Baseline Vision değerlendirmeleri veya turnuva desteği arıyorsanız Tennis Pro Analysis size yardımcı olabilir.",
+        "Antrenörlük, performans analizi, Baseline Vision değerlendirmeleri veya turnuva desteği için Ali ile doğrudan iletişime geçebilirsiniz.",
+      whatsapp: "WhatsApp — +61 400 963 351",
+      whatsappCta: "Ali'ye WhatsApp'tan yazın",
       email: "Web Sitesi — www.alizevkli.com",
       phone: "Hizmetler — Antrenörlük • Maç Analizi • Baseline Vision • Turnuvalar",
       instagram: "Instagram — @tennisproanalysis",
