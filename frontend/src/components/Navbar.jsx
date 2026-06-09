@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
 import { FinalLockup } from "./brand/TpaLogos";
@@ -9,6 +9,9 @@ export const Navbar = () => {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -19,115 +22,198 @@ export const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
-  const links = [
+  useEffect(() => {
+    const handler = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  useEffect(() => {
+    setServicesOpen(false);
+    setOpen(false);
+  }, [location]);
+
+  const serviceRoutes = [
+    "/coaching",
+    "/tournament",
+    "/pathways",
+    "/tennis-in-english",
+    "/australia-consulting",
+    "/baseline-vision-faq",
+  ];
+  const isServicesActive = serviceRoutes.includes(location.pathname);
+
+  const serviceLinks = [
+    { to: "/coaching", label: t.nav.coaching },
+    { to: "/tournament", label: t.nav.tournament },
+    { to: "/pathways", label: t.nav.pathways },
+    { to: "/tennis-in-english", label: t.nav.tennisEnglish },
+    { to: "/australia-consulting", label: t.nav.consulting },
+    { to: "/baseline-vision-faq", label: t.nav.faq },
+  ];
+
+  const mainLinks = [
     { to: "/", label: t.nav.home, end: true },
     { to: "/tpa", label: t.nav.tpa },
     { to: "/baseline-vision", label: t.nav.baseline },
-    { to: "/coaching", label: t.nav.coaching },
+    { to: "/pricing", label: t.nav.pricing },
     { to: "/about", label: t.nav.about },
     { to: "/contact", label: t.nav.contact },
   ];
 
+  const linkClass = ({ isActive }) =>
+    `relative text-[11px] uppercase tracking-[0.18em] transition-colors whitespace-nowrap ${
+      isActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
+    }`;
+
   return (
-    <header
-      data-testid="navbar"
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl bg-[#06141F]/85 border-b border-[#F8FAFC]/10"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between gap-6">
-        <Link
-          to="/"
-          data-testid="nav-logo"
-          className="flex items-center gap-3 group"
-          onClick={() => setOpen(false)}
-          aria-label="Tennis Pro Analysis — Home"
-        >
-          <FinalLockup theme="dark" height={36} />
-        </Link>
-
-        <nav className="hidden lg:flex items-center gap-7">
-          {links.map((l) => (
-            <NavLink
-              key={l.to}
-              to={l.to}
-              end={l.end}
-              data-testid={`nav-link-${l.to === "/" ? "home" : l.to.replace("/", "")}`}
-              className={({ isActive }) =>
-                `tpa-link-underline text-[11px] font-medium uppercase tracking-[0.28em] transition-colors ${
-                  isActive ? "text-white active" : "text-[#A7B0BA] hover:text-white"
-                }`
-              }
-            >
-              {l.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <LanguageToggle />
-          <Link
-            to="/contact"
-            data-testid="nav-book-btn"
-            className="hidden md:inline-flex items-center tpa-btn-primary px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.22em]"
-          >
-            {t.nav.book}
+    <>
+      <header
+        data-testid="navbar"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-[#06141F]/92 backdrop-blur-xl border-b border-[#F8FAFC]/10" : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+          <Link to="/" data-testid="nav-logo" className="flex items-center min-w-0">
+            <FinalLockup className="h-12 md:h-14" />
           </Link>
+
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {mainLinks.slice(0, 3).map((l) => (
+              <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
+                {l.label}
+              </NavLink>
+            ))}
+
+            <div ref={servicesRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setServicesOpen((v) => !v)}
+                className={`relative text-[11px] uppercase tracking-[0.18em] transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
+                  isServicesActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
+                }`}
+              >
+                {t.nav.services}
+                <ChevronDown size={13} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {servicesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-6 w-[280px] bg-[#06141F]/98 backdrop-blur-xl border border-[#F8FAFC]/10 shadow-2xl py-3">
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#06141F] border-l border-t border-[#F8FAFC]/10 rotate-45" />
+                  {serviceLinks.map((l) => (
+                    <NavLink
+                      key={l.to}
+                      to={l.to}
+                      className={({ isActive }) =>
+                        `block px-5 py-3 text-xs uppercase tracking-[0.16em] transition-colors ${
+                          isActive ? "text-[#B7FF00] bg-[#B7FF00]/5" : "text-white/75 hover:text-white hover:bg-white/5"
+                        }`
+                      }
+                    >
+                      {l.label}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {mainLinks.slice(3).map((l) => (
+              <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
+                {l.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-3">
+            <LanguageToggle />
+            <Link
+              to="/contact"
+              className="tpa-btn-primary px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em]"
+            >
+              {t.nav.book}
+            </Link>
+          </div>
+
           <button
             type="button"
-            data-testid="nav-mobile-toggle"
-            onClick={() => setOpen((v) => !v)}
-            className="lg:hidden p-2 text-white"
-            aria-label="Menu"
+            data-testid="mobile-menu-button"
+            onClick={() => setOpen(true)}
+            className="lg:hidden w-11 h-11 flex items-center justify-center border border-[#F8FAFC]/15 text-white"
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            <Menu size={22} />
           </button>
         </div>
-      </div>
+      </header>
 
       {open && (
-        <div
-          data-testid="mobile-menu"
-          className="lg:hidden border-t border-[#F8FAFC]/10 bg-[#06141F]"
-        >
-          <div className="px-5 py-6 flex flex-col gap-1">
-            <div className="pb-5 mb-3 border-b border-[#F8FAFC]/10">
-              <FinalLockup theme="dark" height={38} />
+        <div className="fixed inset-0 z-[60] bg-[#06141F] lg:hidden" data-testid="mobile-menu">
+          <div className="h-20 px-4 flex items-center justify-between border-b border-[#F8FAFC]/10">
+            <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+              <FinalLockup className="h-12" />
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              className="w-11 h-11 flex items-center justify-center border border-[#F8FAFC]/15 text-white"
+            >
+              <X size={22} />
+            </button>
+          </div>
+
+          <div className="px-5 py-8 flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+            <div className="mb-6">
+              <LanguageToggle testId="mobile-language-toggle" />
             </div>
-            {links.map((l) => (
+
+            {mainLinks.map((l) => (
               <NavLink
                 key={l.to}
                 to={l.to}
                 end={l.end}
                 onClick={() => setOpen(false)}
-                data-testid={`mobile-link-${l.to === "/" ? "home" : l.to.replace("/", "")}`}
                 className={({ isActive }) =>
-                  `py-3 font-anton uppercase text-2xl tracking-wide border-b border-[#F8FAFC]/5 ${
-                    isActive ? "text-[#B7FF00]" : "text-white"
-                  }`
+                  `font-anton uppercase text-4xl leading-none py-2 ${isActive ? "text-[#B7FF00]" : "text-white"}`
                 }
               >
                 {l.label}
               </NavLink>
             ))}
+
+            <div className="mt-5 pt-5 border-t border-[#F8FAFC]/10">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">{t.nav.services}</div>
+              <div className="grid grid-cols-1 gap-1">
+                {serviceLinks.map((l) => (
+                  <NavLink
+                    key={l.to}
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `text-sm uppercase tracking-[0.18em] py-2 ${isActive ? "text-[#B7FF00]" : "text-white/80"}`
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              data-testid="mobile-book-btn"
-              className="mt-6 tpa-btn-primary inline-flex justify-center px-5 py-3.5 text-xs font-bold uppercase tracking-[0.22em]"
+              className="tpa-btn-primary mt-8 px-6 py-4 text-center text-xs font-bold uppercase tracking-[0.22em]"
             >
               {t.nav.book}
             </Link>
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
