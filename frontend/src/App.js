@@ -14,6 +14,12 @@ import Pathways from "./pages/Pathways";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Brand from "./pages/Brand";
+import TennisInEnglish from "./pages/TennisInEnglish";
+import AustraliaConsulting from "./pages/AustraliaConsulting";
+import { WhatsAppFloat } from "./components/WhatsAppFloat";
+import Pricing from "./pages/Pricing";
+import { SEOMeta } from "./components/SEOMeta";
+import BaselineVisionFAQ from "./pages/BaselineVisionFAQ";
 
 function App() {
   return (
@@ -22,6 +28,7 @@ function App() {
         <LoadingScreen />
         <BrowserRouter>
           <ScrollToTop />
+          <SEOMeta />
           <Navbar />
           <main className="min-h-screen">
             <Routes>
@@ -31,13 +38,18 @@ function App() {
               <Route path="/coaching" element={<Coaching />} />
               <Route path="/tournament" element={<Tournament />} />
               <Route path="/pathways" element={<Pathways />} />
+              <Route path="/tennis-in-english" element={<TennisInEnglish />} />
+              <Route path="/australia-consulting" element={<AustraliaConsulting />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/brand" element={<Brand />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/baseline-vision-faq" element={<BaselineVisionFAQ />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>
           <Footer />
+          <WhatsAppFloat />
         </BrowserRouter>
       </LanguageProvider>
     </div>
