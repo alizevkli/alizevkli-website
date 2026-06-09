@@ -7,6 +7,8 @@ import { BRAND } from "../constants/images";
 
 export default function About() {
   const { t } = useLanguage();
+  const exp = t.about.experience;
+
   return (
     <div data-testid="page-about">
       <PageHero eyebrow={t.about.eyebrow} title={t.about.title} lead={t.about.role} />
@@ -40,30 +42,69 @@ export default function About() {
               </p>
             </Reveal>
 
+            {/* Credentials */}
             <Reveal delay={220}>
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {t.about.creds.map((c, i) => (
+                {t.about.creds.map((c) => (
                   <div
                     key={c}
                     className="flex items-start gap-3 border border-[#F8FAFC]/10 px-4 py-3 hover:border-[#B7FF00]/50 transition-colors"
                   >
-                    <span className="font-anton text-[#B7FF00] text-sm shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                    <span className="mt-2 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
                     <span className="text-sm text-white/90">{c}</span>
                   </div>
                 ))}
               </div>
             </Reveal>
 
-            <Reveal delay={320}>
-              <div className="mt-10">
+            {/* Club experience — Australia + Turkey */}
+            <Reveal delay={300}>
+              <div className="mt-14">
+                <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6 flex items-center gap-3">
+                  <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+                  {exp.title}
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {/* Australia */}
+                  <div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/60 mb-3 pb-2 border-b border-[#F8FAFC]/10">
+                      {exp.australia.label}
+                    </div>
+                    <ul className="space-y-2">
+                      {exp.australia.clubs.map((c) => (
+                        <li key={c} className="text-sm text-[#A7B0BA] flex items-start gap-2">
+                          <span className="text-[#B7FF00] mt-1 shrink-0">·</span>
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Turkey */}
+                  <div>
+                    <div className="text-xs uppercase tracking-[0.3em] text-white/60 mb-3 pb-2 border-b border-[#F8FAFC]/10">
+                      {exp.turkey.label}
+                    </div>
+                    <ul className="space-y-2">
+                      {exp.turkey.clubs.map((c) => (
+                        <li key={c} className="text-sm text-[#A7B0BA] flex items-start gap-2">
+                          <span className="text-[#B7FF00] mt-1 shrink-0">·</span>
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={400}>
+              <div className="mt-12">
                 <Link
                   to="/contact"
-                  data-testid="about-cta"
+                  data-testid="about-contact-cta"
                   className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
                 >
-                  {t.nav.contact} <ArrowRight size={16} />
+                  {t.contact.cta} <ArrowRight size={16} />
                 </Link>
               </div>
             </Reveal>
