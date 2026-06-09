@@ -1,29 +1,29 @@
 // Centralised image URLs from design guidelines + brand assets supplied by the founder.
-// Image placeholders sourced from Unsplash / Pexels where real public assets are pending.
+// Real brand assets from the v5 package are expected under frontend/public/images/.
 export const IMAGES = {
-  heroCourt:
-    "https://images.unsplash.com/photo-1578966663421-00f3bfebfa89?auto=format&fit=crop&w=2000&q=80",
-  aboutCoach:
-    "https://images.pexels.com/photos/10340633/pexels-photo-10340633.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  silhouette:
-    "https://images.pexels.com/photos/28435181/pexels-photo-28435181.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  clayLegs:
-    "https://images.pexels.com/photos/5739222/pexels-photo-5739222.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  heroCourt: "/images/double-handed-backhand.jpg",
+  aboutCoach: "/images/grass-court-coaching.jpg",
+  silhouette: "/images/reinventing-tennis-experience.jpg",
+  baselineHero: "/images/baseline-train-smarter.jpg",
+  grassCourt: "/images/grass-court-coaching.jpg",
+  actionBackhand: "/images/double-handed-backhand.jpg",
 };
 
-// Real brand + founder assets already hosted from the original site build.
-// Keep these stable until the final GitHub public images are uploaded properly as real files.
 export const BRAND = {
-  logoWide:
-    "https://customer-assets.emergentagent.com/job_tennis-data-hub-1/artifacts/452vnfaa_TPA-LOGO.jpg",
-  logoSquare:
-    "https://customer-assets.emergentagent.com/job_tennis-data-hub-1/artifacts/noaq0k44_TPA-LOGO-SQUARE.jpg",
-  founder:
-    "https://customer-assets.emergentagent.com/job_tennis-data-hub-1/artifacts/an58go10_RMLM2869.JPEG",
-  socialCardA:
-    "https://customer-assets.emergentagent.com/job_tennis-data-hub-1/artifacts/bpxddgop_%C3%87al%C4%B1%C5%9Fma%20Y%C3%BCzeyi%201.png",
-  socialCardB:
-    "https://customer-assets.emergentagent.com/job_tennis-data-hub-1/artifacts/xmg76y8s_%C3%87al%C4%B1%C5%9Fma%20Y%C3%BCzeyi%202.png",
+  logoWide: "/images/tpa-logo.png",
+  logoSquare: "/images/tpa-logo.png",
+  founder: "/images/ali-founder-tpa.jpg",
+  socialCardA: "/images/reinventing-tennis-experience.jpg",
+  socialCardB: "/images/baseline-train-smarter.jpg",
+  logos: {
+    atpca: "/images/logos/atpca-logo.png",
+    ttf: "/images/logos/ttf-logo.png",
+    utr: "/images/logos/utr-sports-logo.png",
+    baselineVision: "/images/logos/baseline-vision-logo.svg",
+    tenx: "/images/logos/tenx-logo.jpg",
+    tpa: "/images/tpa-logo.png",
+    marmara: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png",
+  },
 };
 
 export const SOCIAL = {
@@ -32,4 +32,8 @@ export const SOCIAL = {
   whatsapp: "+61400963351",
   whatsappUrl: "https://wa.me/61400963351",
   whatsappDisplay: "+61 400 963 351",
+  email: "alizevkliali@gmail.com",
+  emailUrl: "mailto:alizevkliali@gmail.com",
 };
+
+export const LOGOS = BRAND.logos;
