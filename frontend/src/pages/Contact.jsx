@@ -1,13 +1,20 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { Mail, Phone, Instagram, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, Instagram, ArrowUpRight, MessageCircle } from "lucide-react";
 import { SOCIAL } from "../constants/images";
 
 export default function Contact() {
   const { t } = useLanguage();
 
   const channels = [
+    {
+      Icon: MessageCircle,
+      label: t.contact.whatsapp,
+      testId: "contact-whatsapp",
+      href: SOCIAL.whatsappUrl,
+      highlight: true,
+    },
     { Icon: Mail, label: t.contact.email, testId: "contact-email", href: null },
     { Icon: Phone, label: t.contact.phone, testId: "contact-phone", href: null },
     {
@@ -28,7 +35,30 @@ export default function Contact() {
       <section className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-7 space-y-4">
-            {channels.map(({ Icon, label, testId, href }) => {
+
+            {/* WhatsApp primary CTA */}
+            <Reveal>
+              <a
+                data-testid="contact-whatsapp-cta"
+                href={SOCIAL.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-6 border border-[#25D366] bg-[#25D366]/10 p-5 md:p-6 hover:bg-[#25D366]/20 transition-colors"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="w-10 h-10 flex items-center justify-center bg-[#25D366] border border-[#25D366]">
+                    <MessageCircle size={18} className="text-[#0A1220]" />
+                  </span>
+                  <div>
+                    <span className="block text-sm md:text-base text-white font-semibold">{t.contact.whatsappCta}</span>
+                    <span className="block text-xs text-[#A7B0BA] mt-0.5">{SOCIAL.whatsappDisplay}</span>
+                  </div>
+                </div>
+                <ArrowUpRight size={16} className="text-[#25D366]" />
+              </a>
+            </Reveal>
+
+            {channels.slice(1).map(({ Icon, label, testId, href }) => {
               const Inner = (
                 <>
                   <div className="flex items-center gap-4">
@@ -81,9 +111,9 @@ export default function Contact() {
               </p>
               <div className="mt-8 space-y-2 text-xs uppercase tracking-[0.22em] text-[#A7B0BA]">
                 <div>ATPCA Advanced Pro Level 2</div>
-                <div>TTF Qualified Coach</div>
+                <div>TTF Yetkili Antrenör</div>
                 <div>UTR Tournament Director</div>
-                <div>Division 1 WA Background</div>
+                <div>Australia • Türkiye • 20+ Years</div>
               </div>
             </div>
           </Reveal>
