@@ -29,4 +29,7 @@ export const BRAND = {
 export const SOCIAL = {
   instagram: "@tennisproanalysis",
   instagramUrl: "https://instagram.com/tennisproanalysis",
+  whatsapp: "+61400963351",
+  whatsappUrl: "https://wa.me/61400963351",
+  whatsappDisplay: "+61 400 963 351",
 };
