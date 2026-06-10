@@ -21,12 +21,6 @@ export default function TPA() {
           {t.tpa.bullets.map((b, i) => (
             <Reveal key={b.k} delay={i * 80}>
               <div className="tpa-card p-8 md:p-10 h-full">
-                <div className="flex items-center justify-between mb-5">
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                    Module · 0{i + 1}
-                  </span>
-                  <span className="font-anton text-3xl text-[#1FA463]">0{i + 1}</span>
-                </div>
                 <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-3">
                   {b.k}
                 </h3>
