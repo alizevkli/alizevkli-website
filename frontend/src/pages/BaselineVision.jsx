@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { IMAGES } from "../constants/images";
+import { IMAGES, SOCIAL } from "../constants/images";
 
 const baselineVideos = [
   {
@@ -22,6 +22,8 @@ const baselineVideos = [
 
 export default function BaselineVision() {
   const { t } = useLanguage();
+  const faq = t.baselineFaq;
+
   return (
     <div data-testid="page-baseline">
       <PageHero
@@ -37,22 +39,10 @@ export default function BaselineVision() {
             {t.baseline.grid.map((g, i) => (
               <Reveal key={g.label} delay={i * 50}>
                 <div className="bg-[#06141F] p-6 md:p-8 h-full group hover:bg-[#0B1F33] transition-colors">
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                      KPI · {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="w-1.5 h-1.5 bg-[#1FA463] group-hover:bg-[#B7FF00] transition-colors" />
-                  </div>
                   <div className="font-anton uppercase text-2xl text-white mb-3">
                     {g.label}
                   </div>
-                  <p className="text-xs text-[#A7B0BA] leading-relaxed">{g.desc}</p>
-                  <div className="mt-6 h-1 bg-[#F8FAFC]/5 overflow-hidden">
-                    <div
-                      className="h-full bg-[#B7FF00]"
-                      style={{ width: `${45 + (i * 7) % 50}%` }}
-                    />
-                  </div>
+                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{g.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -122,7 +112,7 @@ export default function BaselineVision() {
             <Reveal delay={160}>
               <p className="mt-6 text-[#A7B0BA] max-w-xl">
                 Players receive a structured progress report after each Baseline Vision
-                session — KPI deltas, video timestamps, and the next training block
+                session — video timestamps, measurable performance data, and the next training block
                 priorities.
               </p>
             </Reveal>
@@ -147,6 +137,54 @@ export default function BaselineVision() {
           >
             {t.hero.ctaSecondary} <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
+        <div className="max-w-[1100px] mx-auto">
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
+              {faq.eyebrow}
+            </div>
+            <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-tight mb-8">
+              {faq.title}
+            </h2>
+            <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-12">{faq.lead}</p>
+          </Reveal>
+
+          <div className="space-y-4">
+            {faq.faqs.map((item, i) => (
+              <Reveal key={item.q} delay={i * 35}>
+                <article className="border border-[#F8FAFC]/10 bg-[#0B1F33]/45 p-6 md:p-8">
+                  <h3 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">
+                    {item.q}
+                  </h3>
+                  <p className="mt-4 text-sm md:text-base text-[#A7B0BA] leading-relaxed">
+                    {item.a}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={220}>
+            <div className="mt-14 border border-[#B7FF00]/30 bg-[#B7FF00]/5 p-8 md:p-10">
+              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">
+                {faq.ctaBoxTitle}
+              </h2>
+              <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-8">
+                {faq.ctaBoxText}
+              </p>
+              <a
+                href={SOCIAL.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                {faq.cta} <ArrowRight size={16} />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
     </div>
