@@ -1,57 +1,78 @@
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Plus, Minus, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
 import { SOCIAL } from "../constants/images";
 
+const FAQItem = ({ q, a, index }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-[#F8FAFC]/10">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+      >
+        <div className="flex items-start gap-4">
+          <span className="font-anton text-[#B7FF00] text-sm shrink-0 mt-0.5">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className={`text-base font-medium transition-colors ${open ? "text-white" : "text-white/85 group-hover:text-white"}`}>
+            {q}
+          </span>
+        </div>
+        <span className="shrink-0 mt-0.5 text-[#B7FF00]">
+          {open ? <Minus size={18} /> : <Plus size={18} />}
+        </span>
+      </button>
+      {open && (
+        <div className="pb-6 pl-9 pr-6">
+          <p className="text-[#A7B0BA] leading-relaxed text-sm">{a}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function BaselineVisionFAQ() {
   const { t } = useLanguage();
-  const page = t.baselineFaq;
+  const p = t.baselineFaq;
 
   return (
-    <div data-testid="page-baseline-vision-faq">
-      <PageHero eyebrow={page.eyebrow} title={page.title} lead={page.lead} />
+    <div data-testid="page-baseline-faq">
+      <PageHero eyebrow={p.eyebrow} title={p.title} lead={p.lead} />
 
       <section className="py-20 md:py-28 px-5 md:px-10">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="space-y-4">
-            {page.faqs.map((item, i) => (
-              <Reveal key={item.q} delay={i * 35}>
-                <article className="border border-[#F8FAFC]/10 bg-[#0B1F33]/45 p-6 md:p-8">
-                  <h2 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">
-                    {item.q}
-                  </h2>
-                  <p className="mt-4 text-sm md:text-base text-[#A7B0BA] leading-relaxed">
-                    {item.a}
-                  </p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+        <div className="max-w-[900px] mx-auto">
+          <Reveal>
+            <div className="border-t border-[#F8FAFC]/10">
+              {p.faqs.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} index={i} />
+              ))}
+            </div>
+          </Reveal>
 
-          <Reveal delay={220}>
-            <div className="mt-14 border border-[#B7FF00]/30 bg-[#B7FF00]/5 p-8 md:p-10">
-              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">
-                {page.ctaBoxTitle}
-              </h2>
-              <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-8">
-                {page.ctaBoxText}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+          <Reveal delay={200}>
+            <div className="mt-16 border border-[#F8FAFC]/10 p-8 bg-[#0B1F33]/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-2">{p.ctaBoxTitle}</div>
+                <p className="text-sm text-[#A7B0BA]">{p.ctaBoxText}</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0">
                 <a
                   href={SOCIAL.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                  className="tpa-btn-primary inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em]"
                 >
-                  {page.cta} <ArrowRight size={16} />
+                  {p.cta} <ArrowRight size={14} />
                 </a>
                 <Link
                   to="/baseline-vision"
-                  className="tpa-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                  className="inline-flex items-center gap-2 border border-[#F8FAFC]/20 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
                 >
-                  {page.ctaSecondary} <ArrowRight size={16} />
+                  {p.ctaSecondary} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>

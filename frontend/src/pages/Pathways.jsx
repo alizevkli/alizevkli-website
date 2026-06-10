@@ -16,6 +16,7 @@ export default function Pathways() {
         image={IMAGES.silhouette}
       />
 
+      {/* Coming Soon Banner */}
       <section className="px-5 md:px-10 py-6 bg-[#0B1F33]/60 border-y border-[#B7FF00]/20">
         <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
           <span className="inline-block px-3 py-1 text-[10px] uppercase tracking-[0.3em] font-bold bg-[#B7FF00] text-[#0A1220]">
@@ -25,13 +26,14 @@ export default function Pathways() {
         </div>
       </section>
 
+      {/* Pathway Blocks */}
       <section className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.pathways.blocks.map((b, i) => (
             <Reveal key={b.k} delay={i * 80}>
               <div className="tpa-card p-8 md:p-10 h-full flex flex-col">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">
-                  Tennis Pro Analysis
+                  {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
                   {b.k}

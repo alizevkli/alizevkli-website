@@ -1,78 +1,89 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, AlertTriangle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { IMAGES, SOCIAL } from "../constants/images";
+import { SOCIAL } from "../constants/images";
 
 export default function AustraliaConsulting() {
   const { t } = useLanguage();
-  const page = t.consulting;
+  const p = t.consulting;
 
   return (
-    <div data-testid="page-australia-consulting">
-      <PageHero eyebrow={page.eyebrow} title={page.title} lead={page.lead} image={IMAGES.silhouette} />
+    <div data-testid="page-consulting">
+      <PageHero eyebrow={p.eyebrow} title={p.title} lead={p.lead} />
 
+      {/* Disclaimer banner */}
+      <section className="px-5 md:px-10 py-5 bg-[#0B1F33]/60 border-y border-[#1FA463]/30">
+        <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <span className="inline-block px-3 py-1 text-[10px] uppercase tracking-[0.3em] font-bold bg-[#1FA463] text-white shrink-0">
+            {p.disclaimerLabel}
+          </span>
+          <p className="text-sm text-[#A7B0BA]">{p.disclaimer}</p>
+        </div>
+      </section>
+
+      {/* Service blocks */}
       <section className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto">
-          <Reveal>
-            <div className="border border-yellow-400/30 bg-yellow-400/10 p-6 md:p-8 mb-14 flex gap-4">
-              <AlertTriangle className="text-yellow-300 shrink-0 mt-1" size={22} />
-              <div>
-                <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{page.disclaimerLabel}</h2>
-                <p className="text-sm md:text-base text-[#A7B0BA] leading-relaxed">{page.disclaimer}</p>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
-              <div className="lg:col-span-5">
-                <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">{page.bgTitle}</div>
-                <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-tight">Australia knowledge with Turkish context.</h2>
-              </div>
-              <div className="lg:col-span-7">
-                <ul className="divide-y divide-[#F8FAFC]/10 border-y border-[#F8FAFC]/10">
-                  {page.background.map((item) => (
-                    <li key={item} className="py-5 flex items-start gap-4 text-white/90">
-                      <span className="mt-2 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {page.blocks.map((block, i) => (
-              <Reveal key={block.k} delay={i * 70}>
-                <div className="tpa-card p-8 h-full">
-                  <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4">{block.k}</h3>
-                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{block.v}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {p.blocks.map((b, i) => (
+              <Reveal key={b.k} delay={i * 80}>
+                <div className="tpa-card p-8 md:p-10 h-full flex flex-col">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
+                    {b.k}
+                  </h3>
+                  <p className="text-[#A7B0BA] leading-relaxed flex-grow">{b.v}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <Reveal delay={300}>
-            <div className="mt-16 border border-[#B7FF00]/30 bg-[#B7FF00]/5 p-8 md:p-10">
-              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">{page.ctaBoxTitle}</h2>
-              <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-8">{page.ctaBoxText}</p>
-              <div className="flex flex-col sm:flex-row gap-3">
+      {/* Background / credibility strip */}
+      <section className="py-16 px-5 md:px-10 bg-[#0B1F33]/40 border-y border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6 flex items-center gap-3">
+                <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+                {p.bgTitle}
+              </div>
+              <ul className="space-y-3">
+                {p.background.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/90">
+                    <span className="text-[#B7FF00] mt-1 shrink-0">→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="border border-[#F8FAFC]/10 p-8 bg-[#06141F]/60">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">
+                {p.ctaBoxTitle}
+              </div>
+              <p className="text-[#A7B0BA] text-sm leading-relaxed">{p.ctaBoxText}</p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={SOCIAL.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em]"
                 >
-                  {page.cta} <ArrowRight size={16} />
+                  {p.cta} <ArrowRight size={15} />
                 </a>
                 <Link
                   to="/pathways"
-                  className="tpa-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                  className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
                 >
-                  {page.ctaSecondary} <ArrowRight size={16} />
+                  {p.ctaSecondary} <ArrowRight size={15} />
                 </Link>
               </div>
             </div>

@@ -3,62 +3,81 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { IMAGES } from "../constants/images";
+import { SOCIAL } from "../constants/images";
 
 export default function TennisInEnglish() {
   const { t } = useLanguage();
-  const page = t.tennisEnglish;
+  const p = t.tennisEnglish;
 
   return (
-    <div data-testid="page-tennis-in-english">
-      <PageHero eyebrow={page.eyebrow} title={page.title} lead={page.lead} image={IMAGES.clayLegs} />
+    <div data-testid="page-tennis-english">
+      <PageHero eyebrow={p.eyebrow} title={p.title} lead={p.lead} />
 
+      {/* Who is this for */}
       <section className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">{page.whoTitle}</div>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-10 flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+              {p.whoTitle}
+            </div>
           </Reveal>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {page.who.map((item, i) => (
+            {p.who.map((item, i) => (
               <Reveal key={item.k} delay={i * 80}>
-                <div className="tpa-card p-8 h-full">
-                  <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4">{item.k}</h3>
-                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{item.v}</p>
+                <div className="tpa-card p-8 h-full flex flex-col">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-anton uppercase text-2xl text-white mb-4 leading-tight">
+                    {item.k}
+                  </h3>
+                  <p className="text-[#A7B0BA] leading-relaxed flex-grow">{item.v}</p>
                 </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <Reveal delay={200}>
-            <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
-              <div className="lg:col-span-5">
-                <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">{page.whatTitle}</div>
-                <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-tight">English on court. Tennis first.</h2>
+      {/* What you get */}
+      <section className="py-16 md:py-20 px-5 md:px-10 bg-[#0B1F33]/40 border-y border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6 flex items-center gap-3">
+                <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+                {p.whatTitle}
               </div>
-              <div className="lg:col-span-7">
-                <ul className="divide-y divide-[#F8FAFC]/10 border-y border-[#F8FAFC]/10">
-                  {page.what.map((item) => (
-                    <li key={item} className="py-5 flex items-start gap-4 text-white/90">
-                      <span className="mt-2 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <ul className="space-y-4">
+                {p.what.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/90">
+                    <span className="text-[#B7FF00] mt-1 shrink-0">→</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
 
-          <Reveal delay={280}>
-            <div className="mt-14 border border-[#F8FAFC]/10 bg-[#0B1F33]/50 p-7 md:p-9">
-              <h3 className="font-anton uppercase text-3xl text-white mb-4">{page.noteTitle}</h3>
-              <p className="text-[#A7B0BA] leading-relaxed max-w-4xl">{page.note}</p>
+          <Reveal delay={150}>
+            <div className="border border-[#F8FAFC]/10 p-8 bg-[#06141F]/60">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">
+                {p.noteTitle}
+              </div>
+              <p className="text-[#A7B0BA] leading-relaxed text-sm">{p.note}</p>
+              <div className="mt-8">
+                <a
+                  href={SOCIAL.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tpa-btn-primary inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em]"
+                >
+                  {p.cta} <ArrowRight size={15} />
+                </a>
+              </div>
             </div>
-          </Reveal>
-
-          <Reveal delay={340}>
-            <Link to="/contact" className="tpa-btn-primary mt-10 inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-              {page.cta} <ArrowRight size={16} />
-            </Link>
           </Reveal>
         </div>
       </section>

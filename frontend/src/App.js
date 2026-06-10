@@ -21,8 +21,6 @@ import AustraliaConsulting from "./pages/AustraliaConsulting";
 import Pricing from "./pages/Pricing";
 import BaselineVisionFAQ from "./pages/BaselineVisionFAQ";
 
-// Inner component — inside LanguageProvider AND BrowserRouter context
-// Required so SEOMeta and Navbar can safely call useLanguage() and useLocation()
 function AppInner() {
   return (
     <>

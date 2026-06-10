@@ -101,18 +101,48 @@ const ProofBar = () => {
   const { t } = useLanguage();
   const items = [...t.proof.items, ...t.proof.items];
   return (
-    <section data-testid="proof-bar" className="relative border-y border-[#F8FAFC]/10 bg-[#06141F] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-5 flex items-center gap-6">
-        <span className="hidden md:inline-flex shrink-0 text-[10px] uppercase tracking-[0.34em] text-[#B7FF00]">{t.proof.title} —</span>
-        <div className="overflow-hidden flex-1">
-          <div className="tpa-ticker gap-12">
+    <section data-testid="proof-bar" className="relative border-y border-[#F8FAFC]/10 bg-[#06141F] overflow-hidden w-full">
+      <div className="w-full py-5 flex items-center gap-6 overflow-hidden">
+        <span className="hidden md:inline-flex shrink-0 text-[10px] uppercase tracking-[0.34em] text-[#B7FF00] pl-5 md:pl-10">{t.proof.title} —</span>
+        <div className="overflow-hidden flex-1 min-w-0">
+          <div className="tpa-ticker gap-10" style={{whiteSpace: "nowrap"}}>
             {items.map((it, i) => (
-              <span key={i} className="shrink-0 text-xs md:text-sm uppercase tracking-[0.22em] text-[#A7B0BA] flex items-center gap-12">
-                {it}<span className="inline-block w-1.5 h-1.5 bg-[#B7FF00]" />
+              <span key={i} className="shrink-0 text-[11px] md:text-sm uppercase tracking-[0.18em] text-[#A7B0BA] inline-flex items-center gap-10">
+                {it}<span className="inline-block w-1 h-1 bg-[#B7FF00] rounded-full" />
               </span>
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+};
+
+const StatsStrip = () => {
+  const { lang } = useLanguage();
+  const stats = lang === "tr"
+    ? [
+        { val: "20+", label: "Yıllık Deneyim" },
+        { val: "🇦🇺 🇹🇷", label: "İki Ülke, İki Lisans" },
+        { val: "Yüzlerce", label: "Gelişen Oyuncu" },
+        { val: "ITF · UTR · TTF", label: "Uluslararası Sistemler" },
+      ]
+    : [
+        { val: "20+", label: "Years of Coaching" },
+        { val: "🇦🇺 🇹🇷", label: "Two Decades. Two Countries." },
+        { val: "Hundreds", label: "of Players Developed" },
+        { val: "ITF · UTR · TTF", label: "International Systems" },
+      ];
+
+  return (
+    <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/60 py-10 px-5 md:px-10">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+        {stats.map((s, i) => (
+          <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="font-anton uppercase text-2xl md:text-4xl text-white tracking-tight break-words">{s.val}</span>
+            <span className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-[#A7B0BA]">{s.label}</span>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -277,23 +307,42 @@ const PathwaysSection = () => {
 };
 
 const AustraliaTurkeySection = () => {
-  const cards = [
-    {
-      tag: "AU",
-      title: "Australia",
-      items: ["Coaching Experience", "Player Development", "Tournament Experience", "Performance Analysis"],
-    },
-    {
-      tag: "TR",
-      title: "Türkiye",
-      items: ["TTF Coaching Background", "Turkish Tennis Network", "Player Development", "Club & Academy Support"],
-    },
-    {
-      tag: "INTL",
-      title: "International",
-      items: ["Online Analysis", "Remote Coaching", "Performance Reports", "International Pathways"],
-    },
-  ];
+  const { lang } = useLanguage();
+  const cards = lang === "tr"
+    ? [
+        {
+          tag: "🇦🇺 AU",
+          title: "Avustralya",
+          items: ["Perth ve Melbourne'da Antrenörlük", "Oyuncu Gelişim Deneyimi", "Turnuva Yönetimi", "Performans Analizi", "ANZAC — Ortak Tarih, Ortak Bağ"],
+        },
+        {
+          tag: "🇹🇷 TR",
+          title: "Türkiye",
+          items: ["TTF Yetkili Antrenör", "İstanbul & Ankara", "Kulüp ve Akademi Desteği", "Oyuncu Gelişim Yolları", "2026'da Başlıyor"],
+        },
+        {
+          tag: "INTL",
+          title: "Uluslararası",
+          items: ["İngilizce Tenis Dersleri", "Avustralya Danışmanlık", "Vize Yönlendirmesi", "Dünya Genelinde"],
+        },
+      ]
+    : [
+        {
+          tag: "🇦🇺 AU",
+          title: "Australia",
+          items: ["Perth & Melbourne Coaching", "Player Development", "Tournament Direction", "Performance Analysis", "ANZAC — A shared history, a genuine connection"],
+        },
+        {
+          tag: "🇹🇷 TR",
+          title: "Türkiye",
+          items: ["TTF Qualified Coach", "Istanbul & Ankara", "Club & Academy Consulting", "Player Pathways", "Coming 2026"],
+        },
+        {
+          tag: "INTL",
+          title: "International",
+          items: ["Tennis in English", "Australia Consulting", "Visa Referrals", "Available Worldwide Now"],
+        },
+      ];
 
   return (
     <section data-testid="section-australia-turkiye" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
@@ -306,7 +355,7 @@ const AustraliaTurkeySection = () => {
         </Reveal>
         <Reveal delay={180}>
           <p className="mt-6 max-w-4xl text-[#A7B0BA] text-base md:text-lg leading-relaxed">
-            Tennis Pro Analysis combines coaching and tennis experience gained across Australia and Türkiye, helping players, parents, clubs and academies connect performance development with international opportunities.
+            Tennis Pro Analysis bridges two countries with a deep and genuine connection — Australia and Türkiye share a bond that goes beyond sport, from the shores of Gallipoli to the tennis courts of Istanbul and Perth. For players, families, clubs and coaches on either side, TPA is the bridge.
           </p>
         </Reveal>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
@@ -408,6 +457,7 @@ const VideoSection = () => {
 
 const TrustSection = () => {
   const partners = [
+    { name: "Marmara University", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png", label: "Sports Science Degree" },
     { name: "ATPCA", image: BRAND.logos?.atpca, label: "Coach Certification" },
     { name: "TTF", image: BRAND.logos?.ttf, label: "TTF Background" },
     { name: "UTR Sports", image: BRAND.logos?.utr, label: "Tournament Experience" },
@@ -487,6 +537,7 @@ export default function Home() {
     <div data-testid="page-home">
       <HeroSection />
       <ProofBar />
+      <StatsStrip />
       <AboutSection />
       <TPAIntro />
       <BaselineSection />
