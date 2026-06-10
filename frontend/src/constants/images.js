@@ -19,7 +19,7 @@ export const BRAND = {
   socialCardB: "/images/reinventing the tennis experience_n.jpg",
   logos: {
     atpca: "/images/atpca-logo.png",
-    ttf: "/images/ttf.logo.png",
+    ttf: "/images/ttf-logo.png",
     utr: "/images/utr-sports-logo.jpg",
     baselineVision: "/images/baseline-vision-logo.svg",
     tenx: "/images/tenx-logo.jpg",
