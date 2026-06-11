@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 import { SOCIAL } from "../constants/images";
-import { FinalLockup } from "./brand/TpaLogos";
+import { FinalWordmark } from "./brand/TpaLogos";
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -35,7 +35,10 @@ export const Footer = () => {
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <FinalLockup theme="dark" height={44} />
+          <div className="flex items-center gap-3">
+            <img src="/images/logos/tpa-logo-icon.png" alt="Tennis Pro Analysis" className="h-11 w-auto" />
+            <FinalWordmark height={27} />
+          </div>
           <p className="mt-5 text-[#A7B0BA] text-sm leading-relaxed max-w-md">
             {t.footer.tagline}. {t.hero.support}
           </p>

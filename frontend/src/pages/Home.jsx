@@ -50,6 +50,7 @@ const HeroSection = () => {
       >
         <img loading="lazy" src={IMAGES.heroCourt} alt="Tennis court overhead" className="w-full h-full object-cover" />
       </div>
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,18,32,0.78)" }} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/85 via-[#06141F]/55 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F]/80 via-transparent to-transparent" />
       <div className="hidden md:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 rotate-180 [writing-mode:vertical-rl] text-[10px] uppercase tracking-[0.5em] text-[#A7B0BA]">
@@ -93,42 +94,19 @@ const HeroSection = () => {
           </div>
         </Reveal>
         <Reveal delay={520}>
-          <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-6 md:gap-8">
+          <div className="mt-10 md:mt-12 flex flex-wrap justify-start items-center gap-10 md:gap-12">
             {[
-              { src: LOGOS.marmara, alt: "Marmara University", h: "h-9" },
-              { src: LOGOS.atpca, alt: "ATPCA", h: "h-7" },
-              { src: LOGOS.tennisAustralia, alt: "Tennis Australia", h: "h-7" },
-              { src: LOGOS.ttf, alt: "TTF", h: "h-8" },
-              { src: LOGOS.utr, alt: "UTR Sports", h: "h-6" },
-              { src: LOGOS.baselineVision, alt: "Baseline Vision", h: "h-6" },
-            ].map((logo) => logo.src && (
+              { src: "/images/logos/marmara-logo.png", alt: "Marmara University", invert: false },
+              { src: LOGOS.ttf, alt: "TTF", invert: false },
+              { src: LOGOS.atpca, alt: "ATPCA", invert: true },
+              { src: "/images/logos/tennis-australia-logo-white.svg", alt: "Tennis Australia", invert: false },
+              { src: LOGOS.utr, alt: "UTR Sports", invert: true },
+              { src: LOGOS.baselineVision, alt: "Baseline Vision", invert: true },
+              { src: LOGOS.tenx, alt: "TenX", invert: true },
+            ].map((logo) => (
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
-                className={`${logo.h} object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert`} />
+                className={`max-h-10 md:max-h-12 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
             ))}
-          </div>
-        </Reveal>
-
-        {/* Credential logos strip below hero CTAs */}
-        <Reveal delay={520}>
-          <div className="mt-12 md:mt-16 pt-8 border-t border-[#F8FAFC]/10">
-            <div className="text-[10px] uppercase tracking-[0.34em] text-[#A7B0BA] mb-5">Qualifications & Affiliations</div>
-            <div className="flex flex-wrap items-center gap-5 md:gap-8">
-              {[
-                { src: BRAND.logos?.ttf, alt: "TTF", invert: false },
-                { src: BRAND.logos?.marmara, alt: "Marmara University", invert: false },
-                { src: BRAND.logos?.atpca, alt: "ATPCA", invert: true },
-                { src: BRAND.logos?.utr, alt: "UTR Sports", invert: true },
-                { src: BRAND.logos?.baselineVision, alt: "Baseline Vision", invert: true },
-                { src: BRAND.logos?.tenx, alt: "TenX", invert: true },
-              ].filter(l => l.src).map((logo) => (
-                <img
-                  key={logo.alt}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className={`h-7 md:h-8 object-contain opacity-70 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`}
-                />
-              ))}
-            </div>
           </div>
         </Reveal>
       </div>
@@ -226,16 +204,8 @@ const CoachingSection = () => {
   return (
     <section data-testid="section-coaching" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10">
       <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-14">
-          <div className="lg:col-span-7">
-            <SectionHeader eyebrow={t.coaching.eyebrow} title={t.coaching.title} lead={t.coaching.lead} />
-          </div>
-          <Reveal delay={160}>
-            <div className="lg:col-span-5 relative overflow-hidden border border-[#F8FAFC]/10" style={{minHeight: "360px"}}>
-              <img loading="lazy" src={IMAGES.tenx.backhandBW} alt="Tennis player coaching session" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-testid="coaching-photo" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/60 to-transparent pointer-events-none" />
-            </div>
-          </Reveal>
+        <div className="mb-14">
+          <SectionHeader eyebrow={t.coaching.eyebrow} title={t.coaching.title} lead={t.coaching.lead} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {t.coaching.tiers.map((tier, i) => (
@@ -294,16 +264,16 @@ const StatsStrip = () => {
   const { lang } = useLanguage();
   const stats = lang === "tr"
     ? [
-        { val: "20+", label: "Yıllık Deneyim" },
-        { val: "🇦🇺 🇹🇷", label: "İki Ülke, İki Lisans" },
-        { val: "Yüzlerce", label: "Gelişen Oyuncu" },
-        { val: "ITF · UTR · TTF", label: "Uluslararası Sistemler" },
+        { val: "20+", label: "Yıl Koçluk" },
+        { val: "2", label: "Ülke — Avustralya & Türkiye" },
+        { val: "500+", label: "Oyuncu Gelişimi" },
+        { val: "3", label: "Uluslararası Sistem — ITF · UTR · TTF" },
       ]
     : [
-        { val: "20+", label: "Years of Coaching" },
-        { val: "🇦🇺 🇹🇷", label: "Two Decades. Two Countries." },
-        { val: "Hundreds", label: "of Players Developed" },
-        { val: "ITF · UTR · TTF", label: "International Systems" },
+        { val: "20+", label: "Years Coaching" },
+        { val: "2", label: "Countries — Australia & Türkiye" },
+        { val: "500+", label: "Players Developed" },
+        { val: "3", label: "International Systems — ITF · UTR · TTF" },
       ];
 
   return (
@@ -359,10 +329,12 @@ const AustraliaTurkeySection = () => {
     : ["TTF Qualified Coach", "Istanbul & Ankara — Coming 2026", "Club & Academy Consulting", "Junior ITF & Player Pathways"];
 
   return (
-    <section data-testid="section-australia-turkiye" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F] overflow-hidden">
-      <img loading="lazy" src={IMAGES.tenx2?.kenRosewallOverview || IMAGES.tenx?.nightServe} alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/80 via-[#06141F]/70 to-[#06141F]" />
-      <div className="relative max-w-[1400px] mx-auto">
+    <section
+      data-testid="section-australia-turkiye"
+      className="relative border-t border-[#F8FAFC]/10 overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #06141F 0%, #0D1F35 100%)" }}
+    >
+      <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-24">
         <Reveal>
           <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4 flex items-center gap-3">
             <span>🇦🇺</span><span>Australia ↔ Türkiye</span><span>🇹🇷</span>
@@ -374,23 +346,23 @@ const AustraliaTurkeySection = () => {
           </h2>
         </Reveal>
         <Reveal delay={180}>
-          <p className="mt-5 max-w-2xl text-[#A7B0BA] text-base leading-relaxed">
+          <p className="mt-4 max-w-2xl text-[#A7B0BA] text-base leading-relaxed">
             {isT
               ? "Avustralya ve Türkiye'de 20 yılı aşkın deneyim. Her iki sistemi içeriden tanıyan, iki ülkeyi birbirine bağlayan tek antrenör."
               : "20+ years across both countries. Both systems, from the inside. The genuine bridge between Australian and Turkish tennis."}
           </p>
         </Reveal>
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl">
-          <Reveal delay={200}>
-            <div className="tpa-card p-8 h-full border-l-2 border-[#B7FF00]">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-3xl">🇦🇺</span>
-                <div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">Australia</div>
-                  <div className="font-anton uppercase text-2xl text-white">Perth · Melbourne</div>
-                </div>
+
+        <div className="mt-10 flex flex-col md:flex-row items-stretch gap-5 max-w-4xl">
+          <Reveal delay={200} className="flex-1">
+            <div
+              className="h-full p-8 md:p-10 rounded-2xl border border-[#C8F000]/15 hover:border-[#C8F000]/50 hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#B7FF00]/10 text-[#B7FF00] border border-[#B7FF00]/20 mb-5">
+                🇦🇺 Australia
               </div>
-              <ul className="space-y-2.5">
+              <div className="font-anton uppercase text-2xl text-white mb-5">Perth · Melbourne</div>
+              <ul className="space-y-3">
                 {auItems.map(item => (
                   <li key={item} className="flex items-start gap-3 text-sm text-white/85">
                     <span className="text-[#B7FF00] mt-0.5 shrink-0">→</span>{item}
@@ -399,16 +371,20 @@ const AustraliaTurkeySection = () => {
               </ul>
             </div>
           </Reveal>
-          <Reveal delay={300}>
-            <div className="tpa-card p-8 h-full border-l-2 border-[#E8192C]">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-3xl">🇹🇷</span>
-                <div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#E8192C]">Türkiye</div>
-                  <div className="font-anton uppercase text-2xl text-white">İstanbul · Ankara</div>
-                </div>
+
+          <div className="hidden md:flex items-stretch">
+            <div className="w-px self-stretch" style={{ background: "linear-gradient(to bottom, transparent, rgba(200,240,0,0.4), transparent)" }} />
+          </div>
+
+          <Reveal delay={300} className="flex-1">
+            <div
+              className="h-full p-8 md:p-10 rounded-2xl border border-[#C8F000]/15 hover:border-[#C8F000]/50 hover:-translate-y-1 transition-all duration-300"
+            >
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#E8192C]/10 text-[#E8192C] border border-[#E8192C]/20 mb-5">
+                🇹🇷 Türkiye
               </div>
-              <ul className="space-y-2.5">
+              <div className="font-anton uppercase text-2xl text-white mb-5">İstanbul · Ankara</div>
+              <ul className="space-y-3">
                 {trItems.map(item => (
                   <li key={item} className="flex items-start gap-3 text-sm text-white/85">
                     <span className="text-[#E8192C] mt-0.5 shrink-0">→</span>{item}
@@ -418,8 +394,19 @@ const AustraliaTurkeySection = () => {
             </div>
           </Reveal>
         </div>
-        <Reveal delay={400}>
-          <div className="mt-10">
+
+        <Reveal delay={380}>
+          <div className="mt-6 max-w-4xl flex items-center gap-4">
+            <div className="flex-1 h-px bg-[#C8F000]/20" />
+            <div className="shrink-0 text-[11px] uppercase tracking-[0.25em] text-[#B7FF00] border border-[#B7FF00]/30 px-3 py-1.5 rounded-full">
+              AU ↔ TR
+            </div>
+            <div className="flex-1 h-px bg-[#C8F000]/20" />
+          </div>
+        </Reveal>
+
+        <Reveal delay={440}>
+          <div className="mt-8">
             <Link to="/pathways" className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
               {isT ? "Gelişim Yollarını Keşfet" : "Explore Pathways"} <ArrowRight size={16} />
             </Link>
@@ -619,7 +606,6 @@ export default function Home() {
       <AustraliaTurkeySection />
       <VideoSection />
       <TenXPhotoStrip />
-      <TrustSection />
       <ContactCTA />
     </div>
   );

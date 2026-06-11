@@ -3,7 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
-import { FinalLockup } from "./brand/TpaLogos";
+import { FinalWordmark } from "./brand/TpaLogos";
 
 export const Navbar = () => {
   const { t } = useLanguage();
@@ -82,8 +82,11 @@ export const Navbar = () => {
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
-          <Link to="/" data-testid="nav-logo" className="flex items-center min-w-0">
-            <FinalLockup className="h-12 md:h-14" />
+          <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 min-w-0">
+            <img src="/images/logos/tpa-logo-icon.png" alt="Tennis Pro Analysis" className="h-11 w-auto" />
+            <span className="hidden sm:block">
+              <FinalWordmark height={30} />
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -155,8 +158,9 @@ export const Navbar = () => {
       {open && (
         <div className="fixed inset-0 z-[60] bg-[#06141F] lg:hidden" data-testid="mobile-menu">
           <div className="h-20 px-4 flex items-center justify-between border-b border-[#F8FAFC]/10">
-            <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-              <FinalLockup className="h-12" />
+            <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+              <img src="/images/logos/tpa-logo-icon.png" alt="Tennis Pro Analysis" className="h-11 w-auto" />
+              <FinalWordmark height={27} />
             </Link>
             <button
               type="button"

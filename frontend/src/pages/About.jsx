@@ -44,11 +44,11 @@ export default function About() {
 
             {/* Credentials */}
             <Reveal delay={220}>
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ gridAutoRows: "1fr" }}>
                 {t.about.creds.map((c, i) => (
                   <div
                     key={c}
-                    className="flex items-start gap-3 border border-[#F8FAFC]/10 px-4 py-3 hover:border-[#B7FF00]/50 transition-colors"
+                    className="flex items-start gap-3 border border-[#F8FAFC]/10 px-4 py-3 hover:border-[#B7FF00]/50 transition-colors h-full"
                   >
                     <span className="font-anton text-[#B7FF00] text-sm shrink-0">
                       {String(i + 1).padStart(2, "0")}
