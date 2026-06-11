@@ -67,8 +67,9 @@ export default function About() {
                 </div>
                 <div className="flex flex-wrap items-center gap-6">
                   <img src={LOGOS.marmara} alt="Marmara University" className="h-8 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.atpca} alt="ATPCA" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.ttf} alt="Turkish Tennis Federation" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
+                  <img src={LOGOS.atpca} alt="ATPCA" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  {LOGOS.tennisAustralia && <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />}
                   <img src={LOGOS.utr} alt="UTR Sports" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.baselineVision} alt="Baseline Vision" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>

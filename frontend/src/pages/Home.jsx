@@ -390,16 +390,8 @@ const AboutSection = () => {
     <section data-testid="section-about" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
         <Reveal>
-          <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden border border-[#F8FAFC]/10">
-            <img src={BRAND.founder} alt="Ali Zevkli — Founder of Tennis Pro Analysis" className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" data-testid="founder-photo" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/85 via-[#06141F]/10 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">Founder</div>
-                <div className="font-anton uppercase text-3xl text-white mt-1">Ali Zevkli</div>
-              </div>
-              <span className="w-2 h-2 bg-[#B7FF00]" />
-            </div>
+          <div className="lg:col-span-5 relative aspect-square min-h-[400px] overflow-hidden border border-[#F8FAFC]/10">
+            <img src={BRAND.founder} alt="Ali Zevkli — Founder of Tennis Pro Analysis" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" data-testid="founder-photo" />
           </div>
         </Reveal>
         <div className="lg:col-span-7 flex flex-col">
@@ -458,13 +450,13 @@ const VideoSection = () => {
 
 const TrustSection = () => {
   const partners = [
+    { name: "TTF", image: BRAND.logos?.ttf, label: "TTF Background" },
     { name: "Marmara University", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png", label: "Sports Science Degree" },
     { name: "ATPCA", image: BRAND.logos?.atpca, label: "Coach Certification" },
-    { name: "TTF", image: BRAND.logos?.ttf, label: "TTF Background" },
+    { name: "Tennis Australia", image: BRAND.logos?.tennisAustralia, label: "Australian Tennis" },
     { name: "UTR Sports", image: BRAND.logos?.utr, label: "Tournament Experience" },
     { name: "Baseline Vision", image: BRAND.logos?.baselineVision, label: "Analysis Technology" },
     { name: "TenX", image: BRAND.logos?.tenx, label: "Sponsor" },
-    { name: "Tennis Pro Analysis", image: BRAND.logos?.tpa || BRAND.logoSquare, label: "Founder Brand" },
   ];
 
   return (

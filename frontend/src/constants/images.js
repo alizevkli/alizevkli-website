@@ -41,6 +41,7 @@ export const BRAND = {
     tenx: "/images/logos/tenx-logo.jpg",
     tpa: "/images/tpa-logo.png",
     marmara: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png",
+    tennisAustralia: "/images/logos/tennis-australia-logo.png",
   },
 };
 
@@ -52,6 +53,7 @@ export const LOGOS = {
   tenx: "/images/logos/tenx-logo.jpg",
   tpa: "/images/tpa-logo.png",
   marmara: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png",
+  tennisAustralia: "/images/logos/tennis-australia-logo.png",
 };
 
 export const SOCIAL = {
