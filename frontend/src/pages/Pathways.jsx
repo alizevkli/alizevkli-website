@@ -13,7 +13,7 @@ export default function Pathways() {
         eyebrow={t.pathways.eyebrow}
         title={t.pathways.title}
         lead={t.pathways.lead}
-        image={IMAGES.silhouette}
+        image={IMAGES.tenx2?.playerAtStadium}
       />
 
       {/* Coming Soon Banner */}

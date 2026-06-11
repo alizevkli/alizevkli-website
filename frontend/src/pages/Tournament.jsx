@@ -32,7 +32,22 @@ export default function Tournament() {
             ))}
           </ul>
 
-          <div className="mt-14">
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Reveal>
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#F8FAFC]/10">
+                <img src={IMAGES.tenx2?.netHandshakeStadium} alt="Net handshake at stadium" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/60 to-transparent pointer-events-none" />
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#F8FAFC]/10">
+                <img src={IMAGES.tenx2?.stadiumDoubles} alt="Stadium doubles match" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/60 to-transparent pointer-events-none" />
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="mt-10">
             <Link
               to="/contact"
               data-testid="tournament-cta"

@@ -8,6 +8,23 @@ export const IMAGES = {
   baselineHero: "/images/baseline-train-smarter.jpg",
   grassCourt: "/images/grass-court-coaching.jpg",
   actionBackhand: "/images/double-handed-backhand.jpg",
+  tenx2: {
+    kenRosewallArena: "/images/tenx2/ken-rosewall-arena.jpg",
+    sydneySeriesForehand: "/images/tenx2/sydney-series-forehand.jpg",
+    gymTraining: "/images/tenx2/gym-training.jpg",
+    clayCourtForehand: "/images/tenx2/clay-court-forehand.jpg",
+    tenxBagWalkup: "/images/tenx2/tenx-bag-walkup.jpg",
+    utrNightServe2: "/images/tenx2/utr-night-serve-2.jpg",
+    stadiumDoubles: "/images/tenx2/stadium-doubles.jpg",
+    tenxBallsCloseup: "/images/tenx2/tenx-balls-closeup.jpg",
+    kenRosewallOverview: "/images/tenx2/ken-rosewall-overview.jpg",
+    tenxRacketCloseup: "/images/tenx2/tenx-racket-closeup.jpg",
+    playerAtStadium: "/images/tenx2/player-at-stadium.jpg",
+    nightCourtForehand: "/images/tenx2/night-court-forehand.jpg",
+    clayCourtSenior: "/images/tenx2/clay-court-senior.jpg",
+    servePrepStadium: "/images/tenx2/serve-prep-stadium.jpg",
+    netHandshakeStadium: "/images/tenx2/net-handshake-stadium.jpg",
+  },
 };
 
 export const BRAND = {

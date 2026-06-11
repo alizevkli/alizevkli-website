@@ -49,7 +49,7 @@ const HeroSection = () => {
           transition: "transform 0.25s ease-out",
         }}
       >
-        <img src={IMAGES.heroCourt} alt="Tennis court overhead" className="w-full h-full object-cover" />
+        <img src={IMAGES.tenx2?.kenRosewallOverview} alt="Tennis court overhead" className="w-full h-full object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/85 via-[#06141F]/55 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F]/80 via-transparent to-transparent" />
@@ -500,6 +500,27 @@ const TrustSection = () => {
   );
 };
 
+const TenXPhotoStrip = () => {
+  const photos = [
+    { src: IMAGES.tenx2?.kenRosewallArena, alt: "Ken Rosewall Arena" },
+    { src: IMAGES.tenx2?.utrNightServe2, alt: "UTR night serve" },
+    { src: IMAGES.tenx2?.stadiumDoubles, alt: "Stadium doubles" },
+    { src: IMAGES.tenx2?.nightCourtForehand, alt: "Night court forehand" },
+  ];
+  return (
+    <section data-testid="section-tenx2-strip" className="border-t border-[#F8FAFC]/10 grid grid-cols-2 md:grid-cols-4">
+      {photos.map((p, i) => (
+        <Reveal key={p.alt} delay={i * 80}>
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <img src={p.src} alt={p.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-[#06141F]/30 hover:bg-[#06141F]/10 transition-colors" />
+          </div>
+        </Reveal>
+      ))}
+    </section>
+  );
+};
+
 const ContactCTA = () => {
   const { t } = useLanguage();
   return (
@@ -547,6 +568,7 @@ export default function Home() {
       <PathwaysSection />
       <AustraliaTurkeySection />
       <VideoSection />
+      <TenXPhotoStrip />
       <TrustSection />
       <ContactCTA />
     </div>
