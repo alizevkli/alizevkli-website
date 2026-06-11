@@ -1,4 +1,3 @@
-// v5.2
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -6,7 +5,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { Reveal } from "../components/Reveal";
 import { SectionHeader } from "../components/SectionHeader";
 import { PlaceholderBlock } from "../components/PlaceholderBlock";
-import { IMAGES, BRAND } from "../constants/images";
+import { IMAGES, BRAND, LOGOS } from "../constants/images";
 
 const HOME_VIDEOS = [
   {
@@ -49,7 +48,7 @@ const HeroSection = () => {
           transition: "transform 0.25s ease-out",
         }}
       >
-        <img src={IMAGES.tenx2?.kenRosewallOverview} alt="Tennis court overhead" className="w-full h-full object-cover" />
+        <img loading="lazy" src={IMAGES.heroCourt} alt="Tennis court overhead" className="w-full h-full object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/85 via-[#06141F]/55 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F]/80 via-transparent to-transparent" />
@@ -93,6 +92,45 @@ const HeroSection = () => {
             </Link>
           </div>
         </Reveal>
+        <Reveal delay={520}>
+          <div className="mt-10 md:mt-12 flex flex-wrap items-center gap-6 md:gap-8">
+            {[
+              { src: LOGOS.marmara, alt: "Marmara University", h: "h-9" },
+              { src: LOGOS.atpca, alt: "ATPCA", h: "h-7" },
+              { src: LOGOS.tennisAustralia, alt: "Tennis Australia", h: "h-7" },
+              { src: LOGOS.ttf, alt: "TTF", h: "h-8" },
+              { src: LOGOS.utr, alt: "UTR Sports", h: "h-6" },
+              { src: LOGOS.baselineVision, alt: "Baseline Vision", h: "h-6" },
+            ].map((logo) => logo.src && (
+              <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
+                className={`${logo.h} object-contain opacity-80 hover:opacity-100 transition-opacity brightness-0 invert`} />
+            ))}
+          </div>
+        </Reveal>
+
+        {/* Credential logos strip below hero CTAs */}
+        <Reveal delay={520}>
+          <div className="mt-12 md:mt-16 pt-8 border-t border-[#F8FAFC]/10">
+            <div className="text-[10px] uppercase tracking-[0.34em] text-[#A7B0BA] mb-5">Qualifications & Affiliations</div>
+            <div className="flex flex-wrap items-center gap-5 md:gap-8">
+              {[
+                { src: BRAND.logos?.ttf, alt: "TTF", invert: false },
+                { src: BRAND.logos?.marmara, alt: "Marmara University", invert: false },
+                { src: BRAND.logos?.atpca, alt: "ATPCA", invert: true },
+                { src: BRAND.logos?.utr, alt: "UTR Sports", invert: true },
+                { src: BRAND.logos?.baselineVision, alt: "Baseline Vision", invert: true },
+                { src: BRAND.logos?.tenx, alt: "TenX", invert: true },
+              ].filter(l => l.src).map((logo) => (
+                <img
+                  key={logo.alt}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`h-7 md:h-8 object-contain opacity-70 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`}
+                />
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -114,36 +152,6 @@ const ProofBar = () => {
             ))}
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
-
-const StatsStrip = () => {
-  const { lang } = useLanguage();
-  const stats = lang === "tr"
-    ? [
-        { val: "20+", label: "Yıllık Deneyim" },
-        { val: "🇦🇺 🇹🇷", label: "İki Ülke, İki Lisans" },
-        { val: "Yüzlerce", label: "Gelişen Oyuncu" },
-        { val: "ITF · UTR · TTF", label: "Uluslararası Sistemler" },
-      ]
-    : [
-        { val: "20+", label: "Years of Coaching" },
-        { val: "🇦🇺 🇹🇷", label: "Two Decades. Two Countries." },
-        { val: "Hundreds", label: "of Players Developed" },
-        { val: "ITF · UTR · TTF", label: "International Systems" },
-      ];
-
-  return (
-    <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/60 py-10 px-5 md:px-10">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
-        {stats.map((s, i) => (
-          <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
-            <span className="font-anton uppercase text-2xl md:text-4xl text-white tracking-tight break-words">{s.val}</span>
-            <span className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-[#A7B0BA]">{s.label}</span>
-          </div>
-        ))}
       </div>
     </section>
   );
@@ -196,7 +204,7 @@ const BaselineSection = () => {
         <Reveal delay={200}>
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden border border-[#F8FAFC]/10 bg-[#0B1F33]">
-              <img src={BRAND.socialCardA} alt="Baseline Vision device and app screenshots" className="w-full h-full object-cover object-center" data-testid="baseline-device-photo" />
+              <img loading="lazy" src={IMAGES.tenx?.servePrepStadium || IMAGES.baselineHero} alt="Baseline Vision coaching session" className="w-full h-full object-cover object-center" data-testid="baseline-device-photo" />
             </div>
             <div className="lg:col-span-5">
               <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">{t.baseline.deviceEyebrow}</div>
@@ -223,8 +231,8 @@ const CoachingSection = () => {
             <SectionHeader eyebrow={t.coaching.eyebrow} title={t.coaching.title} lead={t.coaching.lead} />
           </div>
           <Reveal delay={160}>
-            <div className="lg:col-span-5 relative aspect-[4/3] overflow-hidden border border-[#F8FAFC]/10">
-              <img src={BRAND.socialCardB} alt="Ali Zevkli coaching on court" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-testid="coaching-photo" />
+            <div className="lg:col-span-5 relative overflow-hidden border border-[#F8FAFC]/10" style={{minHeight: "360px"}}>
+              <img loading="lazy" src={IMAGES.tenx.backhandBW} alt="Tennis player coaching session" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-testid="coaching-photo" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/60 to-transparent pointer-events-none" />
             </div>
           </Reveal>
@@ -281,11 +289,42 @@ const TournamentSection = () => {
   );
 };
 
+
+const StatsStrip = () => {
+  const { lang } = useLanguage();
+  const stats = lang === "tr"
+    ? [
+        { val: "20+", label: "Yıllık Deneyim" },
+        { val: "🇦🇺 🇹🇷", label: "İki Ülke, İki Lisans" },
+        { val: "Yüzlerce", label: "Gelişen Oyuncu" },
+        { val: "ITF · UTR · TTF", label: "Uluslararası Sistemler" },
+      ]
+    : [
+        { val: "20+", label: "Years of Coaching" },
+        { val: "🇦🇺 🇹🇷", label: "Two Decades. Two Countries." },
+        { val: "Hundreds", label: "of Players Developed" },
+        { val: "ITF · UTR · TTF", label: "International Systems" },
+      ];
+
+  return (
+    <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/60 py-10 px-5 md:px-10">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+        {stats.map((s, i) => (
+          <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="font-anton uppercase text-2xl md:text-4xl text-white tracking-tight break-words">{s.val}</span>
+            <span className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-[#A7B0BA]">{s.label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const PathwaysSection = () => {
   const { t } = useLanguage();
   return (
     <section data-testid="section-pathways" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 overflow-hidden">
-      <img src={IMAGES.silhouette} alt="" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-20" />
+      <img loading="lazy" src={IMAGES.silhouette} alt="" className="absolute right-0 top-0 w-1/2 h-full object-cover opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F] via-[#06141F]/85 to-transparent" />
       <div className="relative max-w-[1400px] mx-auto">
         <SectionHeader eyebrow={t.pathways.eyebrow} title={t.pathways.title} lead={t.pathways.lead} />
@@ -309,92 +348,108 @@ const PathwaysSection = () => {
 
 const AustraliaTurkeySection = () => {
   const { lang } = useLanguage();
-  const cards = lang === "tr"
-    ? [
-        {
-          tag: "🇦🇺 AU",
-          title: "Avustralya",
-          items: ["Perth ve Melbourne'da Antrenörlük", "Oyuncu Gelişim Deneyimi", "Turnuva Yönetimi", "Performans Analizi", "ANZAC — Ortak Tarih, Ortak Bağ"],
-        },
-        {
-          tag: "🇹🇷 TR",
-          title: "Türkiye",
-          items: ["TTF Yetkili Antrenör", "İstanbul & Ankara", "Kulüp ve Akademi Desteği", "Oyuncu Gelişim Yolları", "2026'da Başlıyor"],
-        },
-        {
-          tag: "INTL",
-          title: "Uluslararası",
-          items: ["İngilizce Tenis Dersleri", "Avustralya Danışmanlık", "Vize Yönlendirmesi", "Dünya Genelinde"],
-        },
-      ]
-    : [
-        {
-          tag: "🇦🇺 AU",
-          title: "Australia",
-          items: ["Perth & Melbourne Coaching", "Player Development", "Tournament Direction", "Performance Analysis", "ANZAC — A shared history, a genuine connection"],
-        },
-        {
-          tag: "🇹🇷 TR",
-          title: "Türkiye",
-          items: ["TTF Qualified Coach", "Istanbul & Ankara", "Club & Academy Consulting", "Player Pathways", "Coming 2026"],
-        },
-        {
-          tag: "INTL",
-          title: "International",
-          items: ["Tennis in English", "Australia Consulting", "Visa Referrals", "Available Worldwide Now"],
-        },
-      ];
+  const isT = lang === "tr";
+
+  const auItems = isT
+    ? ["Perth & Melbourne'da Antrenörlük", "Oyuncu Gelişimi & Turnuva Yönetimi", "ATPCA İleri Profesyonel Seviye 2", "ANZAC — Ortak Tarih, Gerçek Bağ"]
+    : ["Perth & Melbourne Coaching", "Player Development & Tournaments", "ATPCA Advanced Pro Level 2", "ANZAC — A shared history, genuine connection"];
+
+  const trItems = isT
+    ? ["TTF Yetkili Antrenör", "İstanbul & Ankara — 2026'da Başlıyor", "Kulüp & Akademi Danışmanlığı", "Junior ITF & Oyuncu Gelişim Yolları"]
+    : ["TTF Qualified Coach", "Istanbul & Ankara — Coming 2026", "Club & Academy Consulting", "Junior ITF & Player Pathways"];
 
   return (
-    <section data-testid="section-australia-turkiye" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
-      <div className="max-w-[1400px] mx-auto">
+    <section data-testid="section-australia-turkiye" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F] overflow-hidden">
+      <img loading="lazy" src={IMAGES.tenx2?.kenRosewallOverview || IMAGES.tenx?.nightServe} alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/80 via-[#06141F]/70 to-[#06141F]" />
+      <div className="relative max-w-[1400px] mx-auto">
         <Reveal>
-          <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">Australia ↔ Türkiye</div>
+          <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4 flex items-center gap-3">
+            <span>🇦🇺</span><span>Australia ↔ Türkiye</span><span>🇹🇷</span>
+          </div>
         </Reveal>
         <Reveal delay={100}>
-          <h2 className="font-anton uppercase text-5xl md:text-7xl text-white leading-[0.95]">International Tennis Pathway</h2>
+          <h2 className="font-anton uppercase text-5xl md:text-7xl text-white leading-[0.95]">
+            {isT ? "İki Ülke. Bir Antrenör." : "Two Countries. One Coach."}
+          </h2>
         </Reveal>
         <Reveal delay={180}>
-          <p className="mt-6 max-w-4xl text-[#A7B0BA] text-base md:text-lg leading-relaxed">
-            Tennis Pro Analysis bridges two countries with a deep and genuine connection — Australia and Türkiye share a bond that goes beyond sport, from the shores of Gallipoli to the tennis courts of Istanbul and Perth. For players, families, clubs and coaches on either side, TPA is the bridge.
+          <p className="mt-5 max-w-2xl text-[#A7B0BA] text-base leading-relaxed">
+            {isT
+              ? "Avustralya ve Türkiye'de 20 yılı aşkın deneyim. Her iki sistemi içeriden tanıyan, iki ülkeyi birbirine bağlayan tek antrenör."
+              : "20+ years across both countries. Both systems, from the inside. The genuine bridge between Australian and Turkish tennis."}
           </p>
         </Reveal>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {cards.map((card, i) => (
-            <Reveal key={card.title} delay={i * 100}>
-              <div className="tpa-card p-7 md:p-9 h-full">
-                <div className="inline-flex items-center justify-center px-4 py-2 border border-[#B7FF00]/40 text-[#B7FF00] text-xs font-bold tracking-[0.24em] uppercase mb-6">
-                  {card.tag}
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl">
+          <Reveal delay={200}>
+            <div className="tpa-card p-8 h-full border-l-2 border-[#B7FF00]">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🇦🇺</span>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">Australia</div>
+                  <div className="font-anton uppercase text-2xl text-white">Perth · Melbourne</div>
                 </div>
-                <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-5">{card.title}</h3>
-                <ul className="space-y-3">
-                  {card.items.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-white/90">
-                      <span className="mt-1.5 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </Reveal>
-          ))}
+              <ul className="space-y-2.5">
+                {auItems.map(item => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/85">
+                    <span className="text-[#B7FF00] mt-0.5 shrink-0">→</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={300}>
+            <div className="tpa-card p-8 h-full border-l-2 border-[#E8192C]">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-3xl">🇹🇷</span>
+                <div>
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-[#E8192C]">Türkiye</div>
+                  <div className="font-anton uppercase text-2xl text-white">İstanbul · Ankara</div>
+                </div>
+              </div>
+              <ul className="space-y-2.5">
+                {trItems.map(item => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-white/85">
+                    <span className="text-[#E8192C] mt-0.5 shrink-0">→</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
         </div>
+        <Reveal delay={400}>
+          <div className="mt-10">
+            <Link to="/pathways" className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+              {isT ? "Gelişim Yollarını Keşfet" : "Explore Pathways"} <ArrowRight size={16} />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
 };
 
+
 const AboutSection = () => {
   const { t } = useLanguage();
   return (
     <section data-testid="section-about" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-        <Reveal>
-          <div className="lg:col-span-5 relative aspect-square min-h-[400px] overflow-hidden border border-[#F8FAFC]/10">
-            <img src={BRAND.founder} alt="Ali Zevkli — Founder of Tennis Pro Analysis" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" data-testid="founder-photo" />
+      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-12 items-start">
+        {/* Photo — left column */}
+        <div className="w-full lg:w-5/12 shrink-0">
+          <div className="relative overflow-hidden border border-[#F8FAFC]/10" style={{height: "520px"}}>
+            <img
+              src={BRAND.founder}
+              alt="Ali Zevkli — Founder of Tennis Pro Analysis"
+              className="w-full h-full object-cover object-center"
+              data-testid="founder-photo"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/50 via-transparent to-transparent" />
           </div>
-        </Reveal>
-        <div className="lg:col-span-7 flex flex-col">
+        </div>
+        {/* Content — right column */}
+        <div className="flex flex-col flex-1">
           <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={FOUNDER_LEAD} />
           <Reveal delay={140}>
             <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis</div>
@@ -448,15 +503,39 @@ const VideoSection = () => {
   );
 };
 
+
+const TenXPhotoStrip = () => (
+  <section className="border-t border-[#F8FAFC]/10 overflow-hidden">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+      {[
+        { src: IMAGES.tenx?.nightServe, alt: "Night court serve — UTR Pro Series Sydney" },
+        { src: IMAGES.tenx?.redSmoke, alt: "TenX player entrance" },
+        { src: IMAGES.tenx?.netHandshake, alt: "Players at the net — Melbourne Park" },
+        { src: IMAGES.tenx?.rainCourt, alt: "Player on court in rain — MyUTR" },
+      ].map((photo, i) => (
+        <div key={i} className="relative aspect-video overflow-hidden group">
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+          />
+          <div className="absolute inset-0 bg-[#06141F]/40 group-hover:bg-[#06141F]/10 transition-colors duration-500" />
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
 const TrustSection = () => {
   const partners = [
-    { name: "TTF", image: BRAND.logos?.ttf, label: "TTF Background" },
-    { name: "Marmara University", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Marmara_University_logo.svg/512px-Marmara_University_logo.svg.png", label: "Sports Science Degree" },
-    { name: "ATPCA", image: BRAND.logos?.atpca, label: "Coach Certification" },
-    { name: "Tennis Australia", image: BRAND.logos?.tennisAustralia, label: "Australian Tennis" },
-    { name: "UTR Sports", image: BRAND.logos?.utr, label: "Tournament Experience" },
-    { name: "Baseline Vision", image: BRAND.logos?.baselineVision, label: "Analysis Technology" },
-    { name: "TenX", image: BRAND.logos?.tenx, label: "Sponsor" },
+    { name: "Marmara University", image: LOGOS.marmara, label: "Sports Science Degree" },
+    { name: "ATPCA", image: LOGOS.atpca, label: "ATPCA Advanced Pro Level 2" },
+    { name: "Tennis Australia", image: LOGOS.tennisAustralia, label: "Tennis Australia Member" },
+    { name: "TTF", image: LOGOS.ttf, label: "TTF Qualified Coach" },
+    { name: "UTR Sports", image: LOGOS.utr, label: "UTR Tournament Director" },
+    { name: "Baseline Vision", image: LOGOS.baselineVision, label: "Performance Analysis" },
+    { name: "TenX", image: LOGOS.tenx, label: "Partner" },
+    { name: "Tennis Pro Analysis", image: LOGOS.tpa || BRAND.logoSquare, label: "Founder Brand" },
   ];
 
   return (
@@ -468,13 +547,13 @@ const TrustSection = () => {
             <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">Professional Affiliations, Technology & Sponsors</h3>
           </div>
         </Reveal>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-[1400px] mx-auto">
           {partners.map((partner, i) => (
             <Reveal key={partner.name} delay={i * 60}>
               <div className="h-full min-h-[150px] border border-[#F8FAFC]/10 bg-[#0B1F33]/60 p-4 flex flex-col items-center justify-between text-center hover:border-[#B7FF00]/50 transition-colors">
                 <div className="h-16 w-full flex items-center justify-center mb-4">
                   {partner.image ? (
-                    <img src={partner.image} alt={`${partner.name} logo`} className="max-h-14 max-w-[120px] object-contain" />
+                    <img loading="lazy" src={partner.image} alt={`${partner.name} logo`} className={`max-h-14 max-w-[120px] object-contain ${partner.bg ? "brightness-0 invert" : ""}`} />
                   ) : (
                     <span className="font-anton uppercase text-2xl text-white">{partner.name}</span>
                   )}
@@ -488,27 +567,6 @@ const TrustSection = () => {
           ))}
         </div>
       </div>
-    </section>
-  );
-};
-
-const TenXPhotoStrip = () => {
-  const photos = [
-    { src: IMAGES.tenx2?.kenRosewallArena, alt: "Ken Rosewall Arena" },
-    { src: IMAGES.tenx2?.utrNightServe2, alt: "UTR night serve" },
-    { src: IMAGES.tenx2?.stadiumDoubles, alt: "Stadium doubles" },
-    { src: IMAGES.tenx2?.nightCourtForehand, alt: "Night court forehand" },
-  ];
-  return (
-    <section data-testid="section-tenx2-strip" className="border-t border-[#F8FAFC]/10 grid grid-cols-2 md:grid-cols-4">
-      {photos.map((p, i) => (
-        <Reveal key={p.alt} delay={i * 80}>
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <img src={p.src} alt={p.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-[#06141F]/30 hover:bg-[#06141F]/10 transition-colors" />
-          </div>
-        </Reveal>
-      ))}
     </section>
   );
 };

@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { IMAGES, SOCIAL } from "../constants/images";
+import { IMAGES, BASELINE_SCREENSHOTS } from "../constants/images";
+import { SOCIAL } from "../constants/images";
 
 const baselineVideos = [
   {
@@ -20,10 +22,25 @@ const baselineVideos = [
   },
 ];
 
-export default function BaselineVision() {
-  const { t } = useLanguage();
-  const faq = t.baselineFaq;
 
+const FAQItem = ({ q, a, index }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-[#F8FAFC]/10">
+      <button onClick={() => setOpen(v => !v)} className="w-full flex items-start justify-between gap-6 py-5 text-left group">
+        <div className="flex items-start gap-4">
+          <span className="font-anton text-[#B7FF00] text-sm shrink-0 mt-0.5">{String(index + 1).padStart(2, "0")}</span>
+          <span className={`text-sm md:text-base font-medium transition-colors ${open ? "text-white" : "text-white/85 group-hover:text-white"}`}>{q}</span>
+        </div>
+        <span className="shrink-0 mt-0.5 text-[#B7FF00]">{open ? <Minus size={16} /> : <Plus size={16} />}</span>
+      </button>
+      {open && <div className="pb-5 pl-9 pr-4"><p className="text-[#A7B0BA] leading-relaxed text-sm">{a}</p></div>}
+    </div>
+  );
+};
+
+export default function BaselineVision() {
+  const { t, lang } = useLanguage();
   return (
     <div data-testid="page-baseline">
       <PageHero
@@ -39,10 +56,22 @@ export default function BaselineVision() {
             {t.baseline.grid.map((g, i) => (
               <Reveal key={g.label} delay={i * 50}>
                 <div className="bg-[#06141F] p-6 md:p-8 h-full group hover:bg-[#0B1F33] transition-colors">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
+                      KPI · {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="w-1.5 h-1.5 bg-[#1FA463] group-hover:bg-[#B7FF00] transition-colors" />
+                  </div>
                   <div className="font-anton uppercase text-2xl text-white mb-3">
                     {g.label}
                   </div>
-                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{g.desc}</p>
+                  <p className="text-xs text-[#A7B0BA] leading-relaxed">{g.desc}</p>
+                  <div className="mt-6 h-1 bg-[#F8FAFC]/5 overflow-hidden">
+                    <div
+                      className="h-full bg-[#B7FF00]"
+                      style={{ width: `${45 + (i * 7) % 50}%` }}
+                    />
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -112,7 +141,7 @@ export default function BaselineVision() {
             <Reveal delay={160}>
               <p className="mt-6 text-[#A7B0BA] max-w-xl">
                 Players receive a structured progress report after each Baseline Vision
-                session — video timestamps, measurable performance data, and the next training block
+                session — KPI deltas, video timestamps, and the next training block
                 priorities.
               </p>
             </Reveal>
@@ -120,7 +149,7 @@ export default function BaselineVision() {
           <Reveal delay={200}>
             <div className="lg:col-span-5 relative aspect-square overflow-hidden border border-[#F8FAFC]/10">
               <img
-                src={IMAGES.silhouette}
+                src={IMAGES.baselineHero}
                 alt="Player silhouette"
                 className="w-full h-full object-cover"
               />
@@ -139,49 +168,68 @@ export default function BaselineVision() {
           </Link>
         </div>
       </section>
-
-      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
-        <div className="max-w-[1100px] mx-auto">
+      {/* Baseline Vision Screenshots */}
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
-              {faq.eyebrow}
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+              {lang === "tr" ? "Gerçek Sistem Çıktısı" : "Real System Output"}
             </div>
-            <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-tight mb-8">
-              {faq.title}
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-3">
+              {lang === "tr" ? "Gerçek Seanslardan Gerçek Veri." : "Real Data. From Real Sessions."}
             </h2>
-            <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-12">{faq.lead}</p>
+            <p className="text-[#A7B0BA] max-w-2xl mb-12">
+              {lang === "tr"
+                ? "Bunlar gerçek antrenman seanslarından alınan gerçek Baseline Vision ekran görüntüleridir. Oyuncularınız tam olarak bunları görür."
+                : "These are real Baseline Vision screenshots from actual coaching sessions. This is exactly what your players see."}
+            </p>
           </Reveal>
-
-          <div className="space-y-4">
-            {faq.faqs.map((item, i) => (
-              <Reveal key={item.q} delay={i * 35}>
-                <article className="border border-[#F8FAFC]/10 bg-[#0B1F33]/45 p-6 md:p-8">
-                  <h3 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">
-                    {item.q}
-                  </h3>
-                  <p className="mt-4 text-sm md:text-base text-[#A7B0BA] leading-relaxed">
-                    {item.a}
-                  </p>
-                </article>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {BASELINE_SCREENSHOTS.map((s, i) => (
+              <Reveal key={s.src} delay={i * 80}>
+                <div className="group border border-[#F8FAFC]/10 overflow-hidden hover:border-[#B7FF00]/40 transition-colors">
+                  <div className="aspect-square overflow-hidden bg-[#0B1F33]">
+                    <img
+                      loading="lazy"
+                      src={s.src}
+                      alt={s.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="px-4 py-3 border-t border-[#F8FAFC]/10">
+                    <div className="text-[11px] uppercase tracking-[0.2em] text-[#B7FF00] font-medium">
+                      {lang === "tr" ? s.titleTR : s.title}
+                    </div>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          <Reveal delay={220}>
-            <div className="mt-14 border border-[#B7FF00]/30 bg-[#B7FF00]/5 p-8 md:p-10">
-              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">
-                {faq.ctaBoxTitle}
-              </h2>
-              <p className="text-[#A7B0BA] leading-relaxed max-w-3xl mb-8">
-                {faq.ctaBoxText}
-              </p>
-              <a
-                href={SOCIAL.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-              >
-                {faq.cta} <ArrowRight size={16} />
+      {/* FAQ Section */}
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/30">
+        <div className="max-w-[900px] mx-auto">
+          <Reveal>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
+              <span className="inline-block w-6 h-px bg-[#B7FF00]" />{t.baselineFaq.eyebrow}
+            </div>
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-10">{t.baselineFaq.title}</h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="border-t border-[#F8FAFC]/10">
+              {t.baselineFaq.faqs.map((item, i) => (
+                <FAQItem key={i} q={item.q} a={item.a} index={i} />
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={200}>
+            <div className="mt-10">
+              <a href={SOCIAL.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                className="tpa-btn-primary inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em]">
+                {t.baselineFaq.cta} <ArrowRight size={14} />
               </a>
             </div>
           </Reveal>
