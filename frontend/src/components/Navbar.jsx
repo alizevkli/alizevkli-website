@@ -198,7 +198,7 @@ export const Navbar = () => {
                 end={l.end}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `font-anton uppercase text-4xl leading-none py-2 ${isActive ? "text-[#B7FF00]" : "text-white"}`
+                  `font-anton uppercase text-4xl leading-none py-2 break-words ${isActive ? "text-[#B7FF00]" : "text-white"}`
                 }
               >
                 {l.label}
@@ -214,7 +214,7 @@ export const Navbar = () => {
                     to={l.to}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `text-sm uppercase tracking-[0.18em] py-2 ${isActive ? "text-[#B7FF00]" : "text-white/80"}`
+                      `text-sm uppercase tracking-[0.18em] py-2 break-words ${isActive ? "text-[#B7FF00]" : "text-white/80"}`
                     }
                   >
                     {l.label}

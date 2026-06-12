@@ -15,7 +15,6 @@ import Tournament from "./pages/Tournament";
 import Pathways from "./pages/Pathways";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Brand from "./pages/Brand";
 import TennisInEnglish from "./pages/TennisInEnglish";
 import AustraliaConsulting from "./pages/AustraliaConsulting";
 import Pricing from "./pages/Pricing";
@@ -39,7 +38,6 @@ function AppInner() {
           <Route path="/australia-consulting" element={<AustraliaConsulting />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/brand" element={<Brand />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/baseline-vision-faq" element={<BaselineVisionFAQ />} />
           <Route path="*" element={<Home />} />

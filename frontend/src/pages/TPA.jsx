@@ -38,13 +38,25 @@ export default function TPA() {
             <VideoPlaceholder image={IMAGES.clayLegs} label="TPA — Breakdown" />
           </div>
           <div className="mt-12">
-            <Link
-              to="/contact"
-              data-testid="tpa-cta"
-              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-            >
-              {t.hero.ctaPrimary} <ArrowRight size={16} />
-            </Link>
+            {t.hero.ctaPrimaryHref ? (
+              <a
+                href={t.hero.ctaPrimaryHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="tpa-cta"
+                className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                {t.hero.ctaPrimary} <ArrowRight size={16} />
+              </a>
+            ) : (
+              <Link
+                to="/contact"
+                data-testid="tpa-cta"
+                className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                {t.hero.ctaPrimary} <ArrowRight size={16} />
+              </Link>
+            )}
           </div>
         </div>
       </section>

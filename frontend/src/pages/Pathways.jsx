@@ -56,7 +56,7 @@ export default function Pathways() {
             data-testid="pathways-cta"
             className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
           >
-            {t.nav.contact} <ArrowRight size={16} />
+            {t.contact.cta} <ArrowRight size={16} />
           </Link>
         </div>
       </section>

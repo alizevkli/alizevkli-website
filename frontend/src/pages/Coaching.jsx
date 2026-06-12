@@ -38,13 +38,25 @@ export default function Coaching() {
         </div>
 
         <div className="mt-14">
-          <Link
-            to="/contact"
-            data-testid="coaching-cta"
-            className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-          >
-            {t.nav.book} <ArrowRight size={16} />
-          </Link>
+          {t.hero.ctaPrimaryHref ? (
+            <a
+              href={t.hero.ctaPrimaryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="coaching-cta"
+              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+            >
+              {t.hero.ctaPrimary} <ArrowRight size={16} />
+            </a>
+          ) : (
+            <Link
+              to="/contact"
+              data-testid="coaching-cta"
+              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+            >
+              {t.hero.ctaPrimary} <ArrowRight size={16} />
+            </Link>
+          )}
         </div>
       </section>
     </div>

@@ -147,13 +147,25 @@ export default function BaselineVision() {
         </div>
 
         <div className="max-w-[1400px] mx-auto mt-12">
-          <Link
-            to="/contact"
-            data-testid="baseline-cta"
-            className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-          >
-            {t.hero.ctaSecondary} <ArrowRight size={16} />
-          </Link>
+          {t.hero.ctaPrimaryHref ? (
+            <a
+              href={t.hero.ctaPrimaryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="baseline-cta"
+              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+            >
+              {t.hero.ctaPrimary} <ArrowRight size={16} />
+            </a>
+          ) : (
+            <Link
+              to="/contact"
+              data-testid="baseline-cta"
+              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+            >
+              {t.hero.ctaPrimary} <ArrowRight size={16} />
+            </Link>
+          )}
         </div>
       </section>
       {/* Baseline Vision Screenshots */}

@@ -23,7 +23,7 @@ export const PageHero = ({ eyebrow, title, lead, image, testId = "page-hero" }) 
           </div>
         </Reveal>
         <Reveal delay={80}>
-          <h1 className="font-anton uppercase text-5xl md:text-7xl lg:text-8xl text-white leading-[0.92] max-w-5xl">
+          <h1 className="font-anton uppercase text-4xl md:text-7xl lg:text-8xl text-white leading-[0.92] max-w-5xl">
             {title}
           </h1>
         </Reveal>
