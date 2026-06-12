@@ -2,9 +2,9 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { translations } from "./translations";
 
 const LanguageContext = createContext({
-  lang: "en",
+  lang: "tr",
   setLang: () => {},
-  t: translations.en,
+  t: translations.tr,
 });
 
 export const LanguageProvider = ({ children }) => {
@@ -13,7 +13,7 @@ export const LanguageProvider = ({ children }) => {
       const stored = window.localStorage.getItem("tpa-lang");
       if (stored === "en" || stored === "tr") return stored;
     }
-    return "en";
+    return "tr";
   });
 
   const setLang = (next) => {
@@ -38,7 +38,11 @@ export const LanguageProvider = ({ children }) => {
     [lang]
   );
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
 export const useLanguage = () => useContext(LanguageContext);
