@@ -134,7 +134,7 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <LanguageToggle />
             <Link
               to="/contact"
