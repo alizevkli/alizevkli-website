@@ -4,7 +4,7 @@ import { SOCIAL } from "../constants/images";
 import { FinalWordmark } from "./brand/TpaLogos";
 
 export const Footer = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const year = new Date().getFullYear();
 
   const cols = [
@@ -21,7 +21,7 @@ export const Footer = () => {
       title: t.footer.explore,
       links: [
         { to: "/tournament", label: t.nav.tournament },
-        { to: "/pathways", label: t.nav.pathways },
+        { to: "/pathways", label: lang === "tr" ? t.nav.turkiye2026 : t.nav.pathways },
         { to: "/about", label: t.nav.about },
         { to: "/contact", label: t.nav.contact },
       ],

@@ -70,6 +70,25 @@ export const translations = {
       deviceEyebrow: "Device · App",
       deviceTitle: "Real-time tracking. Reportable output.",
       deviceLead: "Baseline Vision captures the session on court and delivers structured reports — shot speed, placement, patterns and progress — all reviewed inside the wider TPA system.",
+      videoEyebrow: "Baseline Vision in Action",
+      videoTitle: "See the analysis before you book.",
+      videoLead: "Watch how Baseline Vision can turn match play, line calls, stats and player feedback into a clearer coaching experience.",
+      reportEyebrow: "Output",
+      reportTitle: "Every session, a report.",
+      reportLead: "Players receive a structured progress report after each Baseline Vision session — KPI deltas, video timestamps, and the next training block priorities.",
+      screenshotEyebrow: "Real System Output",
+      screenshotTitle: "Real Data. From Real Sessions.",
+      screenshotLead: "These are real Baseline Vision screenshots from actual coaching sessions. This is exactly what your players see.",
+      videos: [
+        {
+          title: "Match Summary Like On TV",
+          text: "Video analysis, match stats, line calling and player feedback in one smarter coaching session.",
+        },
+        {
+          title: "Bring Fairness And Excitement To Your Court",
+          text: "Baseline Vision helps players track performance, review key moments and turn every session into measurable improvement.",
+        },
+      ],
     },
     coaching: {
       eyebrow: "Coaching",
@@ -115,6 +134,8 @@ export const translations = {
       title: "Ali Zevkli",
       role: "International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis",
       lead: "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.",
+      ctaProfile: "Read Founder Profile",
+      affiliationsTitle: "Qualifications & Affiliations",
       creds: [
         "International Tennis Coach — 20+ Years",
         "Marmara University — Sports Science & Physical Education (BESYO, 2003)",
@@ -160,9 +181,22 @@ export const translations = {
     },
     video: {
       eyebrow: "In Motion",
-      title: "Sessions, breakdowns, match film.",
-      lead: "Video reels and analysis clips will be published here.",
+      title: "Baseline Vision in Action",
+      lead: "Watch real Baseline Vision examples showing match film, stats, line calling and coaching feedback.",
       placeholder: "Video placeholder",
+    },
+    trust: {
+      eyebrow: "Trust Network",
+      title: "Professional Affiliations, Technology & Sponsors",
+      labels: [
+        "Sports Science Degree",
+        "ATPCA Advanced Pro Level 2",
+        "TTF Qualified Coach",
+        "UTR Tournament Director",
+        "Performance Analysis",
+        "Partner",
+        "Founder Brand",
+      ],
     },
     contact: {
       eyebrow: "Contact",
@@ -361,6 +395,25 @@ export const translations = {
       deviceEyebrow: "Cihaz · Uygulama",
       deviceTitle: "Gerçek zamanlı takip. Raporlanabilir sonuçlar.",
       deviceLead: "Baseline Vision, kort üzerindeki verileri kayıt altına alır ve yapılandırılmış performans raporları üretir. Vuruş hızı, top yerleşimi, oyun desenleri ve gelişim göstergeleri TPA sistemi içerisinde oyuncuya özel geri bildirimlere dönüştürülür.",
+      videoEyebrow: "Baseline Vision Aksiyonda",
+      videoTitle: "Rezervasyondan önce analizi görün.",
+      videoLead: "Baseline Vision'ın maç oyununu, çizgi kararlarını, istatistikleri ve oyuncu geri bildirimlerini nasıl daha net bir antrenman deneyimine dönüştürdüğünü izleyin.",
+      reportEyebrow: "Çıktı",
+      reportTitle: "Her seans, bir rapor.",
+      reportLead: "Oyuncular, her Baseline Vision seansının ardından yapılandırılmış bir performans raporu alır — KPI değişimleri, video zaman damgaları ve bir sonraki antrenman bloğu öncelikleri.",
+      screenshotEyebrow: "Gerçek Sistem Çıktısı",
+      screenshotTitle: "Gerçek Seanslardan Gerçek Veri.",
+      screenshotLead: "Bunlar gerçek antrenman seanslarından alınan gerçek Baseline Vision ekran görüntüleridir. Oyuncularınız tam olarak bunları görür.",
+      videos: [
+        {
+          title: "TV'deki Gibi Maç Özeti",
+          text: "Daha akıllı bir antrenman seansında video analiz, maç istatistikleri, çizgi kararı incelemesi ve oyuncu geri bildirimi.",
+        },
+        {
+          title: "Kortunuza Adalet ve Heyecan Getirin",
+          text: "Baseline Vision, oyuncuların performanslarını takip etmelerine, kritik anları incelemelerine ve her seansı ölçülebilir gelişime dönüştürmelerine yardımcı olur.",
+        },
+      ],
     },
     coaching: {
       eyebrow: "Hizmetler",
@@ -409,6 +462,8 @@ export const translations = {
       title: "Ali Zevkli",
       role: "ULUSLARARASI TENİS ANTRENÖRÜ · PERFORMANS ANALİSTİ · TENNİS PRO ANALYSİS KURUCUSU",
       lead: "Uluslararası tenis antrenörü, performans analisti ve Tennis Pro Analysis'in kurucusu. Ali Zevkli, kort üzerindeki antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyunlarını net biçimde anlamalarına, amaçlı antrenman yapmalarına ve daha hızlı gelişmelerine yardımcı olur.",
+      ctaProfile: "Kurucu Profilini İncele",
+      affiliationsTitle: "Yetkinlikler & Üyelikler",
       creds: [
         "Uluslararası Tenis Antrenörü — 20+ Yıl",
         "Marmara Üniversitesi — Beden Eğitimi ve Performans Sporları (BESYO, 2003)",
@@ -418,6 +473,7 @@ export const translations = {
         "Baseline Vision Performans Uzmanı",
         "UTR Turnuva Direktörü",
         "Türkçe ↔ İngilizce Tercüme & Çeviri — NAATI Eğitimi (RMIT 2020)",
+        "İngilizce & Türkçe — Profesyonel Düzey",
       ],
       experience: {
         title: "Antrenörlük Kariyeri — 20+ Yıl",
@@ -444,9 +500,22 @@ export const translations = {
     },
     video: {
       eyebrow: "Hareket Halinde",
-      title: "Seanslar, analizler, maç görüntüleri.",
-      lead: "Video reel'leri ve analiz klipleri burada yayınlanacak.",
+      title: "Baseline Vision Aksiyonda",
+      lead: "Gerçek maç görüntüleri, istatistikler, çizgi kararları ve antrenman geri bildirimlerini içeren gerçek Baseline Vision örneklerini izleyin.",
       placeholder: "Video alanı",
+    },
+    trust: {
+      eyebrow: "Güven Ağı",
+      title: "Mesleki Üyelikler, Teknoloji & Sponsorlar",
+      labels: [
+        "Beden Eğitimi Fakültesi",
+        "ATPCA İleri Profesyonel Seviye 2",
+        "TTF Antrenörü",
+        "UTR Turnuva Direktörü",
+        "Performans Analizi",
+        "İş Ortağı",
+        "Kurucu Marka",
+      ],
     },
     contact: {
       eyebrow: "İletişim",
@@ -541,6 +610,7 @@ export const translations = {
         { name: "Junior Gelişim", desc: "Genç oyuncular için yaşa ve seviyeye uygun teknik, taktik ve mental gelişim programları.", price: "Fiyat Sorunuz", unit: "", note: "Oyuncu hedefine göre özel plan.", featured: false, features: ["Teknik temel ve taktik farkındalık", "Turnuva hazırlığı", "Kişiselleştirilmiş gelişim planı", "Velilere düzenli ilerleme raporu"], whatsappMsg: "Merhaba Ali, junior oyuncu gelişim programı hakkında bilgi almak istiyorum." },
         { name: "Kulüp / Akademi", desc: "Kulüpler ve akademiler için program tasarımı, antrenör mentorluğu ve performans analiz sistemlerinin kurulumu.", price: "Fiyat Sorunuz", unit: "", note: "Proje bazlı.", featured: false, features: ["Tam program ve müfredat tasarımı", "Antrenör mentorluğu", "Performans analiz sistemi kurulumu", "Junior gelişim yolu planlaması"], whatsappMsg: "Merhaba Ali, kulüp veya akademi hizmetleri hakkında görüşmek istiyorum." },
         { name: "Resort / Otel", desc: "Antalya ve çevresindeki lüks resort ve otel tesisleri için misafir klinikleri, grup dersleri ve turnuva organizasyonu.", price: "Fiyat Sorunuz", unit: "", note: "Kurumsal teklif.", featured: false, features: ["Misafir tenis programları", "Grup dersleri ve klinikler", "Turnuva organizasyonu", "Maxx Royal & Lykia World deneyimi"], whatsappMsg: "Merhaba Ali, resort veya otel tenis programı hakkında görüşmek istiyorum." },
+        { name: "İngilizce Tenis", desc: "Türkiye'deki expat'lar ve uluslararası ortamlara hazırlanan oyuncular için tamamen İngilizce özel tenis dersleri.", price: "Fiyat Sorunuz", unit: "", note: "2026'dan itibaren Türkiye'de mevcut.", featured: false, features: ["Tamamen İngilizce seans", "Kort terminolojisi ve maç dili", "İngilizce video analizi", "İngilizce seans raporları"], whatsappMsg: "Merhaba Ali, İngilizce tenis dersleri hakkında bilgi almak istiyorum." },
       ],
       customTitle: "Özel paketler ve kurumsal teklifler",
       customText: "Bir kulüp, akademi veya resort tenis programı mı yönetiyorsunuz? Özel paketler ve kurumsal teklifler için doğrudan iletişime geçin.",

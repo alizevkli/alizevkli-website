@@ -8,17 +8,14 @@ export const IMAGES = {
   baselineHero: "/images/baseline-train-smarter.jpg",
   grassCourt: "/images/grass-court-coaching.jpg",
   actionBackhand: "/images/double-handed-backhand.jpg",
-  tenx: {
-    serveBW: "/images/tenx/serve-bw.jpg",
-    playerSeatedBW: "/images/tenx/player-seated-bw.jpg",
-    rainCourt: "/images/tenx/rain-court.jpg",
-    nightServe: "/images/tenx/night-serve.jpg",
-    playerBench: "/images/tenx/player-bench.jpg",
-    redSmoke: "/images/tenx/red-smoke.jpg",
-    netHandshake: "/images/tenx/net-handshake.jpg",
-    clayCourtBalls: "/images/tenx/clay-court-balls.jpg",
-    colourServeJump: "/images/tenx/colour-serve-jump.jpg",
-    backhandBW: "/images/tenx/tenx-backhand-bw.jpg",
+  clayLegs: "/images/double-handed-backhand.jpg",
+  tenx2: {
+    playerAtStadium: "/images/tenx2/player-at-stadium.jpg",
+    netHandshakeStadium: "/images/tenx2/net-handshake-stadium.jpg",
+    stadiumDoubles: "/images/tenx2/stadium-doubles.jpg",
+    kenRosewallArena: "/images/tenx2/ken-rosewall-arena.jpg",
+    nightCourtForehand: "/images/tenx2/night-court-forehand.jpg",
+    servePrep: "/images/tenx2/serve-prep-stadium.jpg",
   },
 };
 
@@ -45,6 +42,7 @@ export const LOGOS = {
   ttf: "/images/logos/ttf-logo.png",
   utr: "/images/logos/utr-sports-logo.png",
   baselineVision: "/images/logos/baseline-vision-logo.svg",
+  tennisAustralia: "/images/logos/tennis-australia-logo-white.svg",
   tenx: "/images/logos/tenx-logo.jpg",
   tpa: "/images/tpa-logo.png",
 };

@@ -26,7 +26,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/80 via-transparent to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                  Founder
+                  {t.about.eyebrow}
                 </div>
                 <div className="font-anton uppercase text-3xl text-white mt-1">
                   Ali Zevkli
@@ -63,13 +63,13 @@ export default function About() {
             <Reveal delay={260}>
               <div className="mt-10 pt-8 border-t border-[#F8FAFC]/10">
                 <div className="text-[10px] uppercase tracking-[0.4em] text-[#A7B0BA] mb-5">
-                  Qualifications & Affiliations
+                  {t.about.affiliationsTitle}
                 </div>
                 <div className="flex flex-wrap items-center gap-6">
                   <img src={LOGOS.marmara} alt="Marmara University" className="h-8 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.ttf} alt="Turkish Tennis Federation" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
                   <img src={LOGOS.atpca} alt="ATPCA" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  {LOGOS.tennisAustralia && <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />}
+                  <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.utr} alt="UTR Sports" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.baselineVision} alt="Baseline Vision" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                 </div>

@@ -7,19 +7,9 @@ import { Reveal } from "../components/Reveal";
 import { IMAGES, BASELINE_SCREENSHOTS } from "../constants/images";
 import { SOCIAL } from "../constants/images";
 
-const baselineVideos = [
-  {
-    title: "Match Summary Like On TV",
-    text:
-      "Video analysis, match stats, line calling and player feedback in one smarter coaching session.",
-    src: "https://drive.google.com/file/d/1HFPsD2YlrA2RA1L4TRvDYmLLaJ1DQEr1/preview",
-  },
-  {
-    title: "Bring Fairness And Excitement To Your Court",
-    text:
-      "Baseline Vision helps players track performance, review key moments and turn every session into measurable improvement.",
-    src: "https://drive.google.com/file/d/1HIpvLWeZXVMUp3VrabOayl7zbGYeIQW-/preview",
-  },
+const VIDEO_SRCS = [
+  "https://drive.google.com/file/d/1HFPsD2YlrA2RA1L4TRvDYmLLaJ1DQEr1/preview",
+  "https://drive.google.com/file/d/1HIpvLWeZXVMUp3VrabOayl7zbGYeIQW-/preview",
 ];
 
 
@@ -83,27 +73,27 @@ export default function BaselineVision() {
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
-              Baseline Vision in Action
+              {t.baseline.videoEyebrow}
             </div>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-[0.95] max-w-4xl">
-              See the analysis before you book.
+              {t.baseline.videoTitle}
             </h2>
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 text-[#A7B0BA] max-w-2xl">
-              Watch how Baseline Vision can turn match play, line calls, stats and player feedback into a clearer coaching experience.
+              {t.baseline.videoLead}
             </p>
           </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-            {baselineVideos.map((video, i) => (
+            {t.baseline.videos.map((video, i) => (
               <Reveal key={video.title} delay={i * 120}>
                 <article className="bg-[#0B1F33] border border-[#F8FAFC]/10 overflow-hidden">
                   <div className="aspect-video bg-black">
                     <iframe
-                      src={video.src}
+                      src={VIDEO_SRCS[i]}
                       title={video.title}
                       className="w-full h-full"
                       allow="autoplay"
@@ -130,19 +120,17 @@ export default function BaselineVision() {
           <div className="lg:col-span-7">
             <Reveal>
               <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
-                Output
+                {t.baseline.reportEyebrow}
               </div>
             </Reveal>
             <Reveal delay={80}>
               <h2 className="font-anton uppercase text-4xl md:text-5xl text-white leading-[0.95]">
-                Every session, a report.
+                {t.baseline.reportTitle}
               </h2>
             </Reveal>
             <Reveal delay={160}>
               <p className="mt-6 text-[#A7B0BA] max-w-xl">
-                Players receive a structured progress report after each Baseline Vision
-                session — KPI deltas, video timestamps, and the next training block
-                priorities.
+                {t.baseline.reportLead}
               </p>
             </Reveal>
           </div>
@@ -174,15 +162,13 @@ export default function BaselineVision() {
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-6 h-px bg-[#B7FF00]" />
-              {lang === "tr" ? "Gerçek Sistem Çıktısı" : "Real System Output"}
+              {t.baseline.screenshotEyebrow}
             </div>
             <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-3">
-              {lang === "tr" ? "Gerçek Seanslardan Gerçek Veri." : "Real Data. From Real Sessions."}
+              {t.baseline.screenshotTitle}
             </h2>
             <p className="text-[#A7B0BA] max-w-2xl mb-12">
-              {lang === "tr"
-                ? "Bunlar gerçek antrenman seanslarından alınan gerçek Baseline Vision ekran görüntüleridir. Oyuncularınız tam olarak bunları görür."
-                : "These are real Baseline Vision screenshots from actual coaching sessions. This is exactly what your players see."}
+              {t.baseline.screenshotLead}
             </p>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

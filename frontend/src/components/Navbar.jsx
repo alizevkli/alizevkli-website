@@ -51,7 +51,6 @@ export const Navbar = () => {
   const isServicesActive = serviceRoutes.includes(location.pathname);
 
   const serviceLinks = lang === "tr" ? [
-    { to: "/coaching", label: t.nav.coaching },
     { to: "/tournament", label: t.nav.tournament },
     { to: "/australia-consulting", label: t.nav.consulting },
     { to: "/baseline-vision-faq", label: t.nav.faq },

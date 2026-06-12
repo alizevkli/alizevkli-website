@@ -8,13 +8,6 @@ export default function Contact() {
   const { t } = useLanguage();
 
   const channels = [
-    {
-      Icon: MessageCircle,
-      label: t.contact.whatsapp,
-      testId: "contact-whatsapp",
-      href: SOCIAL.whatsappUrl,
-      highlight: true,
-    },
     { Icon: Mail, label: t.contact.email, testId: "contact-email", href: "mailto:alizevkliali@gmail.com" },
     { Icon: Phone, label: t.contact.phone, testId: "contact-phone", href: null },
     {
@@ -58,7 +51,7 @@ export default function Contact() {
               </a>
             </Reveal>
 
-            {channels.slice(1).map(({ Icon, label, testId, href }) => {
+            {channels.map(({ Icon, label, testId, href }) => {
               const Inner = (
                 <>
                   <div className="flex items-center gap-4">

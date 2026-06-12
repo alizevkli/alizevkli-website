@@ -22,8 +22,6 @@ const HOME_VIDEOS = [
   },
 ];
 
-const FOUNDER_LEAD =
-  "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.";
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -412,7 +410,7 @@ const AboutSection = () => {
         </div>
         {/* Content — right column */}
         <div className="flex flex-col flex-1">
-          <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={t.about.lead} />
+          <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} lead={t.about.lead} />
           <Reveal delay={140}>
             <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">{t.about.role}</div>
           </Reveal>
@@ -429,7 +427,7 @@ const AboutSection = () => {
           <Reveal delay={320}>
             <div className="mt-8">
               <Link to="/about" data-testid="founder-cta" className="tpa-btn-secondary inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.22em]">
-                Read Founder Profile <ArrowRight size={14} />
+                {t.about.ctaProfile} <ArrowRight size={14} />
               </Link>
             </div>
           </Reveal>
@@ -444,7 +442,7 @@ const VideoSection = () => {
   return (
     <section data-testid="section-video" className="relative py-24 md:py-32 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
       <div className="max-w-[1400px] mx-auto">
-        <SectionHeader eyebrow={t.video.eyebrow} title="Baseline Vision in Action" lead="Watch real Baseline Vision examples showing match film, stats, line calling and coaching feedback." />
+        <SectionHeader eyebrow={t.video.eyebrow} title={t.video.title} lead={t.video.lead} />
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           {HOME_VIDEOS.map((video, i) => (
             <Reveal key={video.title} delay={i * 120}>
@@ -468,14 +466,15 @@ const VideoSection = () => {
 
 
 const TrustSection = () => {
+  const { t } = useLanguage();
   const partners = [
-    { name: "Marmara University", image: LOGOS.marmara, label: "Sports Science Degree" },
-    { name: "ATPCA", image: LOGOS.atpca, label: "ATPCA Advanced Pro Level 2" },
-    { name: "TTF", image: LOGOS.ttf, label: "TTF Qualified Coach" },
-    { name: "UTR Sports", image: LOGOS.utr, label: "UTR Tournament Director" },
-    { name: "Baseline Vision", image: LOGOS.baselineVision, label: "Performance Analysis" },
-    { name: "TenX", image: LOGOS.tenx, label: "Partner" },
-    { name: "Tennis Pro Analysis", image: LOGOS.tpa || BRAND.logoSquare, label: "Founder Brand" },
+    { name: "Marmara University", image: LOGOS.marmara },
+    { name: "ATPCA", image: LOGOS.atpca },
+    { name: "TTF", image: LOGOS.ttf },
+    { name: "UTR Sports", image: LOGOS.utr },
+    { name: "Baseline Vision", image: LOGOS.baselineVision },
+    { name: "TenX", image: LOGOS.tenx },
+    { name: "Tennis Pro Analysis", image: LOGOS.tpa || BRAND.logoSquare },
   ];
 
   return (
@@ -483,8 +482,8 @@ const TrustSection = () => {
       <div className="max-w-[1400px] mx-auto">
         <Reveal>
           <div className="text-center mb-10">
-            <div className="text-[10px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3">Trust Network</div>
-            <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">Professional Affiliations, Technology & Sponsors</h3>
+            <div className="text-[10px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3">{t.trust.eyebrow}</div>
+            <h3 className="font-anton uppercase text-3xl md:text-4xl text-white">{t.trust.title}</h3>
           </div>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 max-w-[1400px] mx-auto">
@@ -493,14 +492,14 @@ const TrustSection = () => {
               <div className="h-full min-h-[150px] border border-[#F8FAFC]/10 bg-[#0B1F33]/60 p-4 flex flex-col items-center justify-between text-center hover:border-[#B7FF00]/50 transition-colors">
                 <div className="h-16 w-full flex items-center justify-center mb-4">
                   {partner.image ? (
-                    <img loading="lazy" src={partner.image} alt={`${partner.name} logo`} className={`max-h-14 max-w-[120px] object-contain ${partner.bg ? "brightness-0 invert" : ""}`} />
+                    <img loading="lazy" src={partner.image} alt={`${partner.name} logo`} className="max-h-14 max-w-[120px] object-contain brightness-0 invert" />
                   ) : (
                     <span className="font-anton uppercase text-2xl text-white">{partner.name}</span>
                   )}
                 </div>
                 <div>
                   <div className="font-bold text-xs uppercase tracking-[0.18em] text-white">{partner.name}</div>
-                  <p className="mt-2 text-[11px] leading-relaxed text-[#A7B0BA]">{partner.label}</p>
+                  <p className="mt-2 text-[11px] leading-relaxed text-[#A7B0BA]">{t.trust.labels[i]}</p>
                 </div>
               </div>
             </Reveal>
