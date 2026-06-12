@@ -387,19 +387,16 @@ export const translations = {
     about: {
       eyebrow: "Kurucu",
       title: "Ali Zevkli",
-      role: "Uluslararası Tenis Antrenörü · TTF Yetkili Antrenör · Tennis Pro Analysis Kurucusu",
-      lead: "İstanbul'dan Antalya'ya, Perth'ten Melbourne'a — Ali Zevkli, 20 yılı aşkın süredir iki ülkenin tenis dünyasında antrenörlük yapmaktadır. Avustralya'da ATPCA İleri Profesyonel Seviye 2 ve Türkiye'de TTF yetkili antrenör olarak çift lisans sahibidir. Kort içi deneyimini video analizi, Baseline Vision teknolojisi ve maç istatistikleriyle birleştirerek oyuncuların oyununu daha net anlamasını, amaçlı çalışmasını ve daha hızlı gelişmesini sağlar.",
+      role: "ULUSLARARASI TENİS ANTRENÖRÜ · PERFORMANS ANALİSTİ · TENNİS PRO ANALYSİS KURUCUSU",
+      lead: "Uluslararası tenis antrenörü, performans analisti ve Tennis Pro Analysis'in kurucusu. Ali Zevkli, kort üzerindeki antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyunlarını net biçimde anlamalarına, amaçlı antrenman yapmalarına ve daha hızlı gelişmelerine yardımcı olur.",
       creds: [
-        "ATPCA İleri Profesyonel Seviye 2 — Sicil No: RT15060103",
-        "Türkiye Tenis Federasyonu (TTF) Yetkili Antrenör",
         "Marmara Üniversitesi — Beden Eğitimi ve Performans Sporları (BESYO, 2003)",
+        "Türkiye Tenis Federasyonu (TTF) Yetkili Antrenör",
+        "ATPCA İleri Profesyonel Seviye 2 — Sicil No: RT15060103",
         "Tennis Pro Analysis Kurucusu",
         "Baseline Vision Performans Uzmanı",
         "UTR Turnuva Direktörü",
         "Türkçe ↔ İngilizce Tercüme & Çeviri — NAATI Eğitimi (RMIT 2020)",
-        "Engelli Bireylerle Çalışma Sertifikası — Cert III in Disability",
-        "Çocuklarla Çalışma Onayı — WA (2029'a kadar geçerli)",
-        "İngilizce & Türkçe — Profesyonel Seviye",
       ],
       experience: {
         title: "Antrenörlük Kariyeri — 20+ Yıl",

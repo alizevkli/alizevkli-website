@@ -436,9 +436,9 @@ const AboutSection = () => {
         </div>
         {/* Content — right column */}
         <div className="flex flex-col flex-1">
-          <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={FOUNDER_LEAD} />
+          <SectionHeader eyebrow="Founder" title="Ali Zevkli" lead={t.about.lead} />
           <Reveal delay={140}>
-            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis</div>
+            <div className="mt-6 text-[11px] uppercase tracking-[0.3em] text-[#B7FF00]">{t.about.role}</div>
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
