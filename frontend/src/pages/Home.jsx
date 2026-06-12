@@ -102,7 +102,6 @@ const HeroSection = () => {
               { src: "/images/logos/tennis-australia-logo-white.svg", alt: "Tennis Australia", invert: false },
               { src: LOGOS.utr, alt: "UTR Sports", invert: true },
               { src: LOGOS.baselineVision, alt: "Baseline Vision", invert: true },
-              { src: LOGOS.tenx, alt: "TenX", invert: true },
             ].map((logo) => (
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
                 className={`h-10 w-auto object-contain mx-auto opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
