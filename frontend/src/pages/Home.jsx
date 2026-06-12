@@ -117,21 +117,15 @@ const TenXPhotoStrip = () => (
   <section className="overflow-x-auto border-b border-[#F8FAFC]/10 bg-[#06141F]">
     <div className="flex gap-3 px-5 md:px-10 py-4 w-max">
       {[
-        { src: "/images/tenx2/clay-court-forehand.jpg", alt: "Clay court forehand" },
-        { src: "/images/tenx2/clay-court-senior.jpg", alt: "Clay court senior" },
-        { src: "/images/tenx2/gym-training.jpg", alt: "Gym training" },
-        { src: "/images/tenx2/ken-rosewall-arena.jpg", alt: "Ken Rosewall Arena" },
+        { src: "/images/tenx2/ken-rosewall-arena.jpg", alt: "Ken Rosewall Arena — UTR Pro Series Sydney" },
         { src: "/images/tenx2/ken-rosewall-overview.jpg", alt: "Ken Rosewall Arena overview" },
-        { src: "/images/tenx2/net-handshake-stadium.jpg", alt: "Net handshake stadium" },
-        { src: "/images/tenx2/night-court-forehand.jpg", alt: "Night court forehand" },
-        { src: "/images/tenx2/player-at-stadium.jpg", alt: "Player at stadium" },
-        { src: "/images/tenx2/serve-prep-stadium.jpg", alt: "Serve prep stadium" },
-        { src: "/images/tenx2/stadium-doubles.jpg", alt: "Stadium doubles" },
-        { src: "/images/tenx2/sydney-series-forehand.jpg", alt: "Sydney series forehand" },
-        { src: "/images/tenx2/tenx-bag-walkup.jpg", alt: "TenX bag walkup" },
-        { src: "/images/tenx2/tenx-balls-closeup.jpg", alt: "TenX balls closeup" },
-        { src: "/images/tenx2/tenx-racket-closeup.jpg", alt: "TenX racket closeup" },
-        { src: "/images/tenx2/utr-night-serve-2.jpg", alt: "UTR night serve" },
+        { src: "/images/tenx2/net-handshake-stadium.jpg", alt: "Net handshake — stadium court" },
+        { src: "/images/tenx2/night-court-forehand.jpg", alt: "Night court forehand — UTR Pro Series" },
+        { src: "/images/tenx2/player-at-stadium.jpg", alt: "Player at stadium — UTR Pro Series Sydney" },
+        { src: "/images/tenx2/serve-prep-stadium.jpg", alt: "Serve prep — Ken Rosewall Arena" },
+        { src: "/images/tenx2/stadium-doubles.jpg", alt: "Stadium doubles — UTR Pro Series Sydney" },
+        { src: "/images/tenx2/sydney-series-forehand.jpg", alt: "Sydney Series forehand" },
+        { src: "/images/tenx2/utr-night-serve-2.jpg", alt: "UTR Pro Series — night serve" },
       ].map((photo) => (
         <img
           key={photo.src}
