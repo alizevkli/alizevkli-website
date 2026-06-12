@@ -102,6 +102,7 @@ const HeroSection = () => {
               { src: "/images/logos/tennis-australia-logo-white.svg", alt: "Tennis Australia", invert: false },
               { src: LOGOS.utr, alt: "UTR Sports", invert: true },
               { src: LOGOS.baselineVision, alt: "Baseline Vision", invert: true },
+              { src: LOGOS.tenx, alt: "TenX", invert: false },
             ].map((logo) => (
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
                 className={`h-10 w-auto object-contain mx-auto opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
@@ -112,6 +113,26 @@ const HeroSection = () => {
     </section>
   );
 };
+
+const TenXPhotoStrip = () => (
+  <section className="overflow-x-auto border-b border-[#F8FAFC]/10 bg-[#06141F]">
+    <div className="flex gap-3 px-5 md:px-10 py-4 w-max">
+      {[
+        { src: "/images/tenx2/tenx-bag-walkup.jpg", alt: "TenX — bag walkup" },
+        { src: "/images/tenx2/tenx-balls-closeup.jpg", alt: "TenX — balls closeup" },
+        { src: "/images/tenx2/tenx-racket-closeup.jpg", alt: "TenX — racket closeup" },
+      ].map((photo) => (
+        <img
+          key={photo.src}
+          loading="lazy"
+          src={photo.src}
+          alt={photo.alt}
+          className="h-48 w-auto object-cover rounded"
+        />
+      ))}
+    </div>
+  </section>
+);
 
 const ProofBar = () => {
   const { t } = useLanguage();
@@ -613,6 +634,7 @@ export default function Home() {
   return (
     <div data-testid="page-home">
       <HeroSection />
+      <TenXPhotoStrip />
       <ProofBar />
       <StatsStrip />
       <AboutSection />
