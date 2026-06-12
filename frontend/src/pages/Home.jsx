@@ -110,9 +110,7 @@ const HeroSection = () => {
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
                 className={`h-10 w-auto object-contain mx-auto opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
             ))}
-            <span className="inline-flex items-center bg-white rounded-md px-3 py-1.5 opacity-85 hover:opacity-100 transition-opacity">
-              <img loading="lazy" src={LOGOS.tenx} alt="TenX" className="h-7 w-auto object-contain" />
-            </span>
+            <img loading="lazy" src={LOGOS.tenx} alt="TenX" className="h-8 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity" />
           </div>
         </Reveal>
       </div>
