@@ -277,11 +277,11 @@ const StatsStrip = () => {
 
   return (
     <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/60 py-10 px-5 md:px-10">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((s, i) => (
-          <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left">
-            <span className="font-anton uppercase text-2xl md:text-4xl text-white tracking-tight break-words">{s.val}</span>
-            <span className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-[#A7B0BA]">{s.label}</span>
+          <div key={i} className="flex flex-col items-center text-center py-8 px-4">
+            <span className="font-black uppercase text-5xl text-white tracking-tight break-words">{s.val}</span>
+            <span className="mt-1.5 text-xs uppercase tracking-widest text-[#A7B0BA]">{s.label}</span>
           </div>
         ))}
       </div>
