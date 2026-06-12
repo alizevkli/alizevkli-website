@@ -389,106 +389,6 @@ const PathwaysSection = () => {
   );
 };
 
-const AustraliaTurkeySection = () => {
-  const { lang } = useLanguage();
-  const isT = lang === "tr";
-
-  const auItems = isT
-    ? ["Perth & Melbourne'da Antrenörlük", "Oyuncu Gelişimi & Turnuva Yönetimi", "ATPCA İleri Profesyonel Seviye 2", "ANZAC — Ortak Tarih, Gerçek Bağ"]
-    : ["Perth & Melbourne Coaching", "Player Development & Tournaments", "ATPCA Advanced Pro Level 2", "ANZAC — A shared history, genuine connection"];
-
-  const trItems = isT
-    ? ["TTF Yetkili Antrenör", "İstanbul & Ankara — 2026'da Başlıyor", "Kulüp & Akademi Danışmanlığı", "Junior ITF & Oyuncu Gelişim Yolları"]
-    : ["TTF Qualified Coach", "Istanbul & Ankara — Coming 2026", "Club & Academy Consulting", "Junior ITF & Player Pathways"];
-
-  return (
-    <section
-      data-testid="section-australia-turkiye"
-      className="relative border-t border-[#F8FAFC]/10 overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #06141F 0%, #0D1F35 100%)" }}
-    >
-      <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-24">
-        <Reveal>
-          <div className="text-[11px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4 flex items-center gap-3">
-            <span>🇦🇺</span><span>Australia ↔ Türkiye</span><span>🇹🇷</span>
-          </div>
-        </Reveal>
-        <Reveal delay={100}>
-          <h2 className="font-anton uppercase text-5xl md:text-7xl text-white leading-[0.95]">
-            {isT ? "İki Ülke. Bir Antrenör." : "Two Countries. One Coach."}
-          </h2>
-        </Reveal>
-        <Reveal delay={180}>
-          <p className="mt-4 max-w-2xl text-[#A7B0BA] text-base leading-relaxed">
-            {isT
-              ? "Avustralya ve Türkiye'de 20 yılı aşkın deneyim. Her iki sistemi içeriden tanıyan, iki ülkeyi birbirine bağlayan tek antrenör."
-              : "20+ years across both countries. Both systems, from the inside. The genuine bridge between Australian and Turkish tennis."}
-          </p>
-        </Reveal>
-
-        <div className="mt-10 flex flex-col md:flex-row items-stretch gap-5 max-w-4xl">
-          <Reveal delay={200} className="flex-1">
-            <div
-              className="h-full p-8 md:p-10 rounded-2xl border border-[#C8F000]/15 hover:border-[#C8F000]/50 hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#B7FF00]/10 text-[#B7FF00] border border-[#B7FF00]/20 mb-5">
-                🇦🇺 Australia
-              </div>
-              <div className="font-anton uppercase text-2xl text-white mb-5">Perth · Melbourne</div>
-              <ul className="space-y-3">
-                {auItems.map(item => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-white/85">
-                    <span className="text-[#B7FF00] mt-0.5 shrink-0">→</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-
-          <div className="hidden md:flex items-stretch">
-            <div className="w-px self-stretch" style={{ background: "linear-gradient(to bottom, transparent, rgba(200,240,0,0.4), transparent)" }} />
-          </div>
-
-          <Reveal delay={300} className="flex-1">
-            <div
-              className="h-full p-8 md:p-10 rounded-2xl border border-[#C8F000]/15 hover:border-[#C8F000]/50 hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs bg-[#E8192C]/10 text-[#E8192C] border border-[#E8192C]/20 mb-5">
-                🇹🇷 Türkiye
-              </div>
-              <div className="font-anton uppercase text-2xl text-white mb-5">İstanbul · Ankara</div>
-              <ul className="space-y-3">
-                {trItems.map(item => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-white/85">
-                    <span className="text-[#E8192C] mt-0.5 shrink-0">→</span>{item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-        </div>
-
-        <Reveal delay={380}>
-          <div className="mt-6 max-w-4xl flex items-center gap-4">
-            <div className="flex-1 h-px bg-[#C8F000]/20" />
-            <div className="shrink-0 text-[11px] uppercase tracking-[0.25em] text-[#B7FF00] border border-[#B7FF00]/30 px-3 py-1.5 rounded-full">
-              AU ↔ TR
-            </div>
-            <div className="flex-1 h-px bg-[#C8F000]/20" />
-          </div>
-        </Reveal>
-
-        <Reveal delay={440}>
-          <div className="mt-8">
-            <Link to="/pathways" className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-              {isT ? "Gelişim Yollarını Keşfet" : "Explore Pathways"} <ArrowRight size={16} />
-            </Link>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-  );
-};
 
 
 const AboutSection = () => {
@@ -655,7 +555,6 @@ export default function Home() {
       <CoachingSection />
       <TournamentSection />
       <PathwaysSection />
-      <AustraliaTurkeySection />
       <VideoSection />
       <ContactCTA />
     </div>
