@@ -5,7 +5,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 const META = {
   "/": {
     en: { title: "Tennis Pro Analysis · Tennis Performance. Measured.", description: "International tennis coach Ali Zevkli — performance coaching, Baseline Vision match analysis, Australia–Türkiye pathways. 20+ years across Perth, Melbourne and Istanbul." },
-    tr: { title: "Tennis Pro Analysis · Tenis Performansı. Ölçüldü.", description: "Uluslararası tenis antrenörü Ali Zevkli — performans antrenörlüğü, Baseline Vision maç analizi, Avustralya–Türkiye gelişim yolları. Perth, Melbourne ve İstanbul'da 20+ yıl deneyim." },
+    tr: { title: "Ali Zevkli | Tenis Antrenörü ve Performans Analizi | Türkiye", description: "Ali Zevkli, Avustralya ve Türkiye deneyimli tenis antrenörü. Özel tenis dersleri, video analiz, Baseline Vision performans analizi, junior gelişim, kulüp ve akademi desteği." },
   },
   "/tpa": {
     en: { title: "TPA — Tennis Pro Analysis System | Ali Zevkli", description: "The Tennis Pro Analysis performance system — coaching, Baseline Vision analysis, tournament direction and player development." },

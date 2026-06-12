@@ -40,7 +40,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section data-testid="hero" className="relative min-h-[100vh] flex items-end overflow-hidden">
+    <section data-testid="hero" className="relative min-h-[600px] flex items-end overflow-hidden">
       <div
         className="absolute inset-0 will-change-transform"
         style={{
@@ -67,7 +67,7 @@ const HeroSection = () => {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <h1 data-testid="hero-title" className="font-anton uppercase text-white leading-[0.88] tracking-tight text-[16vw] sm:text-[13vw] md:text-[9vw] lg:text-[8.5rem] xl:text-[10rem]">
+              <h1 data-testid="hero-title" className="font-anton uppercase text-white leading-[0.92] tracking-tight text-4xl md:text-5xl lg:text-6xl">
                 {t.hero.titleLine1}<br />
                 {t.hero.titleLine2}<span className="text-[#B7FF00]">.</span><br />
                 {t.hero.titleLine3}<span className="text-[#B7FF00]">.</span>
@@ -85,9 +85,15 @@ const HeroSection = () => {
         </div>
         <Reveal delay={420}>
           <div className="mt-10 md:mt-14 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <Link to="/contact" data-testid="hero-cta-primary" className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-              {t.hero.ctaPrimary}<ArrowRight size={16} />
-            </Link>
+            {t.hero.ctaPrimaryHref ? (
+              <a href={t.hero.ctaPrimaryHref} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-primary" className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+                {t.hero.ctaPrimary}<ArrowRight size={16} />
+              </a>
+            ) : (
+              <Link to="/contact" data-testid="hero-cta-primary" className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+                {t.hero.ctaPrimary}<ArrowRight size={16} />
+              </Link>
+            )}
             <Link to="/baseline-vision" data-testid="hero-cta-secondary" className="tpa-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
               {t.hero.ctaSecondary}<ArrowUpRight size={16} />
             </Link>
@@ -106,6 +112,9 @@ const HeroSection = () => {
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
                 className={`h-10 w-auto object-contain mx-auto opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
             ))}
+            <span className="inline-flex items-center bg-white rounded-md px-3 py-1.5 opacity-85 hover:opacity-100 transition-opacity">
+              <img loading="lazy" src={LOGOS.tenx} alt="TenX" className="h-7 w-auto object-contain" />
+            </span>
           </div>
         </Reveal>
       </div>

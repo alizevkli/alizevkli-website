@@ -107,14 +107,16 @@ export default function Contact() {
                 Ali Zevkli
               </h3>
               <p className="mt-3 text-sm text-[#A7B0BA]">
-                International Tennis Coach · Performance Analyst · Tournament Director
+                {t.contact.role}
               </p>
               <div className="mt-8 space-y-2 text-xs uppercase tracking-[0.22em] text-[#A7B0BA]">
-                <div>ATPCA Advanced Pro Level 2</div>
-                <div>TTF Yetkili Antrenör</div>
-                <div>UTR Tournament Director</div>
-                <div>Australia • Türkiye • 20+ Years</div>
+                {t.contact.creds.map((c) => (
+                  <div key={c}>{c}</div>
+                ))}
               </div>
+              {t.contact.location && (
+                <div className="mt-4 text-xs text-[#B7FF00] tracking-[0.18em]">{t.contact.location}</div>
+              )}
             </div>
           </Reveal>
         </div>

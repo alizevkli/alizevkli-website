@@ -6,7 +6,7 @@ import { LanguageToggle } from "./LanguageToggle";
 import { FinalWordmark } from "./brand/TpaLogos";
 
 export const Navbar = () => {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -50,7 +50,12 @@ export const Navbar = () => {
   ];
   const isServicesActive = serviceRoutes.includes(location.pathname);
 
-  const serviceLinks = [
+  const serviceLinks = lang === "tr" ? [
+    { to: "/coaching", label: t.nav.coaching },
+    { to: "/tournament", label: t.nav.tournament },
+    { to: "/australia-consulting", label: t.nav.consulting },
+    { to: "/baseline-vision-faq", label: t.nav.faq },
+  ] : [
     { to: "/coaching", label: t.nav.coaching },
     { to: "/tournament", label: t.nav.tournament },
     { to: "/pathways", label: t.nav.pathways },
@@ -59,7 +64,15 @@ export const Navbar = () => {
     { to: "/baseline-vision-faq", label: t.nav.faq },
   ];
 
-  const mainLinks = [
+  const mainLinks = lang === "tr" ? [
+    { to: "/", label: t.nav.home, end: true },
+    { to: "/baseline-vision", label: t.nav.baseline },
+    { to: "/pathways", label: t.nav.turkiye2026 },
+    { to: "/coaching", label: t.nav.kulupAkademi },
+    { to: "/australia-consulting", label: t.nav.australiaBaglantisi },
+    { to: "/about", label: t.nav.about },
+    { to: "/contact", label: t.nav.contact },
+  ] : [
     { to: "/", label: t.nav.home, end: true },
     { to: "/tpa", label: t.nav.tpa },
     { to: "/baseline-vision", label: t.nav.baseline },
@@ -67,6 +80,9 @@ export const Navbar = () => {
     { to: "/about", label: t.nav.about },
     { to: "/contact", label: t.nav.contact },
   ];
+
+  const beforeDropdown = lang === "tr" ? mainLinks.slice(0, 1) : mainLinks.slice(0, 3);
+  const afterDropdown = lang === "tr" ? mainLinks.slice(1) : mainLinks.slice(3);
 
   const linkClass = ({ isActive }) =>
     `relative text-[11px] uppercase tracking-[0.18em] transition-colors whitespace-nowrap ${
@@ -89,8 +105,8 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {mainLinks.slice(0, 3).map((l) => (
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+            {beforeDropdown.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
                 {l.label}
               </NavLink>
@@ -127,7 +143,7 @@ export const Navbar = () => {
               )}
             </div>
 
-            {mainLinks.slice(3).map((l) => (
+            {afterDropdown.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
                 {l.label}
               </NavLink>
