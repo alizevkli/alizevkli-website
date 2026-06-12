@@ -162,6 +162,46 @@ const TPAIntro = () => {
   );
 };
 
+const BASELINE_PROMO_IMAGES = [
+  "/images/baseline/baseline-promo-1.png",
+  "/images/baseline/baseline-promo-2.png",
+  "/images/baseline/baseline-promo-3.png",
+  "/images/baseline/baseline-promo-4.png",
+  "/images/baseline/baseline-promo-5.png",
+];
+
+const BaselineCarousel = () => {
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => setCurrent((c) => (c + 1) % BASELINE_PROMO_IMAGES.length), 3000);
+    return () => clearInterval(timer);
+  }, []);
+  return (
+    <div className="w-full">
+      <div className="rounded-xl overflow-hidden w-full aspect-[16/10] bg-[#0B1F33] relative">
+        {BASELINE_PROMO_IMAGES.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Baseline Vision promo ${i + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
+          />
+        ))}
+      </div>
+      <div className="flex justify-center gap-2 mt-3">
+        {BASELINE_PROMO_IMAGES.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-colors duration-300 ${i === current ? "bg-[#B7FF00]" : "bg-[#F8FAFC]/30"}`}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const BaselineSection = () => {
   const { t } = useLanguage();
   return (
@@ -180,8 +220,8 @@ const BaselineSection = () => {
         </div>
         <Reveal delay={200}>
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 relative aspect-[16/10] overflow-hidden border border-[#F8FAFC]/10 bg-[#0B1F33]">
-              <img loading="lazy" src={IMAGES.tenx?.servePrepStadium || IMAGES.baselineHero} alt="Baseline Vision coaching session" className="w-full h-full object-cover object-center" data-testid="baseline-device-photo" />
+            <div className="lg:col-span-7">
+              <BaselineCarousel />
             </div>
             <div className="lg:col-span-5">
               <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-3">{t.baseline.deviceEyebrow}</div>
