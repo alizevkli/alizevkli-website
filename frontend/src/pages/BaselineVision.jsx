@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
-import { IMAGES, BASELINE_SCREENSHOTS } from "../constants/images";
+import { IMAGES } from "../constants/images";
 import { SOCIAL } from "../constants/images";
 
 const VIDEO_SRCS = [
@@ -30,7 +30,7 @@ const FAQItem = ({ q, a, index }) => {
 };
 
 export default function BaselineVision() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   return (
     <div data-testid="page-baseline">
       <PageHero
@@ -183,23 +183,23 @@ export default function BaselineVision() {
               {t.baseline.screenshotLead}
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {BASELINE_SCREENSHOTS.map((s, i) => (
-              <Reveal key={s.src} delay={i * 80}>
-                <div className="group border border-[#F8FAFC]/10 overflow-hidden hover:border-[#B7FF00]/40 transition-colors">
-                  <div className="aspect-square overflow-hidden bg-[#0B1F33]">
-                    <img
-                      loading="lazy"
-                      src={s.src}
-                      alt={s.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="px-4 py-3 border-t border-[#F8FAFC]/10">
-                    <div className="text-[11px] uppercase tracking-[0.2em] text-[#B7FF00] font-medium">
-                      {lang === "tr" ? s.titleTR : s.title}
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { src: "/images/baseline/baseline-app-home.png", caption: "Antrenman ve Maç Modları" },
+              { src: "/images/baseline/baseline-match-stats.png", caption: "Maç İstatistikleri" },
+              { src: "/images/baseline/baseline-ground-strokes.png", caption: "Vuruş Analizi & Top Yerleşimi" },
+              { src: "/images/baseline/baseline-return-stats.png", caption: "Dönüş Analizi" },
+              { src: "/images/baseline/baseline-serve-stats.png", caption: "Servis Hızı & Yerleşimi" },
+            ].map((img, i) => (
+              <Reveal key={img.src} delay={i * 80}>
+                <div>
+                  <img
+                    loading="lazy"
+                    src={img.src}
+                    alt={img.caption}
+                    className="w-full rounded-xl object-contain"
+                  />
+                  <p className="text-sm text-gray-400 text-center mt-2">{img.caption}</p>
                 </div>
               </Reveal>
             ))}
