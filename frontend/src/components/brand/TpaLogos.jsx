@@ -197,7 +197,7 @@ export const FinalWordmark = ({
           fontWeight="700"
           fontSize="15"
           letterSpacing="10"
-          fill={accent}
+          fill={color}
         >
           ANALYSIS
         </text>
@@ -229,7 +229,7 @@ export const FinalWordmark = ({
         fontFamily="'Anton', sans-serif"
         fontSize="43"
         letterSpacing="2"
-        fill={accent}
+        fill={color}
       >
         ANALYSIS
       </text>
@@ -286,7 +286,7 @@ export const FinalMobileHeader = ({ theme = "dark" }) => {
           textTransform: "uppercase",
         }}
       >
-        Tennis Pro <span style={{ color: LIME }}>Analysis</span>
+        Tennis Pro Analysis
       </span>
     </div>
   );
