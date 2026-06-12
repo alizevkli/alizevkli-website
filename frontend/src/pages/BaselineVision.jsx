@@ -1,38 +1,149 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Plus, Minus } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
 import { IMAGES } from "../constants/images";
 import { SOCIAL } from "../constants/images";
 
-const VIDEO_SRCS = [
-  "https://drive.google.com/file/d/1HFPsD2YlrA2RA1L4TRvDYmLLaJ1DQEr1/preview",
-  "https://drive.google.com/file/d/1HIpvLWeZXVMUp3VrabOayl7zbGYeIQW-/preview",
+const SCREENSHOTS = [
+  { src: "/images/baseline/baseline-app-home.png",        captionTR: "Antrenman ve Maç Modları",          captionEN: "Training & Match Modes" },
+  { src: "/images/baseline/baseline-match-stats.png",     captionTR: "Maç İstatistikleri",                captionEN: "Match Statistics" },
+  { src: "/images/baseline/baseline-ground-strokes.png",  captionTR: "Vuruş Analizi & Top Yerleşimi",     captionEN: "Stroke Analysis & Ball Placement" },
+  { src: "/images/baseline/baseline-return-stats.png",    captionTR: "Dönüş Analizi",                     captionEN: "Return Analysis" },
+  { src: "/images/baseline/baseline-serve-stats.png",     captionTR: "Servis Hızı & Yerleşimi",           captionEN: "Serve Speed & Placement" },
 ];
-
 
 const FAQItem = ({ q, a, index }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="border-b border-[#F8FAFC]/10">
-      <button onClick={() => setOpen(v => !v)} className="w-full flex items-start justify-between gap-6 py-5 text-left group">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-start justify-between gap-6 py-5 text-left group"
+      >
         <div className="flex items-start gap-4">
-          <span className="font-anton text-[#B7FF00] text-sm shrink-0 mt-0.5">{String(index + 1).padStart(2, "0")}</span>
-          <span className={`text-sm md:text-base font-medium transition-colors ${open ? "text-white" : "text-white/85 group-hover:text-white"}`}>{q}</span>
+          <span className="font-anton text-[#B7FF00] text-sm shrink-0 mt-0.5">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className={`text-sm md:text-base font-medium transition-colors ${open ? "text-white" : "text-white/85 group-hover:text-white"}`}>
+            {q}
+          </span>
         </div>
-        <span className="shrink-0 mt-0.5 text-[#B7FF00]">{open ? <Minus size={16} /> : <Plus size={16} />}</span>
+        <span className="shrink-0 mt-0.5 text-[#B7FF00]">
+          {open ? <Minus size={16} /> : <Plus size={16} />}
+        </span>
       </button>
-      {open && <div className="pb-5 pl-9 pr-4"><p className="text-[#A7B0BA] leading-relaxed text-sm">{a}</p></div>}
+      {open && (
+        <div className="pb-5 pl-9 pr-4">
+          <p className="text-[#A7B0BA] leading-relaxed text-sm">{a}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const ScreenshotsCarousel = () => {
+  const { lang } = useLanguage();
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const touchStartX = useRef(null);
+  const resumeTimer = useRef(null);
+
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(() => setCurrent((c) => (c + 1) % SCREENSHOTS.length), 4000);
+    return () => clearInterval(timer);
+  }, [paused]);
+
+  const scheduleResume = () => {
+    clearTimeout(resumeTimer.current);
+    resumeTimer.current = setTimeout(() => setPaused(false), 2000);
+  };
+
+  const prev = () => {
+    setCurrent((c) => (c - 1 + SCREENSHOTS.length) % SCREENSHOTS.length);
+    setPaused(true);
+    scheduleResume();
+  };
+
+  const next = () => {
+    setCurrent((c) => (c + 1) % SCREENSHOTS.length);
+    setPaused(true);
+    scheduleResume();
+  };
+
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    setPaused(true);
+  };
+
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
+    touchStartX.current = null;
+    scheduleResume();
+  };
+
+  const slide = SCREENSHOTS[current];
+  const caption = lang === "tr" ? slide.captionTR : slide.captionEN;
+
+  return (
+    <div
+      className="relative max-w-sm mx-auto"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      <button
+        onClick={prev}
+        aria-label="Previous"
+        className="hidden md:flex absolute -left-14 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center border border-[#F8FAFC]/20 text-white hover:border-[#B7FF00]/50 hover:text-[#B7FF00] transition-colors z-10"
+      >
+        <ChevronLeft size={20} />
+      </button>
+
+      <img
+        key={slide.src}
+        src={slide.src}
+        alt={caption}
+        className="w-full object-contain rounded-2xl"
+      />
+
+      <p className="text-sm text-gray-400 text-center mt-3">{caption}</p>
+
+      <div className="flex justify-center gap-2 mt-4">
+        {SCREENSHOTS.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => { setCurrent(i); setPaused(true); scheduleResume(); }}
+            className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-[#B7FF00]" : "bg-[#F8FAFC]/30"}`}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      <button
+        onClick={next}
+        aria-label="Next"
+        className="hidden md:flex absolute -right-14 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center border border-[#F8FAFC]/20 text-white hover:border-[#B7FF00]/50 hover:text-[#B7FF00] transition-colors z-10"
+      >
+        <ChevronRight size={20} />
+      </button>
     </div>
   );
 };
 
 export default function BaselineVision() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+
   return (
     <div data-testid="page-baseline">
+
+      {/* 1. Hero */}
       <PageHero
         eyebrow={t.baseline.eyebrow}
         title={t.baseline.title}
@@ -40,28 +151,54 @@ export default function BaselineVision() {
         image={IMAGES.heroCourt}
       />
 
+      {/* 2. What is Baseline Vision */}
       <section className="py-20 md:py-28 px-5 md:px-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <Reveal>
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5 flex items-center gap-3">
+                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
+                {t.baseline.deviceEyebrow}
+              </div>
+              <h2 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl text-white leading-[0.95] mb-6">
+                {t.baseline.deviceTitle}
+              </h2>
+              <p className="text-[#A7B0BA] leading-relaxed">
+                {t.baseline.deviceLead}
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <div className="border border-[#B7FF00]/20 bg-[#0B1F33]/40 p-7 md:p-9">
+              <div className="w-6 h-px bg-[#B7FF00] mb-5" />
+              <p className="text-white/85 leading-relaxed text-sm md:text-base italic">
+                {t.baseline.credibility}
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3. Features — 6 cards 2×3 */}
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#F8FAFC]/10 border border-[#F8FAFC]/10">
-            {t.baseline.grid.map((g, i) => (
-              <Reveal key={g.label} delay={i * 50}>
-                <div className="bg-[#06141F] p-6 md:p-8 h-full group hover:bg-[#0B1F33] transition-colors">
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                      KPI · {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="w-1.5 h-1.5 bg-[#1FA463] group-hover:bg-[#B7FF00] transition-colors" />
-                  </div>
-                  <div className="font-anton uppercase text-2xl text-white mb-3">
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
+              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
+              {t.baseline.eyebrow}
+            </div>
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-10 leading-tight">
+              {lang === "tr" ? "Neler Takip Edilir?" : "What Gets Tracked?"}
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {t.baseline.grid.slice(0, 6).map((g, i) => (
+              <Reveal key={g.label} delay={i * 60}>
+                <div className="border border-[#F8FAFC]/10 bg-[#06141F] p-7 md:p-9 h-full hover:border-[#B7FF00]/30 transition-colors">
+                  <div className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">
                     {g.label}
                   </div>
-                  <p className="text-xs text-[#A7B0BA] leading-relaxed">{g.desc}</p>
-                  <div className="mt-6 h-1 bg-[#F8FAFC]/5 overflow-hidden">
-                    <div
-                      className="h-full bg-[#B7FF00]"
-                      style={{ width: `${45 + (i * 7) % 50}%` }}
-                    />
-                  </div>
+                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{g.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -69,152 +206,36 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
-        <div className="max-w-[1400px] mx-auto">
-          <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
-              {t.baseline.videoEyebrow}
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
-            <h2 className="font-anton uppercase text-4xl md:text-6xl text-white leading-[0.95] max-w-4xl">
-              {t.baseline.videoTitle}
-            </h2>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 text-[#A7B0BA] max-w-2xl">
-              {t.baseline.videoLead}
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-            {t.baseline.videos.map((video, i) => (
-              <Reveal key={video.title} delay={i * 120}>
-                <article className="bg-[#0B1F33] border border-[#F8FAFC]/10 overflow-hidden">
-                  <div className="aspect-video bg-black">
-                    <iframe
-                      src={VIDEO_SRCS[i]}
-                      title={video.title}
-                      className="w-full h-full"
-                      allow="autoplay"
-                      allowFullScreen
-                    />
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <h3 className="font-anton uppercase text-2xl md:text-3xl text-white">
-                      {video.title}
-                    </h3>
-                    <p className="mt-4 text-sm text-[#A7B0BA] leading-relaxed">
-                      {video.text}
-                    </p>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5">
-                {t.baseline.reportEyebrow}
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white leading-[0.95]">
-                {t.baseline.reportTitle}
-              </h2>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 text-[#A7B0BA] max-w-xl">
-                {t.baseline.reportLead}
-              </p>
-            </Reveal>
-          </div>
-          <Reveal delay={200}>
-            <div className="lg:col-span-5 relative aspect-square overflow-hidden border border-[#F8FAFC]/10">
-              <img
-                src={IMAGES.baselineHero}
-                alt="Player silhouette"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06141F] via-transparent to-transparent" />
-            </div>
-          </Reveal>
-        </div>
-
-        <div className="max-w-[1400px] mx-auto mt-12">
-          {t.hero.ctaPrimaryHref ? (
-            <a
-              href={t.hero.ctaPrimaryHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="baseline-cta"
-              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-            >
-              {t.hero.ctaPrimary} <ArrowRight size={16} />
-            </a>
-          ) : (
-            <Link
-              to="/contact"
-              data-testid="baseline-cta"
-              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-            >
-              {t.hero.ctaPrimary} <ArrowRight size={16} />
-            </Link>
-          )}
-        </div>
-      </section>
-      {/* Baseline Vision Screenshots */}
+      {/* 4. Screenshots carousel */}
       <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
+              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
               {t.baseline.screenshotEyebrow}
             </div>
-            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-3">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-3 leading-tight">
               {t.baseline.screenshotTitle}
             </h2>
-            <p className="text-[#A7B0BA] max-w-2xl mb-12">
+            <p className="text-[#A7B0BA] max-w-2xl mb-14">
               {t.baseline.screenshotLead}
             </p>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { src: "/images/baseline/baseline-app-home.png", caption: "Antrenman ve Maç Modları" },
-              { src: "/images/baseline/baseline-match-stats.png", caption: "Maç İstatistikleri" },
-              { src: "/images/baseline/baseline-ground-strokes.png", caption: "Vuruş Analizi & Top Yerleşimi" },
-              { src: "/images/baseline/baseline-return-stats.png", caption: "Dönüş Analizi" },
-              { src: "/images/baseline/baseline-serve-stats.png", caption: "Servis Hızı & Yerleşimi" },
-            ].map((img, i) => (
-              <Reveal key={img.src} delay={i * 80}>
-                <div>
-                  <img
-                    loading="lazy"
-                    src={img.src}
-                    alt={img.caption}
-                    className="w-full rounded-xl object-contain"
-                  />
-                  <p className="text-sm text-gray-400 text-center mt-2">{img.caption}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <ScreenshotsCarousel />
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* 5. FAQ */}
       <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/30">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-6 h-px bg-[#B7FF00]" />{t.baselineFaq.eyebrow}
+              <span className="inline-block w-6 h-px bg-[#B7FF00]" />
+              {t.baselineFaq.eyebrow}
             </div>
-            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-10">{t.baselineFaq.title}</h2>
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-10">
+              {t.baselineFaq.title}
+            </h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="border-t border-[#F8FAFC]/10">
@@ -223,16 +244,53 @@ export default function BaselineVision() {
               ))}
             </div>
           </Reveal>
-          <Reveal delay={200}>
-            <div className="mt-10">
-              <a href={SOCIAL.whatsappUrl} target="_blank" rel="noopener noreferrer"
-                className="tpa-btn-primary inline-flex items-center gap-2 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em]">
-                {t.baselineFaq.cta} <ArrowRight size={14} />
-              </a>
+        </div>
+      </section>
+
+      {/* 6. Contact CTA */}
+      <section className="py-20 md:py-24 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
+        <div className="max-w-[900px] mx-auto text-center">
+          <Reveal>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">
+              {t.baselineFaq.eyebrow}
+            </div>
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">
+              {t.baselineFaq.ctaBoxTitle}
+            </h2>
+            <p className="text-[#A7B0BA] max-w-xl mx-auto mb-10">
+              {t.baselineFaq.ctaBoxText}
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              {t.hero.ctaPrimaryHref ? (
+                <a
+                  href={t.hero.ctaPrimaryHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="baseline-cta"
+                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                >
+                  {t.hero.ctaPrimary} <ArrowRight size={16} />
+                </a>
+              ) : (
+                <Link
+                  to="/contact"
+                  data-testid="baseline-cta"
+                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+                >
+                  {t.hero.ctaPrimary} <ArrowRight size={16} />
+                </Link>
+              )}
+              <Link
+                to="/pricing"
+                className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
+              >
+                {t.nav.pricing} <ArrowRight size={16} />
+              </Link>
             </div>
           </Reveal>
         </div>
       </section>
+
     </div>
   );
 }

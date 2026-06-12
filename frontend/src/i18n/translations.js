@@ -78,8 +78,9 @@ export const translations = {
       reportEyebrow: "Output",
       reportTitle: "Every session, a report.",
       reportLead: "Players receive a structured progress report after each Baseline Vision session — KPI deltas, video timestamps, and the next training block priorities.",
+      credibility: "The Baseline Vision camera system is an analysis tool — an objective data source that supports Ali's coaching assessment.",
       screenshotEyebrow: "Real System Output",
-      screenshotTitle: "Real Data. From Real Sessions.",
+      screenshotTitle: "App Screenshots",
       screenshotLead: "These are real Baseline Vision screenshots from actual coaching sessions. This is exactly what your players see.",
       videos: [
         {
@@ -416,7 +417,7 @@ export const translations = {
       reportTitle: "Her seans, bir rapor.",
       reportLead: "Oyuncular, her Baseline Vision seansının ardından yapılandırılmış bir performans raporu alır — KPI değişimleri, video zaman damgaları ve bir sonraki antrenman bloğu öncelikleri.",
       screenshotEyebrow: "Gerçek Sistem Çıktısı",
-      screenshotTitle: "Gerçek Seanslardan Gerçek Veri.",
+      screenshotTitle: "Uygulama Ekran Görüntüleri",
       screenshotLead: "Bunlar gerçek antrenman seanslarından alınan gerçek Baseline Vision ekran görüntüleridir. Oyuncularınız tam olarak bunları görür.",
       videos: [
         {
