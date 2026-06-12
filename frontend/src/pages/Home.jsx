@@ -341,6 +341,7 @@ const PathwaysSection = () => {
           {t.pathways.blocks.map((b) => (
             <Reveal key={b.k}>
               <div className="tpa-card p-7 md:p-9 h-full">
+                {b.icon && <span className="block mb-2 text-lg">{b.icon}</span>}
                 <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{b.k}</h3>
                 <p className="text-sm text-[#A7B0BA] leading-relaxed">{b.v}</p>
               </div>
@@ -530,27 +531,6 @@ const VideoSection = () => {
 };
 
 
-const TenXPhotoStrip = () => (
-  <section className="border-t border-[#F8FAFC]/10 overflow-hidden">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
-      {[
-        { src: IMAGES.tenx?.nightServe, alt: "Night court serve — UTR Pro Series Sydney" },
-        { src: IMAGES.tenx?.redSmoke, alt: "TenX player entrance" },
-        { src: IMAGES.tenx?.netHandshake, alt: "Players at the net — Melbourne Park" },
-        { src: IMAGES.tenx?.rainCourt, alt: "Player on court in rain — MyUTR" },
-      ].map((photo, i) => (
-        <div key={i} className="relative aspect-video overflow-hidden group">
-          <img
-            src={photo.src}
-            alt={photo.alt}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-          />
-          <div className="absolute inset-0 bg-[#06141F]/40 group-hover:bg-[#06141F]/10 transition-colors duration-500" />
-        </div>
-      ))}
-    </div>
-  </section>
-);
 
 const TrustSection = () => {
   const partners = [
@@ -643,7 +623,6 @@ export default function Home() {
       <PathwaysSection />
       <AustraliaTurkeySection />
       <VideoSection />
-      <TenXPhotoStrip />
       <ContactCTA />
     </div>
   );
