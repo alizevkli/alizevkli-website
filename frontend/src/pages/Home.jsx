@@ -178,13 +178,13 @@ const BaselineCarousel = () => {
   }, []);
   return (
     <div className="w-full">
-      <div className="rounded-xl overflow-hidden w-full h-72 bg-[#0B1F33] relative">
+      <div className="rounded-xl overflow-hidden w-full bg-[#0B1F33]">
         {BASELINE_PROMO_IMAGES.map((src, i) => (
           <img
             key={src}
             src={src}
             alt={`Baseline Vision promo ${i + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"}`}
+            className={`w-full object-contain transition-opacity duration-700 ${i === current ? "block opacity-100" : "hidden opacity-0"}`}
           />
         ))}
       </div>
