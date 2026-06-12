@@ -50,7 +50,7 @@ const HeroSection = () => {
       >
         <img loading="lazy" src={IMAGES.heroCourt} alt="Tennis court overhead" className="w-full h-full object-cover" />
       </div>
-      <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,18,32,0.78)" }} />
+      <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,18,32,0.40)" }} />
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/85 via-[#06141F]/55 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F]/80 via-transparent to-transparent" />
       <div className="hidden md:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 rotate-180 [writing-mode:vertical-rl] text-[10px] uppercase tracking-[0.5em] text-[#A7B0BA]">
@@ -263,10 +263,10 @@ const StatsStrip = () => {
   const { lang } = useLanguage();
   const stats = lang === "tr"
     ? [
-        { val: "20+", label: "Yıl Koçluk" },
-        { val: "2", label: "Ülke — Avustralya & Türkiye" },
-        { val: "500+", label: "Oyuncu Gelişimi" },
-        { val: "3", label: "Uluslararası Sistem — ITF · UTR · TTF" },
+        { val: "20+", label: "🎾 YIL KOÇLUK DENEYİMİ" },
+        { val: "2", label: "🇦🇺 🇹🇷 AVUSTRALYA & TÜRKİYE" },
+        { val: "500+", label: "⚡ OYUNCU GELİŞTİRİLDİ" },
+        { val: "3", label: "🌍 ITF · UTR · TTF SİSTEMLERİ" },
       ]
     : [
         { val: "20+", label: "Years Coaching" },
