@@ -102,10 +102,9 @@ const HeroSection = () => {
               { src: "/images/logos/tennis-australia-logo-white.svg", alt: "Tennis Australia", invert: false },
               { src: LOGOS.utr, alt: "UTR Sports", invert: true },
               { src: LOGOS.baselineVision, alt: "Baseline Vision", invert: true },
-              { src: LOGOS.tenx, alt: "TenX", invert: true },
             ].map((logo) => (
               <img loading="lazy" key={logo.alt} src={logo.src} alt={logo.alt}
-                className={`max-h-10 md:max-h-12 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
+                className={`h-10 w-auto object-contain mx-auto opacity-85 hover:opacity-100 transition-opacity ${logo.invert ? "brightness-0 invert" : ""}`} />
             ))}
           </div>
         </Reveal>
@@ -517,7 +516,6 @@ const TrustSection = () => {
   const partners = [
     { name: "Marmara University", image: LOGOS.marmara, label: "Sports Science Degree" },
     { name: "ATPCA", image: LOGOS.atpca, label: "ATPCA Advanced Pro Level 2" },
-    { name: "Tennis Australia", image: LOGOS.tennisAustralia, label: "Tennis Australia Member" },
     { name: "TTF", image: LOGOS.ttf, label: "TTF Qualified Coach" },
     { name: "UTR Sports", image: LOGOS.utr, label: "UTR Tournament Director" },
     { name: "Baseline Vision", image: LOGOS.baselineVision, label: "Performance Analysis" },
