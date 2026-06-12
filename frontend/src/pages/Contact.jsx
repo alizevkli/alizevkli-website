@@ -9,7 +9,7 @@ export default function Contact() {
 
   const channels = [
     { Icon: Mail, label: t.contact.email, testId: "contact-email", href: "mailto:alizevkliali@gmail.com" },
-    { Icon: Phone, label: t.contact.phone, testId: "contact-phone", href: null },
+    { Icon: Phone, label: t.contact.phone, testId: "contact-phone", href: "tel:+61400963351" },
     {
       Icon: Instagram,
       label: t.contact.instagram,

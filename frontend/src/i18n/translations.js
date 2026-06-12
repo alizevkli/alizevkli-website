@@ -15,6 +15,7 @@ export const translations = {
       consulting: "AU Consulting",
       pricing: "Pricing",
       faq: "Baseline FAQ",
+      clubAcademy: "Club & Academy",
     },
     hero: {
       eyebrow: "Tennis Pro Analysis",
@@ -27,6 +28,7 @@ export const translations = {
       ctaPrimary: "Book a Session",
       ctaSecondary: "Explore Baseline Vision",
       scroll: "Scroll",
+      sidebar: "Tennis Pro Analysis · By Ali Zevkli",
     },
     proof: {
       title: "Credentials",
@@ -179,6 +181,16 @@ export const translations = {
         },
       },
     },
+    stats: {
+      years: "20+",
+      yearsLabel: "Years Coaching",
+      countries: "2",
+      countriesLabel: "Countries — Australia & Türkiye",
+      players: "500+",
+      playersLabel: "Players Developed",
+      systems: "3",
+      systemsLabel: "International Systems — ITF · UTR · TTF",
+    },
     video: {
       eyebrow: "In Motion",
       title: "Baseline Vision in Action",
@@ -203,7 +215,7 @@ export const translations = {
       title: "Let's improve your game.",
       lead: "Whether you're looking for coaching, performance analysis, Baseline Vision insights or tournament support, Tennis Pro Analysis can help you take the next step.",
       email: "alizevkliali@gmail.com",
-      phone: "Services — Coaching • Match Analysis • Baseline Vision • Tournaments",
+      phone: "+61 400 963 351",
       instagram: "Instagram — @tennisproanalysis",
       whatsapp: "WhatsApp — +61 400 963 351",
       cta: "Contact Ali",
@@ -338,6 +350,7 @@ export const translations = {
       turkiye2026: "Türkiye 2026",
       kulupAkademi: "Kulüp & Akademi",
       australiaBaglantisi: "Avustralya Bağlantısı",
+      clubAcademy: "Kulüp & Akademi",
     },
     hero: {
       eyebrow: "ALİ ZEVKLİ · TENNIS PRO ANALYSIS",
@@ -351,6 +364,7 @@ export const translations = {
       ctaPrimaryHref: "https://wa.me/61400963351",
       ctaSecondary: "Baseline Vision'ı İncele",
       scroll: "Kaydır",
+      sidebar: "Tennis Pro Analysis · Ali Zevkli",
     },
     proof: {
       title: "Yetkinlikler",
@@ -498,6 +512,16 @@ export const translations = {
         },
       },
     },
+    stats: {
+      years: "20+",
+      yearsLabel: "🎾 YIL KOÇLUK DENEYİMİ",
+      countries: "2",
+      countriesLabel: "🇦🇺 🇹🇷 AVUSTRALYA & TÜRKİYE",
+      players: "500+",
+      playersLabel: "⚡ OYUNCU GELİŞTİRİLDİ",
+      systems: "3",
+      systemsLabel: "🌍 ITF · UTR · TTF SİSTEMLERİ",
+    },
     video: {
       eyebrow: "Hareket Halinde",
       title: "Baseline Vision Aksiyonda",
@@ -522,7 +546,7 @@ export const translations = {
       title: "Oyununuzu birlikte geliştireceğiz.",
       lead: "Özel ders, video analiz, kulüp/akademi desteği veya Türkiye 2026 programı hakkında bilgi almak için WhatsApp üzerinden yazabilirsiniz.",
       email: "alizevkliali@gmail.com",
-      phone: "Hizmetler — Antrenörlük • Maç Analizi • Kulüp Danışmanlığı • Turnuvalar",
+      phone: "+61 400 963 351",
       instagram: "Instagram — @tennisproanalysis",
       whatsapp: "WhatsApp — +61 400 963 351",
       cta: "Ali ile İletişime Geç",

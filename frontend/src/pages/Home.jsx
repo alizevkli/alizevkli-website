@@ -52,7 +52,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/85 via-[#06141F]/55 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F]/80 via-transparent to-transparent" />
       <div className="hidden md:flex absolute left-4 lg:left-6 top-1/2 -translate-y-1/2 rotate-180 [writing-mode:vertical-rl] text-[10px] uppercase tracking-[0.5em] text-[#A7B0BA]">
-        Tennis Pro Analysis · By Ali Zevkli
+        {t.hero.sidebar}
       </div>
 
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 pb-16 md:pb-24 pt-32 w-full">
@@ -333,20 +333,13 @@ const TournamentSection = () => {
 
 
 const StatsStrip = () => {
-  const { lang } = useLanguage();
-  const stats = lang === "tr"
-    ? [
-        { val: "20+", label: "🎾 YIL KOÇLUK DENEYİMİ" },
-        { val: "2", label: "🇦🇺 🇹🇷 AVUSTRALYA & TÜRKİYE" },
-        { val: "500+", label: "⚡ OYUNCU GELİŞTİRİLDİ" },
-        { val: "3", label: "🌍 ITF · UTR · TTF SİSTEMLERİ" },
-      ]
-    : [
-        { val: "20+", label: "Years Coaching" },
-        { val: "2", label: "Countries — Australia & Türkiye" },
-        { val: "500+", label: "Players Developed" },
-        { val: "3", label: "International Systems — ITF · UTR · TTF" },
-      ];
+  const { t } = useLanguage();
+  const stats = [
+    { val: t.stats.years, label: t.stats.yearsLabel },
+    { val: t.stats.countries, label: t.stats.countriesLabel },
+    { val: t.stats.players, label: t.stats.playersLabel },
+    { val: t.stats.systems, label: t.stats.systemsLabel },
+  ];
 
   return (
     <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/60 py-10 px-5 md:px-10">
