@@ -299,7 +299,7 @@ export const translations = {
       title: "ANALİZ. GELİŞİM. ZAFER.",
       subtitle: "Avustralya ve Türkiye'de 20 yılı aşkın deneyime sahip uluslararası tenis antrenörü Ali Zevkli ile oyununuzu gerçek veriye dayalı antrenman ve maç analiziyle bir üst seviyeye taşıyın.",
       support: "🇦🇺 Avustralya • 🇹🇷 Türkiye • Uluslararası",
-      ctaPrimary: "İLETİŞİME GEÇ →",
+      ctaPrimary: "İLETİŞİME GEÇ",
       ctaSecondary: "Baseline Vision'ı İncele",
       scroll: "Kaydır",
     },
