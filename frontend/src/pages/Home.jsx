@@ -178,7 +178,7 @@ const BaselineCarousel = () => {
   }, []);
   return (
     <div className="w-full">
-      <div className="rounded-xl overflow-hidden w-full aspect-[16/10] bg-[#0B1F33] relative">
+      <div className="rounded-xl overflow-hidden w-full h-72 bg-[#0B1F33] relative">
         {BASELINE_PROMO_IMAGES.map((src, i) => (
           <img
             key={src}
