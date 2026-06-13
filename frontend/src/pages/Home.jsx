@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CheckCircle } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { Reveal } from "../components/Reveal";
 import { IMAGES, LOGOS } from "../constants/images";
@@ -171,36 +171,99 @@ const BaselineTeaser = () => {
   const { t } = useLanguage();
   const h = t.home;
   return (
-    <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <Reveal>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              Baseline Vision
+    <section className="bg-[#0d1b2a] py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <div className="max-w-[1400px] mx-auto">
+
+        {/* Top grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          {/* LEFT — text */}
+          <Reveal>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-4">
+                BASELINE VISION · TENNIS PRO ANALYSIS
+              </div>
+              <h2 className="font-anton uppercase text-4xl md:text-5xl text-white leading-[0.93] mb-6">
+                {h.bvTitle}
+              </h2>
+              <p className="text-[#A7B0BA] leading-relaxed mb-8">
+                {h.bvText}
+              </p>
+
+              {/* Feature pills 2×2 */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {h.bvPills.map((pill) => (
+                  <div
+                    key={pill.label}
+                    className="bg-[#06141F] border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 hover:border-[#B7FF00]/30 transition-colors"
+                  >
+                    <span className="text-lg leading-none">{pill.icon}</span>
+                    <span className="text-[11px] uppercase tracking-wide text-white/80 leading-tight">{pill.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/baseline-vision"
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#B7FF00] hover:gap-3 transition-all"
+                >
+                  {h.bvCta} <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to={h.bvCta2Href}
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors"
+                >
+                  {h.bvCta2} <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl text-white leading-[0.95] mb-6">
-              {h.bvTitle}
-            </h2>
-            <p className="text-[#A7B0BA] leading-relaxed mb-8">
-              {h.bvText}
-            </p>
-            <Link
-              to="/baseline-vision"
-              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.22em] text-[#B7FF00] hover:gap-3 transition-all"
+          </Reveal>
+
+          {/* RIGHT — overlapping screenshots */}
+          <Reveal delay={150}>
+            <div className="relative flex justify-center items-center min-h-[280px] md:min-h-[340px]">
+              {/* Lime glow */}
+              <div className="absolute inset-0 bg-lime-400/5 rounded-3xl blur-3xl pointer-events-none" />
+
+              {/* ITF badge */}
+              <div className="absolute top-2 right-2 z-20 flex items-center gap-1.5 bg-[#B7FF00] text-[#06141F] text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">
+                <CheckCircle size={11} /> {h.bvBadge}
+              </div>
+
+              {/* Back image */}
+              <img
+                src="/images/baseline/baseline-ground-strokes.png"
+                alt="Baseline Vision ground stroke data"
+                className="w-40 md:w-52 rounded-2xl shadow-2xl border border-white/10 opacity-80 -rotate-3 absolute right-4 bottom-4 z-0"
+                loading="lazy"
+              />
+
+              {/* Front image */}
+              <img
+                src="/images/baseline/baseline-match-stats.png"
+                alt="Baseline Vision match statistics"
+                className="w-48 md:w-64 rounded-2xl shadow-2xl border border-white/10 z-10 relative rotate-1"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Bottom stat bar */}
+        <div className="border-t border-white/10 mt-12 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {h.bvStats.map((stat, i) => (
+            <div
+              key={i}
+              className={`px-4 ${i > 0 ? "md:border-l border-white/10" : ""}`}
             >
-              {h.bvCta} <ArrowRight size={14} />
-            </Link>
-          </div>
-        </Reveal>
-        <Reveal delay={150}>
-          <img
-            src="/images/baseline/baseline-ground-strokes.png"
-            alt="Baseline Vision ground stroke analysis"
-            className="w-full max-h-80 rounded-2xl shadow-lg object-contain"
-            loading="lazy"
-          />
-        </Reveal>
+              <div className="font-anton text-white text-xl md:text-2xl uppercase leading-tight">{stat.top}</div>
+              <div className="text-[10px] uppercase tracking-widest text-[#A7B0BA] mt-1">{stat.bottom}</div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

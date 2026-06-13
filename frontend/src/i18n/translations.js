@@ -57,6 +57,21 @@ export const translations = {
       bvTitle: "WHAT IS BASELINE VISION?",
       bvText: "Baseline Vision is a modern camera and analysis system providing speed, ball placement, position, video replays and performance data. Ali Zevkli interprets this data through a coaching lens to create clear development priorities for each player.",
       bvCta: "See Baseline Vision →",
+      bvCta2: "View Sample Report →",
+      bvCta2Href: "/sample-report",
+      bvBadge: "ITF APPROVED SYSTEM",
+      bvPills: [
+        { icon: "📊", label: "Real-Time Statistics" },
+        { icon: "📹", label: "Video Replays" },
+        { icon: "🎯", label: "Ball Placement Analysis" },
+        { icon: "⚡", label: "Match Performance Report" },
+      ],
+      bvStats: [
+        { top: "Real-Time", bottom: "Performance Tracking" },
+        { top: "Video", bottom: "Replay & Download" },
+        { top: "Gamified", bottom: "Drill Workouts" },
+        { top: "ITF", bottom: "Approved System" },
+      ],
     },
     tpa: {
       eyebrow: "Tennis Pro Analysis",
@@ -452,6 +467,21 @@ export const translations = {
       bvTitle: "BASELINE VISION NEDİR?",
       bvText: "Baseline Vision; hız, top yerleşimi, pozisyon, video tekrarları ve performans verileri sunan modern bir kamera ve analiz sistemidir. Ali Zevkli bu verileri tenis koçluğu bakış açısıyla yorumlayarak oyuncuya net gelişim öncelikleri oluşturur.",
       bvCta: "Baseline Vision'ı İncele →",
+      bvCta2: "Örnek Raporu Gör →",
+      bvCta2Href: "/ornek-rapor",
+      bvBadge: "ITF ONAYLU SİSTEM",
+      bvPills: [
+        { icon: "📊", label: "Gerçek Zamanlı İstatistikler" },
+        { icon: "📹", label: "Video Tekrarları" },
+        { icon: "🎯", label: "Top Yerleşim Analizi" },
+        { icon: "⚡", label: "Maç Performans Raporu" },
+      ],
+      bvStats: [
+        { top: "Gerçek Zamanlı", bottom: "Performans Takibi" },
+        { top: "Video", bottom: "Tekrar & İndirme" },
+        { top: "Oyunlaştırılmış", bottom: "Drill Çalışmaları" },
+        { top: "ITF", bottom: "Onaylı Sistem" },
+      ],
     },
     tpa: {
       eyebrow: "Tennis Pro Analysis",
