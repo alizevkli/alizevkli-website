@@ -305,7 +305,7 @@ export const translations = {
     consulting: {
       eyebrow: "Australian Connection",
       title: "Taking the Right Step from Türkiye into Australian Tennis and Careers.",
-      lead: "Ali Zevkli — having lived in Australia for 10+ years, worked in the tennis sector, and served as a former Australian Border Force officer — helps Turkish coaches, players and professionals understand the Australian process more clearly.",
+      lead: "Ali Zevkli is an Australian-Turkish dual citizen who knows both countries from the inside — a competitive tennis player at WA Division 1 level with Peppermint Grove TC, who has played against UTR 9+ players, and as a former Australian Border Force officer brings firsthand knowledge of the Australian system to Turkish coaches, players and professionals.",
       heroDisclaimer: "This service is not formal migration or visa advice. Visa and legal migration matters are always referred to registered Australian migration consultants.",
       ctaBtn: "Write for Your Australia Roadmap",
       whoTitle: "Who is this for?",
@@ -676,7 +676,7 @@ export const translations = {
     consulting: {
       eyebrow: "AVUSTRALYA BAĞLANTISI",
       title: "TÜRKİYE'DEN AVUSTRALYA TENİS VE KARİYER DÜNYASINA DOĞRU ADIM.",
-      lead: "Ali Zevkli; Avustralya'da 10+ yıl yaşamış, tenis sektöründe çalışmış ve eski Avustralya Sınır Kuvvetleri (Australian Border Force) görevlisi olarak Türk antrenörler, oyuncular ve profesyoneller için Avustralya sürecini daha anlaşılır hale getirir.",
+      lead: "Ali Zevkli; Avustralya-Türkiye çift vatandaşı olarak her iki ülkeyi içeriden tanıyan, WA Division 1 seviyesinde Peppermint Grove TC formasıyla rekabetçi tenis oynamış, UTR 9+ oyunculara karşı sahaya çıkmış ve eski Avustralya Sınır Kuvvetleri (Australian Border Force) görevlisi olarak Türk antrenörler, oyuncular ve profesyoneller için Avustralya sürecini daha anlaşılır hale getirir.",
       heroDisclaimer: "Bu hizmet, resmi göçmenlik veya vize danışmanlığı değildir. Vize ve yasal göç konuları her zaman kayıtlı Avustralya göç danışmanlarına yönlendirilir.",
       ctaBtn: "Avustralya Yol Haritası İçin Yaz",
       whoTitle: "Kimler için?",
