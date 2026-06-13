@@ -43,8 +43,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-9">
             <Reveal>
-              <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6 flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
+              <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6">
                 {t.hero.eyebrow}
               </div>
             </Reveal>

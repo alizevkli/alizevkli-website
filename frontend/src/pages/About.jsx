@@ -112,7 +112,7 @@ export default function About() {
                     </div>
                     <ul className="space-y-2">
                       {exp.turkey.clubs.map((c) => (
-                        <li key={c} className="text-sm text-[#A7B0BA] flex items-start gap-2">
+                        <li key={c} className="text-sm text-[#A7B0BA] flex items-start gap-2 [text-decoration:none]">
                           <span className="text-[#B7FF00] mt-1 shrink-0">·</span>
                           {c}
                         </li>

@@ -80,19 +80,9 @@ export default function SampleReportTR() {
             </p>
           </Reveal>
           <Reveal delay={200}>
-            <div className="inline-block border border-lime-400/40 text-lime-400 text-[10px] uppercase tracking-[0.3em] px-4 py-2 mb-8 rounded">
+            <div className="inline-block border border-lime-400/40 text-lime-400 text-[10px] uppercase tracking-[0.3em] px-4 py-2 rounded">
               ÖRNEK RAPOR — TAMAMEN KURGUSAL OYUNCU VERİSİ
             </div>
-          </Reveal>
-          <Reveal delay={240}>
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-            >
-              Oyuncunuz İçin Rapor Talep Edin <ArrowRight size={16} />
-            </a>
           </Reveal>
         </div>
       </section>

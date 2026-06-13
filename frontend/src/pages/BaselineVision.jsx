@@ -105,12 +105,15 @@ const ScreenshotsCarousel = () => {
         <ChevronLeft size={20} />
       </button>
 
-      <img
-        key={slide.src}
-        src={slide.src}
-        alt={caption}
-        className="w-full object-contain rounded-2xl"
-      />
+      <div className="relative overflow-hidden rounded-2xl">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-[#0A1220] z-10 pointer-events-none" />
+        <img
+          key={slide.src}
+          src={slide.src}
+          alt={caption}
+          className="w-full object-contain"
+        />
+      </div>
 
       <p className="text-sm text-gray-400 text-center mt-3">{caption}</p>
 
@@ -179,12 +182,12 @@ export default function BaselineVision() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <div className="border border-[#B7FF00]/20 bg-[#0B1F33]/40 p-7 md:p-9">
-              <div className="w-6 h-px bg-[#B7FF00] mb-5" />
-              <p className="text-white/85 leading-relaxed text-sm md:text-base italic">
-                {t.baseline.credibility}
-              </p>
-            </div>
+            <img
+              src="/images/baseline/baseline-app-home.png"
+              alt="Baseline Vision app — training and match modes"
+              className="w-full max-w-xs mx-auto rounded-2xl shadow-2xl border border-white/10 object-contain"
+              loading="lazy"
+            />
           </Reveal>
         </div>
       </section>
