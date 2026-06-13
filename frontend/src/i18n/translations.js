@@ -178,8 +178,8 @@ export const translations = {
         "Baseline Vision Performance Specialist",
         "UTR Tournament Director",
         "Turkish ↔ English Translation & Interpretation — NAATI-informed training (RMIT 2020)",
-        "Cert III in Disability (CHC30408)",
-        "Working With Children Check — WA (Valid 2029)",
+        "Certificate III in Disability (CHC30408)",
+        "Working With Children Check — WA (Valid until 2029)",
         "English & Turkish — Professional Level",
       ],
       experience: {
@@ -550,6 +550,8 @@ export const translations = {
         "UTR Turnuva Direktörü",
         "Türkçe ↔ İngilizce NAATI Çeviri Eğitimi (RMIT 2020)",
         "İngilizce & Türkçe — Profesyonel Düzey",
+        "Engelli Bireylerle Çalışma Sertifikası (CHC30408)",
+        "Çocuklarla Çalışma İzni — WA (2029'a kadar geçerli)",
       ],
       experience: {
         title: "Antrenörlük Kariyeri — 20+ Yıl",
