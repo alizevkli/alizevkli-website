@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -151,8 +150,19 @@ export default function BaselineVision() {
         image={IMAGES.heroCourt}
       />
 
-      {/* 2. What is Baseline Vision */}
-      <section className="py-20 md:py-28 px-5 md:px-10">
+      {/* 2. Positioning text */}
+      <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[900px] mx-auto">
+          <Reveal>
+            <p className="text-base md:text-lg text-[#A7B0BA] leading-relaxed">
+              {t.baseline.positioningText}
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3. What is Baseline Vision */}
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Reveal>
             <div>
@@ -179,7 +189,7 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      {/* 3. Features — 6 cards 2×3 */}
+      {/* 4. Features — 6 cards 2×3 */}
       <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
@@ -206,8 +216,38 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      {/* 4. Screenshots carousel */}
-      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      {/* 5. How Does It Work? */}
+      <section id="how-it-works" className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto">
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
+              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
+              {t.baseline.eyebrow}
+            </div>
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-10 leading-tight">
+              {t.baseline.howTitle}
+            </h2>
+          </Reveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {t.baseline.howSteps.map((step, i) => (
+              <Reveal key={i} delay={i * 80}>
+                <div className="border border-[#F8FAFC]/10 bg-[#06141F] p-7 h-full hover:border-[#B7FF00]/30 transition-colors">
+                  <div className="font-anton text-[#B7FF00] text-4xl mb-4">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{step.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Screenshots carousel */}
+      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -225,7 +265,7 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      {/* 5. FAQ */}
+      {/* 7. FAQ */}
       <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/30">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
@@ -247,7 +287,7 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      {/* 6. Contact CTA */}
+      {/* 8. Contact CTA */}
       <section className="py-20 md:py-24 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto text-center">
           <Reveal>
@@ -261,31 +301,21 @@ export default function BaselineVision() {
               {t.baselineFaq.ctaBoxText}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              {t.hero.ctaPrimaryHref ? (
-                <a
-                  href={t.hero.ctaPrimaryHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid="baseline-cta"
-                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-                >
-                  {t.hero.ctaPrimary} <ArrowRight size={16} />
-                </a>
-              ) : (
-                <Link
-                  to="/contact"
-                  data-testid="baseline-cta"
-                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
-                >
-                  {t.hero.ctaPrimary} <ArrowRight size={16} />
-                </Link>
-              )}
-              <Link
-                to="/pricing"
+              <a
+                href={SOCIAL.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="baseline-cta"
+                className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                {t.baseline.ctaPrimary} <ArrowRight size={16} />
+              </a>
+              <a
+                href="#how-it-works"
                 className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
               >
-                {t.nav.pricing} <ArrowRight size={16} />
-              </Link>
+                {t.baseline.howTitle} <ArrowRight size={16} />
+              </a>
             </div>
           </Reveal>
         </div>

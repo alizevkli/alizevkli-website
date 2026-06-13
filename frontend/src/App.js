@@ -19,6 +19,7 @@ import TennisInEnglish from "./pages/TennisInEnglish";
 import AustraliaConsulting from "./pages/AustraliaConsulting";
 import Pricing from "./pages/Pricing";
 import BaselineVisionFAQ from "./pages/BaselineVisionFAQ";
+import SampleReport from "./pages/SampleReport";
 
 function AppInner() {
   return (
@@ -40,6 +41,7 @@ function AppInner() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/baseline-vision-faq" element={<BaselineVisionFAQ />} />
+          <Route path="/sample-report" element={<SampleReport />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

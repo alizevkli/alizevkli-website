@@ -47,6 +47,9 @@ const META = {
     en: { title: "Contact Ali Zevkli — Tennis Pro Analysis", description: "Book a coaching session, request performance analysis or discuss Australia–Türkiye pathways. Contact via WhatsApp or email." },
     tr: { title: "İletişim — Ali Zevkli Tennis Pro Analysis", description: "Antrenman seansı rezervasyonu, performans analizi talebi veya Avustralya–Türkiye gelişim yolları hakkında iletişime geçin." },
   },
+  "/sample-report": {
+    en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "A sample Baseline Vision-supported player development report showing how Tennis Pro Analysis turns session data and coaching observation into clear training priorities." },
+  },
   "/tournament": {
     en: { title: "Tournament & Event Management | Tennis Pro Analysis", description: "Tennis tournament planning, scheduling, draw management and event delivery by Ali Zevkli." },
     tr: { title: "Turnuva ve Etkinlik Yönetimi | Tennis Pro Analysis", description: "Ali Zevkli tarafından tenis turnuvası planlama, zamanlama, kura yönetimi ve etkinlik organizasyonu." },
