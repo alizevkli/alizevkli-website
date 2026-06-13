@@ -17,7 +17,7 @@ export default function Contact() {
     <div data-testid="page-contact">
 
       {/* Hero */}
-      <section className="relative pt-36 md:pt-44 pb-16 md:pb-20 px-5 md:px-10 bg-[#06141F]">
+      <section className="relative pt-36 md:pt-44 pb-8 md:pb-10 px-5 md:px-10 bg-[#06141F]">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6 flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function Contact() {
       </section>
 
       {/* Contact cards */}
-      <section className="py-16 md:py-20 px-5 md:px-10">
+      <section className="pt-8 pb-16 md:pt-10 md:pb-20 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 

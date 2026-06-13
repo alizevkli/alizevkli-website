@@ -84,7 +84,7 @@ export const Navbar = () => {
   const afterDropdown = lang === "tr" ? mainLinks.slice(1) : mainLinks.slice(3);
 
   const linkClass = ({ isActive }) =>
-    `relative text-[11px] uppercase tracking-[0.18em] transition-colors whitespace-nowrap ${
+    `relative text-[10px] uppercase tracking-[0.12em] transition-colors whitespace-nowrap ${
       isActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
     }`;
 
@@ -96,7 +96,7 @@ export const Navbar = () => {
           scrolled ? "bg-[#06141F]/92 backdrop-blur-xl border-b border-[#F8FAFC]/10" : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-2 overflow-visible">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-2 overflow-visible">
           <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 shrink-0">
             <img src="/images/logos/tpa-logo-icon.png" alt="Tennis Pro Analysis" className="h-11 w-auto" />
             <span className="hidden sm:block">
@@ -104,7 +104,7 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 min-w-0">
+          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 min-w-0">
             {beforeDropdown.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
                 {l.label}
@@ -115,7 +115,7 @@ export const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setServicesOpen((v) => !v)}
-                className={`relative text-[11px] uppercase tracking-[0.18em] transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
+                className={`relative text-[10px] uppercase tracking-[0.12em] transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
                   isServicesActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -153,7 +153,7 @@ export const Navbar = () => {
             <LanguageToggle />
             <Link
               to="/contact"
-              className="tpa-btn-primary px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em]"
+              className="tpa-btn-primary px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em]"
             >
               {t.nav.book}
             </Link>
