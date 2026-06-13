@@ -1,17 +1,15 @@
-import { ArrowRight, ChevronLeft, ChevronRight, Plus, Minus } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { ArrowRight, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { PageHero } from "../components/PageHero";
 import { Reveal } from "../components/Reveal";
 import { IMAGES } from "../constants/images";
 import { SOCIAL } from "../constants/images";
 
-const SCREENSHOTS = [
-  { src: "/images/baseline/baseline-app-home.png",        captionTR: "Antrenman ve Maç Modları",          captionEN: "Training & Match Modes" },
-  { src: "/images/baseline/baseline-match-stats.png",     captionTR: "Maç İstatistikleri",                captionEN: "Match Statistics" },
-  { src: "/images/baseline/baseline-ground-strokes.png",  captionTR: "Vuruş Analizi & Top Yerleşimi",     captionEN: "Stroke Analysis & Ball Placement" },
-  { src: "/images/baseline/baseline-return-stats.png",    captionTR: "Dönüş Analizi",                     captionEN: "Return Analysis" },
-  { src: "/images/baseline/baseline-serve-stats.png",     captionTR: "Servis Hızı & Yerleşimi",           captionEN: "Serve Speed & Placement" },
+const STACKED_SCREENSHOTS = [
+  { src: "/images/baseline/baseline-app-home.png",       captionTR: "Antrenman ve Maç Modları",   captionEN: "Training & Match Modes" },
+  { src: "/images/baseline/baseline-return-stats.png",   captionTR: "Dönüş Analizi",              captionEN: "Return Analysis" },
+  { src: "/images/baseline/baseline-serve-stats.png",    captionTR: "Servis Hızı & Yerleşimi",    captionEN: "Serve Speed & Placement" },
 ];
 
 const FAQItem = ({ q, a, index }) => {
@@ -39,102 +37,6 @@ const FAQItem = ({ q, a, index }) => {
           <p className="text-[#A7B0BA] leading-relaxed text-sm">{a}</p>
         </div>
       )}
-    </div>
-  );
-};
-
-const ScreenshotsCarousel = () => {
-  const { lang } = useLanguage();
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const touchStartX = useRef(null);
-  const resumeTimer = useRef(null);
-
-  useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(() => setCurrent((c) => (c + 1) % SCREENSHOTS.length), 4000);
-    return () => clearInterval(timer);
-  }, [paused]);
-
-  const scheduleResume = () => {
-    clearTimeout(resumeTimer.current);
-    resumeTimer.current = setTimeout(() => setPaused(false), 2000);
-  };
-
-  const prev = () => {
-    setCurrent((c) => (c - 1 + SCREENSHOTS.length) % SCREENSHOTS.length);
-    setPaused(true);
-    scheduleResume();
-  };
-
-  const next = () => {
-    setCurrent((c) => (c + 1) % SCREENSHOTS.length);
-    setPaused(true);
-    scheduleResume();
-  };
-
-  const onTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-    setPaused(true);
-  };
-
-  const onTouchEnd = (e) => {
-    if (touchStartX.current === null) return;
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
-    touchStartX.current = null;
-    scheduleResume();
-  };
-
-  const slide = SCREENSHOTS[current];
-  const caption = lang === "tr" ? slide.captionTR : slide.captionEN;
-
-  return (
-    <div
-      className="relative max-w-sm mx-auto"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
-    >
-      <button
-        onClick={prev}
-        aria-label="Previous"
-        className="hidden md:flex absolute -left-14 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center border border-[#F8FAFC]/20 text-white hover:border-[#B7FF00]/50 hover:text-[#B7FF00] transition-colors z-10"
-      >
-        <ChevronLeft size={20} />
-      </button>
-
-      <div className="relative overflow-hidden rounded-2xl">
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#0A1220] z-10 pointer-events-none" />
-        <img
-          key={slide.src}
-          src={slide.src}
-          alt={caption}
-          className="w-full object-contain"
-        />
-      </div>
-
-      <p className="text-sm text-gray-400 text-center mt-3">{caption}</p>
-
-      <div className="flex justify-center gap-2 mt-4">
-        {SCREENSHOTS.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => { setCurrent(i); setPaused(true); scheduleResume(); }}
-            className={`w-2 h-2 rounded-full transition-colors ${i === current ? "bg-[#B7FF00]" : "bg-[#F8FAFC]/30"}`}
-            aria-label={`Slide ${i + 1}`}
-          />
-        ))}
-      </div>
-
-      <button
-        onClick={next}
-        aria-label="Next"
-        className="hidden md:flex absolute -right-14 top-1/2 -translate-y-1/2 w-10 h-10 items-center justify-center border border-[#F8FAFC]/20 text-white hover:border-[#B7FF00]/50 hover:text-[#B7FF00] transition-colors z-10"
-      >
-        <ChevronRight size={20} />
-      </button>
     </div>
   );
 };
@@ -264,7 +166,52 @@ export default function BaselineVision() {
               {t.baseline.screenshotLead}
             </p>
           </Reveal>
-          <ScreenshotsCarousel />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+            {/* LEFT — 2 overlapping screenshots */}
+            <Reveal>
+              <div className="relative flex justify-center items-center min-h-[300px] md:min-h-[380px]">
+                <div className="absolute inset-0 bg-lime-400/5 rounded-3xl blur-3xl pointer-events-none" />
+                {/* Back image */}
+                <img
+                  src="/images/baseline/baseline-ground-strokes.png"
+                  alt="Baseline Vision ground stroke analysis"
+                  className="w-52 rounded-2xl shadow-2xl border border-white/10 opacity-80 absolute -right-4 md:-right-8 top-8 z-0"
+                  loading="lazy"
+                />
+                {/* Front image */}
+                <img
+                  src="/images/baseline/baseline-match-stats.png"
+                  alt="Baseline Vision match statistics"
+                  className="w-64 rounded-2xl shadow-2xl border border-white/10 z-10 relative"
+                  loading="lazy"
+                />
+              </div>
+            </Reveal>
+
+            {/* RIGHT — 3 stacked screenshots */}
+            <Reveal delay={120}>
+              <div className="flex flex-col gap-4">
+                {STACKED_SCREENSHOTS.map((item) => (
+                  <div key={item.src}>
+                    <div className="relative overflow-hidden rounded-xl">
+                      <div className="absolute top-0 left-0 right-0 h-14 bg-[#0B1F33] z-10 pointer-events-none" />
+                      <img
+                        src={item.src}
+                        alt={lang === "tr" ? item.captionTR : item.captionEN}
+                        className="w-full rounded-xl border border-white/10"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="text-xs text-gray-400 mt-1">
+                      {lang === "tr" ? item.captionTR : item.captionEN}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+          </div>
         </div>
       </section>
 
