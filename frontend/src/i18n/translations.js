@@ -166,7 +166,7 @@ export const translations = {
       eyebrow: "Founder",
       title: "Ali Zevkli",
       role: "International Tennis Coach · Performance Analyst · Founder of Tennis Pro Analysis",
-      lead: "International tennis coach, performance analyst and founder of Tennis Pro Analysis. Ali combines on-court coaching experience with video analysis, match statistics and Baseline Vision technology to help players understand their game clearly, train with purpose and improve faster.",
+      lead: "Australian-Turkish dual citizen, international tennis coach and performance analysis specialist. Ali began his coaching career in Istanbul and has since worked across clubs, academies and luxury resorts in Turkey, and as a club director, performance coach and founder of his own tennis business in Perth and Melbourne, Australia. He competed at WA Division 1 level with Peppermint Grove TC, playing against UTR 9+ players. Between 2017 and 2021 he served as an Australian Border Force officer in visa and border operations — discipline, reliability and professionalism are the lasting qualities from that experience. Today he combines traditional coaching with Baseline Vision camera analysis, match statistics and data-driven development plans.",
       ctaProfile: "Read Founder Profile",
       affiliationsTitle: "Qualifications & Affiliations",
       creds: [
@@ -537,7 +537,7 @@ export const translations = {
       eyebrow: "Kurucu",
       title: "Ali Zevkli",
       role: "ULUSLARARASI TENİS ANTRENÖRÜ · PERFORMANS ANALİSTİ · TENNİS PRO ANALYSİS KURUCUSU",
-      lead: "Uluslararası tenis antrenörü, performans analisti ve Tennis Pro Analysis'in kurucusu. Ali Zevkli, kort üzerindeki antrenörlük deneyimini video analizi, maç istatistikleri ve Baseline Vision teknolojisiyle birleştirerek oyuncuların oyunlarını net biçimde anlamalarına, amaçlı antrenman yapmalarına ve daha hızlı gelişmelerine yardımcı olur.",
+      lead: "Avustralya-Türkiye çift vatandaşı, uluslararası tenis antrenörü ve performans analizi uzmanı. Kariyerine İstanbul'da başladı; Türkiye'de kulüp, akademi ve lüks resort ortamlarında, Avustralya'da ise Perth ve Melbourne'da kulüp direktörlüğü, performans antrenörlüğü ve kendi tenis işletmesinin kuruculuğunu yaptı. WA Division 1 seviyesinde Peppermint Grove TC formasıyla rekabetçi tenis oynadı ve UTR 9+ oyunculara karşı sahaya çıktı. 2017-2021 yılları arasında Avustralya Sınır Gücü'nde (Australian Border Force) vize ve sınır operasyonlarında görev yaptı — disiplin, güvenilirlik ve profesyonellik bu deneyimin kalıcı kazanımlarıdır. Bugün klasik antrenörlüğü Baseline Vision kamera analizi, maç istatistikleri ve veriye dayalı gelişim planlarıyla birleştiriyor.",
       ctaProfile: "Kurucu Profilini İncele",
       affiliationsTitle: "Yetkinlikler & Üyelikler",
       creds: [
