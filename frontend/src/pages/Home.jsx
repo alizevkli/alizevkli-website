@@ -278,18 +278,11 @@ const CoachingSection = () => {
           <SectionHeader eyebrow={t.coaching.eyebrow} title={t.coaching.title} lead={t.coaching.lead} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {t.coaching.tiers.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 80}>
+          {t.coaching.blocks.slice(0, 3).map((block, i) => (
+            <Reveal key={block.k} delay={i * 80}>
               <div className="tpa-card p-7 md:p-9 h-full flex flex-col">
-                <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-3">{tier.name}</h3>
-                <p className="text-sm text-[#A7B0BA] leading-relaxed mb-6">{tier.desc}</p>
-                <ul className="space-y-2 mt-auto">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm text-white/90">
-                      <span className="mt-1 w-1.5 h-1.5 bg-[#B7FF00] shrink-0" />{f}
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="font-anton uppercase text-3xl md:text-4xl text-white mb-3">{block.k}</h3>
+                <p className="text-sm text-[#A7B0BA] leading-relaxed">{block.v}</p>
               </div>
             </Reveal>
           ))}
@@ -362,18 +355,17 @@ const PathwaysSection = () => {
       <div className="relative max-w-[1400px] mx-auto">
         <SectionHeader eyebrow={t.pathways.eyebrow} title={t.pathways.title} lead={t.pathways.lead} />
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
-          {t.pathways.blocks.map((b) => (
-            <Reveal key={b.k}>
+          {t.pathways.services.slice(0, 3).map((svc) => (
+            <Reveal key={svc.name}>
               <div className="tpa-card p-7 md:p-9 h-full">
-                {b.icon && <span className="block mb-2 text-lg">{b.icon}</span>}
-                <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{b.k}</h3>
-                <p className="text-sm text-[#A7B0BA] leading-relaxed">{b.v}</p>
+                <h3 className="font-anton uppercase text-2xl md:text-3xl text-white mb-3">{svc.name}</h3>
+                <p className="text-sm text-[#A7B0BA] leading-relaxed">{svc.desc}</p>
               </div>
             </Reveal>
           ))}
         </div>
         <Reveal delay={300}>
-          <p className="mt-10 max-w-3xl text-xs uppercase tracking-[0.18em] text-[#A7B0BA] border-l-2 border-[#1FA463] pl-4">{t.pathways.disclaimer}</p>
+          <p className="mt-10 max-w-3xl text-xs uppercase tracking-[0.18em] text-[#A7B0BA] border-l-2 border-[#1FA463] pl-4">{t.pathways.locationText}</p>
         </Reveal>
       </div>
     </section>
