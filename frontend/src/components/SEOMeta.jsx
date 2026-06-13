@@ -48,7 +48,7 @@ const META = {
     tr: { title: "İletişim — Ali Zevkli Tennis Pro Analysis", description: "Antrenman seansı rezervasyonu, performans analizi talebi veya Avustralya–Türkiye gelişim yolları hakkında iletişime geçin." },
   },
   "/sample-report": {
-    en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "A sample Baseline Vision-supported player development report showing how Tennis Pro Analysis turns session data and coaching observation into clear training priorities." },
+    en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "See how Tennis Pro Analysis turns Baseline Vision session data and coaching observation into clear training priorities for players, parents and clubs." },
   },
   "/ornek-rapor": {
     tr: { title: "Örnek Oyuncu Gelişim Raporu | Tennis Pro Analysis", description: "Tennis Pro Analysis'in Baseline Vision destekli oyuncu gelişim raporunun nasıl hazırlandığını gösteren örnek rapor." },

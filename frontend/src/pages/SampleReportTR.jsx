@@ -51,6 +51,15 @@ const OrnekEtiketi = () => (
   </div>
 );
 
+const DrillCard = ({ drill }) => (
+  <div className="mt-4 border border-lime-400/30 bg-lime-400/5 rounded-xl p-4">
+    <span className="text-[10px] uppercase tracking-[0.3em] text-lime-400 font-bold block mb-1">
+      ÖNERİLEN DRİLL
+    </span>
+    <p className="text-white/90 text-sm">{drill}</p>
+  </div>
+);
+
 export default function SampleReportTR() {
   return (
     <div data-testid="page-ornek-rapor" className="bg-[#0A1220] text-white">
@@ -82,6 +91,21 @@ export default function SampleReportTR() {
           <Reveal delay={200}>
             <div className="inline-block border border-lime-400/40 text-lime-400 text-[10px] uppercase tracking-[0.3em] px-4 py-2 rounded">
               ÖRNEK RAPOR — TAMAMEN KURGUSAL OYUNCU VERİSİ
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 1b. Rapor Kapak Kartı */}
+      <section className="py-8 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[900px] mx-auto">
+          <Reveal>
+            <div className="border-2 border-lime-400 rounded-2xl p-8 bg-[#0d1b2a]">
+              <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-3">TENNIS PRO ANALYSIS</div>
+              <h2 className="font-black text-2xl text-white mb-3 leading-tight">ÖRNEK OYUNCU GELİŞİM RAPORU</h2>
+              <p className="text-sm text-[#A7B0BA] mb-2">Oyuncu: Kurgusal ITF Junior Hedefi Oyuncusu</p>
+              <p className="text-sm text-[#A7B0BA] mb-2">Seans: Baseline Vision Destekli Maç Performans Değerlendirmesi</p>
+              <p className="text-sm text-[#B7FF00]">Odak: Hata azaltma · backhand güveni · servis tutarlılığı</p>
             </div>
           </Reveal>
         </div>
@@ -178,9 +202,10 @@ export default function SampleReportTR() {
                   MAÇ PERFORMANS ÖZETİ
                 </h2>
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  Oyuncu maç boyunca güçlü bir rekabet isteği sergiledi. %62 kazanılan puan oranı genel performansın olumlu olduğunu gösteriyor; ancak rakibe kıyasla yüksek hata sayısı (13'e karşı 4) temel gelişim alanını ortaya koyuyor: tarafsız rallilerde gereksiz hataları azaltmak. 3 çift hata, baskı altında servis tutarlılığının geliştirilmesi gerektiğine işaret ediyor. %59 servis puanı kazanma oranı olumlu bir başlangıç noktası.
+                  Oyuncu maç boyunca güçlü bir rekabet isteği sergiledi. %62 kazanılan puan oranı genel performansın olumlu olduğunu gösteriyor; ancak rakibe kıyasla yüksek hata sayısı (13'e karşı 4) temel gelişim alanını ortaya koyuyor: nötr rallilerde gereksiz hataları azaltmak. 3 çift hata, baskı altında servis tutarlılığının geliştirilmesi gerektiğine işaret ediyor. %59 servis puanı kazanma oranı olumlu bir başlangıç noktası.
                 </p>
-                <KoclukOnceligi text="Temel Öncelik: Agresif oyun denemeden önce tarafsız rallilerdeki gereksiz hataları azalt." />
+                <KoclukOnceligi text="Temel Öncelik: Agresif paternlere geçmeden önce nötr rallilerdeki gereksiz hataları azalt." />
+                <DrillCard drill="20 toplu derin çapraz ralli + hata limiti" />
               </div>
             </Reveal>
           </div>
@@ -209,6 +234,7 @@ export default function SampleReportTR() {
                   Vuruş performans verileri ortalama 90 km/s ve maksimum 138 km/s hız gösteriyor — ITF Junior seviyesini hedefleyen 16 yaşındaki bir oyuncu için uygun. Top yerleşimi %61 forehand, %39 backhand ağırlıklı; bu backhand tarafından kaçınma eğilimini ortaya koyuyor. 47 cm file üzeri geçiş yüksekliği güvenli olmakla birlikte kısa toplarda daha agresif olunabilir. Top yerleşim haritası topların büyük çoğunluğunun orta kort bölgesine düştüğünü gösteriyor — ITF Junior seviyesinde fark yaratacak olan daha derin top yerleşimi olacak.
                 </p>
                 <KoclukOnceligi text="Temel Öncelik: Backhand tarafında güven geliştir ve çapraz desenlerde derinliği artır." />
+                <DrillCard drill="Backhand hedef bölgeli çapraz ralli + derinlik bonusu" />
               </div>
             </Reveal>
             <Reveal className="md:order-1">
@@ -265,6 +291,7 @@ export default function SampleReportTR() {
                   Ortalama 165 km/s, maksimum 182 km/s birinci servis hızı bu yaş grubu için güçlü bir silah niteliği taşıyor ve ITF Junior seviyesinde rekabet avantajı sağlayacak. Ancak %50'lik birinci servis isabet oranı geliştirilmeli — birinci servisin yarısını kaçırmak ikinci servis üzerinde gereksiz baskı yaratıyor. Servis yerleşimi %40/%40/%20 dağılım gösteriyor; daha güçlü rakiplere karşı daha fazla çeşitlilik ve gizlilik gerekecek. İkinci servis tutarlılığı bir sonraki turnuva bloğundan önce öncelikli antrenman konusu olmalı.
                 </p>
                 <KoclukOnceligi text="Temel Öncelik: Birinci servis isabet oranını %65+ seviyesine çıkar ve ikinci servisi güvenilir bir silaha dönüştür." />
+                <DrillCard drill="10 hedefli birinci servis + 10 spinli ikinci servis baskı oyunu" />
               </div>
             </Reveal>
           </div>
@@ -291,7 +318,7 @@ export default function SampleReportTR() {
               {
                 num: "01",
                 title: "Ralli Tutarlılığı & Derinlik",
-                text: "Servis çizgisinin ötesine düşen güvenilir çapraz taban çizgisi rallisi oluştur. Yön değiştirmeden önce tarafsız top toleransına odaklan. Hedef: 20 toplu derin çapraz ralli tutarlılığı.",
+                text: "Servis çizgisinin ötesine düşen güvenilir çapraz taban çizgisi rallisi oluştur. Yön değiştirmeden önce nötr top toleransına odaklan. Hedef: 20 toplu derin çapraz ralli tutarlılığı.",
               },
               {
                 num: "02",
