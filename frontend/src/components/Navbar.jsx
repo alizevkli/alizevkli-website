@@ -96,15 +96,15 @@ export const Navbar = () => {
           scrolled ? "bg-[#06141F]/92 backdrop-blur-xl border-b border-[#F8FAFC]/10" : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
-          <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 min-w-0">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-2 overflow-visible">
+          <Link to="/" data-testid="nav-logo" className="flex items-center gap-3 shrink-0">
             <img src="/images/logos/tpa-logo-icon.png" alt="Tennis Pro Analysis" className="h-11 w-auto" />
             <span className="hidden sm:block">
               <FinalWordmark height={30} />
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 min-w-0">
             {beforeDropdown.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
                 {l.label}
@@ -149,7 +149,7 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <LanguageToggle />
             <Link
               to="/contact"

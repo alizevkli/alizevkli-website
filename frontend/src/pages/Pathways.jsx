@@ -196,17 +196,7 @@ export default function Pathways() {
         </div>
       </section>
 
-      {/* 7. Location */}
-      <section className="py-10 md:py-12 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/30">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row gap-5 items-start">
-          <div className="shrink-0">
-            <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-1">{p.locationTitle}</div>
-          </div>
-          <p className="text-sm text-[#A7B0BA] leading-relaxed">{p.locationText}</p>
-        </div>
-      </section>
-
-      {/* 8. Contact CTA */}
+      {/* 7. Contact CTA */}
       <section className="py-20 md:py-24 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto text-center">
           <Reveal>
