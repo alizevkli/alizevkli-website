@@ -4,8 +4,8 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const META = {
   "/": {
-    en: { title: "Tennis Pro Analysis · Tennis Performance. Measured.", description: "International tennis coach Ali Zevkli — performance coaching, Baseline Vision match analysis, Australia–Türkiye pathways. 20+ years across Perth, Melbourne and Istanbul." },
-    tr: { title: "Ali Zevkli | Tenis Antrenörü ve Performans Analizi | Türkiye", description: "Ali Zevkli, Avustralya ve Türkiye deneyimli tenis antrenörü. Özel tenis dersleri, video analiz, Baseline Vision performans analizi, junior gelişim, kulüp ve akademi desteği." },
+    en: { title: "Ali Zevkli | Baseline Vision-Supported Tennis Coaching", description: "Ali Zevkli interprets Baseline Vision session data through coaching experience to create clear player development priorities for players, parents, clubs and academies." },
+    tr: { title: "Ali Zevkli | Baseline Vision Destekli Tenis Koçluğu", description: "Ali Zevkli, Baseline Vision seans verilerini koçluk tecrübesiyle yorumlayarak oyuncular, veliler, kulüpler ve akademiler için anlaşılır tenis oyuncu gelişim raporları hazırlar." },
   },
   "/tpa": {
     en: { title: "TPA — Tennis Pro Analysis System | Ali Zevkli", description: "The Tennis Pro Analysis performance system — coaching, Baseline Vision analysis, tournament direction and player development." },
@@ -49,6 +49,10 @@ const META = {
   },
   "/sample-report": {
     en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "A sample Baseline Vision-supported player development report showing how Tennis Pro Analysis turns session data and coaching observation into clear training priorities." },
+  },
+  "/ornek-rapor": {
+    tr: { title: "Örnek Oyuncu Gelişim Raporu | Tennis Pro Analysis", description: "Tennis Pro Analysis'in Baseline Vision destekli oyuncu gelişim raporunun nasıl hazırlandığını gösteren örnek rapor." },
+    en: { title: "Sample Player Development Report (TR) | Tennis Pro Analysis", description: "A sample Baseline Vision-supported player development report by Tennis Pro Analysis." },
   },
   "/tournament": {
     en: { title: "Tournament & Event Management | Tennis Pro Analysis", description: "Tennis tournament planning, scheduling, draw management and event delivery by Ali Zevkli." },

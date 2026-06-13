@@ -50,6 +50,23 @@ export default function About() {
               </div>
             </Reveal>
 
+            {/* Stats block */}
+            <Reveal delay={250}>
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                {[
+                  { val: t.stats.years, label: t.stats.yearsLabel },
+                  { val: t.stats.countries, label: t.stats.countriesLabel },
+                  { val: t.stats.players, label: t.stats.playersLabel },
+                  { val: t.stats.systems, label: t.stats.systemsLabel },
+                ].map((s, i) => (
+                  <div key={i} className="flex flex-col items-center text-center py-5 px-3 border border-[#F8FAFC]/10 bg-[#0B1F33]/40 hover:border-[#B7FF00]/30 transition-colors">
+                    <span className="font-anton uppercase text-2xl md:text-3xl text-[#B7FF00] tracking-tight break-words">{s.val}</span>
+                    <span className="mt-1 text-[10px] uppercase tracking-widest text-[#A7B0BA] leading-tight">{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
             {/* Logo strip */}
             <Reveal delay={260}>
               <div className="mt-10 pt-8 border-t border-[#F8FAFC]/10">

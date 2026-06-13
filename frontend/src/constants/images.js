@@ -59,6 +59,6 @@ export const SOCIAL = {
   instagram: "@tennisproanalysis",
   instagramUrl: "https://instagram.com/tennisproanalysis",
   whatsapp: "+61400963351",
-  whatsappUrl: "https://wa.me/61400963351",
+  whatsappUrl: "https://wa.me/61400963351?text=Merhaba%20Ali%2C%20Baseline%20Vision%20destekli%20oyuncu%20geli%C5%9Fim%20raporu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.",
   whatsappDisplay: "+61 400 963 351",
 };

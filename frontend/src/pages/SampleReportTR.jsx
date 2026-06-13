@@ -8,14 +8,12 @@ const WA_URL = SOCIAL.whatsappUrl;
 
 const ScreenshotWithFallback = ({ src, alt }) => {
   const [failed, setFailed] = useState(false);
-  const filename = src.split("/").pop();
 
   if (failed) {
     return (
       <div className="w-full max-w-xs mx-auto rounded-2xl bg-[#0d1b2a] border border-white/10 flex items-center justify-center p-8 text-center min-h-[200px]">
         <p className="text-[#A7B0BA] text-sm leading-relaxed">
-          Baseline Vision screenshot<br />
-          <span className="text-white/40 text-xs font-mono">{filename}</span>
+          Örnek Baseline Vision ekran görüntüsü — görsel yüklenecek
         </p>
       </div>
     );
@@ -31,33 +29,33 @@ const ScreenshotWithFallback = ({ src, alt }) => {
   );
 };
 
-const CoachingPriority = ({ text }) => (
+const KoclukOnceligi = ({ text }) => (
   <div className="border-l-4 border-lime-400 bg-lime-400/10 p-4 rounded-r-xl text-sm mt-5">
     <span className="text-[10px] uppercase tracking-[0.3em] text-lime-400 font-bold block mb-1">
-      COACHING PRIORITY
+      KOÇLUK ÖNCELİĞİ
     </span>
     <p className="text-white/90">{text}</p>
   </div>
 );
 
-const StatBox = ({ label, value }) => (
-  <div className="flex flex-col items-center bg-[#06141F] border border-[#F8FAFC]/10 rounded-xl px-4 py-3 min-w-[110px]">
+const StatKutusu = ({ label, value }) => (
+  <div className="flex flex-col items-center bg-[#06141F] border border-[#F8FAFC]/10 rounded-xl px-4 py-3 min-w-[120px]">
     <span className="font-anton text-[#B7FF00] text-lg leading-none">{value}</span>
     <span className="text-[9px] uppercase tracking-[0.2em] text-[#A7B0BA] mt-1 text-center">{label}</span>
   </div>
 );
 
-const ScreenshotLabel = () => (
+const OrnekEtiketi = () => (
   <div className="text-[9px] uppercase tracking-[0.3em] text-[#B7FF00] mb-2 text-center">
-    SAMPLE BASELINE VISION DATA
+    ÖRNEK BASELINE VISION VERİSİ
   </div>
 );
 
-export default function SampleReport() {
+export default function SampleReportTR() {
   return (
-    <div data-testid="page-sample-report" className="bg-[#0A1220] text-white">
+    <div data-testid="page-ornek-rapor" className="bg-[#0A1220] text-white">
 
-      {/* 1. Header */}
+      {/* 1. Başlık */}
       <section className="pt-36 md:pt-44 pb-14 md:pb-20 px-5 md:px-10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
@@ -68,22 +66,22 @@ export default function SampleReport() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-[0.93] mb-6">
-              SAMPLE PLAYER DEVELOPMENT REPORT
+              ÖRNEK OYUNCU GELİŞİM RAPORU
             </h1>
           </Reveal>
           <Reveal delay={140}>
             <p className="text-base md:text-lg text-[#A7B0BA] leading-relaxed max-w-2xl mb-3">
-              This sample shows how Tennis Pro Analysis combines Baseline Vision session data with coaching observation to create clear, practical development priorities for players, parents and clubs.
+              Bu örnek, Tennis Pro Analysis'in Baseline Vision seans verilerini ve koçluk gözlemini nasıl birleştirerek oyuncular, veliler ve kulüpler için net, uygulanabilir gelişim öncelikleri oluşturduğunu göstermektedir.
             </p>
           </Reveal>
           <Reveal delay={170}>
             <p className="text-sm text-[#A7B0BA] leading-relaxed max-w-2xl mb-7 italic">
-              Tennis Pro Analysis interprets Baseline Vision session data through a coaching and player-development lens — we do not replace Baseline Vision or claim to provide automatic technical stroke diagnosis.
+              Tennis Pro Analysis, Baseline Vision seans verilerini koçluk ve oyuncu gelişimi bakış açısıyla yorumlar — otomatik teknik vuruş teşhisi sunmaz.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <div className="inline-block border border-lime-400/40 text-lime-400 text-[10px] uppercase tracking-[0.3em] px-4 py-2 mb-8 rounded">
-              SAMPLE REPORT — FICTIONAL PLAYER DATA FOR DEMONSTRATION ONLY
+              ÖRNEK RAPOR — TAMAMEN KURGUSAL OYUNCU VERİSİ
             </div>
           </Reveal>
           <Reveal delay={240}>
@@ -93,27 +91,27 @@ export default function SampleReport() {
               rel="noopener noreferrer"
               className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
             >
-              Request a Player Development Report <ArrowRight size={16} />
+              Oyuncunuz İçin Rapor Talep Edin <ArrowRight size={16} />
             </a>
           </Reveal>
         </div>
       </section>
 
-      {/* 2. Player Snapshot */}
+      {/* 2. Oyuncu Profili */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border-l-4 border-[#B7FF00]">
               <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6">
-                PLAYER PROFILE
+                OYUNCU PROFİLİ
               </div>
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  ["Age", "16"],
-                  ["Level", "ITF Junior Player — Turkey / International Circuit"],
-                  ["Goal", "ITF Junior Development"],
-                  ["Session Type", "Baseline Vision-Supported Match Performance Review"],
-                  ["Prepared by", "Tennis Pro Analysis"],
+                  ["Yaş", "16"],
+                  ["Seviye", "ITF Junior Oyuncusu — Türkiye / Uluslararası Devre"],
+                  ["Hedef", "ITF Junior Gelişimi"],
+                  ["Seans Tipi", "Baseline Vision Destekli Maç Performans Değerlendirmesi"],
+                  ["Hazırlayan", "Tennis Pro Analysis"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex flex-col gap-1">
                     <dt className="text-[10px] uppercase tracking-[0.25em] text-[#A7B0BA]">{label}</dt>
@@ -126,40 +124,24 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 3. What This Report Includes */}
+      {/* 3. Bu Rapor Neleri Kapsar? */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              REPORT STRUCTURE
+              RAPOR YAPISI
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
-              WHAT THIS REPORT INCLUDES
+              BU RAPOR NELERİ KAPSAR?
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              {
-                num: "01",
-                title: "Baseline Vision Data Review",
-                text: "Session statistics, shot patterns, placement and performance indicators.",
-              },
-              {
-                num: "02",
-                title: "Coaching Interpretation",
-                text: "What the data means for the player's development.",
-              },
-              {
-                num: "03",
-                title: "4-Week Coaching Priorities",
-                text: "Clear focus areas for the next training block.",
-              },
-              {
-                num: "04",
-                title: "Parent / Player Summary",
-                text: "Simple explanation that the player and family can understand.",
-              },
+              { num: "01", title: "Baseline Vision Veri İncelemesi", text: "Seans istatistikleri, vuruş desenleri, top yerleşimi ve performans göstergeleri." },
+              { num: "02", title: "Koçluk Yorumu", text: "Verinin oyuncunun gelişimi açısından ne anlama geldiği." },
+              { num: "03", title: "4 Haftalık Koçluk Öncelikleri", text: "Bir sonraki antrenman bloğu için net odak alanları." },
+              { num: "04", title: "Veli / Oyuncu Özeti", text: "Oyuncu ve ailenin anlayabileceği sade bir açıklama." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 70}>
                 <div className="bg-[#06141F] border border-[#F8FAFC]/10 p-6 rounded-2xl h-full hover:border-[#B7FF00]/30 transition-colors">
@@ -173,7 +155,7 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 4. Match Performance Snapshot — 01 */}
+      {/* 4. 01 — Maç Performans Özeti */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
@@ -181,41 +163,41 @@ export default function SampleReport() {
               <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">01</span>
               <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
                 <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                MATCH PERFORMANCE SNAPSHOT
+                MAÇ PERFORMANS ÖZETİ
               </div>
             </div>
           </Reveal>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <ScreenshotLabel />
+                <OrnekEtiketi />
                 <ScreenshotWithFallback
                   src="/images/baseline/baseline-match-stats.png"
-                  alt="Sample Baseline Vision match statistics — Tennis Pro Analysis player development report"
+                  alt="Örnek Baseline Vision maç istatistikleri — Tennis Pro Analysis oyuncu gelişim raporu"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Points Won" value="62%" />
-                  <StatBox label="Errors" value="13" />
-                  <StatBox label="Svc Pts Won" value="59%" />
+                  <StatKutusu label="Kazanılan Puan" value="%62" />
+                  <StatKutusu label="Hatalar" value="13" />
+                  <StatKutusu label="Servis Puanı" value="%59" />
                 </div>
               </div>
             </Reveal>
             <Reveal delay={120}>
               <div>
                 <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  MATCH PERFORMANCE OVERVIEW
+                  MAÇ PERFORMANS ÖZETİ
                 </h2>
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  The player showed strong competitive intent throughout the match. Points Won at 62% reflects solid overall performance, but the error count of 13 versus only 4 for the opponent highlights the main development area: reducing unforced errors during neutral rallies. Double faults (3) suggest serve consistency under pressure needs attention. Service points won at 59% is a positive — this is a platform to build on.
+                  Oyuncu maç boyunca güçlü bir rekabet isteği sergiledi. %62 kazanılan puan oranı genel performansın olumlu olduğunu gösteriyor; ancak rakibe kıyasla yüksek hata sayısı (13'e karşı 4) temel gelişim alanını ortaya koyuyor: tarafsız rallilerde gereksiz hataları azaltmak. 3 çift hata, baskı altında servis tutarlılığının geliştirilmesi gerektiğine işaret ediyor. %59 servis puanı kazanma oranı olumlu bir başlangıç noktası.
                 </p>
-                <CoachingPriority text="Main Priority: Reduce unforced errors during neutral rallies before attempting aggressive patterns." />
+                <KoclukOnceligi text="Temel Öncelik: Agresif oyun denemeden önce tarafsız rallilerdeki gereksiz hataları azalt." />
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 5. Ground Stroke Performance Review — 02 */}
+      {/* 5. 02 — Vuruş Performans Değerlendirmesi */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
@@ -223,7 +205,7 @@ export default function SampleReport() {
               <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">02</span>
               <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
                 <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                GROUND STROKE PERFORMANCE REVIEW
+                VURUŞ PERFORMANS DEĞERLENDİRMESİ
               </div>
             </div>
           </Reveal>
@@ -231,25 +213,25 @@ export default function SampleReport() {
             <Reveal delay={120} className="md:order-2">
               <div>
                 <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  GROUND STROKES & BALL PLACEMENT
+                  VURUŞ PERFORMANS DEĞERLENDİRMESİ
                 </h2>
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  Ground stroke data shows average speed of 90 km/h with a max of 138 km/h — appropriate for a 16-year-old ITF Junior player. Ball placement shows 61% to the forehand side and 39% to the backhand side, indicating a clear tendency to avoid the backhand wing. Net clearance of 47cm is safe but could be more aggressive on shorter balls. The placement map shows most balls landing in the mid-court zone — deeper placement will be the key differentiator at ITF Junior level.
+                  Vuruş performans verileri ortalama 90 km/s ve maksimum 138 km/s hız gösteriyor — ITF Junior seviyesini hedefleyen 16 yaşındaki bir oyuncu için uygun. Top yerleşimi %61 forehand, %39 backhand ağırlıklı; bu backhand tarafından kaçınma eğilimini ortaya koyuyor. 47 cm file üzeri geçiş yüksekliği güvenli olmakla birlikte kısa toplarda daha agresif olunabilir. Top yerleşim haritası topların büyük çoğunluğunun orta kort bölgesine düştüğünü gösteriyor — ITF Junior seviyesinde fark yaratacak olan daha derin top yerleşimi olacak.
                 </p>
-                <CoachingPriority text="Main Priority: Develop backhand wing confidence and increase depth on cross-court patterns." />
+                <KoclukOnceligi text="Temel Öncelik: Backhand tarafında güven geliştir ve çapraz desenlerde derinliği artır." />
               </div>
             </Reveal>
             <Reveal className="md:order-1">
               <div>
-                <ScreenshotLabel />
+                <OrnekEtiketi />
                 <ScreenshotWithFallback
                   src="/images/baseline/baseline-ground-strokes.png"
-                  alt="Sample Baseline Vision ground stroke performance data — Tennis Pro Analysis"
+                  alt="Örnek Baseline Vision vuruş performans verisi — Tennis Pro Analysis"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Avg Speed" value="90 km/h" />
-                  <StatBox label="Max Speed" value="138 km/h" />
-                  <StatBox label="Net Clearance" value="47cm" />
+                  <StatKutusu label="Ort. Hız" value="90 km/s" />
+                  <StatKutusu label="Maks." value="138 km/s" />
+                  <StatKutusu label="File Üzeri" value="47cm" />
                 </div>
               </div>
             </Reveal>
@@ -257,7 +239,7 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 6. Serve Performance Review — 03 */}
+      {/* 6. 03 — Servis Performans Değerlendirmesi */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
@@ -265,79 +247,77 @@ export default function SampleReport() {
               <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">03</span>
               <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
                 <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                SERVE PERFORMANCE REVIEW
+                SERVİS PERFORMANS DEĞERLENDİRMESİ
               </div>
             </div>
           </Reveal>
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <ScreenshotLabel />
+                <OrnekEtiketi />
                 <ScreenshotWithFallback
                   src="/images/baseline/baseline-serve-stats.png"
-                  alt="Sample Baseline Vision serve speed and placement data — Tennis Pro Analysis"
+                  alt="Örnek Baseline Vision servis hızı ve yerleşim verisi — Tennis Pro Analysis"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Avg Speed" value="165 km/h" />
-                  <StatBox label="Max Speed" value="182 km/h" />
-                  <StatBox label="1st Serve %" value="50%" />
+                  <StatKutusu label="Ort. Hız" value="165 km/s" />
+                  <StatKutusu label="Maks." value="182 km/s" />
+                  <StatKutusu label="1. Servis" value="%50" />
                 </div>
               </div>
             </Reveal>
             <Reveal delay={120}>
               <div>
                 <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  SERVE PERFORMANCE
+                  SERVİS PERFORMANS DEĞERLENDİRMESİ
                 </h2>
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  First serve average speed of 165 km/h with a maximum of 182 km/h is strong for a 16-year-old and will be a competitive weapon at ITF Junior level. However, first serve percentage at 50% needs improvement — losing half of first serve points creates unnecessary pressure on the second serve. Placement shows 40/40/20 distribution across serve zones — more variety and disguise will be needed against stronger opponents. Second serve consistency should become a training priority before the next tournament block.
+                  Ortalama 165 km/s, maksimum 182 km/s birinci servis hızı bu yaş grubu için güçlü bir silah niteliği taşıyor ve ITF Junior seviyesinde rekabet avantajı sağlayacak. Ancak %50'lik birinci servis isabet oranı geliştirilmeli — birinci servisin yarısını kaçırmak ikinci servis üzerinde gereksiz baskı yaratıyor. Servis yerleşimi %40/%40/%20 dağılım gösteriyor; daha güçlü rakiplere karşı daha fazla çeşitlilik ve gizlilik gerekecek. İkinci servis tutarlılığı bir sonraki turnuva bloğundan önce öncelikli antrenman konusu olmalı.
                 </p>
-                <CoachingPriority text="Main Priority: Improve first serve percentage to 65%+ and develop second serve as a reliable weapon." />
+                <KoclukOnceligi text="Temel Öncelik: Birinci servis isabet oranını %65+ seviyesine çıkar ve ikinci servisi güvenilir bir silaha dönüştür." />
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 7. 4-Week Coaching Priorities */}
+      {/* 7. 4 Haftalık Koçluk Öncelikleri */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              COACHING PRIORITIES
+              KOÇLUK ÖNCELİKLERİ
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-2 leading-tight">
-              4-WEEK COACHING PRIORITIES
+              4 HAFTALIK KOÇLUK ÖNCELİKLERİ
             </h2>
             <p className="text-[#A7B0BA] text-sm mb-10">
-              Based on Baseline Vision data and coaching observation — next 4 weeks
+              Baseline Vision verileri ve koçluk gözlemine dayalı — sonraki 4 hafta
             </p>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               {
                 num: "01",
-                title: "Rally Consistency & Depth",
-                text: "Build a reliable cross-court baseline rally with depth past the service line. Focus on neutral ball tolerance before attempting direction changes. Target: 20-ball deep cross-court rally consistency.",
+                title: "Ralli Tutarlılığı & Derinlik",
+                text: "Servis çizgisinin ötesine düşen güvenilir çapraz taban çizgisi rallisi oluştur. Yön değiştirmeden önce tarafsız top toleransına odaklan. Hedef: 20 toplu derin çapraz ralli tutarlılığı.",
               },
               {
                 num: "02",
-                title: "Backhand Wing Development",
-                text: "Reduce avoidance of the backhand side. Structured backhand-focused drills with target zones. The backhand must become a neutral weapon, not a defensive shot, before ITF Junior competition.",
+                title: "Backhand Tarafı Geliştirme",
+                text: "Backhand tarafından kaçınmayı azalt. Hedef bölgeli yapılandırılmış backhand odaklı çalışmalar. ITF Junior rekabetinden önce backhand savunma vuruşu değil tarafsız silah haline gelmeli.",
               },
               {
                 num: "03",
-                title: "Serve Consistency Under Pressure",
-                text: "Increase first serve percentage through controlled target practice. Develop a reliable second serve with spin and depth. Double fault reduction is a priority for tournament matches.",
+                title: "Baskı Altında Servis Tutarlılığı",
+                text: "Kontrollü hedef çalışmalarıyla birinci servis isabet oranını artır. Spin ve derinlikle güvenilir ikinci servis geliştir. Çift hata azaltma turnuva maçları için öncelik.",
               },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 80}>
                 <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">
-                    {card.title}
-                  </h3>
+                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
                 </div>
               </Reveal>
@@ -346,36 +326,36 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 8. 2-Week Player Action Plan */}
+      {/* 8. 2 Haftalık Oyuncu Aksiyon Planı */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              ACTION PLAN
+              AKSİYON PLANI
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
-              2-WEEK PLAYER ACTION PLAN
+              2 HAFTALIK OYUNCU AKSİYON PLANI
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {[
               {
-                week: "WEEK 1 — Foundation",
+                week: "HAFTA 1 — TEMEL",
                 items: [
-                  "Deep rally tolerance drills",
-                  "Cross-court pattern consistency",
-                  "Backhand target zone work",
-                  "Serve placement practice (no pressure)",
+                  "Derin ralli tolerans çalışmaları",
+                  "Çapraz desen tutarlılığı",
+                  "Backhand hedef bölgesi çalışması",
+                  "Servis yerleşim pratiği (baskısız)",
                 ],
               },
               {
-                week: "WEEK 2 — Application",
+                week: "HAFTA 2 — UYGULAMA",
                 items: [
-                  "Match-play situations with rally structure",
-                  "Backhand in competitive drill scenarios",
-                  "Serve under simulated match pressure",
-                  "Video review with player and parent",
+                  "Ralli yapısıyla maç oyun durumları",
+                  "Rekabetçi drill senaryolarında backhand",
+                  "Simüle edilmiş maç baskısı altında servis",
+                  "Oyuncu ve veli ile video incelemesi",
                 ],
               },
             ].map((block, i) => (
@@ -399,64 +379,50 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 9. Parent / Player Summary */}
+      {/* 9. Veli / Oyuncu Özeti */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              SUMMARY
+              ÖZET
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-6 leading-tight">
-              PARENT / PLAYER SUMMARY
+              VELİ / OYUNCU ÖZETİ
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border border-white/10">
               <p className="text-white/90 leading-relaxed text-base md:text-lg">
-                The player has strong ITF Junior potential and already shows competitive intent. The main development opportunity is reducing unnecessary errors before playing more aggressively. Over the next training block, the focus should be rally depth, backhand confidence and serve consistency under pressure.
+                Oyuncunun güçlü ITF Junior potansiyeli var ve rekabetçi istek sergiliyor. Temel gelişim fırsatı, agresif oynamaya çalışmadan önce gereksiz hataları azaltmak. Önümüzdeki antrenman bloğunda odak: ralli derinliği, backhand güveni ve baskı altında servis tutarlılığı.
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* 10. Why Tennis Pro Analysis */}
+      {/* 10. Neden Tennis Pro Analysis? */}
       <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              ABOUT TPA
+              TPA HAKKINDA
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
-              WHY TENNIS PRO ANALYSIS
+              NEDEN TENNIS PRO ANALYSIS?
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              {
-                num: "01",
-                title: "Coaching Experience",
-                text: "Australia and Türkiye tennis coaching background spanning 20+ years across clubs, academies and tournament environments.",
-              },
-              {
-                num: "02",
-                title: "Baseline Vision-Supported",
-                text: "Uses Baseline Vision data to support clearer feedback, measurable tracking and player development.",
-              },
-              {
-                num: "03",
-                title: "Player & Parent Friendly",
-                text: "Reports are written in clear language so players and parents understand exactly what to work on next.",
-              },
+              { num: "01", title: "Koçluk Deneyimi", text: "Avustralya ve Türkiye'de 20+ yıllık tenis ve spor deneyimi." },
+              { num: "02", title: "Baseline Vision Destekli", text: "Baseline Vision verileri net geri bildirim ve oyuncu gelişimi için kullanılır." },
+              { num: "03", title: "Oyuncu & Veli Dostu", text: "Raporlar, oyuncuların ve velilerin üzerinde çalışılacakları şeyi anlayabileceği açık bir dilde yazılır." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 80}>
                 <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">
-                    {card.title}
-                  </h3>
+                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
                 </div>
               </Reveal>
@@ -465,23 +431,23 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 11. Disclaimer */}
+      {/* 11. Yasal Not */}
       <section className="py-10 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto text-center">
           <p className="text-xs text-[#A7B0BA]/60 leading-relaxed">
-            This is a sample demonstration report using fictional player data. Tennis Pro Analysis does not claim to provide automatic technical stroke diagnosis or replace on-court coaching. Baseline Vision provides performance data and visual feedback. Tennis Pro Analysis uses coaching experience to interpret that data and create practical player-development priorities.
+            Bu, kurgusal oyuncu verisi kullanan örnek bir tanıtım raporudur. Tennis Pro Analysis otomatik teknik vuruş teşhisi yapma iddiasında bulunmaz ve sahada koçluğun yerini tutmaz. Baseline Vision performans verisi ve görsel geri bildirim sağlar. Tennis Pro Analysis bu verileri koçluk tecrübesiyle yorumlayarak pratik oyuncu gelişim öncelikleri oluşturur.
           </p>
         </div>
       </section>
 
-      {/* 12. CTA */}
+      {/* 12. Son CTA */}
       <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto bg-[#B7FF00] rounded-2xl p-10 md:p-14 text-center">
           <h2 className="font-anton uppercase text-3xl md:text-4xl text-[#06141F] mb-4 leading-tight">
-            WANT A REPORT FOR YOUR PLAYER?
+            OYUNCUNUZ İÇİN RAPOR İSTEYİN
           </h2>
           <p className="text-[#06141F]/80 mb-8 max-w-lg mx-auto leading-relaxed">
-            Contact Tennis Pro Analysis on WhatsApp to request a Baseline Vision-supported player development report.
+            Baseline Vision destekli oyuncu gelişim raporu için Tennis Pro Analysis ile WhatsApp'tan iletişime geçin.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
@@ -490,13 +456,13 @@ export default function SampleReport() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#06141F] text-[#B7FF00] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:bg-[#0d1b2a] transition-colors rounded"
             >
-              Request a Player Report <ArrowRight size={16} />
+              Oyuncu Raporu Talep Et <ArrowRight size={16} />
             </a>
             <Link
               to="/baseline-vision"
               className="inline-flex items-center justify-center gap-2 border-2 border-[#06141F]/30 text-[#06141F] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:border-[#06141F] transition-colors rounded"
             >
-              Learn About Baseline Vision <ArrowRight size={16} />
+              Baseline Vision'ı İncele <ArrowRight size={16} />
             </Link>
           </div>
         </div>
