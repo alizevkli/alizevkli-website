@@ -16,22 +16,13 @@ export default function About() {
       <section className="py-20 md:py-28 px-5 md:px-10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <Reveal>
-            <div className="lg:col-span-5 relative aspect-[3/4] overflow-hidden border border-[#F8FAFC]/10">
+            <div className="lg:col-span-5">
               <img
                 src={BRAND.founder}
                 alt="Ali Zevkli — Founder of Tennis Pro Analysis"
-                className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="w-full max-w-sm mx-auto rounded-2xl object-cover"
                 data-testid="founder-photo-about"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/80 via-transparent to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00]">
-                  {t.about.eyebrow}
-                </div>
-                <div className="font-anton uppercase text-3xl text-white mt-1">
-                  Ali Zevkli
-                </div>
-              </div>
             </div>
           </Reveal>
 
@@ -66,12 +57,13 @@ export default function About() {
                   {t.about.affiliationsTitle}
                 </div>
                 <div className="flex flex-wrap items-center gap-6">
-                  <img src={LOGOS.marmara} alt="Marmara University" className="h-8 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.ttf} alt="Turkish Tennis Federation" className="h-8 opacity-70 hover:opacity-100 transition-opacity" />
-                  <img src={LOGOS.atpca} alt="ATPCA" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.utr} alt="UTR Sports" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.baselineVision} alt="Baseline Vision" className="h-6 opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.marmara} alt="Marmara University" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.ttf} alt="Turkish Tennis Federation" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity" />
+                  <img src={LOGOS.atpca} alt="ATPCA" className="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.utr} alt="UTR Sports" className="h-6 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.baselineVision} alt="Baseline Vision" className="h-6 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
+                  <img src={LOGOS.tenx} alt="TenX" className="h-8 object-contain opacity-70 hover:opacity-100 transition-opacity" />
                 </div>
               </div>
             </Reveal>

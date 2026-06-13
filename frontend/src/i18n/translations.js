@@ -187,16 +187,15 @@ export const translations = {
         australia: {
           label: "🇦🇺 Australia",
           clubs: [
+            "Tennis Pro Analysis — Founder & Head Coach",
             "Tennis Programs Victoria — Melbourne",
-            "Norris Bank Tennis Club — Melbourne",
-            "Tennis Factory / Onslow Park TC — Perth",
-            "East Fremantle Lawn Tennis Club — Perth",
-            "Tennis Excellence / Mount Lawley TC — Head Coach",
-            "Tennis Excellence / Blue Gum Park TC — Perth",
-            "Nedlands Tennis Club — Perth",
-            "Peppermint Grove Tennis Club — Perth",
-            "Perth College — School Tennis Coach",
-            "Durham Road School — School Tennis Program",
+            "Tennis Factory / Onslow Park TC / East Fremantle Lawn TC — Senior Coach",
+            "Titan Tennis & Tennis Excellence — Owner & Senior Coach, Perth",
+            "Tennis Excellence / Nedlands TC — Performance Pathway Director",
+            "Mount Lawley Tennis Centre — Director / Head Coach",
+            "Peppermint Grove TC — Perth",
+            "Perth College — Team Coach",
+            "Blue Gum Park TC — Performance Pathway",
           ],
         },
         turkey: {
@@ -547,9 +546,15 @@ export const translations = {
         australia: {
           label: "🇦🇺 Avustralya",
           clubs: [
+            "Tennis Pro Analysis — Kurucu & Baş Antrenör",
             "Tennis Programs Victoria — Melbourne",
-            "Norris Bank Tennis Club — Melbourne",
-            "Tennis Excellence / Mount Lawley TC — Baş Antrenör",
+            "Tennis Factory / Onslow Park TC / East Fremantle Lawn TC — Senior Antrenör",
+            "Titan Tennis & Tennis Excellence — İşletme Sahibi & Senior Antrenör, Perth",
+            "Tennis Excellence / Nedlands TC — Performance Pathway Direktörü",
+            "Mount Lawley Tennis Centre — Direktör / Baş Antrenör",
+            "Peppermint Grove TC — Perth",
+            "Perth College — Takım Antrenörü",
+            "Blue Gum Park TC — Performance Pathway",
           ],
         },
         turkey: {
