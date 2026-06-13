@@ -61,7 +61,7 @@ export default function Pathways() {
               data-testid="pathways-hero-cta"
               className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
             >
-              {t.hero.ctaPrimary} <ArrowRight size={16} />
+              {p.ctaBtn} <ArrowRight size={16} />
             </a>
           </Reveal>
         </div>
@@ -87,7 +87,38 @@ export default function Pathways() {
         </div>
       </section>
 
-      {/* 3. Service cards — 2×3 grid */}
+      {/* 3. What's starting */}
+      <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <Reveal>
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white leading-tight">
+              {p.whatTitle}
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-[#A7B0BA] leading-relaxed">{p.whatText}</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 4. Who is this for — pills */}
+      <section className="border-y border-[#F8FAFC]/10 bg-[#0B1F33]/40 py-8 px-5 md:px-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-4">{p.whoTitle}</div>
+          <div className="flex flex-wrap gap-2">
+            {p.whoItems.map((item) => (
+              <span
+                key={item}
+                className="px-4 py-2 text-xs uppercase tracking-[0.15em] text-[#A7B0BA] border border-[#F8FAFC]/15"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Service cards — 2×3 grid, card 5 highlighted */}
       <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1400px] mx-auto">
           <Reveal>
@@ -124,6 +155,16 @@ export default function Pathways() {
                     {svc.name}
                   </h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed flex-grow">{svc.desc}</p>
+                  {svc.link && (
+                    <div className="mt-5 pt-4 border-t border-[#F8FAFC]/10">
+                      <Link
+                        to={svc.link}
+                        className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#B7FF00] hover:gap-3 transition-all"
+                      >
+                        {lang === "tr" ? "Kulüp & Akademi →" : "Club & Academy →"}
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -131,50 +172,41 @@ export default function Pathways() {
         </div>
       </section>
 
-      {/* 4. Australia connection */}
-      <section className="py-20 md:py-28 px-5 md:px-10 border-t border-[#F8FAFC]/10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* 6. Baseline Vision section */}
+      <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <Reveal>
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5 flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                🇦🇺 🇹🇷
-              </div>
-              <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-6 leading-tight">
-                {p.australiaTitle}
-              </h2>
-              <p className="text-[#A7B0BA] leading-relaxed mb-8">{p.australiaIntro}</p>
-              <ul className="space-y-3">
-                {p.australiaBullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-sm text-white/90">
-                    <span className="text-[#B7FF00] mt-0.5 shrink-0">→</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
+            <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5 flex items-center gap-3">
+              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
+              Baseline Vision
             </div>
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-6 leading-tight">
+              {p.bvTitle}
+            </h2>
           </Reveal>
-          <Reveal delay={150}>
-            <div className="border border-[#1FA463]/30 bg-[#0B1F33]/40 p-7 md:p-9">
-              <div className="inline-block px-3 py-1 text-[10px] uppercase tracking-[0.3em] font-bold bg-[#1FA463] text-white mb-5">
-                {lang === "tr" ? "Önemli Not" : "Important Note"}
-              </div>
-              <p className="text-sm text-[#A7B0BA] leading-relaxed">{p.disclaimer}</p>
-              <div className="mt-6 pt-6 border-t border-[#F8FAFC]/10">
-                <Link
-                  to="/australia-consulting"
-                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#B7FF00] hover:gap-3 transition-all"
-                >
-                  {lang === "tr" ? "Avustralya Danışmanlık" : "Australia Consulting"}{" "}
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
+          <Reveal delay={100}>
+            <p className="text-[#A7B0BA] leading-relaxed mb-6">{p.bvText}</p>
+            <Link
+              to="/baseline-vision"
+              className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#B7FF00] hover:gap-3 transition-all"
+            >
+              {p.bvLink} <ArrowRight size={14} />
+            </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* 5. Contact CTA */}
+      {/* 7. Location */}
+      <section className="py-10 md:py-12 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/30">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row gap-5 items-start">
+          <div className="shrink-0">
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[#B7FF00] mb-1">{p.locationTitle}</div>
+          </div>
+          <p className="text-sm text-[#A7B0BA] leading-relaxed">{p.locationText}</p>
+        </div>
+      </section>
+
+      {/* 8. Contact CTA */}
       <section className="py-20 md:py-24 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto text-center">
           <Reveal>
@@ -191,7 +223,7 @@ export default function Pathways() {
               data-testid="pathways-cta"
               className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
             >
-              {t.hero.ctaPrimary} <ArrowRight size={16} />
+              {p.ctaBtn} <ArrowRight size={16} />
             </a>
           </Reveal>
         </div>
