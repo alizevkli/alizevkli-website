@@ -197,7 +197,7 @@ const BaselineTeaser = () => {
           <img
             src="/images/baseline/baseline-ground-strokes.png"
             alt="Baseline Vision ground stroke analysis"
-            className="w-full rounded-2xl shadow-lg object-contain"
+            className="w-full max-h-80 rounded-2xl shadow-lg object-contain"
             loading="lazy"
           />
         </Reveal>

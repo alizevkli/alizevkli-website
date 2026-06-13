@@ -84,7 +84,7 @@ export const Navbar = () => {
   const afterDropdown = lang === "tr" ? mainLinks.slice(1) : mainLinks.slice(3);
 
   const linkClass = ({ isActive }) =>
-    `relative text-[10px] uppercase tracking-[0.12em] transition-colors whitespace-nowrap ${
+    `relative text-[10px] uppercase tracking-normal transition-colors whitespace-nowrap ${
       isActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
     }`;
 
@@ -104,7 +104,7 @@ export const Navbar = () => {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-2 xl:gap-3 min-w-0">
+          <nav className="hidden lg:flex items-center gap-2 min-w-0">
             {beforeDropdown.map((l) => (
               <NavLink key={l.to} to={l.to} end={l.end} className={linkClass}>
                 {l.label}
@@ -115,7 +115,7 @@ export const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setServicesOpen((v) => !v)}
-                className={`relative text-[10px] uppercase tracking-[0.12em] transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
+                className={`relative text-[10px] uppercase tracking-normal transition-colors whitespace-nowrap inline-flex items-center gap-1.5 ${
                   isServicesActive ? "text-[#B7FF00]" : "text-white/80 hover:text-white"
                 }`}
               >
@@ -123,7 +123,7 @@ export const Navbar = () => {
                 <ChevronDown size={13} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-6 w-[280px] bg-[#06141F]/98 backdrop-blur-xl border border-[#F8FAFC]/10 shadow-2xl py-3">
+                <div className="absolute top-full left-0 mt-6 w-[280px] z-50 bg-[#06141F]/98 backdrop-blur-xl border border-white/10 shadow-xl py-3">
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-[#06141F] border-l border-t border-[#F8FAFC]/10 rotate-45" />
                   {serviceLinks.map((l) => (
                     <NavLink
