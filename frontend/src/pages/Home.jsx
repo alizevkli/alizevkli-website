@@ -39,100 +39,61 @@ const HeroSection = () => {
       </div>
 
       <div className="relative max-w-[1400px] mx-auto px-5 md:px-10 pt-32 pb-16 md:pb-24 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-          {/* LEFT — text */}
-          <div>
-            <Reveal>
-              <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-5">
-                {t.hero.eyebrow}
-              </div>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1 data-testid="hero-title" className="font-anton uppercase text-white leading-[0.92] tracking-tight text-4xl md:text-5xl lg:text-6xl mb-6">
-                {t.hero.titleLine1}<br />
-                {t.hero.titleLine2}<span className="text-[#B7FF00]">.</span><br />
-                {t.hero.titleLine3}<span className="text-[#B7FF00]">.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p data-testid="hero-subtitle" className="text-base md:text-lg text-white/90 leading-relaxed mb-4">
-                {t.hero.subtitle}
+        <div className="max-w-3xl">
+          <Reveal>
+            <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-5">
+              {t.hero.eyebrow}
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <h1 data-testid="hero-title" className="font-anton uppercase text-white leading-[0.92] tracking-tight text-4xl md:text-5xl lg:text-6xl mb-6">
+              {t.hero.titleLine1}<br />
+              {t.hero.titleLine2}<span className="text-[#B7FF00]">.</span><br />
+              {t.hero.titleLine3}<span className="text-[#B7FF00]">.</span>
+            </h1>
+          </Reveal>
+          <Reveal delay={160}>
+            <p data-testid="hero-subtitle" className="text-base md:text-lg text-white/90 leading-relaxed mb-4">
+              {t.hero.subtitle}
+            </p>
+          </Reveal>
+          {t.hero.disclaimer && (
+            <Reveal delay={210}>
+              <p className="text-sm text-gray-400 leading-relaxed mb-8">
+                {t.hero.disclaimer}
               </p>
             </Reveal>
-            {t.hero.disclaimer && (
-              <Reveal delay={210}>
-                <p className="text-sm text-gray-400 leading-relaxed mb-8">
-                  {t.hero.disclaimer}
-                </p>
-              </Reveal>
-            )}
-            <Reveal delay={270}>
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                {t.hero.ctaPrimaryHref ? (
-                  <a href={t.hero.ctaPrimaryHref} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-primary"
-                    className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-                    {t.hero.ctaPrimary}<ArrowRight size={16} />
-                  </a>
-                ) : (
-                  <Link to="/contact" data-testid="hero-cta-primary"
-                    className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-                    {t.hero.ctaPrimary}<ArrowRight size={16} />
-                  </Link>
-                )}
-                <Link to={secondaryTo} data-testid="hero-cta-secondary"
-                  className="tpa-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-                  {t.hero.ctaSecondary}<ArrowUpRight size={16} />
+          )}
+          <Reveal delay={270}>
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              {t.hero.ctaPrimaryHref ? (
+                <a href={t.hero.ctaPrimaryHref} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-primary"
+                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+                  {t.hero.ctaPrimary}<ArrowRight size={16} />
+                </a>
+              ) : (
+                <Link to="/contact" data-testid="hero-cta-primary"
+                  className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+                  {t.hero.ctaPrimary}<ArrowRight size={16} />
                 </Link>
-              </div>
-            </Reveal>
-            {t.hero.trustBadges && (
-              <Reveal delay={330}>
-                <div className="flex flex-wrap gap-2">
-                  {t.hero.trustBadges.map((badge) => (
-                    <span key={badge} className="text-xs border border-lime-400/40 text-[#A7B0BA] px-3 py-1 rounded-full bg-[#06141F]/60">
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            )}
-          </div>
-
-          {/* RIGHT — glassmorphism report preview (desktop only) */}
-          <Reveal delay={200} className="hidden md:block">
-            <div className="bg-white/5 backdrop-blur border border-lime-400/30 rounded-2xl p-6 shadow-2xl">
-              <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-2">
-                TENNIS PRO ANALYSIS
-              </div>
-              <div className="font-black text-lg text-white mb-2 leading-tight">
-                ÖRNEK OYUNCU GELİŞİM RAPORU
-              </div>
-              <div className="text-sm text-[#A7B0BA] mb-4">
-                Oyuncu: ITF Junior · Yaş: 16
-              </div>
-              <div className="flex gap-2 mb-4 flex-wrap">
-                {["%62 Puan", "13 Hata", "%59 Servis"].map((stat) => (
-                  <span key={stat} className="text-xs bg-[#06141F] border border-white/10 px-3 py-1 rounded-full text-white/80">
-                    {stat}
-                  </span>
-                ))}
-              </div>
-              <div className="relative overflow-hidden rounded-xl">
-                <div className="absolute top-0 left-0 right-0 h-12 bg-[#06141F]/90 z-10 pointer-events-none" />
-                <img
-                  src="/images/baseline/baseline-match-stats.png"
-                  alt="Örnek Baseline Vision maç istatistikleri"
-                  className="rounded-xl w-full opacity-90"
-                  loading="lazy"
-                />
-              </div>
-              <Link to="/ornek-rapor" className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#B7FF00] hover:gap-2 transition-all">
-                Tam Raporu Gör <ArrowRight size={13} />
+              )}
+              <Link to={secondaryTo} data-testid="hero-cta-secondary"
+                className="tpa-btn-secondary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
+                {t.hero.ctaSecondary}<ArrowUpRight size={16} />
               </Link>
             </div>
           </Reveal>
-
+          {t.hero.trustBadges && (
+            <Reveal delay={330}>
+              <div className="flex flex-wrap gap-2 mt-6">
+                {t.hero.trustBadges.map((badge) => (
+                  <span key={badge} className="text-xs border border-lime-400/40 text-[#A7B0BA] px-3 py-1 rounded-full bg-[#06141F]/60">
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          )}
         </div>
 
         {/* Logo strip */}
@@ -186,7 +147,7 @@ const MainProductBlock = () => {
   return (
     <section className="bg-[#0d1b2a] py-16 border-t border-[#F8FAFC]/10">
       <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-3xl">
           <Reveal>
             <div>
               <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-4">
@@ -198,28 +159,15 @@ const MainProductBlock = () => {
               <p className="text-[#A7B0BA] leading-relaxed mb-8">
                 {h.productText}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-8">
                 {h.productChips.map((chip) => (
                   <span key={chip} className="text-sm border border-lime-400/40 text-[#A7B0BA] px-3 py-1 rounded-full bg-[#06141F]/60 hover:border-lime-400/70 transition-colors">
                     {chip}
                   </span>
                 ))}
               </div>
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="bg-white/5 backdrop-blur border border-lime-400/30 rounded-2xl p-6 shadow-2xl">
-              <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-2">
-                TENNIS PRO ANALYSIS
-              </div>
-              <div className="font-black text-lg text-white mb-3 leading-tight">
-                ÖRNEK OYUNCU GELİŞİM RAPORU
-              </div>
-              <div className="text-sm text-[#A7B0BA] mb-5">
-                %62 Puan · 13 Hata · %59 Servis Puanı
-              </div>
-              <Link to="/ornek-rapor" className="inline-flex items-center gap-1 text-sm font-bold text-[#B7FF00] hover:gap-2 transition-all">
-                {h.productCardCta} <ArrowRight size={13} />
+              <Link to="/ornek-rapor" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#B7FF00]">
+                {h.productCardCta}
               </Link>
             </div>
           </Reveal>
@@ -293,7 +241,7 @@ const ReportPreviewSection = () => {
         </div>
         <Reveal delay={280}>
           <Link to="/ornek-rapor" className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]">
-            {h.reportPreviewCta} <ArrowRight size={16} />
+            {h.reportPreviewCta}
           </Link>
         </Reveal>
       </div>
@@ -339,18 +287,24 @@ const BaselineTeaser = () => {
             <Reveal delay={150}>
               <div className="relative flex justify-center items-center min-h-[280px] md:min-h-[340px]">
                 <div className="absolute inset-0 bg-lime-400/5 rounded-3xl blur-3xl pointer-events-none" />
-                <img
-                  src="/images/baseline/baseline-serve-stats.png"
-                  alt="Baseline Vision serve statistics"
-                  className="w-44 rounded-2xl shadow-2xl border border-white/10 opacity-80 absolute -right-4 top-8 z-0"
-                  loading="lazy"
-                />
-                <img
-                  src="/images/baseline/baseline-ground-strokes.png"
-                  alt="Baseline Vision ground stroke analysis"
-                  className="w-56 rounded-2xl shadow-2xl border border-white/10 z-10 relative"
-                  loading="lazy"
-                />
+                <div className="w-44 rounded-2xl shadow-2xl border border-white/10 opacity-80 absolute -right-4 top-8 z-0 overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-14 bg-[#0A1220] z-10 rounded-t-2xl pointer-events-none" />
+                  <img
+                    src="/images/baseline/baseline-serve-stats.png"
+                    alt="Baseline Vision serve statistics"
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="w-56 rounded-2xl shadow-2xl border border-white/10 z-10 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-14 bg-[#0A1220] z-10 rounded-t-2xl pointer-events-none" />
+                  <img
+                    src="/images/baseline/baseline-ground-strokes.png"
+                    alt="Baseline Vision ground stroke analysis"
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </Reveal>
 

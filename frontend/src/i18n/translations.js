@@ -721,8 +721,8 @@ export const translations = {
     },
     contact: {
       eyebrow: "İletişim",
-      title: "Oyununuzu birlikte geliştireceğiz.",
-      lead: "Özel ders, performans analizi, kulüp & akademi iş birliği veya Türkiye 2026 programı hakkında bilgi almak için aşağıdaki kanallardan ulaşabilirsiniz.",
+      title: "İletişime Geçin.",
+      lead: "Özel ders, Baseline Vision destekli performans analizi, kulüp & akademi iş birliği veya Türkiye 2026 programı için WhatsApp'tan yazın.",
       pageLead: "Özel ders, performans analizi, kulüp & akademi iş birliği veya Türkiye 2026 programı hakkında bilgi almak için aşağıdaki kanallardan ulaşabilirsiniz.",
       email: "alizevkliali@gmail.com",
       phone: "+61 400 963 351",

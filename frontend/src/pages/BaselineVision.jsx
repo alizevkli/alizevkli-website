@@ -173,19 +173,25 @@ export default function BaselineVision() {
               <div className="relative flex justify-center items-center min-h-[300px] md:min-h-[380px]">
                 <div className="absolute inset-0 bg-lime-400/5 rounded-3xl blur-3xl pointer-events-none" />
                 {/* Back image */}
-                <img
-                  src="/images/baseline/baseline-ground-strokes.png"
-                  alt="Baseline Vision ground stroke analysis"
-                  className="w-52 rounded-2xl shadow-2xl border border-white/10 opacity-80 absolute -right-4 md:-right-8 top-8 z-0"
-                  loading="lazy"
-                />
+                <div className="w-52 rounded-2xl shadow-2xl border border-white/10 opacity-80 absolute -right-4 md:-right-8 top-8 z-0 overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-14 bg-[#0A1220] z-10 rounded-t-2xl pointer-events-none" />
+                  <img
+                    src="/images/baseline/baseline-ground-strokes.png"
+                    alt="Baseline Vision ground stroke analysis"
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
                 {/* Front image */}
-                <img
-                  src="/images/baseline/baseline-match-stats.png"
-                  alt="Baseline Vision match statistics"
-                  className="w-64 rounded-2xl shadow-2xl border border-white/10 z-10 relative"
-                  loading="lazy"
-                />
+                <div className="w-64 rounded-2xl shadow-2xl border border-white/10 z-10 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-14 bg-[#0A1220] z-10 rounded-t-2xl pointer-events-none" />
+                  <img
+                    src="/images/baseline/baseline-match-stats.png"
+                    alt="Baseline Vision match statistics"
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </Reveal>
 
