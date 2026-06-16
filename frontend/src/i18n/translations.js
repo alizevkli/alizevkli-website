@@ -325,7 +325,7 @@ export const translations = {
       ],
     },
     footer: {
-      tagline: "Performance & Video Analysis",
+      tagline: "Baseline Vision-Supported Tennis Coaching & Player Development",
       rights: "All rights reserved.",
       pages: "Pages",
       explore: "Explore",
@@ -750,7 +750,7 @@ export const translations = {
       ],
     },
     footer: {
-      tagline: "Performans ve Video Analizi",
+      tagline: "Baseline Vision Destekli Tenis Koçluğu ve Oyuncu Gelişimi",
       rights: "Tüm hakları saklıdır.",
       pages: "Sayfalar",
       explore: "Keşfet",
