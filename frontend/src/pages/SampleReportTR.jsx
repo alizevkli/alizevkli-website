@@ -6,26 +6,28 @@ import { SOCIAL } from "../constants/images";
 
 const WA_URL = SOCIAL.whatsappUrl;
 
-const ScreenshotWithFallback = ({ src, alt }) => {
+/* Phone-style frame — matches BaselineVision card style */
+const PhoneFrame = ({ src, alt }) => {
   const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return (
-      <div className="w-full max-w-xs mx-auto rounded-2xl bg-[#0d1b2a] border border-white/10 flex items-center justify-center p-8 text-center min-h-[200px]">
-        <p className="text-[#A7B0BA] text-sm leading-relaxed">
-          Örnek Baseline Vision ekran görüntüsü — görsel yüklenecek
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <img
-      src={src}
-      alt={alt}
-      onError={() => setFailed(true)}
-      className="w-full max-w-xs mx-auto rounded-2xl shadow-lg object-contain"
-    />
+    <div className="w-full max-w-[280px] mx-auto">
+      <div className="bg-[#0d1b2a] border border-white/10 rounded-2xl overflow-hidden shadow-xl ring-1 ring-lime-400/10 min-h-[160px] flex items-center justify-center">
+        {failed ? (
+          <p className="text-[#A7B0BA] text-sm p-6 text-center leading-relaxed">
+            Örnek Baseline Vision ekran görüntüsü — görsel yüklenecek
+          </p>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            onError={() => setFailed(true)}
+            className="w-full object-contain block"
+            style={{ maxHeight: "320px" }}
+            loading="lazy"
+          />
+        )}
+      </div>
+    </div>
   );
 };
 
@@ -62,10 +64,10 @@ const DrillCard = ({ drill }) => (
 
 export default function SampleReportTR() {
   return (
-    <div data-testid="page-ornek-rapor" className="bg-[#0A1220] text-white">
+    <div data-testid="page-ornek-rapor" className="bg-[#0A1220] text-white overflow-x-hidden">
 
       {/* 1. Başlık */}
-      <section className="pt-36 md:pt-44 pb-14 md:pb-20 px-5 md:px-10 bg-[#06141F]">
+      <section className="pt-36 md:pt-44 pb-12 md:pb-16 px-5 md:px-10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-5 flex items-center gap-3">
@@ -100,7 +102,7 @@ export default function SampleReportTR() {
       <section className="py-8 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
-            <div className="border-2 border-lime-400 rounded-2xl p-8 bg-[#0d1b2a]">
+            <div className="border-2 border-lime-400/60 rounded-2xl p-8 bg-[#0d1b2a]">
               <div className="text-xs uppercase tracking-widest text-[#B7FF00] mb-3">TENNIS PRO ANALYSIS</div>
               <h2 className="font-black text-2xl text-white mb-3 leading-tight">ÖRNEK OYUNCU GELİŞİM RAPORU</h2>
               <p className="text-sm text-[#A7B0BA] mb-2">Oyuncu: Kurgusal ITF Junior Hedefi Oyuncusu</p>
@@ -112,7 +114,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 2. Oyuncu Profili */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border-l-4 border-[#B7FF00]">
@@ -139,7 +141,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 3. Bu Rapor Neleri Kapsar? */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -153,9 +155,9 @@ export default function SampleReportTR() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { num: "01", title: "Baseline Vision Veri İncelemesi", text: "Seans istatistikleri, vuruş desenleri, top yerleşimi ve performans göstergeleri." },
-              { num: "02", title: "Koçluk Yorumu", text: "Verinin oyuncunun gelişimi açısından ne anlama geldiği." },
-              { num: "03", title: "4 Haftalık Koçluk Öncelikleri", text: "Bir sonraki antrenman bloğu için net odak alanları." },
-              { num: "04", title: "Veli / Oyuncu Özeti", text: "Oyuncu ve ailenin anlayabileceği sade bir açıklama." },
+              { num: "02", title: "Koçluk Yorumu",                   text: "Verinin oyuncunun gelişimi açısından ne anlama geldiği." },
+              { num: "03", title: "4 Haftalık Koçluk Öncelikleri",   text: "Bir sonraki antrenman bloğu için net odak alanları." },
+              { num: "04", title: "Veli / Oyuncu Özeti",             text: "Oyuncu ve ailenin anlayabileceği sade bir açıklama." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 70}>
                 <div className="bg-[#06141F] border border-[#F8FAFC]/10 p-6 rounded-2xl h-full hover:border-[#B7FF00]/30 transition-colors">
@@ -170,7 +172,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 4. 01 — Maç Performans Özeti */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -185,7 +187,7 @@ export default function SampleReportTR() {
             <Reveal>
               <div>
                 <OrnekEtiketi />
-                <ScreenshotWithFallback
+                <PhoneFrame
                   src="/images/baseline/baseline-match-stats.png"
                   alt="Örnek Baseline Vision maç istatistikleri — Tennis Pro Analysis oyuncu gelişim raporu"
                 />
@@ -213,7 +215,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 5. 02 — Vuruş Performans Değerlendirmesi */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -240,7 +242,7 @@ export default function SampleReportTR() {
             <Reveal className="md:order-1">
               <div>
                 <OrnekEtiketi />
-                <ScreenshotWithFallback
+                <PhoneFrame
                   src="/images/baseline/baseline-ground-strokes.png"
                   alt="Örnek Baseline Vision vuruş performans verisi — Tennis Pro Analysis"
                 />
@@ -256,7 +258,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 6. 03 — Servis Performans Değerlendirmesi */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -271,7 +273,7 @@ export default function SampleReportTR() {
             <Reveal>
               <div>
                 <OrnekEtiketi />
-                <ScreenshotWithFallback
+                <PhoneFrame
                   src="/images/baseline/baseline-serve-stats.png"
                   alt="Örnek Baseline Vision servis hızı ve yerleşim verisi — Tennis Pro Analysis"
                 />
@@ -290,7 +292,7 @@ export default function SampleReportTR() {
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
                   Ortalama 165 km/s, maksimum 182 km/s birinci servis hızı bu yaş grubu için güçlü bir silah niteliği taşıyor ve ITF Junior seviyesinde rekabet avantajı sağlayacak. Ancak %50'lik birinci servis isabet oranı geliştirilmeli — birinci servisin yarısını kaçırmak ikinci servis üzerinde gereksiz baskı yaratıyor. Servis yerleşimi %40/%40/%20 dağılım gösteriyor; daha güçlü rakiplere karşı daha fazla çeşitlilik ve gizlilik gerekecek. İkinci servis tutarlılığı bir sonraki turnuva bloğundan önce öncelikli antrenman konusu olmalı.
                 </p>
-                <KoclukOnceligi text="Temel Öncelik: Birinci servis isabet oranını %65+ seviyesine çıkar ve ikinci servisi güvenilir bir silaha dönüştür." />
+                <KoclukOnceligi text="Temel Öncelik: Birinci servis isabet oranını artır ve ikinci servisi güvenilir bir silaha dönüştür." />
                 <DrillCard drill="10 hedefli birinci servis + 10 spinli ikinci servis baskı oyunu" />
               </div>
             </Reveal>
@@ -299,7 +301,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 7. 4 Haftalık Koçluk Öncelikleri */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -344,7 +346,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 8. 2 Haftalık Oyuncu Aksiyon Planı */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -397,7 +399,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 9. Veli / Oyuncu Özeti */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -419,7 +421,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 10. Neden Tennis Pro Analysis? */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -432,9 +434,9 @@ export default function SampleReportTR() {
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { num: "01", title: "Koçluk Deneyimi", text: "Avustralya ve Türkiye'de 20+ yıllık tenis ve spor deneyimi." },
+              { num: "01", title: "Koçluk Deneyimi",         text: "Avustralya ve Türkiye'de tenis ve spor deneyimi — kulüpler, akademiler ve turnuva ortamları." },
               { num: "02", title: "Baseline Vision Destekli", text: "Baseline Vision verileri net geri bildirim ve oyuncu gelişimi için kullanılır." },
-              { num: "03", title: "Oyuncu & Veli Dostu", text: "Raporlar, oyuncuların ve velilerin üzerinde çalışılacakları şeyi anlayabileceği açık bir dilde yazılır." },
+              { num: "03", title: "Oyuncu & Veli Dostu",     text: "Raporlar, oyuncuların ve velilerin üzerinde çalışılacakları şeyi anlayabileceği açık bir dilde yazılır." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 80}>
                 <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
@@ -449,7 +451,7 @@ export default function SampleReportTR() {
       </section>
 
       {/* 11. Yasal Not */}
-      <section className="py-10 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-8 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto text-center">
           <p className="text-xs text-[#A7B0BA]/60 leading-relaxed">
             Bu, kurgusal oyuncu verisi kullanan örnek bir tanıtım raporudur. Tennis Pro Analysis otomatik teknik vuruş teşhisi yapma iddiasında bulunmaz ve sahada koçluğun yerini tutmaz. Baseline Vision performans verisi ve görsel geri bildirim sağlar. Tennis Pro Analysis bu verileri koçluk tecrübesiyle yorumlayarak pratik oyuncu gelişim öncelikleri oluşturur.
@@ -457,31 +459,36 @@ export default function SampleReportTR() {
         </div>
       </section>
 
-      {/* 12. Son CTA */}
-      <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
-        <div className="max-w-[900px] mx-auto bg-[#B7FF00] rounded-2xl p-10 md:p-14 text-center">
-          <h2 className="font-anton uppercase text-3xl md:text-4xl text-[#06141F] mb-4 leading-tight">
-            OYUNCUNUZ İÇİN RAPOR İSTEYİN
-          </h2>
-          <p className="text-[#06141F]/80 mb-8 max-w-lg mx-auto leading-relaxed">
-            Baseline Vision destekli oyuncu gelişim raporu için Tennis Pro Analysis ile WhatsApp'tan iletişime geçin.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#06141F] text-[#B7FF00] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:bg-[#0d1b2a] transition-colors rounded"
-            >
-              Oyuncu Raporu Talep Et <ArrowRight size={16} />
-            </a>
-            <Link
-              to="/baseline-vision"
-              className="inline-flex items-center justify-center gap-2 border-2 border-[#06141F]/30 text-[#06141F] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:border-[#06141F] transition-colors rounded"
-            >
-              Baseline Vision'ı İncele <ArrowRight size={16} />
-            </Link>
-          </div>
+      {/* 12. Son CTA — dark premium style */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
+        <div className="max-w-[900px] mx-auto text-center">
+          <Reveal>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">
+              TENNIS PRO ANALYSIS
+            </div>
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4 leading-tight">
+              OYUNCUNUZ İÇİN RAPOR İSTEYİN
+            </h2>
+            <p className="text-[#A7B0BA] max-w-xl mx-auto mb-8 leading-relaxed">
+              Baseline Vision destekli oyuncu gelişim raporu için Tennis Pro Analysis ile WhatsApp'tan iletişime geçin.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                Oyuncu Raporu Talep Et <ArrowRight size={16} />
+              </a>
+              <Link
+                to="/baseline-vision"
+                className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
+              >
+                Baseline Vision'ı İncele <ArrowRight size={16} />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 

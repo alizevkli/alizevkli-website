@@ -6,28 +6,31 @@ import { SOCIAL } from "../constants/images";
 
 const WA_URL = SOCIAL.whatsappUrl;
 
-const ScreenshotWithFallback = ({ src, alt }) => {
+/* Phone-style frame — matches BaselineVision card style */
+const PhoneFrame = ({ src, alt }) => {
   const [failed, setFailed] = useState(false);
   const filename = src.split("/").pop();
-
-  if (failed) {
-    return (
-      <div className="w-full max-w-xs mx-auto rounded-2xl bg-[#0d1b2a] border border-white/10 flex items-center justify-center p-8 text-center min-h-[200px]">
-        <p className="text-[#A7B0BA] text-sm leading-relaxed">
-          Baseline Vision screenshot<br />
-          <span className="text-white/40 text-xs font-mono">{filename}</span>
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <img
-      src={src}
-      alt={alt}
-      onError={() => setFailed(true)}
-      className="w-full max-w-xs mx-auto rounded-2xl shadow-lg object-contain"
-    />
+    <div className="w-full max-w-[280px] mx-auto">
+      <div className="bg-[#0d1b2a] border border-white/10 rounded-2xl overflow-hidden shadow-xl ring-1 ring-lime-400/10 min-h-[160px] flex items-center justify-center">
+        {failed ? (
+          <p className="text-[#A7B0BA] text-sm p-6 text-center leading-relaxed">
+            Baseline Vision screenshot
+            <br />
+            <span className="text-white/40 text-xs font-mono">{filename}</span>
+          </p>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            onError={() => setFailed(true)}
+            className="w-full object-contain block"
+            style={{ maxHeight: "320px" }}
+            loading="lazy"
+          />
+        )}
+      </div>
+    </div>
   );
 };
 
@@ -47,7 +50,7 @@ const StatBox = ({ label, value }) => (
   </div>
 );
 
-const ScreenshotLabel = () => (
+const SampleLabel = () => (
   <div className="text-[9px] uppercase tracking-[0.3em] text-[#B7FF00] mb-2 text-center">
     SAMPLE BASELINE VISION DATA
   </div>
@@ -55,10 +58,10 @@ const ScreenshotLabel = () => (
 
 export default function SampleReport() {
   return (
-    <div data-testid="page-sample-report" className="bg-[#0A1220] text-white">
+    <div data-testid="page-sample-report" className="bg-[#0A1220] text-white overflow-x-hidden">
 
       {/* 1. Header */}
-      <section className="pt-36 md:pt-44 pb-14 md:pb-20 px-5 md:px-10 bg-[#06141F]">
+      <section className="pt-36 md:pt-44 pb-12 md:pb-16 px-5 md:px-10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-5 flex items-center gap-3">
@@ -100,7 +103,7 @@ export default function SampleReport() {
       </section>
 
       {/* 2. Player Snapshot */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border-l-4 border-[#B7FF00]">
@@ -127,7 +130,7 @@ export default function SampleReport() {
       </section>
 
       {/* 3. What This Report Includes */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -140,26 +143,10 @@ export default function SampleReport() {
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              {
-                num: "01",
-                title: "Baseline Vision Data Review",
-                text: "Session statistics, shot patterns, placement and performance indicators.",
-              },
-              {
-                num: "02",
-                title: "Coaching Interpretation",
-                text: "What the data means for the player's development.",
-              },
-              {
-                num: "03",
-                title: "4-Week Coaching Priorities",
-                text: "Clear focus areas for the next training block.",
-              },
-              {
-                num: "04",
-                title: "Parent / Player Summary",
-                text: "Simple explanation that the player and family can understand.",
-              },
+              { num: "01", title: "Baseline Vision Data Review",  text: "Session statistics, shot patterns, placement and performance indicators." },
+              { num: "02", title: "Coaching Interpretation",       text: "What the data means for the player's development." },
+              { num: "03", title: "4-Week Coaching Priorities",    text: "Clear focus areas for the next training block." },
+              { num: "04", title: "Parent / Player Summary",       text: "Simple explanation that the player and family can understand." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 70}>
                 <div className="bg-[#06141F] border border-[#F8FAFC]/10 p-6 rounded-2xl h-full hover:border-[#B7FF00]/30 transition-colors">
@@ -173,8 +160,8 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 4. Match Performance Snapshot — 01 */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      {/* 4. Match Performance — 01 */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -188,8 +175,8 @@ export default function SampleReport() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <ScreenshotLabel />
-                <ScreenshotWithFallback
+                <SampleLabel />
+                <PhoneFrame
                   src="/images/baseline/baseline-match-stats.png"
                   alt="Sample Baseline Vision match statistics — Tennis Pro Analysis player development report"
                 />
@@ -215,8 +202,8 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 5. Ground Stroke Performance Review — 02 */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      {/* 5. Ground Stroke — 02 */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -241,8 +228,8 @@ export default function SampleReport() {
             </Reveal>
             <Reveal className="md:order-1">
               <div>
-                <ScreenshotLabel />
-                <ScreenshotWithFallback
+                <SampleLabel />
+                <PhoneFrame
                   src="/images/baseline/baseline-ground-strokes.png"
                   alt="Sample Baseline Vision ground stroke performance data — Tennis Pro Analysis"
                 />
@@ -257,8 +244,8 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 6. Serve Performance Review — 03 */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      {/* 6. Serve — 03 */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="flex items-center gap-3 mb-1">
@@ -272,8 +259,8 @@ export default function SampleReport() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <ScreenshotLabel />
-                <ScreenshotWithFallback
+                <SampleLabel />
+                <PhoneFrame
                   src="/images/baseline/baseline-serve-stats.png"
                   alt="Sample Baseline Vision serve speed and placement data — Tennis Pro Analysis"
                 />
@@ -292,7 +279,7 @@ export default function SampleReport() {
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
                   First serve average speed of 165 km/h with a maximum of 182 km/h is strong for a 16-year-old and will be a competitive weapon at ITF Junior level. However, first serve percentage at 50% needs improvement — losing half of first serve points creates unnecessary pressure on the second serve. Placement shows 40/40/20 distribution across serve zones — more variety and disguise will be needed against stronger opponents. Second serve consistency should become a training priority before the next tournament block.
                 </p>
-                <CoachingPriority text="Main Priority: Improve first serve percentage to 65%+ and develop second serve as a reliable weapon." />
+                <CoachingPriority text="Main Priority: Improve first serve percentage and develop second serve as a reliable weapon." />
               </div>
             </Reveal>
           </div>
@@ -300,7 +287,7 @@ export default function SampleReport() {
       </section>
 
       {/* 7. 4-Week Coaching Priorities */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -335,9 +322,7 @@ export default function SampleReport() {
               <Reveal key={card.num} delay={i * 80}>
                 <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">
-                    {card.title}
-                  </h3>
+                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
                 </div>
               </Reveal>
@@ -346,8 +331,8 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 8. 2-Week Player Action Plan */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      {/* 8. 2-Week Action Plan */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -400,7 +385,7 @@ export default function SampleReport() {
       </section>
 
       {/* 9. Parent / Player Summary */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -422,7 +407,7 @@ export default function SampleReport() {
       </section>
 
       {/* 10. Why Tennis Pro Analysis */}
-      <section className="py-14 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
@@ -438,7 +423,7 @@ export default function SampleReport() {
               {
                 num: "01",
                 title: "Coaching Experience",
-                text: "Australia and Türkiye tennis coaching background spanning 20+ years across clubs, academies and tournament environments.",
+                text: "Tennis coaching experience across Australia and Türkiye — clubs, academies and tournament environments.",
               },
               {
                 num: "02",
@@ -454,9 +439,7 @@ export default function SampleReport() {
               <Reveal key={card.num} delay={i * 80}>
                 <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">
-                    {card.title}
-                  </h3>
+                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
                 </div>
               </Reveal>
@@ -466,7 +449,7 @@ export default function SampleReport() {
       </section>
 
       {/* 11. Disclaimer */}
-      <section className="py-10 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-8 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto text-center">
           <p className="text-xs text-[#A7B0BA]/60 leading-relaxed">
             This is a sample demonstration report using fictional player data. Tennis Pro Analysis does not claim to provide automatic technical stroke diagnosis or replace on-court coaching. Baseline Vision provides performance data and visual feedback. Tennis Pro Analysis uses coaching experience to interpret that data and create practical player-development priorities.
@@ -474,31 +457,36 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 12. CTA */}
-      <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
-        <div className="max-w-[900px] mx-auto bg-[#B7FF00] rounded-2xl p-10 md:p-14 text-center">
-          <h2 className="font-anton uppercase text-3xl md:text-4xl text-[#06141F] mb-4 leading-tight">
-            WANT A REPORT FOR YOUR PLAYER?
-          </h2>
-          <p className="text-[#06141F]/80 mb-8 max-w-lg mx-auto leading-relaxed">
-            Contact Tennis Pro Analysis on WhatsApp to request a Baseline Vision-supported player development report.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#06141F] text-[#B7FF00] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:bg-[#0d1b2a] transition-colors rounded"
-            >
-              Request a Player Report <ArrowRight size={16} />
-            </a>
-            <Link
-              to="/baseline-vision"
-              className="inline-flex items-center justify-center gap-2 border-2 border-[#06141F]/30 text-[#06141F] px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] hover:border-[#06141F] transition-colors rounded"
-            >
-              Learn About Baseline Vision <ArrowRight size={16} />
-            </Link>
-          </div>
+      {/* 12. CTA — dark premium style */}
+      <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
+        <div className="max-w-[900px] mx-auto text-center">
+          <Reveal>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">
+              TENNIS PRO ANALYSIS
+            </div>
+            <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4 leading-tight">
+              WANT A REPORT FOR YOUR PLAYER?
+            </h2>
+            <p className="text-[#A7B0BA] max-w-xl mx-auto mb-8 leading-relaxed">
+              Contact Tennis Pro Analysis on WhatsApp to request a Baseline Vision-supported player development report.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
+              >
+                Request a Player Report <ArrowRight size={16} />
+              </a>
+              <Link
+                to="/baseline-vision"
+                className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
+              >
+                Learn About Baseline Vision <ArrowRight size={16} />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
