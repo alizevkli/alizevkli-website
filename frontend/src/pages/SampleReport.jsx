@@ -6,18 +6,14 @@ import { SOCIAL } from "../constants/images";
 
 const WA_URL = SOCIAL.whatsappUrl;
 
-/* Phone-style frame — matches BaselineVision card style */
 const PhoneFrame = ({ src, alt }) => {
   const [failed, setFailed] = useState(false);
-  const filename = src.split("/").pop();
   return (
     <div className="w-full max-w-[280px] mx-auto">
       <div className="bg-[#0d1b2a] border border-white/10 rounded-2xl overflow-hidden shadow-xl ring-1 ring-lime-400/10 min-h-[160px] flex items-center justify-center">
         {failed ? (
           <p className="text-[#A7B0BA] text-sm p-6 text-center leading-relaxed">
-            Baseline Vision screenshot
-            <br />
-            <span className="text-white/40 text-xs font-mono">{filename}</span>
+            Sample screenshot
           </p>
         ) : (
           <img
@@ -25,7 +21,7 @@ const PhoneFrame = ({ src, alt }) => {
             alt={alt}
             onError={() => setFailed(true)}
             className="w-full object-contain block"
-            style={{ maxHeight: "320px" }}
+            style={{ maxHeight: "300px" }}
             loading="lazy"
           />
         )}
@@ -35,7 +31,7 @@ const PhoneFrame = ({ src, alt }) => {
 };
 
 const CoachingPriority = ({ text }) => (
-  <div className="border-l-4 border-lime-400 bg-lime-400/10 p-4 rounded-r-xl text-sm mt-5">
+  <div className="border-l-4 border-lime-400 bg-lime-400/10 p-4 rounded-r-xl text-sm mt-4">
     <span className="text-[10px] uppercase tracking-[0.3em] text-lime-400 font-bold block mb-1">
       COACHING PRIORITY
     </span>
@@ -43,24 +39,24 @@ const CoachingPriority = ({ text }) => (
   </div>
 );
 
-const StatBox = ({ label, value }) => (
-  <div className="flex flex-col items-center bg-[#06141F] border border-[#F8FAFC]/10 rounded-xl px-4 py-3 min-w-[110px]">
-    <span className="font-anton text-[#B7FF00] text-lg leading-none">{value}</span>
+const Chip = ({ label, value }) => (
+  <div className="flex flex-col items-center bg-[#06141F] border border-[#F8FAFC]/10 rounded-xl px-4 py-3 min-w-[100px]">
+    <span className="font-anton text-[#B7FF00] text-base leading-none">{value}</span>
     <span className="text-[9px] uppercase tracking-[0.2em] text-[#A7B0BA] mt-1 text-center">{label}</span>
   </div>
 );
 
-const SampleLabel = () => (
-  <div className="text-[9px] uppercase tracking-[0.3em] text-[#B7FF00] mb-2 text-center">
-    SAMPLE BASELINE VISION DATA
-  </div>
+const SampleNote = () => (
+  <p className="text-[9px] uppercase tracking-[0.2em] text-[#A7B0BA]/50 text-center mt-2">
+    Sample data shown for illustration only.
+  </p>
 );
 
 export default function SampleReport() {
   return (
     <div data-testid="page-sample-report" className="bg-[#0A1220] text-white overflow-x-hidden">
 
-      {/* 1. Header */}
+      {/* 1. Hero */}
       <section className="pt-36 md:pt-44 pb-12 md:pb-16 px-5 md:px-10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
@@ -70,53 +66,45 @@ export default function SampleReport() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-[0.93] mb-6">
-              SAMPLE PLAYER DEVELOPMENT REPORT
+            <h1 className="font-anton uppercase text-4xl md:text-6xl lg:text-7xl text-white leading-[0.93] mb-5">
+              SAMPLE PLAYER<br />DEVELOPMENT REPORT
             </h1>
           </Reveal>
-          <Reveal delay={140}>
-            <p className="text-base md:text-lg text-[#A7B0BA] leading-relaxed max-w-2xl mb-3">
-              This sample shows how Tennis Pro Analysis combines Baseline Vision session data with coaching observation to create clear, practical development priorities for players, parents and clubs.
+          <Reveal delay={130}>
+            <p className="text-base md:text-lg text-[#A7B0BA] leading-relaxed max-w-2xl mb-4">
+              Data does not coach by itself. Ali Zevkli interprets session data through a coaching lens and turns it into practical player development priorities.
             </p>
           </Reveal>
           <Reveal delay={170}>
-            <p className="text-sm text-[#A7B0BA] leading-relaxed max-w-2xl mb-7 italic">
-              Tennis Pro Analysis interprets Baseline Vision session data through a coaching and player-development lens — we do not replace Baseline Vision or claim to provide automatic technical stroke diagnosis.
-            </p>
-          </Reveal>
-          <Reveal delay={200}>
             <div className="inline-block border border-lime-400/40 text-lime-400 text-[10px] uppercase tracking-[0.3em] px-4 py-2 mb-8 rounded">
-              SAMPLE REPORT — FICTIONAL PLAYER DATA FOR DEMONSTRATION ONLY
+              FICTIONAL PLAYER DATA — DEMONSTRATION ONLY
             </div>
           </Reveal>
-          <Reveal delay={240}>
+          <Reveal delay={210}>
             <a
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="tpa-btn-primary inline-flex items-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
             >
-              Request a Player Development Report <ArrowRight size={16} />
+              Request Report on WhatsApp <ArrowRight size={16} />
             </a>
           </Reveal>
         </div>
       </section>
 
-      {/* 2. Player Snapshot */}
+      {/* 2. Player Profile */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border-l-4 border-[#B7FF00]">
-              <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-6">
-                PLAYER PROFILE
-              </div>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-5">PLAYER PROFILE</div>
               <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   ["Age", "16"],
-                  ["Level", "ITF Junior Player — Turkey / International Circuit"],
+                  ["Level", "ITF Junior — Turkey / International Circuit"],
                   ["Goal", "ITF Junior Development"],
-                  ["Session Type", "Baseline Vision-Supported Match Performance Review"],
-                  ["Prepared by", "Tennis Pro Analysis"],
+                  ["Session Type", "Match & Session Development Review"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex flex-col gap-1">
                     <dt className="text-[10px] uppercase tracking-[0.25em] text-[#A7B0BA]">{label}</dt>
@@ -133,26 +121,21 @@ export default function SampleReport() {
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              REPORT STRUCTURE
-            </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-8 leading-tight">
               WHAT THIS REPORT INCLUDES
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { num: "01", title: "Baseline Vision Data Review",  text: "Session statistics, shot patterns, placement and performance indicators." },
-              { num: "02", title: "Coaching Interpretation",       text: "What the data means for the player's development." },
-              { num: "03", title: "4-Week Coaching Priorities",    text: "Clear focus areas for the next training block." },
-              { num: "04", title: "Parent / Player Summary",       text: "Simple explanation that the player and family can understand." },
+              { num: "01", title: "Session Data Review" },
+              { num: "02", title: "Coaching Interpretation" },
+              { num: "03", title: "4-Week Priorities" },
+              { num: "04", title: "Player & Parent Summary" },
             ].map((card, i) => (
-              <Reveal key={card.num} delay={i * 70}>
-                <div className="bg-[#06141F] border border-[#F8FAFC]/10 p-6 rounded-2xl h-full hover:border-[#B7FF00]/30 transition-colors">
-                  <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-lg text-white mb-2 leading-tight">{card.title}</h3>
-                  <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
+              <Reveal key={card.num} delay={i * 60}>
+                <div className="bg-[#06141F] border border-[#F8FAFC]/10 p-5 rounded-2xl hover:border-[#B7FF00]/30 transition-colors text-center">
+                  <div className="font-anton text-[#B7FF00] text-3xl mb-3">{card.num}</div>
+                  <h3 className="font-anton uppercase text-base text-white leading-tight">{card.title}</h3>
                 </div>
               </Reveal>
             ))}
@@ -160,126 +143,106 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 4. Match Performance — 01 */}
+      {/* 4. Match Performance */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">01</span>
-              <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                MATCH PERFORMANCE SNAPSHOT
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-anton text-[#B7FF00]/30 text-5xl leading-none select-none">01</span>
+              <h2 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">MATCH PERFORMANCE</h2>
             </div>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <SampleLabel />
                 <PhoneFrame
                   src="/images/baseline/baseline-match-stats.png"
-                  alt="Sample Baseline Vision match statistics — Tennis Pro Analysis player development report"
+                  alt="Sample match statistics — Tennis Pro Analysis player development report"
                 />
-                <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Points Won" value="62%" />
-                  <StatBox label="Errors" value="13" />
-                  <StatBox label="Svc Pts Won" value="59%" />
+                <div className="flex flex-wrap justify-center gap-3 mt-4">
+                  <Chip label="Points Won" value="62%" />
+                  <Chip label="Errors" value="13" />
+                  <Chip label="Svc Pts Won" value="59%" />
                 </div>
+                <SampleNote />
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div>
-                <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  MATCH PERFORMANCE OVERVIEW
-                </h2>
+              <div className="flex flex-col gap-4">
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  The player showed strong competitive intent throughout the match. Points Won at 62% reflects solid overall performance, but the error count of 13 versus only 4 for the opponent highlights the main development area: reducing unforced errors during neutral rallies. Double faults (3) suggest serve consistency under pressure needs attention. Service points won at 59% is a positive — this is a platform to build on.
+                  Points Won at 62% shows solid overall performance, but 13 errors against the opponent's 4 highlights the main development area: reducing unforced errors in neutral rallies. Double faults (3) and a 59% serve points won rate signal serve consistency is a further priority.
                 </p>
-                <CoachingPriority text="Main Priority: Reduce unforced errors during neutral rallies before attempting aggressive patterns." />
+                <CoachingPriority text="Reduce unforced errors in neutral rallies before attempting aggressive patterns." />
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 5. Ground Stroke — 02 */}
+      {/* 5. Stroke Patterns */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">02</span>
-              <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                GROUND STROKE PERFORMANCE REVIEW
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-anton text-[#B7FF00]/30 text-5xl leading-none select-none">02</span>
+              <h2 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">STROKE PATTERNS</h2>
             </div>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal delay={120} className="md:order-2">
-              <div>
-                <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  GROUND STROKES & BALL PLACEMENT
-                </h2>
+              <div className="flex flex-col gap-4">
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  Ground stroke data shows average speed of 90 km/h with a max of 138 km/h — appropriate for a 16-year-old ITF Junior player. Ball placement shows 61% to the forehand side and 39% to the backhand side, indicating a clear tendency to avoid the backhand wing. Net clearance of 47cm is safe but could be more aggressive on shorter balls. The placement map shows most balls landing in the mid-court zone — deeper placement will be the key differentiator at ITF Junior level.
+                  Shot distribution shows 61% to the forehand side — a clear tendency to avoid the backhand wing. Ball depth is mid-court heavy; pushing landing zones deeper will be the key differentiator at ITF Junior level.
                 </p>
-                <CoachingPriority text="Main Priority: Develop backhand wing confidence and increase depth on cross-court patterns." />
+                <CoachingPriority text="Build backhand wing confidence and increase cross-court depth." />
               </div>
             </Reveal>
             <Reveal className="md:order-1">
               <div>
-                <SampleLabel />
                 <PhoneFrame
                   src="/images/baseline/baseline-ground-strokes.png"
-                  alt="Sample Baseline Vision ground stroke performance data — Tennis Pro Analysis"
+                  alt="Sample stroke distribution data — Tennis Pro Analysis"
                 />
-                <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Avg Speed" value="90 km/h" />
-                  <StatBox label="Max Speed" value="138 km/h" />
-                  <StatBox label="Net Clearance" value="47cm" />
+                <div className="flex flex-wrap justify-center gap-3 mt-4">
+                  <Chip label="FH / BH" value="61/39%" />
+                  <Chip label="Avg Speed" value="90 km/h" />
                 </div>
+                <SampleNote />
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 6. Serve — 03 */}
+      {/* 6. Serve Trends */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="flex items-center gap-3 mb-1">
-              <span className="font-anton text-[#B7FF00]/40 text-5xl leading-none select-none">03</span>
-              <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                SERVE PERFORMANCE REVIEW
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="font-anton text-[#B7FF00]/30 text-5xl leading-none select-none">03</span>
+              <h2 className="font-anton uppercase text-2xl md:text-3xl text-white leading-tight">SERVE TRENDS</h2>
             </div>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <Reveal>
               <div>
-                <SampleLabel />
                 <PhoneFrame
                   src="/images/baseline/baseline-serve-stats.png"
-                  alt="Sample Baseline Vision serve speed and placement data — Tennis Pro Analysis"
+                  alt="Sample serve speed and placement data — Tennis Pro Analysis"
                 />
-                <div className="flex flex-wrap justify-center gap-3 mt-5">
-                  <StatBox label="Avg Speed" value="165 km/h" />
-                  <StatBox label="Max Speed" value="182 km/h" />
-                  <StatBox label="1st Serve %" value="50%" />
+                <div className="flex flex-wrap justify-center gap-3 mt-4">
+                  <Chip label="Avg Speed" value="165 km/h" />
+                  <Chip label="1st Serve %" value="50%" />
                 </div>
+                <SampleNote />
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div>
-                <h2 className="font-anton uppercase text-2xl md:text-3xl text-white mb-4 leading-tight">
-                  SERVE PERFORMANCE
-                </h2>
+              <div className="flex flex-col gap-4">
                 <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                  First serve average speed of 165 km/h with a maximum of 182 km/h is strong for a 16-year-old and will be a competitive weapon at ITF Junior level. However, first serve percentage at 50% needs improvement — losing half of first serve points creates unnecessary pressure on the second serve. Placement shows 40/40/20 distribution across serve zones — more variety and disguise will be needed against stronger opponents. Second serve consistency should become a training priority before the next tournament block.
+                  First serve speed is strong for a 16-year-old, but a 50% first serve percentage creates unnecessary pressure on the second serve. More placement variety and a reliable second serve with spin are the next development focus.
                 </p>
-                <CoachingPriority text="Main Priority: Improve first serve percentage and develop second serve as a reliable weapon." />
+                <CoachingPriority text="Improve first serve percentage and develop second serve reliability." />
               </div>
             </Reveal>
           </div>
@@ -290,39 +253,20 @@ export default function SampleReport() {
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              COACHING PRIORITIES
-            </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-2 leading-tight">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-8 leading-tight">
               4-WEEK COACHING PRIORITIES
             </h2>
-            <p className="text-[#A7B0BA] text-sm mb-10">
-              Based on Baseline Vision data and coaching observation — next 4 weeks
-            </p>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              {
-                num: "01",
-                title: "Rally Consistency & Depth",
-                text: "Build a reliable cross-court baseline rally with depth past the service line. Focus on neutral ball tolerance before attempting direction changes. Target: 20-ball deep cross-court rally consistency.",
-              },
-              {
-                num: "02",
-                title: "Backhand Wing Development",
-                text: "Reduce avoidance of the backhand side. Structured backhand-focused drills with target zones. The backhand must become a neutral weapon, not a defensive shot, before ITF Junior competition.",
-              },
-              {
-                num: "03",
-                title: "Serve Consistency Under Pressure",
-                text: "Increase first serve percentage through controlled target practice. Develop a reliable second serve with spin and depth. Double fault reduction is a priority for tournament matches.",
-              },
+              { num: "01", title: "Rally Depth",          text: "Build consistent cross-court depth past the service line. Neutral ball tolerance before direction changes." },
+              { num: "02", title: "Backhand Development", text: "Structured backhand-focused work with target zones. Backhand must become a reliable neutral weapon." },
+              { num: "03", title: "Serve Consistency",    text: "Increase first serve percentage and develop a second serve with spin and depth." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 80}>
-                <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
+                <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 hover:border-[#B7FF00]/30 transition-colors h-full">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
-                  <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
+                  <h3 className="font-anton uppercase text-lg text-white mb-2 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
                 </div>
               </Reveal>
@@ -335,34 +279,14 @@ export default function SampleReport() {
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              ACTION PLAN
-            </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-8 leading-tight">
               2-WEEK PLAYER ACTION PLAN
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {[
-              {
-                week: "WEEK 1 — Foundation",
-                items: [
-                  "Deep rally tolerance drills",
-                  "Cross-court pattern consistency",
-                  "Backhand target zone work",
-                  "Serve placement practice (no pressure)",
-                ],
-              },
-              {
-                week: "WEEK 2 — Application",
-                items: [
-                  "Match-play situations with rally structure",
-                  "Backhand in competitive drill scenarios",
-                  "Serve under simulated match pressure",
-                  "Video review with player and parent",
-                ],
-              },
+              { week: "WEEK 1 — FOUNDATION", items: ["Deep rally tolerance drills", "Cross-court pattern consistency", "Backhand target zone work", "Serve placement practice (low pressure)"] },
+              { week: "WEEK 2 — APPLICATION", items: ["Match-play rally structure scenarios", "Backhand in competitive drills", "Serve under simulated match pressure", "Video review with player and parent"] },
             ].map((block, i) => (
               <Reveal key={block.week} delay={i * 100}>
                 <div>
@@ -372,8 +296,7 @@ export default function SampleReport() {
                   <ul className="space-y-3">
                     {block.items.map((item) => (
                       <li key={item} className="flex items-start gap-3 text-sm text-[#A7B0BA]">
-                        <span className="text-[#B7FF00] mt-1 shrink-0">·</span>
-                        {item}
+                        <span className="text-[#B7FF00] mt-1 shrink-0">·</span>{item}
                       </li>
                     ))}
                   </ul>
@@ -384,22 +307,18 @@ export default function SampleReport() {
         </div>
       </section>
 
-      {/* 9. Parent / Player Summary */}
+      {/* 9. Player & Parent Summary */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              SUMMARY
-            </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-6 leading-tight">
-              PARENT / PLAYER SUMMARY
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-6 leading-tight">
+              PLAYER & PARENT SUMMARY
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="bg-[#0d1b2a] rounded-2xl p-7 md:p-9 border border-white/10">
               <p className="text-white/90 leading-relaxed text-base md:text-lg">
-                The player has strong ITF Junior potential and already shows competitive intent. The main development opportunity is reducing unnecessary errors before playing more aggressively. Over the next training block, the focus should be rally depth, backhand confidence and serve consistency under pressure.
+                Strong ITF Junior potential and good competitive intent. The clearest development opportunity is reducing errors before playing aggressively. Next training block focus: rally depth, backhand confidence, and serve consistency under pressure.
               </p>
             </div>
           </Reveal>
@@ -410,34 +329,18 @@ export default function SampleReport() {
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="text-[11px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
-              <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              ABOUT TPA
-            </div>
-            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mt-2 mb-10 leading-tight">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-8 leading-tight">
               WHY TENNIS PRO ANALYSIS
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              {
-                num: "01",
-                title: "Coaching Experience",
-                text: "Tennis coaching experience across Australia and Türkiye — clubs, academies and tournament environments.",
-              },
-              {
-                num: "02",
-                title: "Baseline Vision-Supported",
-                text: "Uses Baseline Vision data to support clearer feedback, measurable tracking and player development.",
-              },
-              {
-                num: "03",
-                title: "Player & Parent Friendly",
-                text: "Reports are written in clear language so players and parents understand exactly what to work on next.",
-              },
+              { num: "01", title: "Coaching Experience",      text: "Tennis coaching experience across Australia and Türkiye — clubs, academies and tournament environments." },
+              { num: "02", title: "Data-Supported Method",    text: "Session data supports clearer feedback, measurable tracking and practical player development plans." },
+              { num: "03", title: "Player & Parent Friendly", text: "Reports are written so players and parents understand exactly what to work on next." },
             ].map((card, i) => (
               <Reveal key={card.num} delay={i * 80}>
-                <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 h-full hover:border-[#B7FF00]/30 transition-colors">
+                <div className="bg-[#0d1b2a] rounded-2xl p-6 border border-white/10 hover:border-[#B7FF00]/30 transition-colors h-full">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">{card.num}</div>
                   <h3 className="font-anton uppercase text-xl text-white mb-3 leading-tight">{card.title}</h3>
                   <p className="text-sm text-[#A7B0BA] leading-relaxed">{card.text}</p>
@@ -449,26 +352,24 @@ export default function SampleReport() {
       </section>
 
       {/* 11. Disclaimer */}
-      <section className="py-8 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
+      <section className="py-6 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[900px] mx-auto text-center">
-          <p className="text-xs text-[#A7B0BA]/60 leading-relaxed">
-            This is a sample demonstration report using fictional player data. Tennis Pro Analysis does not claim to provide automatic technical stroke diagnosis or replace on-court coaching. Baseline Vision provides performance data and visual feedback. Tennis Pro Analysis uses coaching experience to interpret that data and create practical player-development priorities.
+          <p className="text-xs text-[#A7B0BA]/50 leading-relaxed">
+            Sample report — fictional player data for demonstration only. Tennis Pro Analysis uses coaching experience to interpret session data and does not replace on-court coaching.
           </p>
         </div>
       </section>
 
-      {/* 12. CTA — dark premium style */}
+      {/* 12. CTA */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#06141F]">
         <div className="max-w-[900px] mx-auto text-center">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">
-              TENNIS PRO ANALYSIS
-            </div>
+            <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">TENNIS PRO ANALYSIS</div>
             <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4 leading-tight">
-              WANT A REPORT FOR YOUR PLAYER?
+              REQUEST A REPORT FOR YOUR PLAYER
             </h2>
             <p className="text-[#A7B0BA] max-w-xl mx-auto mb-8 leading-relaxed">
-              Contact Tennis Pro Analysis on WhatsApp to request a Baseline Vision-supported player development report.
+              Request a player development report for your next session.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
@@ -477,13 +378,13 @@ export default function SampleReport() {
                 rel="noopener noreferrer"
                 className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
               >
-                Request a Player Report <ArrowRight size={16} />
+                Request Report on WhatsApp <ArrowRight size={16} />
               </a>
               <Link
-                to="/baseline-vision"
+                to="/tpa-method"
                 className="inline-flex items-center justify-center gap-2 border border-[#F8FAFC]/20 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
               >
-                Learn About Baseline Vision <ArrowRight size={16} />
+                Learn More <ArrowRight size={16} />
               </Link>
             </div>
           </Reveal>

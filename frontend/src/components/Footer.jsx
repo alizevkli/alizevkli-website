@@ -13,7 +13,7 @@ export const Footer = () => {
       links: [
         { to: "/", label: t.nav.home },
         { to: "/tpa", label: t.nav.tpa },
-        { to: "/baseline-vision", label: t.nav.baseline },
+        { to: "/tpa-method", label: t.nav.baseline },
         { to: "/coaching", label: t.nav.clubAcademy },
       ],
     },

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -32,7 +32,10 @@ function AppInner() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tpa" element={<TPA />} />
-          <Route path="/baseline-vision" element={<BaselineVision />} />
+          <Route path="/tpa-method" element={<BaselineVision />} />
+          <Route path="/tpa-method-faq" element={<BaselineVisionFAQ />} />
+          <Route path="/baseline-vision" element={<Navigate to="/tpa-method" replace />} />
+          <Route path="/baseline-vision-faq" element={<Navigate to="/tpa-method-faq" replace />} />
           <Route path="/coaching" element={<Coaching />} />
           <Route path="/tournament" element={<Tournament />} />
           <Route path="/pathways" element={<Pathways />} />
@@ -41,7 +44,6 @@ function AppInner() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/baseline-vision-faq" element={<BaselineVisionFAQ />} />
           <Route path="/sample-report" element={<SampleReport />} />
           <Route path="/ornek-rapor" element={<SampleReportTR />} />
           <Route path="*" element={<Home />} />

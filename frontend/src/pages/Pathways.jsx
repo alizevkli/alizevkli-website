@@ -187,7 +187,7 @@ export default function Pathways() {
           <Reveal delay={100}>
             <p className="text-[#A7B0BA] leading-relaxed mb-6">{p.bvText}</p>
             <Link
-              to="/baseline-vision"
+              to="/tpa-method"
               className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-[#B7FF00] hover:gap-3 transition-all"
             >
               {p.bvLink} <ArrowRight size={14} />

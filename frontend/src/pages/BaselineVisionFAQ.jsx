@@ -69,7 +69,7 @@ export default function BaselineVisionFAQ() {
                   {p.cta} <ArrowRight size={14} />
                 </a>
                 <Link
-                  to="/baseline-vision"
+                  to="/tpa-method"
                   className="inline-flex items-center gap-2 border border-[#F8FAFC]/20 px-6 py-3.5 text-sm font-bold uppercase tracking-[0.22em] text-white hover:border-[#B7FF00]/50 transition-colors"
                 >
                   {p.ctaSecondary} <ArrowRight size={14} />

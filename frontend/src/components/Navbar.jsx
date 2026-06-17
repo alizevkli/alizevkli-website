@@ -46,26 +46,26 @@ export const Navbar = () => {
     "/pathways",
     "/tennis-in-english",
     "/australia-consulting",
-    "/baseline-vision-faq",
+    "/tpa-method-faq",
   ];
   const isServicesActive = serviceRoutes.includes(location.pathname);
 
   const serviceLinks = lang === "tr" ? [
     { to: "/tournament", label: t.nav.tournament },
     { to: "/australia-consulting", label: t.nav.consulting },
-    { to: "/baseline-vision-faq", label: t.nav.faq },
+    { to: "/tpa-method-faq", label: t.nav.faq },
   ] : [
     { to: "/coaching", label: t.nav.coaching },
     { to: "/tournament", label: t.nav.tournament },
     { to: "/pathways", label: t.nav.pathways },
     { to: "/tennis-in-english", label: t.nav.tennisEnglish },
     { to: "/australia-consulting", label: t.nav.consulting },
-    { to: "/baseline-vision-faq", label: t.nav.faq },
+    { to: "/tpa-method-faq", label: t.nav.faq },
   ];
 
   const mainLinks = lang === "tr" ? [
     { to: "/", label: t.nav.home, end: true },
-    { to: "/baseline-vision", label: t.nav.baseline },
+    { to: "/tpa-method", label: t.nav.baseline },
     { to: "/pathways", label: t.nav.turkiye2026 },
     { to: "/coaching", label: t.nav.kulupAkademi },
     { to: "/australia-consulting", label: t.nav.australiaBaglantisi },
@@ -74,7 +74,7 @@ export const Navbar = () => {
   ] : [
     { to: "/", label: t.nav.home, end: true },
     { to: "/tpa", label: t.nav.tpa },
-    { to: "/baseline-vision", label: t.nav.baseline },
+    { to: "/tpa-method", label: t.nav.baseline },
     { to: "/pricing", label: t.nav.pricing },
     { to: "/about", label: t.nav.about },
     { to: "/contact", label: t.nav.contact },

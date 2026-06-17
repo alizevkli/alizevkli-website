@@ -9,13 +9,13 @@ import { IMAGES, LOGOS, BRAND } from "../constants/images";
 
 const HERO_CARDS = {
   tr: [
-    { title: "TPA METODU",       sub: "Maç gözlemi, seans değerlendirmesi ve koçluk raporu", link: "/baseline-vision" },
+    { title: "TPA METODU",       sub: "Maç gözlemi, seans değerlendirmesi ve koçluk raporu", link: "/tpa-method" },
     { title: "OYUNCU GELİŞİMİ", sub: "Raporlar, öncelikler ve antrenman planı",              link: "/ornek-rapor" },
     { title: "KULÜP & AKADEMİ", sub: "Oyuncu gelişim sistemi ve iş birliği",                 link: "/coaching" },
     { title: "TÜRKİYE 2026",    sub: "Türkiye'de oyuncu, veli ve kulüplerle çalışma",        link: "/pathways" },
   ],
   en: [
-    { title: "TPA METHOD",         sub: "Match observation, session review & coaching report", link: "/baseline-vision" },
+    { title: "TPA METHOD",         sub: "Match observation, session review & coaching report", link: "/tpa-method" },
     { title: "PLAYER DEVELOPMENT", sub: "Reports, priorities and training plan",               link: "/sample-report" },
     { title: "CLUB & ACADEMY",     sub: "Player development system",                           link: "/coaching" },
     { title: "TÜRKIYE 2026",       sub: "Working with players in Türkiye 2026",                link: "/pathways" },

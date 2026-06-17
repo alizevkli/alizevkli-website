@@ -11,6 +11,10 @@ const META = {
     en: { title: "TPA — Tennis Pro Analysis System | Ali Zevkli", description: "The Tennis Pro Analysis performance system — coaching, match observation, tournament direction and player development." },
     tr: { title: "TPA — Tennis Pro Analysis Sistemi | Ali Zevkli", description: "Tennis Pro Analysis performans sistemi — antrenörlük, maç analizi, turnuva yönetimi ve oyuncu gelişimi." },
   },
+  "/tpa-method": {
+    en: { title: "TPA Player Development Method | Tennis Pro Analysis", description: "TPA Player Development Method combines match observation, session review and coaching interpretation to create practical player development reports." },
+    tr: { title: "TPA Oyuncu Gelişim Metodu | Tennis Pro Analysis", description: "TPA Oyuncu Gelişim Metodu; maç gözlemi, seans değerlendirmesi ve koçluk yorumunu birleştirerek uygulanabilir oyuncu gelişim raporları oluşturur." },
+  },
   "/baseline-vision": {
     en: { title: "TPA Player Development Method | Tennis Pro Analysis", description: "TPA Player Development Method combines match observation, session review and coaching interpretation to create practical player development reports." },
     tr: { title: "TPA Oyuncu Gelişim Metodu | Tennis Pro Analysis", description: "TPA Oyuncu Gelişim Metodu; maç gözlemi, seans değerlendirmesi ve koçluk yorumunu birleştirerek uygulanabilir oyuncu gelişim raporları oluşturur." },
@@ -34,6 +38,10 @@ const META = {
   "/pricing": {
     en: { title: "Pricing — Tennis Coaching & Analysis Sessions | Tennis Pro Analysis", description: "Coaching, performance analysis, club consulting and Australia pathway services. Contact for pricing tailored to your goals." },
     tr: { title: "Fiyatlar — Tenis Antrenörlüğü ve Analiz Seansları | Tennis Pro Analysis", description: "Antrenörlük, performans analizi, kulüp danışmanlığı ve Avustralya yolu hizmetleri. Hedeflerinize özel fiyat için iletişime geçin." },
+  },
+  "/tpa-method-faq": {
+    en: { title: "TPA Method FAQ — How It Works | Tennis Pro Analysis", description: "Everything you need to know about the TPA Player Development Method — what it analyses, how it works, and how to improve your game." },
+    tr: { title: "TPA Metodu SSS — Nasıl Çalışır | Tennis Pro Analysis", description: "TPA Oyuncu Gelişim Metodu hakkında bilmeniz gereken her şey — neyi analiz eder, nasıl çalışır." },
   },
   "/baseline-vision-faq": {
     en: { title: "TPA Method FAQ — How It Works | Tennis Pro Analysis", description: "Everything you need to know about the TPA Player Development Method — what it analyses, how it works, and how to improve your game." },
