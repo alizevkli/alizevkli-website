@@ -3,7 +3,7 @@ export const translations = {
     nav: {
       home: "Home",
       tpa: "TPA",
-      baseline: "TPA Method",
+      tpaMethod: "TPA Method",
       coaching: "Coaching",
       tournament: "Tournaments",
       pathways: "Pathways",
@@ -99,7 +99,7 @@ export const translations = {
       ],
       cta: "Explore TPA",
     },
-    baseline: {
+    tpaMethod: {
       eyebrow: "TPA Player Development Method",
       title: "Match observation. Coaching insight.",
       lead: "TPA Player Development Method combines match observation, session review, player development priorities and coaching interpretation. Ali Zevkli uses structured session data to create practical development reports for players, parents and clubs.",
@@ -398,7 +398,7 @@ export const translations = {
       customText: "Running a club, school program or group of players? Custom packages are available for academies, schools and group bookings. Get in touch to discuss.",
       customCta: "Discuss a Custom Package",
     },
-    baselineFaq: {
+    tpaMethodFaq: {
       eyebrow: "TPA Method FAQ",
       title: "Your questions answered.",
       lead: "Everything you need to know about the TPA Player Development Method — how it works, what it analyses, and how it turns session data into practical development priorities.",
@@ -424,7 +424,7 @@ export const translations = {
     nav: {
       home: "Ana Sayfa",
       tpa: "TPA",
-      baseline: "TPA Metodu",
+      tpaMethod: "TPA Metodu",
       coaching: "Antrenörlük",
       tournament: "Turnuvalar",
       pathways: "Yollar",
@@ -524,7 +524,7 @@ export const translations = {
       ],
       cta: "TPA'yı Keşfet",
     },
-    baseline: {
+    tpaMethod: {
       eyebrow: "TPA Oyuncu Gelişim Metodu",
       title: "Maç gözlemi. Koçluk yorumu.",
       lead: "TPA Oyuncu Gelişim Metodu; maç gözlemi, seans değerlendirmesi, oyuncu gelişim öncelikleri ve koçluk yorumunu birleştirerek oyuncular için uygulanabilir gelişim raporları oluşturur.",
@@ -823,7 +823,7 @@ export const translations = {
       customText: "Bir kulüp, akademi veya resort tenis programı mı yönetiyorsunuz? Özel paketler ve kurumsal teklifler için doğrudan iletişime geçin.",
       customCta: "WhatsApp'tan Bilgi Al",
     },
-    baselineFaq: {
+    tpaMethodFaq: {
       eyebrow: "TPA Metodu SSS",
       title: "Sorularınızın yanıtları burada.",
       lead: "TPA Oyuncu Gelişim Metodu hakkında bilmeniz gereken her şey — nasıl çalışır, neyi analiz eder ve seans verilerini nasıl uygulanabilir gelişim önceliklerine dönüştürür.",

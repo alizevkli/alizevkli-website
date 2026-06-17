@@ -35,12 +35,12 @@ const FAQItem = ({ q, a, index }) => {
   );
 };
 
-export default function BaselineVisionFAQ() {
+export default function TPAMethodFAQ() {
   const { t } = useLanguage();
-  const p = t.baselineFaq;
+  const p = t.tpaMethodFaq;
 
   return (
-    <div data-testid="page-baseline-faq">
+    <div data-testid="page-tpa-method-faq">
       <PageHero eyebrow={p.eyebrow} title={p.title} lead={p.lead} />
 
       <section className="py-20 md:py-28 px-5 md:px-10">

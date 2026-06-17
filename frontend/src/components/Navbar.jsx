@@ -65,7 +65,7 @@ export const Navbar = () => {
 
   const mainLinks = lang === "tr" ? [
     { to: "/", label: t.nav.home, end: true },
-    { to: "/tpa-method", label: t.nav.baseline },
+    { to: "/tpa-method", label: t.nav.tpaMethod },
     { to: "/pathways", label: t.nav.turkiye2026 },
     { to: "/coaching", label: t.nav.kulupAkademi },
     { to: "/australia-consulting", label: t.nav.australiaBaglantisi },
@@ -74,7 +74,7 @@ export const Navbar = () => {
   ] : [
     { to: "/", label: t.nav.home, end: true },
     { to: "/tpa", label: t.nav.tpa },
-    { to: "/tpa-method", label: t.nav.baseline },
+    { to: "/tpa-method", label: t.nav.tpaMethod },
     { to: "/pricing", label: t.nav.pricing },
     { to: "/about", label: t.nav.about },
     { to: "/contact", label: t.nav.contact },

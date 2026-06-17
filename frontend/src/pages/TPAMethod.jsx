@@ -57,19 +57,19 @@ const FAQItem = ({ q, a, index }) => {
 };
 
 /* ── Page ─────────────────────────────────────────────────────────────────── */
-export default function BaselineVision() {
+export default function TPAMethod() {
   const { t, lang } = useLanguage();
   const tr = lang === "tr";
   const caption = tr ? "Örnek TPA seans verisi" : "Sample TPA session data";
 
   return (
-    <div data-testid="page-baseline" className="overflow-x-hidden">
+    <div data-testid="page-tpa-method" className="overflow-x-hidden">
 
       {/* 1. Hero */}
       <PageHero
-        eyebrow={t.baseline.eyebrow}
-        title={t.baseline.title}
-        lead={t.baseline.lead}
+        eyebrow={t.tpaMethod.eyebrow}
+        title={t.tpaMethod.title}
+        lead={t.tpaMethod.lead}
         image={IMAGES.heroCourt}
       />
 
@@ -78,7 +78,7 @@ export default function BaselineVision() {
         <div className="max-w-[900px] mx-auto">
           <Reveal>
             <p className="text-base md:text-lg text-[#A7B0BA] leading-relaxed">
-              {t.baseline.positioningText}
+              {t.tpaMethod.positioningText}
             </p>
           </Reveal>
         </div>
@@ -91,13 +91,13 @@ export default function BaselineVision() {
             <div>
               <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-4 flex items-center gap-3">
                 <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-                {t.baseline.deviceEyebrow}
+                {t.tpaMethod.deviceEyebrow}
               </div>
               <h2 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl text-white leading-[0.95] mb-5">
-                {t.baseline.deviceTitle}
+                {t.tpaMethod.deviceTitle}
               </h2>
               <p className="text-[#A7B0BA] leading-relaxed text-sm md:text-base">
-                {t.baseline.deviceLead}
+                {t.tpaMethod.deviceLead}
               </p>
             </div>
           </Reveal>
@@ -117,7 +117,7 @@ export default function BaselineVision() {
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              {t.baseline.eyebrow}
+              {t.tpaMethod.eyebrow}
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-10 leading-tight">
               {tr ? "TPA Metodu Ne Sağlar?" : "What Does the TPA Method Analyse?"}
@@ -240,14 +240,14 @@ export default function BaselineVision() {
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              {t.baseline.eyebrow}
+              {t.tpaMethod.eyebrow}
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-10 leading-tight">
-              {t.baseline.howTitle}
+              {t.tpaMethod.howTitle}
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {t.baseline.howSteps.map((step, i) => (
+            {t.tpaMethod.howSteps.map((step, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="border border-[#F8FAFC]/10 bg-[#06141F] p-7 h-full hover:border-[#B7FF00]/30 transition-colors rounded-xl">
                   <div className="font-anton text-[#B7FF00] text-4xl mb-4">
@@ -270,15 +270,15 @@ export default function BaselineVision() {
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-3 flex items-center gap-3">
               <span className="inline-block w-6 h-px bg-[#B7FF00]" />
-              {t.baselineFaq.eyebrow}
+              {t.tpaMethodFaq.eyebrow}
             </div>
             <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-10">
-              {t.baselineFaq.title}
+              {t.tpaMethodFaq.title}
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <div className="border-t border-[#F8FAFC]/10">
-              {t.baselineFaq.faqs.map((item, i) => (
+              {t.tpaMethodFaq.faqs.map((item, i) => (
                 <FAQItem key={i} q={item.q} a={item.a} index={i} />
               ))}
             </div>
@@ -291,23 +291,23 @@ export default function BaselineVision() {
         <div className="max-w-[900px] mx-auto text-center">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-[#B7FF00] mb-4">
-              {t.baselineFaq.eyebrow}
+              {t.tpaMethodFaq.eyebrow}
             </div>
             <h2 className="font-anton uppercase text-4xl md:text-5xl text-white mb-4">
-              {t.baselineFaq.ctaBoxTitle}
+              {t.tpaMethodFaq.ctaBoxTitle}
             </h2>
             <p className="text-[#A7B0BA] max-w-xl mx-auto mb-10">
-              {t.baselineFaq.ctaBoxText}
+              {t.tpaMethodFaq.ctaBoxText}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
                 href={SOCIAL.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-testid="baseline-cta"
+                data-testid="tpa-method-cta"
                 className="tpa-btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.22em]"
               >
-                {t.baseline.ctaPrimary} <ArrowRight size={16} />
+                {t.tpaMethod.ctaPrimary} <ArrowRight size={16} />
               </a>
               <Link
                 to={tr ? "/ornek-rapor" : "/sample-report"}

@@ -9,7 +9,7 @@ import { WhatsAppFloat } from "./components/WhatsAppFloat";
 import { SEOMeta } from "./components/SEOMeta";
 import Home from "./pages/Home";
 import TPA from "./pages/TPA";
-import BaselineVision from "./pages/BaselineVision";
+import TPAMethod from "./pages/TPAMethod";
 import Coaching from "./pages/Coaching";
 import Tournament from "./pages/Tournament";
 import Pathways from "./pages/Pathways";
@@ -18,7 +18,7 @@ import Contact from "./pages/Contact";
 import TennisInEnglish from "./pages/TennisInEnglish";
 import AustraliaConsulting from "./pages/AustraliaConsulting";
 import Pricing from "./pages/Pricing";
-import BaselineVisionFAQ from "./pages/BaselineVisionFAQ";
+import TPAMethodFAQ from "./pages/TPAMethodFAQ";
 import SampleReport from "./pages/SampleReport";
 import SampleReportTR from "./pages/SampleReportTR";
 
@@ -32,8 +32,8 @@ function AppInner() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/tpa" element={<TPA />} />
-          <Route path="/tpa-method" element={<BaselineVision />} />
-          <Route path="/tpa-method-faq" element={<BaselineVisionFAQ />} />
+          <Route path="/tpa-method" element={<TPAMethod />} />
+          <Route path="/tpa-method-faq" element={<TPAMethodFAQ />} />
           <Route path="/baseline-vision" element={<Navigate to="/tpa-method" replace />} />
           <Route path="/baseline-vision-faq" element={<Navigate to="/tpa-method-faq" replace />} />
           <Route path="/coaching" element={<Coaching />} />
