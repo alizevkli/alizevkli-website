@@ -60,7 +60,7 @@ const FAQItem = ({ q, a, index }) => {
 export default function BaselineVision() {
   const { t, lang } = useLanguage();
   const tr = lang === "tr";
-  const caption = tr ? "Örnek Baseline Vision ekranı" : "Sample Baseline Vision screen";
+  const caption = tr ? "Örnek TPA seans verisi" : "Sample TPA session data";
 
   return (
     <div data-testid="page-baseline" className="overflow-x-hidden">
@@ -73,7 +73,7 @@ export default function BaselineVision() {
         image={IMAGES.heroCourt}
       />
 
-      {/* 2. Positioning — what BV is vs what TPA does */}
+      {/* 2. TPA positioning — method overview */}
       <section className="py-12 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[900px] mx-auto">
           <Reveal>
@@ -104,14 +104,14 @@ export default function BaselineVision() {
           <Reveal delay={150}>
             <PhoneCard
               src="/images/baseline/baseline-app-home.png"
-              alt="Baseline Vision app — training and match modes"
+              alt="TPA session data — training and match modes"
               caption={caption}
             />
           </Reveal>
         </div>
       </section>
 
-      {/* 4. What Baseline Vision Tracks — 3 cards with compact phone screenshots */}
+      {/* 4. What the TPA Method analyses — 3 cards with compact phone screenshots */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10 bg-[#0B1F33]/40">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
@@ -120,7 +120,7 @@ export default function BaselineVision() {
               {t.baseline.eyebrow}
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-10 leading-tight">
-              {tr ? "Baseline Vision Ne Sağlar?" : "What Does Baseline Vision Track?"}
+              {tr ? "TPA Metodu Ne Sağlar?" : "What Does the TPA Method Analyse?"}
             </h2>
           </Reveal>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -134,7 +134,7 @@ export default function BaselineVision() {
                   ? "Maç istatistikleri, hata eğilimleri ve servis baskısı koçluk yorumuyla oyuncu raporuna dönüştürülür."
                   : "Match stats, error patterns and serve pressure are turned into clear player development priorities.",
                 img: "/images/baseline/baseline-match-stats.png",
-                imgAlt: "Baseline Vision match statistics",
+                imgAlt: "TPA session data — match statistics",
               },
               {
                 title: tr ? "Vuruş Performansı" : "Shot Performance",
@@ -145,7 +145,7 @@ export default function BaselineVision() {
                   ? "Forehand/backhand dağılımı, top derinliği ve yön verileri gelişim önceliklerine çevrilir."
                   : "Shot distribution, depth and direction data is translated into coaching development priorities.",
                 img: "/images/baseline/baseline-ground-strokes.png",
-                imgAlt: "Baseline Vision ground stroke data",
+                imgAlt: "TPA session data — ground stroke patterns",
               },
               {
                 title: tr ? "Servis & Return" : "Serve & Return",
@@ -156,7 +156,7 @@ export default function BaselineVision() {
                   ? "Servis hızı, isabet oranı ve return verileri bütünsel bir değerlendirmeyle oyuncuya sunulur."
                   : "Serve speed, accuracy and return data are packaged into a clear player assessment.",
                 img: "/images/baseline/baseline-serve-stats.png",
-                imgAlt: "Baseline Vision serve statistics",
+                imgAlt: "TPA session data — serve statistics",
               },
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 80}>
@@ -183,7 +183,7 @@ export default function BaselineVision() {
         </div>
       </section>
 
-      {/* 5. From Data to Coaching Insight — BV vs TPA */}
+      {/* 5. From data to coaching insight */}
       <section className="py-12 md:py-16 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
@@ -195,17 +195,17 @@ export default function BaselineVision() {
             <Reveal>
               <div className="bg-[#0d1b2a] border border-white/10 rounded-2xl p-6 h-full flex flex-col gap-5">
                 <div className="text-xs uppercase tracking-widest text-[#A7B0BA]">
-                  Baseline Vision
+                  Match &amp; Session Data
                 </div>
                 <p className="text-sm text-[#A7B0BA] leading-relaxed">
                   {tr
-                    ? "Baseline Vision teknoloji ve veri tarafını sağlar: vuruş hızı, top yerleşimi, oyuncu pozisyonu, video tekrarları ve performans verileri."
-                    : "Baseline Vision handles the technology and data side: shot speed, ball placement, player position, video replays and performance data."}
+                    ? "Maç gözlemi ve seans değerlendirmesi; vuruş desenleri, hata eğilimleri, servis verileri ve maç istatistiklerini kapsar."
+                    : "Match observation and session review covers shot patterns, error tendencies, serve data and match statistics."}
                 </p>
                 <div className="mt-auto">
                   <PhoneCard
                     src="/images/baseline/baseline-return-stats.png"
-                    alt="Baseline Vision return statistics"
+                    alt="Sample TPA session data — return statistics"
                     caption={caption}
                   />
                 </div>
@@ -224,7 +224,7 @@ export default function BaselineVision() {
                 <div className="mt-auto">
                   <PhoneCard
                     src="/images/baseline/baseline-ground-strokes.png"
-                    alt="Baseline Vision coaching interpretation"
+                    alt="TPA coaching interpretation"
                     caption={caption}
                   />
                 </div>

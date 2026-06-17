@@ -9,16 +9,16 @@ import { IMAGES, LOGOS, BRAND } from "../constants/images";
 
 const HERO_CARDS = {
   tr: [
-    { title: "BASELINE VISION",  sub: "Maç performansı ve seans verileri",            link: "/baseline-vision" },
-    { title: "OYUNCU GELİŞİMİ", sub: "Raporlar, öncelikler ve antrenman planı",        link: "/ornek-rapor" },
-    { title: "KULÜP & AKADEMİ", sub: "Oyuncu gelişim sistemi ve iş birliği",           link: "/coaching" },
-    { title: "TÜRKİYE 2026",    sub: "Türkiye'de oyuncu, veli ve kulüplerle çalışma", link: "/pathways" },
+    { title: "TPA METODU",       sub: "Maç gözlemi, seans değerlendirmesi ve koçluk raporu", link: "/baseline-vision" },
+    { title: "OYUNCU GELİŞİMİ", sub: "Raporlar, öncelikler ve antrenman planı",              link: "/ornek-rapor" },
+    { title: "KULÜP & AKADEMİ", sub: "Oyuncu gelişim sistemi ve iş birliği",                 link: "/coaching" },
+    { title: "TÜRKİYE 2026",    sub: "Türkiye'de oyuncu, veli ve kulüplerle çalışma",        link: "/pathways" },
   ],
   en: [
-    { title: "BASELINE VISION",    sub: "Match performance & session data",            link: "/baseline-vision" },
-    { title: "PLAYER DEVELOPMENT", sub: "Reports, priorities and training plan",       link: "/sample-report" },
-    { title: "CLUB & ACADEMY",     sub: "Player development system",                   link: "/coaching" },
-    { title: "TÜRKIYE 2026",       sub: "Working with players in Türkiye 2026",        link: "/pathways" },
+    { title: "TPA METHOD",         sub: "Match observation, session review & coaching report", link: "/baseline-vision" },
+    { title: "PLAYER DEVELOPMENT", sub: "Reports, priorities and training plan",               link: "/sample-report" },
+    { title: "CLUB & ACADEMY",     sub: "Player development system",                           link: "/coaching" },
+    { title: "TÜRKIYE 2026",       sub: "Working with players in Türkiye 2026",                link: "/pathways" },
   ],
 };
 
@@ -27,7 +27,7 @@ const SIX_CARDS = {
   tr: [
     { num: "01", title: "ÖZEL DERS",            text: "Bireysel gelişim ve antrenman planı",                link: "/pathways" },
     { num: "02", title: "GRUP ANTRENMANI",       text: "Junior, kulüp ve takım çalışmaları",                 link: "/coaching" },
-    { num: "03", title: "TENNIS PRO ANALYSIS",   text: "Baseline Vision destekli oyuncu gelişim raporları",  link: "/tpa" },
+    { num: "03", title: "TENNIS PRO ANALYSIS",   text: "Oyuncu gelişim raporları ve koçluk yorumu",           link: "/tpa" },
     { num: "04", title: "KULÜP & AKADEMİ",      text: "Oyuncu gelişim sistemi ve performans günleri",       link: "/coaching" },
     { num: "05", title: "TÜRKİYE & AVUSTRALYA", text: "Oyuncu yolları, deneyim ve bağlantılar",             link: "/pathways", flags: true },
     { num: "06", title: "KOÇ GELİŞİMİ",         text: "Program desteği, mentorluk ve sistem kurma",         link: "/coaching" },
@@ -35,7 +35,7 @@ const SIX_CARDS = {
   en: [
     { num: "01", title: "PRIVATE COACHING",    text: "Individual development and training plan",             link: "/pathways" },
     { num: "02", title: "GROUP TRAINING",      text: "Junior, club and team sessions",                       link: "/coaching" },
-    { num: "03", title: "TENNIS PRO ANALYSIS", text: "Baseline Vision-supported player development reports", link: "/tpa" },
+    { num: "03", title: "TENNIS PRO ANALYSIS", text: "Player development reports and coaching interpretation", link: "/tpa" },
     { num: "04", title: "CLUB & ACADEMY",      text: "Player development system and performance days",       link: "/coaching" },
     { num: "05", title: "TÜRKIYE & AUSTRALIA", text: "Player pathways, experience and connections",          link: "/pathways", flags: true },
     { num: "06", title: "COACH DEVELOPMENT",   text: "Program support, mentoring and system setup",          link: "/coaching" },
@@ -46,14 +46,14 @@ const CREDENTIALS = {
   tr: [
     { label: "ATPCA Advanced Pro Level 2" },
     { label: "Türkiye · Avustralya", flags: "🇹🇷🇦🇺" },
-    { label: "Baseline Vision Destekli" },
+    { label: "TPA Metodu" },
     { label: "Tennis Pro Analysis" },
     { label: "Türkçe + İngilizce" },
   ],
   en: [
     { label: "ATPCA Advanced Pro Level 2" },
     { label: "Türkiye · Australia", flags: "🇹🇷🇦🇺" },
-    { label: "Baseline Vision Supported" },
+    { label: "TPA Method" },
     { label: "Tennis Pro Analysis" },
     { label: "English + Turkish" },
   ],
@@ -108,8 +108,8 @@ const HeroSection = () => {
             <Reveal>
               <p className="text-[10px] uppercase tracking-[0.38em] text-[#B7FF00] mb-6 leading-loose">
                 {isTR
-                  ? "TENİS KOÇU · OYUNCU GELİŞİMİ · BASELINE VISION DESTEKLİ SİSTEM"
-                  : "TENNIS COACH · PLAYER DEVELOPMENT · BASELINE VISION SYSTEM"}
+                  ? "TENİS KOÇU · OYUNCU GELİŞİMİ · TPA OYUNCU GELİŞİM METODU"
+                  : "TENNIS COACH · PLAYER DEVELOPMENT · TPA PLAYER DEVELOPMENT METHOD"}
               </p>
             </Reveal>
 
@@ -142,7 +142,7 @@ const HeroSection = () => {
                 className="text-sm text-white/60 leading-relaxed mb-7 max-w-md"
               >
                 {isTR
-                  ? "Türkiye ve Avustralya deneyimini Baseline Vision destekli oyuncu gelişim yaklaşımıyla birleştiren tenis koçluğu, maç performansı değerlendirmesi ve kulüp-akademi destek sistemi."
+                  ? "Türkiye ve Avustralya deneyimini TPA Oyuncu Gelişim Metodu ile birleştiren tenis koçluğu, maç performansı değerlendirmesi ve kulüp-akademi destek sistemi."
                   : t.hero.subtitle}
               </p>
             </Reveal>
@@ -376,8 +376,6 @@ const LogoStrip = () => (
         <img loading="lazy" src="/images/logos/tennis-australia-logo-white.svg" alt="Tennis Australia"
           className="h-8 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />
         <img loading="lazy" src={LOGOS.utr} alt="UTR Sports"
-          className="h-6 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity brightness-0 invert" />
-        <img loading="lazy" src={LOGOS.baselineVision} alt="Baseline Vision"
           className="h-6 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity brightness-0 invert" />
         <img loading="lazy" src={LOGOS.tenx} alt="TenX"
           className="h-7 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />

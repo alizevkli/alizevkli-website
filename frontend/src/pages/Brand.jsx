@@ -117,7 +117,7 @@ const ContextGrid = ({ concept }) => {
           <ul className="mt-4 space-y-2 text-white/90 font-anton uppercase text-sm">
             <li>Home</li>
             <li>TPA</li>
-            <li>Baseline Vision</li>
+            <li>TPA Method</li>
             <li>Contact</li>
           </ul>
         </div>
@@ -160,7 +160,7 @@ const ContextGrid = ({ concept }) => {
 };
 
 const conceptLogic = {
-  c1: "Reads first as analytics — frame + curve + data-points. Strongest as a brand mark for the Baseline Vision sub-product, performance reports, and technical content. Risk: less iconic at favicon size because the curve is complex.",
+  c1: "Reads first as analytics — frame + curve + data-points. Strongest as a brand mark for TPA performance reports, report covers, and technical content. Risk: less iconic at favicon size because the curve is complex.",
   c2: "Reads first as athletic — silhouette + accent line. Strongest in hero billboards, video covers, jerseys, and any context where the brand competes with sports-tech players. Risk: the chevron alone is generic without the wordmark.",
   c3: "Reads first as a brand-system mark — a proprietary TPA glyph in a badge. Strongest as the app icon, social avatar, and merchandise stamp. Risk: badge format can feel club-like if executed lazily — the precise letter geometry has to do the heavy lifting.",
 };
@@ -216,7 +216,7 @@ const ConceptBlock = ({ concept, index }) => {
 const RECOMMENDATIONS = [
   { use: "Elite coaching", winner: "C2 · Apex", why: "Athletic, confident, sits next to ATP/WTA-grade language without competing with it." },
   { use: "Performance analysis", winner: "C1 · Signal", why: "Reads as analytics first — the captured curve + data points telegraph the discipline immediately." },
-  { use: "Baseline Vision analytics", winner: "C1 · Signal", why: "Best lockup for sub-product surfaces, reports, dashboard headers and data exports." },
+  { use: "Performance analytics", winner: "C1 · Signal", why: "Best lockup for performance report surfaces, dashboard headers and data exports." },
   { use: "International growth", winner: "C3 · Monogram", why: "Language-agnostic, single-glyph, app-icon-ready — travels across markets without depending on the English wordmark." },
 ];
 
@@ -329,7 +329,7 @@ const FinalSection = () => (
         <Tile title="Video Watermark" span="md:col-span-4" minH={220}>
           <div className="relative w-full aspect-video bg-[#111827] border border-white/5">
             <div className="absolute inset-0 flex items-center justify-center text-[#A7B0BA] text-[10px] uppercase tracking-[0.3em]">
-              ▷ Baseline Vision · Match 04
+              ▷ TPA · Match 04
             </div>
             <div className="absolute bottom-2 right-2">
               <FinalMark size={28} />

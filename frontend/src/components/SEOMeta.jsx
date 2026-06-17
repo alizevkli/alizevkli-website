@@ -4,16 +4,16 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const META = {
   "/": {
-    en: { title: "Ali Zevkli | Baseline Vision-Supported Tennis Coaching", description: "Ali Zevkli interprets Baseline Vision session data through coaching experience to create clear player development priorities for players, parents, clubs and academies." },
-    tr: { title: "Ali Zevkli | Baseline Vision Destekli Tenis Koçluğu", description: "Ali Zevkli, Baseline Vision seans verilerini koçluk tecrübesiyle yorumlayarak oyuncular, veliler, kulüpler ve akademiler için anlaşılır tenis oyuncu gelişim raporları hazırlar." },
+    en: { title: "Ali Zevkli | TPA Player Development Method", description: "Ali Zevkli combines match observation, session review and coaching interpretation through Tennis Pro Analysis to create practical player development reports." },
+    tr: { title: "Ali Zevkli | TPA Oyuncu Gelişim Metodu", description: "Ali Zevkli, Tennis Pro Analysis çatısı altında maç gözlemi, seans değerlendirmesi ve koçluk yorumunu birleştirerek oyuncular için uygulanabilir gelişim raporları hazırlar." },
   },
   "/tpa": {
-    en: { title: "TPA — Tennis Pro Analysis System | Ali Zevkli", description: "The Tennis Pro Analysis performance system — coaching, Baseline Vision analysis, tournament direction and player development." },
-    tr: { title: "TPA — Tennis Pro Analysis Sistemi | Ali Zevkli", description: "Tennis Pro Analysis performans sistemi — antrenörlük, Baseline Vision analizi, turnuva yönetimi ve oyuncu gelişimi." },
+    en: { title: "TPA — Tennis Pro Analysis System | Ali Zevkli", description: "The Tennis Pro Analysis performance system — coaching, match observation, tournament direction and player development." },
+    tr: { title: "TPA — Tennis Pro Analysis Sistemi | Ali Zevkli", description: "Tennis Pro Analysis performans sistemi — antrenörlük, maç analizi, turnuva yönetimi ve oyuncu gelişimi." },
   },
   "/baseline-vision": {
-    en: { title: "Baseline Vision — Match Analysis & Performance Tracking | TPA", description: "Baseline Vision tennis performance system — shot speed, ball placement, rally analysis, match statistics and player development reports." },
-    tr: { title: "Baseline Vision — Maç Analizi ve Performans Takibi | TPA", description: "Baseline Vision tenis performans sistemi — vuruş hızı, top yerleşimi, ralli analizi, maç istatistikleri ve oyuncu gelişim raporları." },
+    en: { title: "TPA Player Development Method | Tennis Pro Analysis", description: "TPA Player Development Method combines match observation, session review and coaching interpretation to create practical player development reports." },
+    tr: { title: "TPA Oyuncu Gelişim Metodu | Tennis Pro Analysis", description: "TPA Oyuncu Gelişim Metodu; maç gözlemi, seans değerlendirmesi ve koçluk yorumunu birleştirerek uygulanabilir oyuncu gelişim raporları oluşturur." },
   },
   "/coaching": {
     en: { title: "Tennis Coaching — Individual, Performance & Club Programs | TPA", description: "Private tennis coaching, performance analysis sessions and club program design by Ali Zevkli. Australia and Türkiye." },
@@ -36,23 +36,23 @@ const META = {
     tr: { title: "Fiyatlar — Tenis Antrenörlüğü ve Analiz Seansları | Tennis Pro Analysis", description: "Antrenörlük, performans analizi, kulüp danışmanlığı ve Avustralya yolu hizmetleri. Hedeflerinize özel fiyat için iletişime geçin." },
   },
   "/baseline-vision-faq": {
-    en: { title: "Baseline Vision FAQ — How It Works | Tennis Pro Analysis", description: "Everything you need to know about Baseline Vision tennis performance analysis — what it tracks, how it works, and how to improve your game." },
-    tr: { title: "Baseline Vision SSS — Nasıl Çalışır | Tennis Pro Analysis", description: "Baseline Vision tenis performans analizi hakkında bilmeniz gereken her şey — neyi takip eder, nasıl çalışır." },
+    en: { title: "TPA Method FAQ — How It Works | Tennis Pro Analysis", description: "Everything you need to know about the TPA Player Development Method — what it analyses, how it works, and how to improve your game." },
+    tr: { title: "TPA Metodu SSS — Nasıl Çalışır | Tennis Pro Analysis", description: "TPA Oyuncu Gelişim Metodu hakkında bilmeniz gereken her şey — neyi analiz eder, nasıl çalışır." },
   },
   "/about": {
-    en: { title: "About Ali Zevkli — International Tennis Coach & Founder TPA", description: "ATPCA Advanced Pro Level 2, TTF qualified, Marmara University BESYO. 20+ years coaching across Australia and Türkiye." },
-    tr: { title: "Ali Zevkli Hakkında — Uluslararası Tenis Antrenörü ve TPA Kurucusu", description: "ATPCA İleri Profesyonel Seviye 2, TTF yetkili antrenör, Marmara Üniversitesi BESYO. Avustralya ve Türkiye'de 20+ yıl antrenörlük." },
+    en: { title: "About Ali Zevkli — International Tennis Coach & Founder TPA", description: "ATPCA Advanced Pro Level 2, TTF qualified, Marmara University BESYO. Coaching across Australia and Türkiye." },
+    tr: { title: "Ali Zevkli Hakkında — Uluslararası Tenis Antrenörü ve TPA Kurucusu", description: "ATPCA İleri Profesyonel Seviye 2, TTF yetkili antrenör, Marmara Üniversitesi BESYO. Avustralya ve Türkiye'de antrenörlük." },
   },
   "/contact": {
     en: { title: "Contact Ali Zevkli — Tennis Pro Analysis", description: "Book a coaching session, request performance analysis or discuss Australia–Türkiye pathways. Contact via WhatsApp or email." },
     tr: { title: "İletişim — Ali Zevkli Tennis Pro Analysis", description: "Antrenman seansı rezervasyonu, performans analizi talebi veya Avustralya–Türkiye gelişim yolları hakkında iletişime geçin." },
   },
   "/sample-report": {
-    en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "See how Tennis Pro Analysis turns Baseline Vision session data and coaching observation into clear training priorities for players, parents and clubs." },
+    en: { title: "Sample Player Development Report | Tennis Pro Analysis", description: "See how Tennis Pro Analysis turns match observation and coaching interpretation into clear training priorities for players, parents and clubs." },
   },
   "/ornek-rapor": {
-    tr: { title: "Örnek Oyuncu Gelişim Raporu | Tennis Pro Analysis", description: "Tennis Pro Analysis'in Baseline Vision destekli oyuncu gelişim raporunun nasıl hazırlandığını gösteren örnek rapor." },
-    en: { title: "Sample Player Development Report (TR) | Tennis Pro Analysis", description: "A sample Baseline Vision-supported player development report by Tennis Pro Analysis." },
+    tr: { title: "Örnek Oyuncu Gelişim Raporu | Tennis Pro Analysis", description: "Tennis Pro Analysis'in TPA Oyuncu Gelişim Metodu ile hazırlanan örnek oyuncu raporu." },
+    en: { title: "Sample Player Development Report (TR) | Tennis Pro Analysis", description: "A sample TPA Player Development Report by Tennis Pro Analysis." },
   },
   "/tournament": {
     en: { title: "Tournament & Event Management | Tennis Pro Analysis", description: "Tennis tournament planning, scheduling, draw management and event delivery by Ali Zevkli." },

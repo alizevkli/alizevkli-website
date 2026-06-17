@@ -5,22 +5,22 @@ import { Reveal } from "../components/Reveal";
 import { SOCIAL } from "../constants/images";
 
 const CREDS_TR = [
-  "20+ Yıl Avustralya & Türkiye",
+  "Avustralya & Türkiye",
   "Marmara BESYO",
   "TTF Antrenörü",
   "ATPCA Advanced Pro Level 2",
   "Tennis Australia Antrenör Üyesi",
-  "Baseline Vision",
+  "TPA Metodu",
   "NAATI Tercüme Eğitimi (RMIT)",
 ];
 
 const CREDS_EN = [
-  "20+ Years Australia & Türkiye",
+  "Australia & Türkiye",
   "Marmara BESYO",
   "TTF Qualified Coach",
   "ATPCA Advanced Pro Level 2",
   "Tennis Australia Coach Member",
-  "Baseline Vision",
+  "TPA Method",
   "NAATI Translation Training (RMIT)",
 ];
 
@@ -172,13 +172,13 @@ export default function Pathways() {
         </div>
       </section>
 
-      {/* 6. Baseline Vision section */}
+      {/* 6. TPA Player Development Method section */}
       <section className="py-16 md:py-20 px-5 md:px-10 border-t border-[#F8FAFC]/10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-5 flex items-center gap-3">
               <span className="inline-block w-8 h-px bg-[#B7FF00]" />
-              Baseline Vision
+              TPA Method
             </div>
             <h2 className="font-anton uppercase text-3xl md:text-4xl text-white mb-6 leading-tight">
               {p.bvTitle}

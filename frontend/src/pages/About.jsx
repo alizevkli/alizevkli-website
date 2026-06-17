@@ -79,7 +79,6 @@ export default function About() {
                   <img src={LOGOS.atpca} alt="ATPCA" className="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.tennisAustralia} alt="Tennis Australia" className="h-7 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src={LOGOS.utr} alt="UTR Sports" className="h-6 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
-                  <img src={LOGOS.baselineVision} alt="Baseline Vision" className="h-6 object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert" />
                   <img src="/images/logos/tenx-logo.jpg" alt="TenX" className="h-8 w-auto object-contain" />
                 </div>
               </div>
