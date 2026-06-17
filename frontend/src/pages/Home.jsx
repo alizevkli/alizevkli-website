@@ -9,112 +9,36 @@ import { IMAGES, LOGOS, BRAND } from "../constants/images";
 
 const HERO_CARDS = {
   tr: [
-    { title: "BASELINE VISION",  sub: "Maç performansı ve seans verileri",             link: "/baseline-vision" },
-    { title: "OYUNCU GELİŞİMİ", sub: "Raporlar, öncelikler ve antrenman planı",         link: "/ornek-rapor" },
-    { title: "KULÜP & AKADEMİ", sub: "Oyuncu gelişim sistemi ve iş birliği",            link: "/coaching" },
-    { title: "TÜRKİYE 2026",    sub: "Türkiye'de oyuncu, veli ve kulüplerle çalışma",  link: "/pathways" },
+    { title: "BASELINE VISION",  sub: "Maç performansı ve seans verileri",            link: "/baseline-vision" },
+    { title: "OYUNCU GELİŞİMİ", sub: "Raporlar, öncelikler ve antrenman planı",        link: "/ornek-rapor" },
+    { title: "KULÜP & AKADEMİ", sub: "Oyuncu gelişim sistemi ve iş birliği",           link: "/coaching" },
+    { title: "TÜRKİYE 2026",    sub: "Türkiye'de oyuncu, veli ve kulüplerle çalışma", link: "/pathways" },
   ],
   en: [
-    { title: "BASELINE VISION",    sub: "Match performance & session data",             link: "/baseline-vision" },
-    { title: "PLAYER DEVELOPMENT", sub: "Reports, priorities and training plan",        link: "/sample-report" },
-    { title: "CLUB & ACADEMY",     sub: "Player development system",                    link: "/coaching" },
-    { title: "TÜRKIYE 2026",       sub: "Working with players in Türkiye 2026",         link: "/pathways" },
+    { title: "BASELINE VISION",    sub: "Match performance & session data",            link: "/baseline-vision" },
+    { title: "PLAYER DEVELOPMENT", sub: "Reports, priorities and training plan",       link: "/sample-report" },
+    { title: "CLUB & ACADEMY",     sub: "Player development system",                   link: "/coaching" },
+    { title: "TÜRKIYE 2026",       sub: "Working with players in Türkiye 2026",        link: "/pathways" },
   ],
 };
 
-/*
-  img       — path to background image. Omit for premium dark-gradient card.
-  objectPos — Tailwind object-position class (default "object-center").
-  flags     — render 🇹🇷·🇦🇺 badge on this card.
-*/
+/* No photos — curated images will be added later */
 const SIX_CARDS = {
   tr: [
-    {
-      num: "01", title: "ÖZEL DERS",
-      text: "Bireysel gelişim ve antrenman planı",
-      link: "/pathways",
-      img: "/images/ali-founder-tpa.jpg",
-      objectPos: "object-top",
-    },
-    {
-      num: "02", title: "GRUP ANTRENMANI",
-      text: "Junior, kulüp ve takım çalışmaları",
-      link: "/coaching",
-      img: "/images/tenx2/stadium-doubles.jpg",
-      objectPos: "object-center",
-    },
-    {
-      num: "03", title: "TENNIS PRO ANALYSIS",
-      text: "Baseline Vision destekli oyuncu gelişim raporları",
-      link: "/tpa",
-      // no img — premium dark gradient card
-    },
-    {
-      num: "04", title: "KULÜP & AKADEMİ",
-      text: "Oyuncu gelişim sistemi ve performans günleri",
-      link: "/coaching",
-      img: "/images/tenx2/clay-court-senior.jpg",
-      objectPos: "object-center",
-    },
-    {
-      num: "05", title: "TÜRKİYE & AVUSTRALYA",
-      text: "Oyuncu yolları, deneyim ve bağlantılar",
-      link: "/pathways",
-      img: "/images/tenx2/ken-rosewall-arena.jpg",
-      objectPos: "object-center",
-      flags: true,
-    },
-    {
-      num: "06", title: "KOÇ GELİŞİMİ",
-      text: "Program desteği, mentorluk ve sistem kurma",
-      link: "/coaching",
-      img: "/images/tenx2/gym-training.jpg",
-      objectPos: "object-center",
-    },
+    { num: "01", title: "ÖZEL DERS",            text: "Bireysel gelişim ve antrenman planı",                link: "/pathways" },
+    { num: "02", title: "GRUP ANTRENMANI",       text: "Junior, kulüp ve takım çalışmaları",                 link: "/coaching" },
+    { num: "03", title: "TENNIS PRO ANALYSIS",   text: "Baseline Vision destekli oyuncu gelişim raporları",  link: "/tpa" },
+    { num: "04", title: "KULÜP & AKADEMİ",      text: "Oyuncu gelişim sistemi ve performans günleri",       link: "/coaching" },
+    { num: "05", title: "TÜRKİYE & AVUSTRALYA", text: "Oyuncu yolları, deneyim ve bağlantılar",             link: "/pathways", flags: true },
+    { num: "06", title: "KOÇ GELİŞİMİ",         text: "Program desteği, mentorluk ve sistem kurma",         link: "/coaching" },
   ],
   en: [
-    {
-      num: "01", title: "PRIVATE COACHING",
-      text: "Individual development and training plan",
-      link: "/pathways",
-      img: "/images/ali-founder-tpa.jpg",
-      objectPos: "object-top",
-    },
-    {
-      num: "02", title: "GROUP TRAINING",
-      text: "Junior, club and team sessions",
-      link: "/coaching",
-      img: "/images/tenx2/stadium-doubles.jpg",
-      objectPos: "object-center",
-    },
-    {
-      num: "03", title: "TENNIS PRO ANALYSIS",
-      text: "Baseline Vision-supported player development reports",
-      link: "/tpa",
-      // no img — premium dark gradient card
-    },
-    {
-      num: "04", title: "CLUB & ACADEMY",
-      text: "Player development system and performance days",
-      link: "/coaching",
-      img: "/images/tenx2/clay-court-senior.jpg",
-      objectPos: "object-center",
-    },
-    {
-      num: "05", title: "TÜRKIYE & AUSTRALIA",
-      text: "Player pathways, experience and connections",
-      link: "/pathways",
-      img: "/images/tenx2/ken-rosewall-arena.jpg",
-      objectPos: "object-center",
-      flags: true,
-    },
-    {
-      num: "06", title: "COACH DEVELOPMENT",
-      text: "Program support, mentoring and system setup",
-      link: "/coaching",
-      img: "/images/tenx2/gym-training.jpg",
-      objectPos: "object-center",
-    },
+    { num: "01", title: "PRIVATE COACHING",    text: "Individual development and training plan",             link: "/pathways" },
+    { num: "02", title: "GROUP TRAINING",      text: "Junior, club and team sessions",                       link: "/coaching" },
+    { num: "03", title: "TENNIS PRO ANALYSIS", text: "Baseline Vision-supported player development reports", link: "/tpa" },
+    { num: "04", title: "CLUB & ACADEMY",      text: "Player development system and performance days",       link: "/coaching" },
+    { num: "05", title: "TÜRKIYE & AUSTRALIA", text: "Player pathways, experience and connections",          link: "/pathways", flags: true },
+    { num: "06", title: "COACH DEVELOPMENT",   text: "Program support, mentoring and system setup",          link: "/coaching" },
   ],
 };
 
@@ -166,20 +90,20 @@ const HeroSection = () => {
         <img loading="eager" src={IMAGES.heroCourt} alt="Tennis court" className="w-full h-full object-cover" />
       </div>
 
-      {/* Directional overlays only — no flat global dim */}
+      {/* Directional overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#06141F]/75 via-[#06141F]/20 to-[#06141F]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#06141F] via-[#06141F]/60 to-[#06141F]/15" />
 
-      {/* Vertical sidebar label */}
+      {/* Vertical sidebar label — desktop only */}
       <div className="hidden md:flex absolute left-5 top-1/2 -translate-y-1/2 rotate-180 [writing-mode:vertical-rl] text-[9px] uppercase tracking-[0.45em] text-[#A7B0BA]/35 z-10 select-none">
         Tennis Pro Analysis · Ali Zevkli
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-10 pt-28 pb-14 w-full">
-        {/* 3-col layout: text (5) | Ali portrait (4) | service cards (3) */}
+        {/* Desktop: 3-col text | portrait | cards. Mobile: single stack */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-start">
 
-          {/* COL 1 — Hero text */}
+          {/* COL 1 — Text */}
           <div className="lg:col-span-5">
             <Reveal>
               <p className="text-[10px] uppercase tracking-[0.38em] text-[#B7FF00] mb-6 leading-loose">
@@ -244,9 +168,9 @@ const HeroSection = () => {
               </div>
             </Reveal>
 
-            {/* Flag location chips — visible and tasteful */}
+            {/* Flag location chips */}
             <Reveal delay={300}>
-              <div className="flex items-center gap-1.5 flex-wrap">
+              <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
                   <span className="text-sm leading-none">🇹🇷</span>
                   <span className="text-[10px] uppercase tracking-[0.22em] text-[#A7B0BA]/80">
@@ -263,7 +187,7 @@ const HeroSection = () => {
             </Reveal>
           </div>
 
-          {/* COL 2 — Ali portrait (4/12 on desktop, dedicated column so face is never covered) */}
+          {/* COL 2 — Ali portrait (desktop only, own column so face never covered) */}
           <div className="hidden lg:block lg:col-span-4">
             <Reveal delay={100}>
               <div
@@ -276,15 +200,12 @@ const HeroSection = () => {
                   className="w-full h-full object-cover object-top"
                   loading="eager"
                 />
-                {/* Only bottom fade — face fully lit */}
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06141F] to-transparent" />
-                {/* TPA chip */}
                 <div className="absolute top-3 left-3">
                   <span className="text-[9px] uppercase tracking-[0.3em] text-[#B7FF00] bg-[#06141F]/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-[#B7FF00]/20">
                     Tennis Pro Analysis
                   </span>
                 </div>
-                {/* Name */}
                 <div className="absolute bottom-4 left-4">
                   <div className="text-sm font-bold text-white">Ali Zevkli</div>
                   <div className="text-[10px] text-[#A7B0BA] mt-0.5">
@@ -295,15 +216,15 @@ const HeroSection = () => {
             </Reveal>
           </div>
 
-          {/* COL 3 — 4 stacked service link cards (3/12 on desktop) */}
+          {/* COL 3 — 4 hero service link cards */}
           <div className="lg:col-span-3 flex flex-col gap-2.5">
 
-            {/* Mobile only: Ali portrait card */}
+            {/* Mobile Ali portrait */}
             <div className="lg:hidden mb-1">
               <Reveal delay={280}>
                 <div
                   className="relative rounded-2xl overflow-hidden border border-white/12 shadow-xl"
-                  style={{ height: "180px" }}
+                  style={{ height: "200px" }}
                 >
                   <img
                     src={BRAND.founder}
@@ -369,7 +290,7 @@ const CredentialStrip = () => {
   );
 };
 
-/* ── Six service cards — image or premium dark gradient ───────────────── */
+/* ── Six service cards — all premium dark gradient, no photos ─────────── */
 const ServiceCardsSection = () => {
   const { t, lang } = useLanguage();
   const isTR = lang === "tr";
@@ -386,65 +307,51 @@ const ServiceCardsSection = () => {
             </h2>
           </div>
         </Reveal>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {cards.map((card, i) => (
             <Reveal key={card.title} delay={i * 45}>
               <Link
                 to={card.link}
-                className="group relative block rounded-2xl overflow-hidden border border-white/10 hover:border-[#B7FF00]/50 transition-all"
-                style={{ height: "230px" }}
+                className="group relative block rounded-2xl overflow-hidden border border-white/10 hover:border-[#B7FF00]/50 transition-all duration-300"
+                style={{ height: "200px" }}
               >
-                {/* Background: strong image OR premium dark gradient */}
-                {card.img ? (
-                  <>
-                    <img
-                      src={card.img}
-                      alt={card.title}
-                      className={`absolute inset-0 w-full h-full object-cover ${card.objectPos ?? "object-center"} transition-transform duration-500 group-hover:scale-[1.04]`}
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#06141F] via-[#06141F]/65 to-[#06141F]/15" />
-                  </>
-                ) : (
-                  <>
-                    {/* Premium dark glass card */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#0d1b2a] via-[#06141F] to-[#0A1220]" />
-                    {/* Subtle court-grid texture */}
-                    <div
-                      className="absolute inset-0 opacity-[0.04]"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(rgba(183,255,0,1) 1px,transparent 1px),linear-gradient(90deg,rgba(183,255,0,1) 1px,transparent 1px)",
-                        backgroundSize: "36px 36px",
-                      }}
-                    />
-                    {/* Lime radial glow — top right */}
-                    <div className="absolute -top-6 right-4 w-28 h-28 rounded-full bg-[#B7FF00]/10 blur-2xl" />
-                    {/* Bottom fade for text */}
-                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#06141F]/80 to-transparent" />
-                  </>
-                )}
+                {/* Dark glass background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0d1b2a] via-[#06141F] to-[#0A1220]" />
 
-                {/* Lime bottom line on hover */}
+                {/* Subtle lime court-grid texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.035]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(183,255,0,1) 1px,transparent 1px),linear-gradient(90deg,rgba(183,255,0,1) 1px,transparent 1px)",
+                    backgroundSize: "32px 32px",
+                  }}
+                />
+
+                {/* Lime radial glow — top-right corner */}
+                <div className="absolute -top-8 -right-4 w-32 h-32 rounded-full bg-[#B7FF00]/8 blur-2xl group-hover:bg-[#B7FF00]/14 transition-all duration-500" />
+
+                {/* Hover: lime bottom accent line */}
                 <div className="absolute inset-x-0 bottom-0 h-px bg-[#B7FF00] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
-                {/* Flag badge on Türkiye & Australia card */}
+                {/* Flag badge — Türkiye & Australia card only */}
                 {card.flags && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-[#06141F]/65 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/10">
+                  <div className="absolute top-4 right-4 flex items-center gap-1 bg-[#06141F]/70 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/10">
                     <span className="text-sm leading-none">🇹🇷</span>
-                    <span className="text-[9px] text-[#A7B0BA]/70 px-0.5">·</span>
+                    <span className="text-[9px] text-[#A7B0BA]/60 px-0.5">·</span>
                     <span className="text-sm leading-none">🇦🇺</span>
                   </div>
                 )}
 
                 {/* Card content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5">
-                  <div className="text-[10px] font-bold tracking-[0.42em] text-[#B7FF00] mb-1.5">{card.num}</div>
-                  <h3 className="font-anton uppercase text-lg md:text-xl text-white mb-1 group-hover:text-[#B7FF00] transition-colors leading-tight">
+                  <div className="text-[10px] font-bold tracking-[0.44em] text-[#B7FF00] mb-2">{card.num}</div>
+                  <h3 className="font-anton uppercase text-xl text-white mb-1.5 group-hover:text-[#B7FF00] transition-colors leading-tight">
                     {card.title}
                   </h3>
-                  <p className="text-[11px] text-white/55 leading-relaxed mb-2.5">{card.text}</p>
-                  <ArrowRight size={13} className="text-[#B7FF00]" />
+                  <p className="text-[11px] text-white/50 leading-relaxed mb-3">{card.text}</p>
+                  <ArrowRight size={13} className="text-[#B7FF00] opacity-60 group-hover:opacity-100 transition-opacity" />
                 </div>
               </Link>
             </Reveal>
@@ -457,23 +364,23 @@ const ServiceCardsSection = () => {
 
 /* ── Authority / logo strip ───────────────────────────────────────────── */
 const LogoStrip = () => (
-  <section className="border-y border-[#F8FAFC]/10 bg-[#0d1b2a] py-4">
+  <section className="border-y border-[#F8FAFC]/10 bg-[#0d1b2a] py-5">
     <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-10">
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
         <img loading="lazy" src="/images/logos/marmara-logo.png" alt="Marmara University"
-          className="h-7 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
-        <img loading="lazy" src={LOGOS.ttf} alt="TTF"
-          className="h-7 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
+          className="h-9 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />
+        <img loading="lazy" src={LOGOS.ttf} alt="Türkiye Tenis Federasyonu"
+          className="h-9 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />
         <img loading="lazy" src={LOGOS.atpca} alt="ATPCA"
-          className="h-6 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity brightness-0 invert" />
+          className="h-8 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity brightness-0 invert" />
         <img loading="lazy" src="/images/logos/tennis-australia-logo-white.svg" alt="Tennis Australia"
-          className="h-6 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
+          className="h-8 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />
         <img loading="lazy" src={LOGOS.utr} alt="UTR Sports"
-          className="h-5 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity brightness-0 invert" />
+          className="h-6 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity brightness-0 invert" />
         <img loading="lazy" src={LOGOS.baselineVision} alt="Baseline Vision"
-          className="h-5 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity brightness-0 invert" />
+          className="h-6 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity brightness-0 invert" />
         <img loading="lazy" src={LOGOS.tenx} alt="TenX"
-          className="h-6 w-auto object-contain opacity-50 hover:opacity-75 transition-opacity" />
+          className="h-7 w-auto object-contain opacity-55 hover:opacity-80 transition-opacity" />
       </div>
     </div>
   </section>
@@ -485,28 +392,32 @@ const ContactCTA = () => {
   return (
     <section
       data-testid="section-contact-cta"
-      className="relative py-10 md:py-14 px-5 md:px-10 border-t border-[#F8FAFC]/10 overflow-hidden"
+      className="relative py-10 md:py-12 px-5 md:px-10 border-t border-[#F8FAFC]/10"
     >
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        <div className="lg:col-span-8">
+
+        {/* Left: text */}
+        <div className="lg:col-span-7">
           <Reveal>
             <div className="text-[11px] uppercase tracking-[0.34em] text-[#B7FF00] mb-3">
               {t.contact.eyebrow}
             </div>
           </Reveal>
           <Reveal delay={70}>
-            <h2 className="font-anton uppercase text-3xl md:text-5xl lg:text-6xl text-white leading-[0.9]">
+            <h2 className="font-anton uppercase text-3xl md:text-4xl lg:text-5xl text-white leading-[0.9]">
               {t.contact.title}
             </h2>
           </Reveal>
           <Reveal delay={150}>
-            <p className="mt-4 text-sm text-[#A7B0BA] max-w-xl leading-relaxed">
+            <p className="mt-3 text-sm text-[#A7B0BA] max-w-lg leading-relaxed">
               {t.contact.lead}
             </p>
           </Reveal>
         </div>
-        <div className="lg:col-span-4 flex flex-col gap-3">
-          <Reveal delay={210}>
+
+        {/* Right: button + contact details */}
+        <div className="lg:col-span-5 flex flex-col gap-3">
+          <Reveal delay={200}>
             <Link
               to="/contact"
               data-testid="home-contact-cta"
@@ -515,12 +426,13 @@ const ContactCTA = () => {
               {t.contact.cta} <ArrowRight size={16} />
             </Link>
           </Reveal>
-          <div className="text-xs text-[#A7B0BA] space-y-1 mt-1">
+          <div className="text-xs text-[#A7B0BA]/80 space-y-1.5 pt-1">
             <div>{t.contact.email}</div>
             <div>{t.contact.phone}</div>
             <div>{t.contact.instagram}</div>
           </div>
         </div>
+
       </div>
     </section>
   );
