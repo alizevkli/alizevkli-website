@@ -103,7 +103,7 @@ export default function BaselineVision() {
           </Reveal>
           <Reveal delay={150}>
             <PhoneCard
-              src="/images/baseline/baseline-app-home.png"
+              src="/images/tpa-method/tpa-method-app-home.png"
               alt="TPA session data — training and match modes"
               caption={caption}
             />
@@ -133,7 +133,7 @@ export default function BaselineVision() {
                 coaching: tr
                   ? "Maç istatistikleri, hata eğilimleri ve servis baskısı koçluk yorumuyla oyuncu raporuna dönüştürülür."
                   : "Match stats, error patterns and serve pressure are turned into clear player development priorities.",
-                img: "/images/baseline/baseline-match-stats.png",
+                img: "/images/tpa-method/tpa-match-stats.png",
                 imgAlt: "TPA session data — match statistics",
               },
               {
@@ -144,7 +144,7 @@ export default function BaselineVision() {
                 coaching: tr
                   ? "Forehand/backhand dağılımı, top derinliği ve yön verileri gelişim önceliklerine çevrilir."
                   : "Shot distribution, depth and direction data is translated into coaching development priorities.",
-                img: "/images/baseline/baseline-ground-strokes.png",
+                img: "/images/tpa-method/tpa-ground-strokes.png",
                 imgAlt: "TPA session data — ground stroke patterns",
               },
               {
@@ -155,7 +155,7 @@ export default function BaselineVision() {
                 coaching: tr
                   ? "Servis hızı, isabet oranı ve return verileri bütünsel bir değerlendirmeyle oyuncuya sunulur."
                   : "Serve speed, accuracy and return data are packaged into a clear player assessment.",
-                img: "/images/baseline/baseline-serve-stats.png",
+                img: "/images/tpa-method/tpa-serve-stats.png",
                 imgAlt: "TPA session data — serve statistics",
               },
             ].map((card, i) => (
@@ -204,7 +204,7 @@ export default function BaselineVision() {
                 </p>
                 <div className="mt-auto">
                   <PhoneCard
-                    src="/images/baseline/baseline-return-stats.png"
+                    src="/images/tpa-method/tpa-return-stats.png"
                     alt="Sample TPA session data — return statistics"
                     caption={caption}
                   />
@@ -223,7 +223,7 @@ export default function BaselineVision() {
                 </p>
                 <div className="mt-auto">
                   <PhoneCard
-                    src="/images/baseline/baseline-ground-strokes.png"
+                    src="/images/tpa-method/tpa-ground-strokes.png"
                     alt="TPA coaching interpretation"
                     caption={caption}
                   />

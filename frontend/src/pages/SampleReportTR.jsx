@@ -176,7 +176,7 @@ export default function SampleReportTR() {
             <Reveal>
               <div>
                 <PhoneFrame
-                  src="/images/baseline/baseline-match-stats.png"
+                  src="/images/tpa-method/tpa-match-stats.png"
                   alt="Örnek maç istatistikleri — Tennis Pro Analysis oyuncu gelişim raporu"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-4">
@@ -222,7 +222,7 @@ export default function SampleReportTR() {
             <Reveal className="md:order-1">
               <div>
                 <PhoneFrame
-                  src="/images/baseline/baseline-ground-strokes.png"
+                  src="/images/tpa-method/tpa-ground-strokes.png"
                   alt="Örnek vuruş dağılım verisi — Tennis Pro Analysis"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-4">
@@ -249,7 +249,7 @@ export default function SampleReportTR() {
             <Reveal>
               <div>
                 <PhoneFrame
-                  src="/images/baseline/baseline-serve-stats.png"
+                  src="/images/tpa-method/tpa-serve-stats.png"
                   alt="Örnek servis hızı ve yerleşim verisi — Tennis Pro Analysis"
                 />
                 <div className="flex flex-wrap justify-center gap-3 mt-4">

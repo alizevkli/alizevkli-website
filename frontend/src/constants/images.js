@@ -5,7 +5,7 @@ export const IMAGES = {
   heroCourt: "/images/hero-background.jpg",
   aboutCoach: "/images/grass-court-coaching.jpg",
   silhouette: "/images/grass-court-coaching.jpg",
-  baselineHero: "/images/baseline-train-smarter.jpg",
+  tpaMethodHero: "/images/tpa-method-train-smarter.jpg",
   grassCourt: "/images/grass-court-coaching.jpg",
   actionBackhand: "/images/double-handed-backhand.jpg",
   clayLegs: "/images/double-handed-backhand.jpg",
@@ -24,13 +24,12 @@ export const BRAND = {
   logoSquare: "/images/tpa-logo.png",
   founder: "/images/ali-founder-tpa.jpg",
   socialCardA: "/images/reinventing-tennis-experience.jpg",
-  socialCardB: "/images/baseline-train-smarter.jpg",
+  socialCardB: "/images/tpa-method-train-smarter.jpg",
   logos: {
     marmara: "/images/logos/marmara-university-logo.png",
     atpca: "/images/logos/atpca-logo.png",
     ttf: "/images/logos/ttf-logo.png",
     utr: "/images/logos/utr-sports-logo.png",
-    baselineVision: "/images/logos/baseline-vision-logo.svg",
     tenx: "/images/logos/tenx-logo.jpg",
     tpa: "/images/tpa-logo.png",
   },
@@ -41,18 +40,17 @@ export const LOGOS = {
   atpca: "/images/logos/atpca-logo.png",
   ttf: "/images/logos/ttf-logo.png",
   utr: "/images/logos/utr-sports-logo.png",
-  baselineVision: "/images/logos/baseline-vision-logo.svg",
   tennisAustralia: "/images/logos/tennis-australia-logo-white.svg",
   tenx: "/images/logos/tenx-logo.jpg",
   tpa: "/images/tpa-logo.png",
 };
 
-export const BASELINE_SCREENSHOTS = [
-  { src: "/images/baseline/bv-rally-length.jpg", title: "Average Rally Length", titleTR: "Ortalama Ralli Uzunluğu" },
-  { src: "/images/baseline/bv-net-clearance.jpg", title: "Average Net Clearance", titleTR: "Ortalama Net Geçişi" },
-  { src: "/images/baseline/bv-shot-speed.jpg", title: "Average Shot Speed", titleTR: "Ortalama Vuruş Hızı" },
-  { src: "/images/baseline/bv-fh-bh.jpg", title: "Forehand vs Backhand %In", titleTR: "Forehand vs Backhand %Giriş" },
-  { src: "/images/baseline/bv-court-positioning.jpg", title: "Court Positioning", titleTR: "Kort Pozisyonu" },
+export const TPA_SCREENSHOTS = [
+  { src: "/images/tpa-method/tpa-rally-length.jpg", title: "Average Rally Length", titleTR: "Ortalama Ralli Uzunluğu" },
+  { src: "/images/tpa-method/tpa-net-clearance.jpg", title: "Average Net Clearance", titleTR: "Ortalama Net Geçişi" },
+  { src: "/images/tpa-method/tpa-shot-speed.jpg", title: "Average Shot Speed", titleTR: "Ortalama Vuruş Hızı" },
+  { src: "/images/tpa-method/tpa-fh-bh.jpg", title: "Forehand vs Backhand %In", titleTR: "Forehand vs Backhand %Giriş" },
+  { src: "/images/tpa-method/tpa-court-positioning.jpg", title: "Court Positioning", titleTR: "Kort Pozisyonu" },
 ];
 
 export const SOCIAL = {
