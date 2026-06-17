@@ -191,13 +191,13 @@ const HeroSection = () => {
           <div className="hidden lg:block lg:col-span-4">
             <Reveal delay={100}>
               <div
-                className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl ring-1 ring-lime-400/10"
-                style={{ height: "380px" }}
+                className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl ring-1 ring-lime-400/10 bg-[#06141F]"
+                style={{ height: "500px" }}
               >
                 <img
                   src={BRAND.founder}
                   alt="Ali Zevkli — Tennis Coach & Tennis Pro Analysis Founder"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain object-top"
                   loading="eager"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#06141F] to-transparent" />
@@ -223,13 +223,13 @@ const HeroSection = () => {
             <div className="lg:hidden mb-1">
               <Reveal delay={280}>
                 <div
-                  className="relative rounded-2xl overflow-hidden border border-white/12 shadow-xl"
-                  style={{ height: "200px" }}
+                  className="relative rounded-2xl overflow-hidden border border-white/12 shadow-xl bg-[#06141F]"
+                  style={{ height: "340px" }}
                 >
                   <img
                     src={BRAND.founder}
                     alt="Ali Zevkli"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-contain object-top"
                     loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#06141F]/80 via-[#06141F]/10 to-transparent" />
